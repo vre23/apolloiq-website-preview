@@ -1,0 +1,132 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<footer class="site-footer">
+  <div class="container-site">
+    <div class="footer-grid">
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <a href={base} aria-label="ApolloIQ Home">
+          <img
+            src={`${base}images/685dc40ff887e05cecfae33e_aiq_logo-gradient.png`}
+            alt="ApolloIQ"
+            width="150"
+            height="auto"
+            loading="lazy"
+          />
+        </a>
+        <p class="footer-tagline">Choose the innovative services of ApolloIQ for your company</p>
+        <p class="footer-credit">Created by: stencildesign.co.uk</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Quick Links</h4>
+        <a href={`${base}products`} class="footer-link">Products</a>
+        <a href={`${base}service`} class="footer-link">Services</a>
+        <a href={`${base}pricing`} class="footer-link">Pricing</a>
+        <a href={`${base}case-study`} class="footer-link">Case Studies</a>
+        <a href={`${base}about`} class="footer-link">About Us</a>
+      </div>
+
+      <!-- Social -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Social</h4>
+        <a href="#" class="footer-link">LinkedIn</a>
+      </div>
+
+      <!-- Other -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Other</h4>
+        <a href={`${base}privacy-policy`} class="footer-link">Privacy Policy</a>
+        <a href="mailto:contact@apolloiq.co.uk" class="footer-link">Email: contact@apolloiq.co.uk</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {new Date().getFullYear()} ApolloIQ. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    padding: 5rem 0 3rem;
+    background: var(--color-brand-black);
+    color: rgba(255,255,255,0.7);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-brand img {
+    height: 32px;
+    width: auto;
+    margin-bottom: 1rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .footer-credit {
+    font-size: 0.8125rem;
+    opacity: 0.5;
+  }
+
+  .footer-heading {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-link {
+    font-size: 0.9375rem;
+    color: rgba(255,255,255,0.7);
+    transition: color 0.2s;
+    padding: 0.125rem 0;
+  }
+  .footer-link:hover {
+    color: var(--color-brand-blue);
+  }
+
+  .footer-bottom {
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 0.8125rem;
+    opacity: 0.4;
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .footer-brand {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

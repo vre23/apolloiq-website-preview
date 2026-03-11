@@ -1,0 +1,652 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import CTASection from '../../../components/CTASection.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Pathology Automation" description="Automate the filing of routine blood test results across 80+ biomarkers and 17 test categories. Gender and age-specific reference ranges, intelligent routing, and 100% accuracy.">
+  <Nav />
+
+  <!-- Hero -->
+  <section class="product-hero">
+    <div class="container-site">
+      <span class="product-badge">Automated Workflow</span>
+      <h1 class="product-hero-title">Pathology <span class="text-gradient">Automation</span></h1>
+      <p class="product-subtitle">80+ biomarkers. 17 test categories. Gender and age-specific reference ranges. Intelligent filing with zero compromise on accuracy.</p>
+      <a href={`${base}contact-us`} class="btn-primary">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section product-overview-section">
+    <div class="container-site">
+      <div class="product-overview-box">
+        <span class="product-label">OVERVIEW</span>
+        <h2 class="product-section-title">What is Pathology Automation?</h2>
+        <p class="product-body-text">
+          Our Lab Report Processing Service is a purpose-built API that processes pathology lab reports in EMIS format. It extracts numerical biomarker values from unstructured lab report text, evaluates them against gender and age-specific reference ranges, and returns structured output indicating whether each result is normal, low, or high -- along with recommended actions.
+        </p>
+        <p class="product-body-text">
+          With 80+ biomarker tests configured across 17 test categories, the service intelligently routes results: normal values are filed without comment, abnormal or clinically significant results are flagged for doctor review, and sample quality issues are detected automatically. The result is faster turnaround, safer workflows, and dramatically reduced admin burden for your clinical team.
+        </p>
+        <a href={`${base}contact-us`} class="btn-primary" style="margin-top: 1rem;">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Benefits -->
+  <section class="section">
+    <div class="container-site">
+      <div class="product-split">
+        <div class="product-split-left">
+          <h2 class="product-section-title">Key <span class="text-gradient">Benefits</span></h2>
+          <p class="product-split-intro">6 key features that make our Pathology Automation service essential for your practice.</p>
+        </div>
+        <div class="product-split-right">
+          <ul class="product-feature-list">
+            <li>
+              <strong>80+ Biomarkers Covered</strong>
+              <span>Comprehensive coverage across 17 test categories including FBC, LFTs, Renal Function, Thyroid, Lipid Profile, Bone Profile, and many more.</span>
+            </li>
+            <li>
+              <strong>Gender &amp; Age-Specific Ranges</strong>
+              <span>Evaluates results against reference ranges tailored to patient gender (e.g. Haemoglobin, Creatinine, Gamma GT) and age (e.g. PSA thresholds for ages 40-49, 50-59, 60-69, 70-79).</span>
+            </li>
+            <li>
+              <strong>Intelligent Routing</strong>
+              <span>Three clear actions: File Without Comments for normal results, Skip for results needing doctor review, and Sample Unavailable when no valid sample is detected.</span>
+            </li>
+            <li>
+              <strong>Sample Quality Detection</strong>
+              <span>Automatically identifies 6 sample quality issues: No sample, Contaminated, Unable to provide, Regret error, Haemolyzed, and Duplicate specimens.</span>
+            </li>
+            <li>
+              <strong>Trend Detection</strong>
+              <span>Detects clinically significant trends by comparing against previous values -- such as significant drops in Haemoglobin or spikes in Creatinine -- and flags them for review.</span>
+            </li>
+            <li>
+              <strong>100% Accuracy</strong>
+              <span>Clinically reviewed workflows maintained by a Clinical Safety Officer, ensuring every result is evaluated correctly and routed appropriately.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comprehensive Coverage -->
+  <section class="section product-coverage-section">
+    <div class="container-site">
+      <div class="product-coverage-box">
+        <span class="product-label">COMPREHENSIVE COVERAGE</span>
+        <h2 class="product-section-title">17 Test Categories. <span class="text-gradient">80+ Biomarkers.</span></h2>
+        <p class="product-body-text">
+          Every major pathology test category is covered, with gender-specific and age-specific reference ranges applied where clinically appropriate.
+        </p>
+        <div class="path-coverage-grid">
+          <div class="path-coverage-card">
+            <div class="path-coverage-name">Full Blood Count (FBC)</div>
+            <div class="path-coverage-count">15 tests</div>
+            <div class="path-coverage-detail">WBC, Haemoglobin, Haematocrit, Platelets, RBC, MCV, MCH, MCHC, Neutrophils, Lymphocytes, Monocytes, Eosinophils, Basophils</div>
+          </div>
+          <div class="path-coverage-card">
+            <div class="path-coverage-name">Liver Function Tests (LFT)</div>
+            <div class="path-coverage-count">8 tests</div>
+            <div class="path-coverage-detail">Albumin, Bilirubin, ALP, ALT, Globulin, Total Protein, Gamma GT</div>
+          </div>
+          <div class="path-coverage-card">
+            <div class="path-coverage-name">Lipid Profile</div>
+            <div class="path-coverage-count">6 tests</div>
+            <div class="path-coverage-detail">Non-HDL, HDL, LDL, Total Cholesterol, Triglycerides, Cholesterol/HDL Ratio</div>
+          </div>
+          <div class="path-coverage-card">
+            <div class="path-coverage-name">Metabolic / Vitamins / Minerals</div>
+            <div class="path-coverage-count">8 tests</div>
+            <div class="path-coverage-detail">Folate, Ferritin, B12, Vitamin D, Uric Acid, Iron, Transferrin, Magnesium</div>
+          </div>
+          <div class="path-coverage-card">
+            <div class="path-coverage-name">Bone Profile</div>
+            <div class="path-coverage-count">7 tests</div>
+            <div class="path-coverage-detail">Calcium, Phosphate, ALP + others</div>
+          </div>
+          <div class="path-coverage-card">
+            <div class="path-coverage-name">Renal Function</div>
+            <div class="path-coverage-count">5 tests</div>
+            <div class="path-coverage-detail">GFR, Creatinine, Potassium, Sodium, Urea</div>
+          </div>
+          <div class="path-coverage-card">
+            <div class="path-coverage-name">Inflammatory Markers</div>
+            <div class="path-coverage-count">3 tests</div>
+            <div class="path-coverage-detail">CRP, Plasma CRP, ESR</div>
+          </div>
+          <div class="path-coverage-card">
+            <div class="path-coverage-name">Thyroid Function</div>
+            <div class="path-coverage-count">2 tests</div>
+            <div class="path-coverage-detail">TSH, Free T4</div>
+          </div>
+          <div class="path-coverage-card">
+            <div class="path-coverage-name">Clotting Tests</div>
+            <div class="path-coverage-count">3 tests</div>
+            <div class="path-coverage-detail">APTT, INR, Fibrinogen</div>
+          </div>
+          <div class="path-coverage-card">
+            <div class="path-coverage-name">GI Tests</div>
+            <div class="path-coverage-count">3 tests</div>
+            <div class="path-coverage-detail">Faecal Calprotectin, Helicobacter Screen, FOBT</div>
+          </div>
+          <div class="path-coverage-card">
+            <div class="path-coverage-name">Cardiac Biomarkers</div>
+            <div class="path-coverage-count">2 tests</div>
+            <div class="path-coverage-detail">NT-proBNP, BNP</div>
+          </div>
+          <div class="path-coverage-card">
+            <div class="path-coverage-name">PSA (Prostate)</div>
+            <div class="path-coverage-count">Age-based logic</div>
+            <div class="path-coverage-detail">Custom thresholds for ages 40-49, 50-59, 60-69, 70-79</div>
+          </div>
+          <div class="path-coverage-card">
+            <div class="path-coverage-name">HbA1c (Diabetes)</div>
+            <div class="path-coverage-count">1 test</div>
+            <div class="path-coverage-detail">Glycated haemoglobin for diabetes screening</div>
+          </div>
+          <div class="path-coverage-card">
+            <div class="path-coverage-name">ACR</div>
+            <div class="path-coverage-count">1 test</div>
+            <div class="path-coverage-detail">Albumin:Creatinine Ratio</div>
+          </div>
+          <div class="path-coverage-card">
+            <div class="path-coverage-name">Rheumatology</div>
+            <div class="path-coverage-count">1 test</div>
+            <div class="path-coverage-detail">Rheumatoid Factor</div>
+          </div>
+          <div class="path-coverage-card">
+            <div class="path-coverage-name">Tumour Markers</div>
+            <div class="path-coverage-count">1 test</div>
+            <div class="path-coverage-detail">CA125</div>
+          </div>
+          <div class="path-coverage-card">
+            <div class="path-coverage-name">Muscle</div>
+            <div class="path-coverage-count">1 test</div>
+            <div class="path-coverage-detail">Creatine Kinase</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section">
+    <div class="container-site">
+      <div class="product-split">
+        <div class="product-split-left">
+          <h2 class="product-section-title">How It <span class="text-gradient">Works</span></h2>
+          <p class="product-split-intro">A six-step processing pipeline that evaluates every lab report with clinical precision and routes it to the right action.</p>
+        </div>
+        <div class="product-split-right">
+          <ul class="product-feature-list">
+            <li>
+              <strong>1. Submit Lab Report</strong>
+              <span>EMIS-format pathology report is received by the processing service via API.</span>
+            </li>
+            <li>
+              <strong>2. Check Sample Quality</strong>
+              <span>The system checks for 6 sample quality issues -- no sample, contaminated, unable to provide, regret error, haemolyzed, or duplicate -- and flags them immediately.</span>
+            </li>
+            <li>
+              <strong>3. Extract Biomarker Values</strong>
+              <span>Numerical values are extracted from unstructured lab report text for each biomarker present in the report.</span>
+            </li>
+            <li>
+              <strong>4. Evaluate Against Reference Ranges</strong>
+              <span>Each value is compared against gender-specific and age-specific reference ranges to determine normal, low, or high status.</span>
+            </li>
+            <li>
+              <strong>5. Apply Custom Logic</strong>
+              <span>Advanced rules are applied: age-based PSA thresholds, previous value trend detection for Haemoglobin and Creatinine, and keyword filtering for clinical terms.</span>
+            </li>
+            <li>
+              <strong>6. Return Structured Results</strong>
+              <span>The service returns a structured response with a recommended action: File Without Comments (normal), Skip (needs doctor review), or Sample Unavailable.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Highlights -->
+  <section class="section path-stats-section">
+    <div class="container-site">
+      <div class="path-stats-grid">
+        <div class="path-stat-card">
+          <div class="path-stat-value">80+</div>
+          <div class="path-stat-desc">biomarker tests configured</div>
+        </div>
+        <div class="path-stat-card">
+          <div class="path-stat-value path-stat-green">17</div>
+          <div class="path-stat-desc">test categories covered</div>
+        </div>
+        <div class="path-stat-card">
+          <div class="path-stat-value">6</div>
+          <div class="path-stat-desc">sample quality checks</div>
+        </div>
+        <div class="path-stat-card">
+          <div class="path-stat-value path-stat-green">100%</div>
+          <div class="path-stat-desc">filing accuracy maintained</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose -->
+  <section class="section product-why-section">
+    <div class="container-site">
+      <div class="product-why-box">
+        <span class="product-label">WHY US?</span>
+        <h2 class="product-section-title">Why Choose ApolloIQ's Pathology Automation?</h2>
+        <ul class="product-benefit-list">
+          <li><strong>Clinically Validated:</strong> Workflows reviewed and maintained by a Clinical Safety Officer.</li>
+          <li><strong>Reduces Admin Burden:</strong> Automatically files normal results, freeing clinician time for patients needing advanced care.</li>
+          <li><strong>Gender &amp; Age Aware:</strong> Reference ranges adapt to patient demographics -- not a one-size-fits-all approach.</li>
+          <li><strong>Trend Detection:</strong> Catches clinically significant changes between current and previous results before they reach a doctor.</li>
+          <li><strong>Sample Quality Screening:</strong> Identifies six distinct sample quality issues so they never get filed as valid results.</li>
+          <li><strong>Keyword Filtering:</strong> Checks for specific clinical terms to ensure results are routed appropriately.</li>
+        </ul>
+        <p class="product-body-text" style="margin-top: 1.5rem;">
+          Unlike rigid systems or slow manual processing, our automation is <strong>flexible, safe, and constantly refined</strong> by real NHS clinicians. You get faster turnaround, safer workflows, and reduced pressure on your clinical team -- all from day one.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section path-pricing-section">
+    <div class="container-site">
+      <div class="path-pricing-wrap">
+        <span class="product-label">PRICING</span>
+        <h2 class="product-section-title" style="text-align: center;">Simple, Transparent <span class="text-gradient">Pricing</span></h2>
+        <p class="product-body-text" style="text-align: center; max-width: 600px; margin: 0 auto 2.5rem;">
+          No hidden fees. No complex contracts. Just straightforward pricing that saves you thousands.
+        </p>
+
+        <div class="path-pricing-card">
+          <div class="path-pricing-label">Per Patient Per Year</div>
+          <div class="path-pricing-price">&pound;0.30</div>
+          <div class="path-pricing-billed">billed annually</div>
+          <div class="path-pricing-calc">
+            <div class="path-pricing-calc-row">
+              <span><strong>Example:</strong> 10,000 patients x &pound;0.30</span>
+              <span class="path-pricing-calc-val">&pound;3,000/year</span>
+            </div>
+            <div class="path-pricing-calc-row">
+              <span>That's just</span>
+              <span class="path-pricing-calc-val">&pound;250/month</span>
+            </div>
+          </div>
+          <ul class="path-check-list">
+            <li>6-month initial contract</li>
+            <li>Then flexible month-by-month</li>
+            <li>No setup fees</li>
+            <li>Includes full support</li>
+          </ul>
+          <a href={`${base}contact-us`} class="btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .product-hero {
+    padding: 5rem 0 3rem;
+    background: linear-gradient(135deg, #f8faff, #f0f7ff 50%, #f5fdf9);
+    text-align: center;
+  }
+
+  .product-hero-title {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .product-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-brand-grey-muted);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+
+  .product-badge {
+    display: inline-block;
+    padding: 0.375rem 1rem;
+    background: rgba(44, 112, 235, 0.08);
+    color: var(--color-brand-blue);
+    border-radius: 20px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .product-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--color-brand-blue);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .product-section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 1.25rem;
+  }
+
+  .product-body-text {
+    font-size: 1.0625rem;
+    color: var(--color-brand-grey);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .product-overview-section {
+    background: #f9fafb;
+  }
+
+  .product-overview-box {
+    max-width: 800px;
+  }
+
+  .product-split {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+  }
+
+  .product-split-left {
+    flex: 1;
+    min-width: 260px;
+  }
+
+  .product-split-right {
+    flex: 1.2;
+    min-width: 300px;
+  }
+
+  .product-split-intro {
+    font-size: 1.0625rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+  }
+
+  .product-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .product-feature-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--color-brand-blue);
+  }
+
+  .product-feature-list li strong {
+    font-size: 1.0625rem;
+    color: var(--color-brand-black);
+  }
+
+  .product-feature-list li span {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+  }
+
+  .product-why-section {
+    background: #f9fafb;
+  }
+
+  .product-why-box {
+    max-width: 800px;
+  }
+
+  .product-benefit-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .product-benefit-list li {
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .product-benefit-list li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    color: var(--color-brand-green);
+    font-weight: 700;
+  }
+
+  .product-benefit-list li strong {
+    color: var(--color-brand-black);
+  }
+
+  /* Coverage section */
+  .product-coverage-section {
+    background: #f9fafb;
+  }
+
+  .product-coverage-box {
+    max-width: 1100px;
+  }
+
+  .path-coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .path-coverage-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease;
+  }
+
+  .path-coverage-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .path-coverage-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 0.25rem;
+  }
+
+  .path-coverage-count {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-brand-blue);
+    margin-bottom: 0.5rem;
+  }
+
+  .path-coverage-detail {
+    font-size: 0.8125rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.5;
+  }
+
+  /* Stats */
+  .path-stats-section {
+    background: #fff;
+  }
+
+  .path-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .path-stat-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .path-stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-brand-blue);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .path-stat-green {
+    color: var(--color-brand-green);
+  }
+
+  .path-stat-desc {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.4;
+  }
+
+  /* Pricing */
+  .path-pricing-section {
+    background: #f9fafb;
+  }
+
+  .path-pricing-wrap {
+    text-align: center;
+  }
+
+  .path-pricing-card {
+    max-width: 480px;
+    margin: 0 auto 1.5rem;
+    border-radius: 20px;
+    padding: 2.5rem;
+    background: #fff;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .path-pricing-label {
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-brand-grey-muted);
+    margin-bottom: 0.25rem;
+  }
+
+  .path-pricing-price {
+    font-size: 3.25rem;
+    font-weight: 700;
+    color: var(--color-brand-blue);
+    line-height: 1;
+  }
+
+  .path-pricing-billed {
+    font-size: 0.875rem;
+    color: var(--color-brand-grey-muted);
+    margin-top: 0.375rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .path-pricing-calc {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  .path-pricing-calc-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    margin-bottom: 0.25rem;
+  }
+
+  .path-pricing-calc-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .path-pricing-calc-val {
+    font-weight: 600;
+    color: var(--color-brand-blue);
+  }
+
+  .path-check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    text-align: left;
+  }
+
+  .path-check-list li {
+    padding: 0.375rem 0 0.375rem 1.5rem;
+    position: relative;
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+  }
+
+  .path-check-list li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    color: var(--color-brand-green);
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    .product-hero-title {
+      font-size: 2.25rem;
+    }
+    .product-split {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .path-stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .path-coverage-grid {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+  }
+
+  @media (max-width: 480px) {
+    .path-stats-grid {
+      grid-template-columns: 1fr;
+    }
+    .path-coverage-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,796 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="AI & Automation for Modern Healthcare">
+  <Nav />
+
+  <!-- ════════ HERO ════════ -->
+  <section class="hero">
+    <div class="container-site">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="text-gradient">AI & Automation</span><br />
+            for Modern Healthcare
+          </h1>
+          <!-- Icon grid with descriptions (matches original) -->
+          <div class="hero-icon-grid">
+            <div class="hero-icon-item">
+              <img src={`${base}images/685dc40ff887e05cecfae324_Document_icon.png`} alt="" width="32" />
+              <div>
+                <strong>Merlin Platform</strong>
+                <span>Empowering Primary Care</span>
+              </div>
+            </div>
+            <div class="hero-icon-item">
+              <img src={`${base}images/685dc40ff887e05cecfae2fe_Gears_Icon.png`} alt="" width="32" />
+              <div>
+                <strong>Fully NHS Compliant</strong>
+                <span>Always compliant with latest guidelines</span>
+              </div>
+            </div>
+            <div class="hero-icon-item">
+              <img src={`${base}images/685dc40ff887e05cecfae2ea_Clipboard_icon.png`} alt="" width="32" />
+              <div>
+                <strong>By clinician for clinicians</strong>
+                <span>Simple tools that make big difference</span>
+              </div>
+            </div>
+            <div class="hero-icon-item">
+              <img src={`${base}images/685dc40ff887e05cecfae31c_People_silhouette_icon.png`} alt="" width="32" />
+              <div>
+                <strong>Expert Support Team</strong>
+                <span>Dedicated support from industry experts.</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a href={`${base}products`} class="btn-primary">Find out more</a>
+            <a href={`${base}contact-us`} class="btn-secondary">Contact Us</a>
+          </div>
+        </div>
+        <div class="hero-images">
+          <div class="hero-img-composition">
+            <!-- Left column (40%): Blue text card + Merlin lion -->
+            <div class="hero-comp-col-left">
+              <div class="hero-comp-card hero-comp-card--text-blue">
+                <span class="hero-comp-heading hero-comp-heading--large">Proven</span>
+                <span class="hero-comp-heading">Productivity</span>
+                <span class="hero-comp-heading">Increase</span>
+              </div>
+              <div class="hero-comp-card hero-comp-card--img">
+                <img src={`${base}images/68e64c96cb8794ac69203cac_img_hero_1.jpg`} alt="Merlin AI Healthcare" loading="eager" />
+              </div>
+            </div>
+            <!-- Right column (60%): Dashboard + Blue text card -->
+            <div class="hero-comp-col-right">
+              <div class="hero-comp-card hero-comp-card--img">
+                <img src={`${base}images/68e6543bff4a39d5270fa13c_img_hero_2.jpg`} alt="ApolloIQ Merlin Dashboard" loading="eager" />
+              </div>
+              <div class="hero-comp-card hero-comp-card--text-blue">
+                <span class="hero-comp-heading hero-comp-heading--large">Growing</span>
+                <span class="hero-comp-heading">Network of UK</span>
+                <span class="hero-comp-heading hero-comp-heading--bold">Healthcare Partners</span>
+                <img src={`${base}images/685dc40ff887e05cecfae33d_Testimonials_stars.png`} alt="5 stars" class="hero-comp-stars" />
+              </div>
+            </div>
+            <!-- Arrow link centered -->
+            <a href={`${base}products`} class="hero-arrow-link" aria-label="Explore products">
+              <img src={`${base}images/685dc40ff887e05cecfae306_Arrow_icon.png`} alt="" width="40" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- spacer -->
+    </div>
+    <div class="hero-orb hero-orb--1"></div>
+    <div class="hero-orb hero-orb--2"></div>
+  </section>
+
+  <!-- ════════ LOGO MARQUEE ════════ -->
+  <section class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <img src={`${base}images/689b67c59b99bccf4f668ad1_logo_1.jpg`} alt="Client" class="marquee-logo" loading="lazy" />
+        <img src={`${base}images/689b67c54ffae44467a9ec74_logo_2.jpg`} alt="Client" class="marquee-logo" loading="lazy" />
+        <img src={`${base}images/689b67c5651b5f6599c5f1e0_logo_3.jpg`} alt="Client" class="marquee-logo" loading="lazy" />
+        <img src={`${base}images/689b67c5e576a4cf96d20c90_logo_4.jpg`} alt="Client" class="marquee-logo" loading="lazy" />
+        <img src={`${base}images/689b67c5fbca20f21583e55b_logo_5.jpg`} alt="Client" class="marquee-logo" loading="lazy" />
+        <img src={`${base}images/689b67c554ff393e20ac6945_logo_6.jpg`} alt="Client" class="marquee-logo" loading="lazy" />
+        <img src={`${base}images/6981f2933eaa3b783f8e1a38_iso.svg`} alt="ISO Certified" class="marquee-logo" loading="lazy" />
+        <img src={`${base}images/6981f293dc55eec51188ee46_ukca.svg`} alt="UKCA" class="marquee-logo" loading="lazy" />
+        <!-- Duplicate set 1 for seamless loop -->
+        <img src={`${base}images/689b67c59b99bccf4f668ad1_logo_1.jpg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/689b67c54ffae44467a9ec74_logo_2.jpg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/689b67c5651b5f6599c5f1e0_logo_3.jpg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/689b67c5e576a4cf96d20c90_logo_4.jpg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/689b67c5fbca20f21583e55b_logo_5.jpg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/689b67c554ff393e20ac6945_logo_6.jpg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/6981f2933eaa3b783f8e1a38_iso.svg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/6981f293dc55eec51188ee46_ukca.svg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <!-- Duplicate set 2 -->
+        <img src={`${base}images/689b67c59b99bccf4f668ad1_logo_1.jpg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/689b67c54ffae44467a9ec74_logo_2.jpg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/689b67c5651b5f6599c5f1e0_logo_3.jpg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/689b67c5e576a4cf96d20c90_logo_4.jpg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/689b67c5fbca20f21583e55b_logo_5.jpg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/689b67c554ff393e20ac6945_logo_6.jpg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/6981f2933eaa3b783f8e1a38_iso.svg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/6981f293dc55eec51188ee46_ukca.svg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <!-- Duplicate set 3 -->
+        <img src={`${base}images/689b67c59b99bccf4f668ad1_logo_1.jpg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/689b67c54ffae44467a9ec74_logo_2.jpg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/689b67c5651b5f6599c5f1e0_logo_3.jpg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/689b67c5e576a4cf96d20c90_logo_4.jpg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/689b67c5fbca20f21583e55b_logo_5.jpg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/689b67c554ff393e20ac6945_logo_6.jpg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/6981f2933eaa3b783f8e1a38_iso.svg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+        <img src={`${base}images/6981f293dc55eec51188ee46_ukca.svg`} alt="" class="marquee-logo" loading="lazy" aria-hidden="true" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ OUR MISSION ════════ -->
+  <section class="section">
+    <div class="container-site text-center" style="max-width: 800px;">
+      <h2 class="section-title">Our <span class="text-gradient">Mission</span></h2>
+      <p class="section-text">
+        We believe that every healthcare provider <span class="mission-highlight">should have access to advanced automation tools</span> that can streamline workflows, reduce operational costs, and <span class="mission-highlight">improve patient outcomes</span>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════ WHAT WE DO ════════ -->
+  <section class="section" style="background: var(--color-brand-grey-bg-subtle);">
+    <div class="container-site">
+      <div class="text-center" style="margin-bottom: 3rem;">
+        <h2 class="section-title">What We <span class="text-gradient">Do</span></h2>
+        <p class="section-subtitle">Digital Process Automation Made Simple</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6m-3-3v6m-7 4h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="feature-title">Spells</h3>
+          <p class="feature-desc">Voice-powered clinical tools including ScribeCraft for consultation transcription, Blood Pressure Scroll for digitising readings, and Locate Elixir for real-time medication availability.</p>
+          <a href={`${base}products`} class="feature-link">Explore Spells &rarr;</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon feature-icon--green">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          </div>
+          <h3 class="feature-title">Automated Workflows</h3>
+          <p class="feature-desc">Intelligent automation systems for pathology filing, clinical document management, QRisk3 calculations, and GP list reallocation — available 24/7 with 100% accuracy.</p>
+          <a href={`${base}products`} class="feature-link">Explore Workflows &rarr;</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon feature-icon--teal">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          </div>
+          <h3 class="feature-title">Custom Solutions</h3>
+          <p class="feature-desc">Bespoke automation processes, custom software solutions, and digitalisation consultancy — tailored to your practice's specific needs and clinical workflows.</p>
+          <a href={`${base}service`} class="feature-link">Explore Services &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ TESTIMONIALS ════════ -->
+  <section class="section testimonials-section">
+    <div class="container-site">
+      <div class="text-center" style="margin-bottom: 3rem;">
+        <h2 class="section-title">What Our <span class="text-gradient">Clients Say</span></h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card testimonial-card--blue">
+          <div class="testimonial-quote">
+            <p>"ApolloIQ's approach to our collaboration has been outstanding from the start. They listened closely to our challenges and developed tailored solutions that genuinely improve our day-to-day operations. Their blend of healthcare knowledge and AI technology sets them apart."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src={`${base}images/685dc40ff887e05cecfae2fd_84b855382620e11d9931513d8365e6ae.jpeg`} alt="Dr Christian Hornung" class="testimonial-avatar" />
+            <div>
+              <strong class="testimonial-name">Dr Christian Hornung</strong>
+              <span class="testimonial-role">Clinical Director, Taunton Vale Healthcare</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            <p>"From the initial brief to the finished website, the ApolloIQ team were exceptional. Their responsiveness to queries and design input was great. A pleasure to work with and would highly recommend."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src={`${base}images/68610e0b2ff42f65d5184b3a_valeed2.webp`} alt="Dr. Valeed Ghafoor" class="testimonial-avatar" />
+            <div>
+              <strong class="testimonial-name">Dr. Valeed Ghafoor</strong>
+              <span class="testimonial-role">CEO of GP Practice Specialists</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card testimonial-card--blue">
+          <div class="testimonial-quote">
+            <p>"We were instantly impressed by Vlad's knowledge of Primary Care administration and the evident opportunities to improve efficiency. The collaboration has gone from strength to strength as we work together to improve the pathway."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src={`${base}images/68610f087977ffbeb345abba_nhs-logo.webp`} alt="NHS" class="testimonial-avatar" />
+            <div>
+              <strong class="testimonial-name">James Roberts</strong>
+              <span class="testimonial-role">Digital & Transformation Lead, Taunton Central & Tone Valley PCN</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            <p>"Documents Automation has reduced our workload by 50%!"</p>
+          </div>
+          <div class="testimonial-author">
+            <img src={`${base}images/68610f087977ffbeb345abba_nhs-logo.webp`} alt="NHS" class="testimonial-avatar" />
+            <div>
+              <strong class="testimonial-name">Chris Miller</strong>
+              <span class="testimonial-role">Data Team Lead, French Wier Medical Centre</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ WHY APOLLOIQ ════════ -->
+  <section class="section" style="background: var(--color-brand-grey-bg-subtle);">
+    <div class="container-site">
+      <div class="text-center" style="margin-bottom: 3rem;">
+        <h2 class="section-title">Why <span class="text-gradient">ApolloIQ</span></h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-number">01</div>
+          <h3 class="why-title">Clinical Expertise</h3>
+          <p class="why-desc">Founded by clinical pharmacists with extensive experience across GP surgeries and pharmacies. Every product is designed with real clinical workflows in mind.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-number">02</div>
+          <h3 class="why-title">Proven Results</h3>
+          <p class="why-desc">Over 35,000 documents and tests processed automatically with 100% accuracy. Our tools deliver measurable time and cost savings, reducing admin burdens and cutting costs.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-number">03</div>
+          <h3 class="why-title">Trusted by Practices</h3>
+          <p class="why-desc">Endorsed by Somerset ICB and trusted by NHS practices across the UK. All data stays within HSCN with zero-retention architecture.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ CASE STUDIES ════════ -->
+  <section class="section">
+    <div class="container-site">
+      <div class="text-center" style="margin-bottom: 3rem;">
+        <h2 class="section-title">Case <span class="text-gradient">Studies</span></h2>
+        <p class="section-subtitle">Real results from real healthcare practices</p>
+      </div>
+      <div class="case-studies-grid">
+        <a href={`${base}case-study/apolloiq-capitalising-on-ai`} class="case-card">
+          <div class="case-card-image">
+            <img src={`${base}images/68e8f4f5579ff61729b7eec0_thumb-case-study-forestside.jpg`} alt="Forestside Medical Practice" loading="lazy" />
+          </div>
+          <div class="case-card-body">
+            <h3 class="case-card-title">Forestside Medical Practice</h3>
+            <p class="case-card-desc">Clinical Document Management automation — 5,100 documents processed, £10,552 annual savings</p>
+            <span class="case-card-link">Read Case Study &rarr;</span>
+          </div>
+        </a>
+        <a href={`${base}case-study/apolloiq-new-website`} class="case-card">
+          <div class="case-card-image">
+            <img src={`${base}images/68e8f4ee5ab86aa5ce6bf4cc_thumb-case-study-taunton-vale.jpg`} alt="Taunton Vale Healthcare" loading="lazy" />
+          </div>
+          <div class="case-card-body">
+            <h3 class="case-card-title">Taunton Vale Healthcare</h3>
+            <p class="case-card-desc">Pathology automation — 30,234 tests processed, £19,604 projected annual savings</p>
+            <span class="case-card-link">Read Case Study &rarr;</span>
+          </div>
+        </a>
+      </div>
+      <div class="text-center" style="margin-top: 2.5rem;">
+        <a href={`${base}case-study`} class="btn-secondary">All Case Studies</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ CTA ════════ -->
+  <CTASection />
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    padding: 5rem 0 4rem;
+    overflow: hidden;
+    background: #fff;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--color-brand-black);
+    margin-bottom: 2.5rem;
+  }
+
+  /* Hero icon grid (2x2 with descriptions) */
+  .hero-icon-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 27px;
+    grid-row-gap: 22px;
+    margin-bottom: 2.5rem;
+  }
+  .hero-icon-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .hero-icon-item img {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .hero-icon-item strong {
+    display: block;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 0.125rem;
+  }
+  .hero-icon-item span {
+    display: block;
+    font-size: 0.8125rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.4;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* ── Hero 2x2 Image Composition ── */
+  .hero-images {
+    position: relative;
+    z-index: 2;
+  }
+  .hero-img-composition {
+    position: relative;
+    display: flex;
+    gap: 14px;
+    max-width: 540px;
+    height: 520px;
+    margin-left: auto;
+  }
+  /* Left column: 40% (blue card + merlin lion) */
+  .hero-comp-col-left {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 40%;
+    flex-shrink: 0;
+  }
+  /* Right column: 60% (dashboard + blue card) */
+  .hero-comp-col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 60%;
+    flex-shrink: 0;
+  }
+  .hero-comp-card {
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .hero-comp-card--img {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    box-shadow: 10px 6px 16px 1px rgba(0,0,0,0.12);
+  }
+  .hero-comp-card--img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-comp-card--text-blue {
+    background: var(--color-brand-blue);
+    height: 170px;
+    flex-shrink: 0;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero-comp-heading {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.2;
+  }
+  .hero-comp-heading--large {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .hero-comp-heading--bold {
+    font-weight: 700;
+  }
+  .hero-comp-stars {
+    height: auto;
+    width: 80px;
+    margin-top: 0.5rem;
+    display: block;
+  }
+
+  .hero-arrow-link {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(44,112,235,0.2);
+  }
+  .hero-arrow-link:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  }
+  .hero-arrow-link img {
+    width: 24px;
+    height: auto;
+  }
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+  }
+  .hero-orb--1 {
+    width: 500px;
+    height: 500px;
+    background: rgba(44, 112, 235, 0.06);
+    top: -10%;
+    right: -5%;
+  }
+  .hero-orb--2 {
+    width: 400px;
+    height: 400px;
+    background: rgba(0, 195, 147, 0.05);
+    bottom: -20%;
+    right: 20%;
+  }
+
+  /* ── Marquee ── */
+  .marquee-section {
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-brand-grey-border);
+    border-bottom: 1px solid var(--color-brand-grey-border);
+    overflow: hidden;
+    background: #fff;
+  }
+  .marquee-track {
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+  .marquee-content {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    animation: marquee 80s linear infinite;
+    width: max-content;
+  }
+  .marquee-content:hover {
+    animation-play-state: paused;
+  }
+  .marquee-logo {
+    height: 70px;
+    width: auto;
+    opacity: 0.85;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .marquee-logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-25%); }
+  }
+
+  /* Sections */
+  .text-center { text-align: center; }
+  .section-title {
+    font-size: 2.75rem;
+    font-weight: 300;
+    color: var(--color-brand-black);
+    margin-bottom: 1rem;
+    line-height: 1.15;
+  }
+  .section-subtitle {
+    font-size: 1.0625rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.6;
+  }
+  .section-text {
+    font-size: 1.125rem;
+    color: var(--color-brand-grey);
+    line-height: 1.8;
+  }
+  .mission-highlight {
+    color: var(--color-brand-blue);
+    font-weight: 500;
+  }
+
+  /* Features */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .feature-card {
+    background: #fff;
+    border-radius: var(--radius-card);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .feature-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+  }
+  .feature-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: rgba(44, 112, 235, 0.08);
+    color: var(--color-brand-blue);
+    margin-bottom: 1.5rem;
+  }
+  .feature-icon--green {
+    background: rgba(0, 195, 147, 0.08);
+    color: var(--color-brand-green);
+  }
+  .feature-icon--teal {
+    background: rgba(16, 165, 179, 0.08);
+    color: var(--color-brand-teal-dark);
+  }
+  .feature-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 0.75rem;
+  }
+  .feature-desc {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .feature-link {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-brand-blue);
+    transition: color 0.2s;
+  }
+  .feature-link:hover {
+    color: var(--color-brand-blue-dark);
+  }
+
+  /* Testimonials */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .testimonial-card {
+    background: #fff;
+    border-radius: var(--radius-card);
+    padding: 2rem;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.3s;
+  }
+  .testimonial-card:hover {
+    box-shadow: var(--shadow-hover);
+  }
+  .testimonial-card--blue {
+    background: linear-gradient(135deg, #1d2939, #344054);
+    color: #fff;
+    box-shadow: var(--shadow-card-lg);
+  }
+  .testimonial-quote p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-brand-grey);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+  .testimonial-card--blue .testimonial-quote p {
+    color: rgba(255,255,255,0.85);
+  }
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+  }
+  .testimonial-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .testimonial-name {
+    display: block;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 0.125rem;
+  }
+  .testimonial-card--blue .testimonial-name {
+    color: #fff;
+  }
+  .testimonial-role {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.4;
+  }
+  .testimonial-card--blue .testimonial-role {
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* Why */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .why-card {
+    padding: 2rem;
+    border: 1px solid var(--color-brand-grey-border);
+    border-radius: var(--radius-card);
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .why-card:hover {
+    border-color: var(--color-brand-blue);
+    box-shadow: 0 4px 20px rgba(44, 112, 235, 0.08);
+  }
+  .why-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-brand-blue);
+    opacity: 0.15;
+    margin-bottom: 1rem;
+    line-height: 1;
+  }
+  .why-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 0.75rem;
+  }
+  .why-desc {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.7;
+  }
+
+  /* Case Studies */
+  .case-studies-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .case-card {
+    background: #fff;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.3s, transform 0.3s;
+    display: block;
+  }
+  .case-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+  }
+  .case-card-image {
+    height: 240px;
+    overflow: hidden;
+  }
+  .case-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  .case-card:hover .case-card-image img {
+    transform: scale(1.05);
+  }
+  .case-card-body {
+    padding: 1.75rem 2rem 2rem;
+  }
+  .case-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 0.5rem;
+  }
+  .case-card-desc {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+  .case-card-link {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-brand-blue);
+  }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .hero { padding: 3rem 0 2.5rem; }
+    .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-images { order: -1; }
+    .hero-img-composition { max-width: 480px; height: 400px; margin: 0 auto; }
+    .hero-arrow-link { display: none; }
+    .hero-icon-grid { grid-template-columns: 1fr 1fr; }
+    .features-grid, .why-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .case-studies-grid { grid-template-columns: 1fr; }
+    .marquee-logo { height: 55px; }
+  }
+  @media (max-width: 480px) {
+    .hero { padding: 2.5rem 0 2rem; }
+    .hero-actions { flex-direction: column; }
+    .hero-img-composition { gap: 8px; max-width: 100%; height: 320px; }
+    .hero-comp-card { border-radius: 14px; }
+    .hero-comp-card--text-blue { height: 130px; padding: 1rem; }
+    .hero-comp-heading { font-size: 1rem; }
+    .hero-comp-heading--large { font-size: 1.5rem; }
+    .hero-icon-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .section-title { font-size: 2rem; }
+    .marquee-logo { height: 45px; }
+  }
+</style>

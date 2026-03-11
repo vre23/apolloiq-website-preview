@@ -1,0 +1,367 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import CTASection from '../../../components/CTASection.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="Taunton Vale Healthcare - Automated Pathology Filing"
+  description="How ApolloIQ automated pathology filing for Taunton Vale Healthcare, processing 30,234 tests with 100% accuracy and projected annual savings of £19,604."
+>
+  <Nav />
+
+  <!-- Hero -->
+  <section class="cs-hero">
+    <div class="container-site">
+      <div class="cs-hero-inner">
+        <a href={`${base}case-study`} class="cs-back-link">&larr; All Case Studies</a>
+        <h1 class="cs-hero-title">Automating Pathology Filing</h1>
+      </div>
+    </div>
+    <div class="hero-orb hero-orb--1"></div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container-narrow">
+      <div class="cs-intro">
+        <p>
+          Taunton Vale Healthcare, a busy Somerset practice serving over <strong>14,000 patients</strong>,
+          faced growing pressure to manage thousands of routine blood tests. Filing normal results was
+          consuming valuable clinician time daily -- time that should've been spent on patient care.
+        </p>
+        <p>That's where ApolloIQ stepped in.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution with Image -->
+  <section class="section" style="background: var(--color-brand-grey-bg-subtle);">
+    <div class="container-site">
+      <div class="cs-solution-grid">
+        <div class="cs-image-wrap">
+          <img
+            src={`${base}images/685dc40ff887e05cecfae2db_de549e830eb7c1963effe48e3f990923-min.jpeg`}
+            alt="Taunton Vale Healthcare"
+            loading="lazy"
+          />
+        </div>
+        <div class="cs-solution-content">
+          <h2 class="cs-section-title">The <span class="text-gradient">Solution</span></h2>
+          <p>
+            ApolloIQ deployed a pathology automation system that processes
+            <strong>80+ different biomarker tests across 17 categories</strong>, capable of
+            automatically filing 70-80% of blood test results that fall within normal ranges.
+            The system uses <strong>gender-specific and age-specific reference ranges</strong>,
+            clinically reviewed and validated, to ensure every result is assessed with precision.
+          </p>
+          <p>
+            It also includes <strong>sample quality detection</strong>, identifying when samples
+            are haemolysed, insufficient, or otherwise unavailable -- preventing false results
+            from being filed.
+          </p>
+          <p>The 17 test categories include:</p>
+          <ul class="cs-list">
+            <li>Full Blood Count (FBC) -- 15 individual tests</li>
+            <li>Liver Function Tests (LFTs)</li>
+            <li>Urea & Electrolytes (U&Es)</li>
+            <li>Lipid Profiles</li>
+            <li>Inflammatory Markers (CRP, ESR)</li>
+            <li>Thyroid Function (TSH, T4)</li>
+            <li>Bone Profile</li>
+            <li>Vitamin D, B12, Folate</li>
+            <li>HbA1c (Diabetes)</li>
+            <li>Cardiac Biomarkers (BNP)</li>
+            <li>PSA with age-based logic</li>
+            <li>And more...</li>
+          </ul>
+          <p>
+            The system applies intelligent actions for each result:
+            <strong>File Without Comments</strong> for normal results,
+            <strong>Skip</strong> for results that need clinician review, and
+            <strong>Sample unavailable</strong> when quality issues are detected
+            -- allowing clinicians to focus only on the results that matter most.
+          </p>
+
+          <h3 class="cs-subsection-title">How It Works</h3>
+          <ul class="cs-list">
+            <li>Reports are received in EMIS format from pathology labs</li>
+            <li>Values are extracted using pattern matching against known test structures</li>
+            <li>Each value is compared against clinically reviewed reference ranges</li>
+            <li>Gender-specific and age-specific thresholds are applied automatically</li>
+            <li>Intelligent routing: normal results are filed automatically, abnormal results are flagged for doctor review</li>
+            <li>All processing is logged for a full audit trail</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section">
+    <div class="container-narrow">
+      <h2 class="cs-section-title">Results at a <span class="text-gradient">Glance</span></h2>
+
+      <div class="cs-stats-grid">
+        <div class="cs-stat-card">
+          <span class="cs-stat-value">30,234</span>
+          <span class="cs-stat-label">Total tests processed in 3 months</span>
+        </div>
+        <div class="cs-stat-card">
+          <span class="cs-stat-value">11,252</span>
+          <span class="cs-stat-label">Filed automatically, saving clinician time</span>
+        </div>
+        <div class="cs-stat-card">
+          <span class="cs-stat-value">&pound;19,604</span>
+          <span class="cs-stat-label">Projected annual savings</span>
+        </div>
+        <div class="cs-stat-card">
+          <span class="cs-stat-value">100%</span>
+          <span class="cs-stat-label">Accuracy rate in automated filing</span>
+        </div>
+      </div>
+
+      <!-- Testimonial -->
+      <blockquote class="cs-quote">
+        <p>
+          "Collaboration with ApolloIQ has been a great experience. Testing didn't disrupt
+          operations, and the safety feedback loop made it personal and precise."
+        </p>
+        <cite>-- <strong>Dr. Christian Hornung</strong>, Clinical Director, Taunton Vale Healthcare</cite>
+      </blockquote>
+
+      <div class="cs-what-changed">
+        <h3 class="cs-subsection-title">What Changed</h3>
+        <ul class="cs-list">
+          <li>Clinicians no longer waste time on filing routine blood tests</li>
+          <li>The system evolved with regular feedback, improving accuracy and scope</li>
+          <li>Patient care became the focus, not admin work</li>
+        </ul>
+      </div>
+
+      <p class="cs-closing">
+        <strong>ApolloIQ delivered a safe, reliable, and scalable automation system that
+        transformed pathology management for this practice.</strong>
+      </p>
+    </div>
+  </section>
+
+  <CTASection />
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .cs-hero {
+    position: relative;
+    padding: 7rem 0 4rem;
+    overflow: hidden;
+    background: linear-gradient(170deg, #fff 0%, rgba(44,112,235,0.03) 40%, rgba(0,195,147,0.04) 100%);
+  }
+
+  .cs-hero-inner {
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .cs-back-link {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-brand-blue);
+    margin-bottom: 1.5rem;
+    transition: color 0.2s;
+  }
+  .cs-back-link:hover {
+    color: var(--color-brand-blue-dark);
+  }
+
+  .cs-hero-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--color-brand-black);
+  }
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+  }
+  .hero-orb--1 {
+    width: 500px;
+    height: 500px;
+    background: rgba(44, 112, 235, 0.06);
+    top: -20%;
+    right: -10%;
+  }
+
+  /* Intro */
+  .cs-intro {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .cs-intro p {
+    font-size: 1.0625rem;
+    color: var(--color-brand-grey);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Solution Grid */
+  .cs-solution-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .cs-image-wrap {
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    max-height: 500px;
+  }
+  .cs-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cs-section-title {
+    font-size: 2.25rem;
+    font-weight: 400;
+    color: var(--color-brand-black);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .cs-solution-content p {
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  .cs-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .cs-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.9625rem;
+    color: var(--color-brand-grey);
+    line-height: 1.6;
+  }
+  .cs-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-brand-blue), var(--color-brand-green));
+  }
+
+  /* Stats Grid */
+  .cs-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .cs-stat-card {
+    background: #fff;
+    border-radius: var(--radius-card);
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-card);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cs-stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-brand-blue);
+    line-height: 1.1;
+  }
+
+  .cs-stat-label {
+    font-size: 0.875rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.4;
+  }
+
+  /* Quote */
+  .cs-quote {
+    border-left: 4px solid var(--color-brand-blue);
+    padding: 1.25rem 1.75rem;
+    margin: 2.5rem 0;
+    background: rgba(44, 112, 235, 0.03);
+    border-radius: 0 12px 12px 0;
+  }
+  .cs-quote p {
+    font-style: italic;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--color-brand-dark-medium);
+    margin-bottom: 0.75rem;
+  }
+  .cs-quote cite {
+    font-style: normal;
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey-muted);
+  }
+
+  /* What Changed */
+  .cs-what-changed {
+    margin-bottom: 2.5rem;
+  }
+
+  .cs-subsection-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 1rem;
+  }
+
+  .cs-closing {
+    font-size: 1.0625rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+  }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .cs-solution-grid {
+      grid-template-columns: 1fr;
+    }
+    .cs-stats-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cs-hero {
+      padding: 5rem 0 3rem;
+    }
+    .cs-hero-title {
+      font-size: 1.75rem;
+    }
+    .cs-stats-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

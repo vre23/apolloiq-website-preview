@@ -1,0 +1,321 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+const base = import.meta.env.BASE_URL;
+
+const spells = [
+  {
+    title: 'Scribe Craft',
+    href: `${base}products/scribecraft`,
+    description: 'ScribeCraft is a voice-powered consultation tool that listens to clinician-patient interactions and instantly creates structured, accurate notes. Designed to integrate smoothly within the Merlin workspace, it allows clinicians to quickly copy the output into their EPR system — all without typing a word.',
+  },
+  {
+    title: 'Blood Pressure Scroll',
+    href: `${base}products/blood-pressure-average-calculator`,
+    description: 'Blood Pressure Scroll is a powerful AI-driven tool designed to support GP practices in digitising blood pressure records submitted by patients. Often, these readings come in handwritten formats, making manual transcription time-consuming and prone to error.',
+  },
+  {
+    title: 'Locate Elixir',
+    href: `${base}products/locate-elixir`,
+    description: 'Locate Elixir is a live medication availability tool designed to give healthcare staff real-time visibility of pharmacy stock levels. Using a simple traffic light system, users can instantly check whether a medication is available to order (green) or currently out of stock (red). This reduces prescribing delays.',
+  },
+];
+
+const workflows = [
+  {
+    title: 'Pathology Automation',
+    href: `${base}products/pathology-automation`,
+    description: 'Automate up to 80% of blood test filings, saving approximately \u00A318,000 annually. Ensure 100% accuracy with automated filing for tests like Full Blood Count (FBC), Liver Function Tests (LFTs), and more.',
+  },
+  {
+    title: 'Clinical Document Management',
+    href: `${base}products/clinical-document-management`,
+    description: 'Document Management processes and organizes administrative paperwork, such as referrals and patient forms, directly within Merlin\'s workspace, significantly speeding up a task typically handled manually by admin staff.',
+  },
+  {
+    title: 'Clinical Calculator (QRisk3)',
+    href: `${base}products/clinical-calculator-qrisk3`,
+    description: 'Say goodbye to manual calculations. Our QRisk3 Calculations delivers accurate cardiovascular risk assessments instantly. Results can be uploaded in EPR.',
+  },
+  {
+    title: 'GP List Reallocation',
+    href: `${base}products/gp-list-reallocation`,
+    description: 'GP List Reallocation is a smart, automated tool designed to redistribute patients when a GP leaves a practice. Whether it\'s the entire patient list or just a subset, the system uses intelligent algorithms to assign patients fairly and strategically across your remaining clinicians.',
+  },
+];
+---
+
+<BaseLayout title="Products" description="Explore ApolloIQ's suite of AI-powered healthcare products — Merlin Spells and Automated Workflows.">
+  <Nav />
+
+  <!-- Hero -->
+  <section class="products-hero">
+    <div class="container-site">
+      <div class="products-hero-content">
+        <div class="products-hero-text">
+          <h1 class="products-hero-title">
+            <span class="text-gradient">Merlin</span>
+          </h1>
+          <h2 class="products-hero-subtitle">
+            Automation<br />AI Spells<br />Analytics for Healthcare<br />in <span class="text-gradient">ONE place.</span>
+          </h2>
+        </div>
+        <div class="products-hero-actions">
+          <img
+            src={`${base}images/685dc40ff887e05cecfae344_logo_Merlin_color.svg`}
+            alt="Merlin logo"
+            class="products-merlin-logo"
+            loading="lazy"
+          />
+          <a href={`${base}about`} class="btn-primary">Find out more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spells Section -->
+  <section class="section products-section">
+    <div class="container-site">
+      <div class="products-category-tag">
+        <h3 class="products-category-label">Spells</h3>
+      </div>
+      <div class="products-grid">
+        {spells.map((product) => (
+          <a href={product.href} class="product-card">
+            <div class="product-card-header">
+              <h3 class="product-card-title">{product.title}</h3>
+              <div class="product-card-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </div>
+            <p class="product-card-desc">{product.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Automated Workflows Section -->
+  <section class="section products-section">
+    <div class="container-site">
+      <div class="products-category-tag">
+        <h3 class="products-category-label">Automated Workflows</h3>
+      </div>
+      <div class="products-grid">
+        {workflows.map((product) => (
+          <a href={product.href} class="product-card">
+            <div class="product-card-header">
+              <h3 class="product-card-title">{product.title}</h3>
+              <div class="product-card-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </div>
+            <p class="product-card-desc">{product.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why ApolloIQ -->
+  <section class="section products-why-section">
+    <div class="container-site">
+      <div class="products-category-tag">
+        <h3 class="products-category-label">WHY APOLLOIQ?</h3>
+      </div>
+      <div class="products-why-content">
+        <p class="products-why-text">
+          Our suite of AI-powered solutions are tailored to <span class="text-gradient-inline">meet the unique demands</span> of healthcare practices. From automating routine tasks to improving clinical outcomes, our products are designed to <span class="text-gradient-inline">seamlessly integrate</span> into your existing systems, saving time, reducing costs, and ensuring accuracy.
+        </p>
+        <p class="products-why-text">
+          Discover more, or get in touch to see how ApolloIQ can help <span class="text-gradient-inline">transform your operations</span> and enhance patient care.
+        </p>
+        <a href={`${base}case-study`} class="btn-secondary products-discover-btn">
+          Discover
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="10" viewBox="0 0 15 10" fill="none">
+            <path d="M9.8 1.74L13.13 5.06M13.13 5.06L9.8 8.39M13.13 5.06H1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .products-hero {
+    padding: 5rem 0 3rem;
+    background: linear-gradient(135deg, #f8faff, #f0f7ff 50%, #f5fdf9);
+  }
+
+  .products-hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .products-hero-title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .products-hero-subtitle {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    line-height: 1.3;
+  }
+
+  .products-hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .products-merlin-logo {
+    width: 120px;
+    height: auto;
+  }
+
+  /* Section layout */
+  .products-section {
+    padding: 3rem 0;
+  }
+
+  .products-category-tag {
+    margin-bottom: 2rem;
+  }
+
+  .products-category-label {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background: rgba(44, 112, 235, 0.08);
+    color: var(--color-brand-blue);
+    border-radius: 20px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* Product Cards */
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .product-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .product-card-title {
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+  }
+
+  .product-card-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-brand-black);
+    color: #fff;
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+  }
+
+  .product-card:hover .product-card-arrow {
+    background: var(--color-brand-blue);
+  }
+
+  .product-card-desc {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+  }
+
+  /* Why ApolloIQ */
+  .products-why-section {
+    padding: 3rem 0 2rem;
+  }
+
+  .products-why-content {
+    max-width: 720px;
+  }
+
+  .products-why-text {
+    font-size: 1.0625rem;
+    color: var(--color-brand-grey);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  .text-gradient-inline {
+    background: linear-gradient(135deg, var(--color-brand-blue), var(--color-brand-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 500;
+  }
+
+  .products-discover-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .products-hero-title {
+      font-size: 2.5rem;
+    }
+    .products-hero-subtitle {
+      font-size: 1.75rem;
+    }
+    .products-hero-content {
+      flex-direction: column;
+      text-align: center;
+    }
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

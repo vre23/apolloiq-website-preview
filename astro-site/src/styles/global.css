@@ -1,0 +1,228 @@
+@import "tailwindcss";
+
+/* ── ApolloIQ Brand Tokens ── */
+@theme {
+  /* Colors */
+  --color-brand-blue: #2c70eb;
+  --color-brand-blue-dark: #1a5bc7;
+  --color-brand-blue-light: rgba(44, 112, 235, 0.06);
+  --color-brand-green: #00c393;
+  --color-brand-teal: #04bb9c;
+  --color-brand-teal-dark: #10a5b3;
+  --color-brand-black: #191d21;
+  --color-brand-grey: #4a4a4a;
+  --color-brand-grey-muted: #667085;
+  --color-brand-grey-light: #98a2b3;
+  --color-brand-grey-border: #eaecf0;
+  --color-brand-grey-bg: #f6f6f6;
+  --color-brand-grey-bg-subtle: #f9fafb;
+  --color-brand-dark: #1d2939;
+  --color-brand-dark-medium: #344054;
+  --color-brand-red: #e74c6f;
+
+  /* Font Family */
+  --font-roboto: 'Roboto', sans-serif;
+
+  /* Border Radius */
+  --radius-card: 20px;
+  --radius-btn: 10px;
+
+  /* Shadows */
+  --shadow-card: 4px 4px 30px 10px rgba(0, 0, 0, 0.06);
+  --shadow-card-lg: 4px 4px 30px 10px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 4px 4px 30px 10px rgba(0, 0, 0, 0.12);
+
+  /* Animations */
+  --animate-fade-in: fade-in 0.6s ease-out forwards;
+  --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
+  --animate-slide-in-left: slide-in-left 0.5s ease-out forwards;
+  --animate-marquee: marquee 60s linear infinite;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-in-left {
+  0% { opacity: 0; transform: translateX(-24px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Base Styles ── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    font-family: var(--font-roboto);
+    color: var(--color-brand-black);
+    background-color: #fff;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-roboto);
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ── Utility Components ── */
+@layer components {
+  /* Gradient text */
+  .text-gradient {
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(274deg, #00c393, #00c393 23%, #04bb9c 37%, #10a5b3 60%, #2381d9 88%, #2c70eb);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    background-color: var(--color-brand-blue);
+    color: #fff;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.5;
+    border: 2px solid var(--color-brand-blue);
+    border-radius: var(--radius-btn);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-family: var(--font-roboto);
+  }
+  .btn-primary:hover {
+    background-color: var(--color-brand-blue-dark);
+    border-color: var(--color-brand-blue-dark);
+    box-shadow: 0 4px 20px rgba(44, 112, 235, 0.3);
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 2rem;
+    background-color: transparent;
+    color: var(--color-brand-blue);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.5;
+    border: 2px solid var(--color-brand-blue);
+    border-radius: var(--radius-btn);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-family: var(--font-roboto);
+  }
+  .btn-secondary:hover {
+    background-color: var(--color-brand-blue);
+    color: #fff;
+  }
+
+  /* Nav button (Go to Merlin) */
+  .btn-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1rem;
+    background-color: var(--color-brand-blue);
+    color: #fff;
+    font-weight: 500;
+    font-size: 15px;
+    border-radius: var(--radius-btn);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-family: var(--font-roboto);
+  }
+  .btn-nav:hover {
+    background-color: var(--color-brand-green);
+  }
+
+  /* Section wrapper */
+  .section {
+    padding: 5rem 0;
+  }
+  .section-sm {
+    padding: 3rem 0;
+  }
+  .section-hero {
+    padding: 6rem 0 5rem;
+  }
+
+  /* Container */
+  .container-site {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 5%;
+  }
+  .container-narrow {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5%;
+  }
+
+  /* Card */
+  .card {
+    background: #fff;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+  .card:hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* Dark card */
+  .card-dark {
+    background: linear-gradient(135deg, #1d2939, #344054);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card-lg);
+    padding: 2rem;
+    color: #fff;
+  }
+
+  /* Form field */
+  .form-field {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid var(--color-brand-grey-border);
+    border-radius: 8px;
+    font-family: var(--font-roboto);
+    font-size: 0.9375rem;
+    color: var(--color-brand-black);
+    background: #fff;
+    transition: border-color 0.3s ease;
+  }
+  .form-field:focus {
+    outline: none;
+    border-color: var(--color-brand-blue);
+    box-shadow: 0 0 0 3px rgba(44, 112, 235, 0.1);
+  }
+  .form-field::placeholder {
+    color: var(--color-brand-grey-light);
+  }
+}
+
+/* Google Fonts loaded via <link> in BaseLayout.astro head */

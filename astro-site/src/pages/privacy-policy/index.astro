@@ -1,0 +1,275 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Privacy Policy" description="ApolloIQ Privacy Policy - Learn how we collect, use, store, and protect your personal information.">
+  <Nav />
+
+  <!-- Hero Section -->
+  <section class="section-hero pp-hero">
+    <div class="container-site">
+      <div class="hero-split">
+        <div class="hero-left">
+          <h1 class="hero-title">
+            Our Privacy <span class="text-gradient">Policy</span>
+          </h1>
+        </div>
+        <div class="hero-right">
+          <p class="hero-subtitle">
+            At ApolloIQ, we are committed to protecting and respecting your privacy.
+            This privacy notice explains how we collect, use, store, and disclose your personal information.
+            It also outlines your rights and choices regarding your personal information.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy Policy Content -->
+  <section class="section pp-content-section">
+    <div class="container-narrow">
+      <div class="pp-content">
+
+        <div class="pp-section">
+          <h2 class="pp-heading">1. Information We Collect</h2>
+          <p class="pp-text">We may collect and process the following types of personal information:</p>
+          <ul class="pp-list">
+            <li>Contact information (such as name, email address, phone number)</li>
+            <li>Demographic information (such as location, preferences)</li>
+            <li>Billing information</li>
+            <li>Other information necessary to provide our services</li>
+          </ul>
+        </div>
+
+        <div class="pp-section">
+          <h2 class="pp-heading">2. How We Use Your Information</h2>
+          <p class="pp-text">We use your information for the following purposes:</p>
+          <ul class="pp-list">
+            <li>To provide our services and fulfill our contractual obligations</li>
+            <li>To communicate with you and respond to your inquiries</li>
+            <li>To improve our services and enhance your user experience</li>
+            <li>To send you promotional materials and updates (with your consent, where required by law)</li>
+          </ul>
+        </div>
+
+        <div class="pp-section">
+          <h2 class="pp-heading">3. Information Sharing</h2>
+          <p class="pp-text">We may share your personal information with the following parties:</p>
+          <ul class="pp-list">
+            <li>Our trusted service providers and business partners who assist us in delivering our services</li>
+            <li>Regulatory authorities or legal entities as required by law or to protect our rights</li>
+          </ul>
+        </div>
+
+        <div class="pp-section">
+          <h2 class="pp-heading">4. Data Security</h2>
+          <p class="pp-text">
+            We have implemented appropriate technical and organizational measures to ensure the security of your
+            personal information and protect it against unauthorised access, loss, or misuse.
+          </p>
+        </div>
+
+        <div class="pp-section">
+          <h2 class="pp-heading">5. Data Retention</h2>
+          <p class="pp-text">
+            We will retain your personal information for as long as necessary to fulfill the purposes outlined in
+            this privacy notice, or as required by applicable laws and regulations.
+          </p>
+        </div>
+
+        <div class="pp-section">
+          <h2 class="pp-heading">6. Your Rights</h2>
+          <p class="pp-text">You have the right to:</p>
+          <ul class="pp-list">
+            <li>Access and request a copy of your personal information</li>
+            <li>Update or correct your personal information</li>
+            <li>Request the erasure of your personal information</li>
+            <li>Object to or restrict the processing of your personal information</li>
+            <li>Withdraw your consent for any processing activities that rely on consent</li>
+          </ul>
+        </div>
+
+        <div class="pp-section">
+          <h2 class="pp-heading">Contact Us</h2>
+          <p class="pp-text">
+            If you have any questions, concerns, or requests regarding your personal information or this privacy notice,
+            please contact us using the following details:
+          </p>
+          <p class="pp-text">
+            <strong>Email:</strong>
+            <a href="mailto:contact@apolloiq.co.uk" class="pp-link">contact@apolloiq.co.uk</a>
+          </p>
+        </div>
+
+        <div class="pp-section">
+          <p class="pp-text">
+            We may update this privacy notice from time to time to reflect changes in our practices or legal requirements.
+            We encourage you to review this notice periodically for any updates.
+          </p>
+          <p class="pp-text">
+            If you are not satisfied with our response to your privacy-related concerns, you have the right to
+            lodge a complaint with the relevant supervisory authority.
+          </p>
+          <p class="pp-text">
+            Thank you for entrusting us with your personal information. We are committed to protecting your privacy
+            and ensuring transparency in our data practices.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* ── Hero ── */
+  .pp-hero {
+    padding: 6rem 0 4rem;
+  }
+
+  .hero-split {
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+
+  .hero-left {
+    flex: 1;
+  }
+
+  .hero-right {
+    flex: 1.2;
+    padding-top: 0.5rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--color-brand-black);
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+  }
+
+  /* ── Content ── */
+  .pp-content-section {
+    padding-bottom: 5rem;
+  }
+
+  .pp-content {
+    background: #fff;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: 3rem;
+  }
+
+  .pp-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .pp-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .pp-heading {
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-brand-grey-border);
+  }
+
+  .pp-text {
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+    line-height: 1.8;
+    margin-bottom: 0.75rem;
+  }
+
+  .pp-text:last-child {
+    margin-bottom: 0;
+  }
+
+  .pp-text strong {
+    color: var(--color-brand-black);
+    font-weight: 600;
+  }
+
+  .pp-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0;
+  }
+
+  .pp-list li {
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+    line-height: 1.8;
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.375rem;
+  }
+
+  .pp-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-brand-blue);
+  }
+
+  .pp-link {
+    color: var(--color-brand-blue);
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .pp-link:hover {
+    color: var(--color-brand-blue-dark);
+    text-decoration: underline;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 960px) {
+    .hero-split {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .pp-hero {
+      padding: 4rem 0 3rem;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .pp-content {
+      padding: 2rem 1.5rem;
+    }
+
+    .pp-heading {
+      font-size: 1.125rem;
+    }
+  }
+</style>

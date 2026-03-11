@@ -1,0 +1,540 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import CTASection from '../../../components/CTASection.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="Forestside Medical Practice - Clinical Document Management Automation"
+  description="How ApolloIQ transformed clinical document management at Forestside Medical Practice using AI and RPA, processing 5,100 documents and saving over £10,000 annually."
+>
+  <Nav />
+
+  <!-- Hero -->
+  <section class="cs-hero">
+    <div class="container-site">
+      <div class="cs-hero-inner">
+        <a href={`${base}case-study`} class="cs-back-link">&larr; All Case Studies</a>
+        <h1 class="cs-hero-title">
+          Forestside Medical Practice - Clinical Document Management Automation
+        </h1>
+      </div>
+    </div>
+    <div class="hero-orb hero-orb--1"></div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container-narrow">
+      <div class="cs-intro">
+        <p>
+          Forestside Medical Practice serves <strong>11,000 patients</strong> and receives around
+          <strong>100 clinical letters per day</strong>. Before ApolloIQ, two admin staff were manually
+          coding and filing documents until 4 PM every day -- prone to delays and human error.
+        </p>
+        <p>
+          ApolloIQ deployed an intelligent automation system combining <strong>RPA</strong> and a
+          <strong>self-hosted AI language model</strong>, integrated with EMIS Web -- transforming how
+          Forestside processes clinical documents.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution with Image -->
+  <section class="section" style="background: var(--color-brand-grey-bg-subtle);">
+    <div class="container-site">
+      <div class="cs-solution-grid">
+        <div class="cs-image-wrap">
+          <img
+            src={`${base}images/685dc40ff887e05cecfae2db_de549e830eb7c1963effe48e3f990923-min.jpeg`}
+            alt="Forestside Medical Practice"
+            loading="lazy"
+          />
+        </div>
+        <div class="cs-solution-content">
+          <h2 class="cs-section-title">The <span class="text-gradient">Solution</span></h2>
+          <p>ApolloIQ deployed a clinical document management system that automatically processes every incoming letter:</p>
+          <ul class="cs-list">
+            <li><strong>Accurate Date Identification</strong> -- RPA extracts the correct letter date</li>
+            <li><strong>SnomedCT Coding</strong> -- Matches document types with clinical codes</li>
+            <li><strong>AI-Generated Titles</strong> -- Precise, meaningful document titles</li>
+            <li><strong>Secure & Private</strong> -- Operates within the HSCN connection</li>
+            <li><strong>Available 24/7-365</strong> -- No breaks, no holidays needed</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before & After Tables -->
+  <section class="section">
+    <div class="container-site">
+      <h2 class="cs-tables-heading">
+        Before & After <span class="text-gradient">ApolloIQ</span>
+      </h2>
+      <div class="cs-tables-grid">
+        <!-- Before Table -->
+        <div class="cs-table-card">
+          <div class="cs-table-title cs-table-title--before">Before ApolloIQ</div>
+          <div class="cs-table-scroll">
+            <table class="cs-table">
+              <thead>
+                <tr>
+                  <th>Patient</th>
+                  <th>Type</th>
+                  <th>Title</th>
+                  <th>Coded</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Bertie Bangers</td>
+                  <td class="cs-dim">Clinical Document</td>
+                  <td class="cs-dim">No Title</td>
+                  <td class="cs-no">Not Set</td>
+                </tr>
+                <tr>
+                  <td>Penny Farthing</td>
+                  <td class="cs-dim">Clinical Document</td>
+                  <td class="cs-dim">No Title</td>
+                  <td class="cs-no">Not Set</td>
+                </tr>
+                <tr>
+                  <td>Chester Cheddar</td>
+                  <td class="cs-dim">Clinical Document</td>
+                  <td class="cs-dim">No Title</td>
+                  <td class="cs-no">Not Set</td>
+                </tr>
+                <tr>
+                  <td>Molly Muddle</td>
+                  <td class="cs-dim">Clinical Document</td>
+                  <td class="cs-dim">No Title</td>
+                  <td class="cs-no">Not Set</td>
+                </tr>
+                <tr>
+                  <td>Nigel Nibbles</td>
+                  <td class="cs-dim">Clinical Document</td>
+                  <td class="cs-dim">No Title</td>
+                  <td class="cs-no">Not Set</td>
+                </tr>
+                <tr>
+                  <td>Fiona Fishcake</td>
+                  <td class="cs-dim">Clinical Document</td>
+                  <td class="cs-dim">No Title</td>
+                  <td class="cs-no">Not Set</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- After Table -->
+        <div class="cs-table-card">
+          <div class="cs-table-title cs-table-title--after">After ApolloIQ</div>
+          <div class="cs-table-scroll">
+            <table class="cs-table">
+              <thead>
+                <tr>
+                  <th>Patient</th>
+                  <th>Specialty</th>
+                  <th>Title</th>
+                  <th>Coded</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Bertie Bangers</td>
+                  <td>Discharge Summary</td>
+                  <td>Accidental fall, Pleural Effusion</td>
+                  <td class="cs-yes">Yes</td>
+                </tr>
+                <tr>
+                  <td>Penny Farthing</td>
+                  <td>Gastroenterology</td>
+                  <td>Barrett's Metaplasia</td>
+                  <td class="cs-yes">Yes</td>
+                </tr>
+                <tr>
+                  <td>Chester Cheddar</td>
+                  <td>Endocrinology</td>
+                  <td>Normal Calcium & Vitamin D</td>
+                  <td class="cs-yes">Yes</td>
+                </tr>
+                <tr>
+                  <td>Molly Muddle</td>
+                  <td>Gastroenterology</td>
+                  <td>No concerning features found</td>
+                  <td class="cs-yes">Yes</td>
+                </tr>
+                <tr>
+                  <td>Nigel Nibbles</td>
+                  <td>Urology</td>
+                  <td>Overactive Bladder</td>
+                  <td class="cs-yes">Yes</td>
+                </tr>
+                <tr>
+                  <td>Fiona Fishcake</td>
+                  <td>Rheumatology</td>
+                  <td>Rheumatoid Nodule on MCP2</td>
+                  <td class="cs-yes">Yes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section" style="background: var(--color-brand-grey-bg-subtle);">
+    <div class="container-narrow">
+      <h2 class="cs-section-title">Results at a <span class="text-gradient">Glance</span></h2>
+
+      <div class="cs-stats-grid">
+        <div class="cs-stat-card">
+          <span class="cs-stat-value">5,100</span>
+          <span class="cs-stat-label">Documents processed in 3 months</span>
+        </div>
+        <div class="cs-stat-card">
+          <span class="cs-stat-value">2 hrs/day</span>
+          <span class="cs-stat-label">Saved -- 96 staff hours over the project</span>
+        </div>
+        <div class="cs-stat-card">
+          <span class="cs-stat-value">&pound;10,552</span>
+          <span class="cs-stat-label">Projected annual savings</span>
+        </div>
+        <div class="cs-stat-card">
+          <span class="cs-stat-value">100%</span>
+          <span class="cs-stat-label">Accuracy in SNOMED coding and filing</span>
+        </div>
+      </div>
+
+      <div class="cs-what-changed">
+        <h3 class="cs-subsection-title">What Changed</h3>
+        <ul class="cs-list">
+          <li>No more backlog of hospital letters, referrals, and results</li>
+          <li>Staff review only the exceptions -- routine documents are auto-filed</li>
+          <li>Tasks are completed faster, freeing staff for patient-facing roles</li>
+          <li>Quicker turnaround times and enhanced patient care</li>
+        </ul>
+      </div>
+
+      <!-- Testimonial -->
+      <blockquote class="cs-quote">
+        <p>
+          "The transition has been a game-changer. What took two staff all day, now gets done
+          by early afternoon -- and with more consistency."
+        </p>
+        <cite>-- <strong>Andy Lopez</strong>, Managing Partner, Forestside Medical Practice</cite>
+      </blockquote>
+
+      <p class="cs-closing">
+        <strong>This is just one example of how ApolloIQ helps practices capitalise on AI to transform clinical workflows.</strong>
+      </p>
+    </div>
+  </section>
+
+  <CTASection />
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .cs-hero {
+    position: relative;
+    padding: 7rem 0 4rem;
+    overflow: hidden;
+    background: linear-gradient(170deg, #fff 0%, rgba(44,112,235,0.03) 40%, rgba(0,195,147,0.04) 100%);
+  }
+
+  .cs-hero-inner {
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .cs-back-link {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-brand-blue);
+    margin-bottom: 1.5rem;
+    transition: color 0.2s;
+  }
+  .cs-back-link:hover {
+    color: var(--color-brand-blue-dark);
+  }
+
+  .cs-hero-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--color-brand-black);
+  }
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+  }
+  .hero-orb--1 {
+    width: 500px;
+    height: 500px;
+    background: rgba(44, 112, 235, 0.06);
+    top: -20%;
+    right: -10%;
+  }
+
+  /* Intro */
+  .cs-intro {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .cs-intro p {
+    font-size: 1.0625rem;
+    color: var(--color-brand-grey);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Solution Grid */
+  .cs-solution-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .cs-image-wrap {
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    max-height: 500px;
+  }
+  .cs-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cs-section-title {
+    font-size: 2.25rem;
+    font-weight: 400;
+    color: var(--color-brand-black);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .cs-solution-content p {
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  .cs-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .cs-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.9625rem;
+    color: var(--color-brand-grey);
+    line-height: 1.6;
+  }
+  .cs-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-brand-blue), var(--color-brand-green));
+  }
+
+  /* Tables */
+  .cs-tables-heading {
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--color-brand-black);
+    margin-bottom: 2rem;
+  }
+
+  .cs-tables-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .cs-table-card {
+    border-radius: var(--radius-card);
+    padding: 2rem;
+    background: #fff;
+    box-shadow: var(--shadow-card);
+  }
+
+  .cs-table-scroll {
+    overflow-x: auto;
+  }
+
+  .cs-table-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .cs-table-title--before {
+    color: var(--color-brand-red);
+  }
+  .cs-table-title--after {
+    color: var(--color-brand-green);
+  }
+
+  .cs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+  .cs-table thead tr {
+    border-bottom: 2px solid var(--color-brand-blue);
+  }
+  .cs-table th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    color: var(--color-brand-blue);
+    font-weight: 600;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .cs-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-brand-grey-border);
+    color: var(--color-brand-dark-medium);
+  }
+  .cs-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .cs-table tbody tr:hover {
+    background: rgba(44, 112, 235, 0.02);
+  }
+
+  .cs-dim { color: var(--color-brand-grey-light); }
+  .cs-yes { color: var(--color-brand-green); font-weight: 600; }
+  .cs-no { color: var(--color-brand-red); font-weight: 600; }
+
+  /* Stats Grid */
+  .cs-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .cs-stat-card {
+    background: #fff;
+    border-radius: var(--radius-card);
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-card);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cs-stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-brand-blue);
+    line-height: 1.1;
+  }
+
+  .cs-stat-label {
+    font-size: 0.875rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.4;
+  }
+
+  /* What Changed */
+  .cs-what-changed {
+    margin-bottom: 2.5rem;
+  }
+
+  .cs-subsection-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 1rem;
+  }
+
+  /* Quote */
+  .cs-quote {
+    border-left: 4px solid var(--color-brand-blue);
+    padding: 1.25rem 1.75rem;
+    margin: 2.5rem 0;
+    background: rgba(44, 112, 235, 0.03);
+    border-radius: 0 12px 12px 0;
+  }
+  .cs-quote p {
+    font-style: italic;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--color-brand-dark-medium);
+    margin-bottom: 0.75rem;
+  }
+  .cs-quote cite {
+    font-style: normal;
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey-muted);
+  }
+
+  .cs-closing {
+    font-size: 1.0625rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+  }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .cs-solution-grid {
+      grid-template-columns: 1fr;
+    }
+    .cs-tables-grid {
+      grid-template-columns: 1fr;
+    }
+    .cs-stats-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cs-hero {
+      padding: 5rem 0 3rem;
+    }
+    .cs-hero-title {
+      font-size: 1.75rem;
+    }
+    .cs-stats-grid {
+      grid-template-columns: 1fr;
+    }
+    .cs-table th,
+    .cs-table td {
+      padding: 0.5rem 0.625rem;
+      font-size: 0.75rem;
+    }
+    .cs-table-card {
+      padding: 1.25rem 1rem;
+    }
+  }
+</style>

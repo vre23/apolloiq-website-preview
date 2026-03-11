@@ -1,0 +1,351 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import CTASection from '../../../components/CTASection.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="Digitalisation Consultancy"
+  description="Empowering healthcare providers to go fully digital. Expert consultancy services to streamline operations, eliminate paper-based inefficiencies, and future-proof your organisation."
+>
+  <Nav />
+
+  <!-- Hero -->
+  <section class="svc-hero">
+    <div class="container-site">
+      <div class="svc-hero-grid">
+        <div class="svc-hero-left">
+          <h1 class="svc-hero-title">
+            Digitalisation <span class="text-gradient">Consultancy</span>
+          </h1>
+        </div>
+        <div class="svc-hero-right">
+          <p class="svc-hero-subtitle">Empowering Healthcare Providers to Go Fully Digital</p>
+          <a href={`${base}contact-us`} class="btn-primary">Contact Us</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-orb hero-orb--1"></div>
+    <div class="hero-orb hero-orb--2"></div>
+  </section>
+
+  <!-- Overview -->
+  <section class="svc-overview-section">
+    <div class="container-narrow">
+      <div class="svc-overview-card">
+        <span class="svc-tag">OVERVIEW</span>
+        <h2 class="svc-overview-title">What is Digitalisation Consultancy?</h2>
+        <p class="svc-overview-text">
+          From busy GP practices to complex hospital trusts and private clinics -- we guide healthcare
+          organisations through the full digital transformation journey. Our expert consultancy services
+          are designed to streamline operations, eliminate paper-based inefficiencies, and future-proof
+          your organisation with scalable digital workflows.
+        </p>
+        <a href={`${base}contact-us`} class="btn-primary">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Benefits -->
+  <section class="section">
+    <div class="container-site">
+      <div class="svc-benefits-grid">
+        <div class="svc-benefits-left">
+          <h2 class="svc-section-title">Key & <span class="text-gradient">Benefits</span></h2>
+          <p class="svc-benefits-subtitle">
+            4 key features that make our Digitalisation Consultancy essential for your practice.
+          </p>
+        </div>
+        <div class="svc-benefits-right">
+          <ul class="svc-benefits-list">
+            <li>
+              <strong>Reduce paperwork and admin workload.</strong>
+            </li>
+            <li>
+              <strong>Accelerate workflows with modern, reliable tools.</strong>
+            </li>
+            <li>
+              <strong>Improve data security and governance.</strong>
+            </li>
+            <li>
+              <strong>Boost staff and patient satisfaction with streamlined processes.</strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section class="section" style="background: var(--color-brand-grey-bg-subtle);">
+    <div class="container-narrow">
+      <div class="svc-why-section">
+        <span class="svc-tag">WHY US?</span>
+        <h2 class="svc-why-title">Why Choose ApolloIQ's Digitalisation Consultancy?</h2>
+        <p class="svc-why-text">
+          We don't just understand technology -- we understand healthcare. Our consultants bring
+          real-world experience from NHS, private, and international healthcare settings. We speak
+          your language and know the demands of clinical teams. With our help, you won't just adopt
+          digital tools -- you'll make them work for you.
+        </p>
+        <div class="svc-process-grid">
+          <div class="svc-process-card">
+            <span class="svc-process-number">01</span>
+            <h3 class="svc-process-title">Digital Transformation Strategy</h3>
+            <p>We develop a tailored roadmap based on your specific needs, challenges, and goals.</p>
+          </div>
+          <div class="svc-process-card">
+            <span class="svc-process-number">02</span>
+            <h3 class="svc-process-title">Implementation Plan</h3>
+            <p>A detailed, step-by-step plan including timelines, outcomes, and rollout strategy.</p>
+          </div>
+          <div class="svc-process-card">
+            <span class="svc-process-number">03</span>
+            <h3 class="svc-process-title">Training</h3>
+            <p>On-site or remote training to ensure staff confidence and competence with new systems.</p>
+          </div>
+          <div class="svc-process-card">
+            <span class="svc-process-number">04</span>
+            <h3 class="svc-process-title">Change Management</h3>
+            <p>Hands-on support with staff engagement, adoption planning, and stakeholder alignment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .svc-hero {
+    position: relative;
+    padding: 7rem 0 5rem;
+    overflow: hidden;
+    background: linear-gradient(170deg, #fff 0%, rgba(44,112,235,0.03) 40%, rgba(0,195,147,0.04) 100%);
+  }
+
+  .svc-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .svc-hero-title {
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--color-brand-black);
+  }
+
+  .svc-hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+  }
+  .hero-orb--1 {
+    width: 500px;
+    height: 500px;
+    background: rgba(44, 112, 235, 0.06);
+    top: -10%;
+    right: -5%;
+  }
+  .hero-orb--2 {
+    width: 400px;
+    height: 400px;
+    background: rgba(0, 195, 147, 0.05);
+    bottom: -20%;
+    left: -5%;
+  }
+
+  /* Overview */
+  .svc-overview-section {
+    padding: 5rem 0;
+    background: var(--color-brand-grey-bg-subtle);
+  }
+
+  .svc-overview-card {
+    background: #fff;
+    border-radius: var(--radius-card);
+    padding: 3rem;
+    box-shadow: var(--shadow-card);
+  }
+
+  .svc-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-brand-blue);
+    margin-bottom: 1.25rem;
+  }
+
+  .svc-overview-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 1.25rem;
+  }
+
+  .svc-overview-text {
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    max-width: 700px;
+  }
+
+  /* Benefits */
+  .svc-benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .svc-section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 1rem;
+  }
+
+  .svc-benefits-subtitle {
+    font-size: 1.0625rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.6;
+  }
+
+  .svc-benefits-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .svc-benefits-list li {
+    position: relative;
+    padding-left: 1.75rem;
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+  }
+  .svc-benefits-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-brand-blue), var(--color-brand-green));
+  }
+
+  /* Why Us */
+  .svc-why-section {
+    text-align: center;
+  }
+
+  .svc-why-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 1.25rem;
+  }
+
+  .svc-why-text {
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Process Grid */
+  .svc-process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    text-align: left;
+  }
+
+  .svc-process-card {
+    background: #fff;
+    border-radius: var(--radius-card);
+    padding: 2rem 1.5rem;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .svc-process-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+  }
+
+  .svc-process-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-brand-blue);
+    opacity: 0.15;
+    display: block;
+    margin-bottom: 0.75rem;
+    line-height: 1;
+  }
+
+  .svc-process-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 0.5rem;
+  }
+
+  .svc-process-card p {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.6;
+  }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .svc-hero-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .svc-benefits-grid {
+      grid-template-columns: 1fr;
+    }
+    .svc-process-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .svc-hero {
+      padding: 5rem 0 3rem;
+    }
+    .svc-hero-title {
+      font-size: 2rem;
+    }
+    .svc-overview-card {
+      padding: 2rem 1.5rem;
+    }
+    .svc-process-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

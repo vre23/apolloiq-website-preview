@@ -1,0 +1,681 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const teamMembers = [
+  {
+    name: 'Razvan Valcu',
+    role: 'Co-Founder',
+    title: 'CEO at ApolloIQ',
+    expertise: 'Clinical Pharmacist',
+    image: `${base}images/685dc40ff887e05cecfae302_image.jpg`,
+    linkedin: 'https://www.linkedin.com/in/razvan-v-b7b69522/',
+  },
+  {
+    name: 'Vlad Repede',
+    role: 'Co-Founder',
+    title: 'COO at ApolloIQ',
+    expertise: 'Clinical Pharmacist',
+    image: `${base}images/68610a1b291d82321864ae33_Screenshot_2025-06-29_at_12.39.35.png`,
+    linkedin: 'https://www.linkedin.com/in/vlad-repede-259b85173/',
+  },
+  {
+    name: 'Radu Ancas',
+    role: 'CTO ApolloIQ',
+    title: '',
+    expertise: 'Engineering',
+    image: `${base}images/68610bc27b02f6fd878e729a_radu.png`,
+    linkedin: 'https://www.linkedin.com/in/radu-ancas-95085459/',
+  },
+  {
+    name: 'Claudiu Tugui',
+    role: 'Lead Engineer at ApolloIQ',
+    title: '',
+    expertise: 'Engineering',
+    image: `${base}images/68610bc2c191d42ad42f00f0_claudiu.png`,
+    linkedin: 'https://www.linkedin.com/in/claudiu-tugui-8b061514b/',
+  },
+  {
+    name: 'Andreea Tugui',
+    role: 'Software Engineer at ApolloIQ',
+    title: '',
+    expertise: 'Engineering',
+    image: `${base}images/686e9cfa27d09b72a4a4b065_andreea3-1.jpeg`,
+    linkedin: 'https://www.linkedin.com/in/catargiuandreeaalexandra/',
+  },
+];
+
+const testimonials = [
+  {
+    name: 'Dr Christian Hornung',
+    role: 'Clinical Director - Taunton Vale Healthcare',
+    image: `${base}images/685dc40ff887e05cecfae2fd_84b855382620e11d9931513d8365e6ae.jpeg`,
+    quote: 'Collaboration with ApolloIQ has been a great experience for our GP business. The expertise from both pharmacists Raz and Vlad and their Automation and AI team was instrumental in developing solutions. Piloting and testing services did not affect daily operations. Continuous feedback loops ensured both safety and a personalised approach from ApolloIQ.',
+    variant: 'blue',
+  },
+  {
+    name: 'Dr. Valeed Ghafoor',
+    role: 'CEO of GP Practice Specialists',
+    image: `${base}images/68610e0b2ff42f65d5184b3a_valeed2.webp`,
+    quote: 'Working with ApolloIQ has been an excellent experience, they are very responsive and attentive to detail. We never hesitate to work with them or recommend their services to our clients.',
+    variant: 'white',
+  },
+  {
+    name: 'James Roberts',
+    role: 'Digital & Transformation Lead Taunton Central & Tone Valley PCN',
+    image: `${base}images/68610f087977ffbeb345abba_nhs-logo.webp`,
+    quote: 'ApolloIQ Automation solutions are improving efficiency and safety of our Practices. Their attention to details around clinical safety and information governance is second to none.',
+    variant: 'blue',
+  },
+  {
+    name: 'Chris Miller',
+    role: 'Data Team Lead French Weir Medical Centre, Taunton Central PCN',
+    image: `${base}images/68610f087977ffbeb345abba_nhs-logo.webp`,
+    quote: 'Documents Automation has reduced our workload by 50%!',
+    variant: 'white',
+  },
+];
+
+const values = [
+  {
+    title: 'Innovation',
+    description: "We continually push the boundaries of what's possible with AI and automation, staying at the forefront of healthcare technology.",
+  },
+  {
+    title: 'Efficiency',
+    description: 'Our solutions are designed to simplify and streamline workflows, allowing healthcare providers to focus on delivering exceptional patient care.',
+  },
+  {
+    title: 'Accuracy',
+    description: 'We ensure 100% precision in clinical tasks, reducing human error and enhancing the reliability of medical processes.',
+  },
+  {
+    title: 'Collaboration',
+    description: 'We work closely with our clients to design bespoke solutions that meet their unique needs and challenges.',
+  },
+  {
+    title: 'Patient-Centered',
+    description: 'At the heart of our technology is the goal to improve patient outcomes, making healthcare faster, more accessible, and more reliable.',
+  },
+];
+---
+
+<BaseLayout title="About" description="Learn about ApolloIQ - Innovators in Healthcare Automation. Meet our team of clinical and software engineers transforming healthcare.">
+  <Nav />
+
+  <!-- Hero Section -->
+  <section class="section-hero about-hero">
+    <div class="container-site">
+      <div class="hero-split">
+        <div class="hero-left">
+          <h1 class="hero-title">
+            Who We Are: <span class="text-gradient">Innovators</span> in Healthcare Automation
+          </h1>
+        </div>
+        <div class="hero-right">
+          <p class="hero-subtitle">
+            At the forefront of transforming healthcare with our intelligent automation solutions
+          </p>
+          <a href="#testimonials" class="btn-primary">What Our Clients Say</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why ApolloIQ Section -->
+  <section class="section about-why">
+    <div class="container-site">
+      <div class="why-wrapper card">
+        <div class="why-content">
+          <span class="section-label">Who we are</span>
+          <h2 class="why-heading">Why ApolloIQ?</h2>
+          <p class="why-text">
+            Founded in Taunton, Somerset, our team is a unique blend of dedicated Clinical and Software Engineers,
+            all working together to create innovative solutions that address the challenges faced by healthcare providers today.
+          </p>
+          <ul class="why-list">
+            <li>
+              <strong>Clinical Expertise:</strong> Our team has extensive clinical experience spanning hundreds of GP surgeries and pharmacies.
+            </li>
+            <li>
+              <strong>Proven Results:</strong> We deliver solutions that significantly reduce administrative burdens and operational costs.
+            </li>
+            <li>
+              <strong>Endorsement and Trust:</strong> Fully endorsed by Somerset ICB, our products are trusted by healthcare providers across the region.
+            </li>
+          </ul>
+          <a href={`${base}contact-us`} class="btn-primary">Find out more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story & Mission Section -->
+  <section class="section about-story">
+    <div class="container-site">
+      <div class="story-grid">
+        <div class="story-card card">
+          <span class="card-label">OUR STORY</span>
+          <p class="card-text">
+            Born out of a deep understanding of the healthcare landscape, ApolloIQ was established by a team of
+            committed clinicians who experienced firsthand the high administrative burden in GP surgeries and
+            pharmacies across the South West. Our strong ties with local Primary Care Networks (PCNs) and
+            Integrated Care Board (ICB) ensure that our solutions are tailored to the real-world needs of healthcare providers.
+          </p>
+        </div>
+        <div class="story-card card">
+          <span class="card-label">OUR MISSION</span>
+          <p class="card-text">
+            We believe that every healthcare provider should have access to advanced automation tools that can
+            streamline their workflows, reduce their operational costs, and ultimately improve patient outcomes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="section about-team">
+    <div class="container-site">
+      <div class="team-header">
+        <span class="section-label">OUR TEAM</span>
+        <p class="team-intro">
+          Our team is made up of experts from various fields, including healthcare, technology, AI, and automation.
+          Together, we bring decades of experience to the table, helping us craft innovative solutions that address
+          the complexities of modern healthcare.
+        </p>
+      </div>
+      <div class="team-grid">
+        {teamMembers.map((member) => (
+          <a href={member.linkedin} target="_blank" rel="noopener noreferrer" class="team-card">
+            <div class="team-card-image">
+              <img src={member.image} alt={member.name} loading="lazy" />
+              <div class="team-card-overlay">
+                <div class="team-card-info">
+                  <h4 class="team-name">{member.name}</h4>
+                  <p class="team-role">{member.role}</p>
+                  {member.title && <p class="team-role">{member.title}</p>}
+                  <p class="team-expertise">{member.expertise}</p>
+                </div>
+                <div class="team-arrow">
+                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <rect width="30" height="30" rx="15" fill="white"/>
+                    <path d="M9 9H21M21 9V21M21 9L9 21" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Values & Journey Section -->
+  <section class="section about-values">
+    <div class="container-site">
+      <div class="story-grid">
+        <div class="story-card card">
+          <span class="card-label">OUR VALUES</span>
+          <div class="values-list">
+            {values.map((value) => (
+              <p class="value-item">
+                <span class="value-name">{value.title}:</span> {value.description}
+              </p>
+            ))}
+          </div>
+        </div>
+        <div class="story-card card">
+          <span class="card-label">OUR JOURNEY</span>
+          <p class="card-text">
+            Founded in 2023, ApolloIQ was built on the belief that technology should serve healthcare, not
+            complicate it. Over the years, we have grown from a small start-up to a trusted partner for healthcare
+            practices and networks across the UK. We are proud to continue pushing the boundaries of what AI and
+            automation can achieve in the healthcare industry.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section about-testimonials" id="testimonials">
+    <div class="container-site">
+      <div class="testimonials-header">
+        <span class="section-label">TESTIMONIALS</span>
+        <h2 class="testimonials-heading">
+          What Our Clients<br />Say About <span class="text-gradient">ApolloIQ</span>
+        </h2>
+      </div>
+      <div class="testimonials-grid">
+        {testimonials.map((t) => (
+          <div class={`testimonial-card ${t.variant === 'blue' ? 'testimonial-blue' : 'testimonial-white'}`}>
+            <div class="testimonial-author">
+              <img src={t.image} alt={t.name} class="testimonial-avatar" loading="lazy" />
+              <div>
+                <h5 class="testimonial-name">{t.name}</h5>
+                <p class="testimonial-role">{t.role}</p>
+              </div>
+            </div>
+            <blockquote class="testimonial-quote">"{t.quote}"</blockquote>
+            <a href={`${base}pricing`} class="testimonial-link">
+              Learn More
+              <svg width="15" height="10" viewBox="0 0 15 10" fill="none">
+                <path d="M9.79932 1.73682L13.1253 5.06277M13.1253 5.06277L9.79932 8.38873M13.1253 5.06277H0.999725" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* ── Hero ── */
+  .about-hero {
+    padding: 6rem 0 4rem;
+  }
+
+  .hero-split {
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+
+  .hero-left {
+    flex: 1.2;
+  }
+
+  .hero-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--color-brand-black);
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+  }
+
+  /* ── Why ApolloIQ ── */
+  .about-why .why-wrapper {
+    padding: 3rem;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-brand-blue);
+    margin-bottom: 0.75rem;
+  }
+
+  .why-heading {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    color: var(--color-brand-black);
+  }
+
+  .why-text {
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    max-width: 720px;
+  }
+
+  .why-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .why-list li {
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .why-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-brand-blue);
+  }
+
+  .why-list li strong {
+    color: var(--color-brand-black);
+    font-weight: 600;
+  }
+
+  /* ── Story & Mission ── */
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .story-card {
+    padding: 2.5rem;
+  }
+
+  .card-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-brand-blue);
+    margin-bottom: 1.25rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+    line-height: 1.8;
+  }
+
+  /* ── Team ── */
+  .team-header {
+    margin-bottom: 3rem;
+  }
+
+  .team-intro {
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+    max-width: 700px;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .team-card {
+    display: block;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .team-card-image {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+  }
+
+  .team-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .team-card:hover .team-card-image img {
+    transform: scale(1.05);
+  }
+
+  .team-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.75rem;
+    min-height: 50%;
+  }
+
+  .team-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.25rem;
+  }
+
+  .team-role {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.4;
+  }
+
+  .team-expertise {
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.6);
+    margin-top: 0.25rem;
+  }
+
+  .team-arrow {
+    flex-shrink: 0;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .team-card:hover .team-arrow {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Values ── */
+  .values-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .value-item {
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+  }
+
+  .value-name {
+    font-weight: 600;
+    color: var(--color-brand-blue);
+  }
+
+  /* ── Testimonials ── */
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .testimonials-heading {
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--color-brand-black);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .testimonial-card {
+    border-radius: var(--radius-card);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .testimonial-blue {
+    background: var(--color-brand-blue);
+    color: #fff;
+  }
+
+  .testimonial-white {
+    background: #fff;
+    color: var(--color-brand-black);
+    box-shadow: var(--shadow-card);
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .testimonial-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .testimonial-name {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .testimonial-blue .testimonial-name {
+    color: #fff;
+  }
+
+  .testimonial-role {
+    font-size: 0.8125rem;
+    opacity: 0.8;
+    line-height: 1.4;
+  }
+
+  .testimonial-quote {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    flex: 1;
+  }
+
+  .testimonial-blue .testimonial-quote {
+    color: rgba(255,255,255,0.9);
+  }
+
+  .testimonial-white .testimonial-quote {
+    color: var(--color-brand-grey);
+  }
+
+  .testimonial-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    transition: gap 0.2s ease;
+  }
+
+  .testimonial-link:hover {
+    gap: 0.75rem;
+  }
+
+  .testimonial-blue .testimonial-link {
+    color: #fff;
+  }
+
+  .testimonial-white .testimonial-link {
+    color: var(--color-brand-black);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 960px) {
+    .hero-split {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .team-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-hero {
+      padding: 4rem 0 3rem;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .story-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .testimonials-heading {
+      font-size: 1.75rem;
+    }
+
+    .why-heading {
+      font-size: 2rem;
+    }
+
+    .about-why .why-wrapper {
+      padding: 2rem 1.5rem;
+    }
+
+    .story-card {
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+      max-width: 340px;
+    }
+  }
+</style>

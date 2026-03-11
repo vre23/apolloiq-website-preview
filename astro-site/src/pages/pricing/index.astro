@@ -1,0 +1,448 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const spellsRows = [
+  {
+    service: 'Blood Pressure Scroll (BP)',
+    user: '\u00A315 / user / month',
+    organisation: '\u00A310 / user / month',
+    enterprise: 'Custom',
+  },
+  {
+    service: 'Locate Elixir (LE)',
+    user: '\u00A320 / user / month',
+    organisation: '\u00A313 / user / month',
+    enterprise: 'Custom',
+  },
+  {
+    service: 'Scribe Craft (SC)',
+    user: '\u00A324.99 / user / month',
+    organisation: '\u00A316.99 / user / month',
+    enterprise: 'Custom',
+  },
+  {
+    service: 'All Services Bundle',
+    user: '\u00A359.99 / user / month',
+    organisation: '\u00A339.99 / user / month',
+    enterprise: 'Custom',
+    highlight: true,
+  },
+];
+
+const workflowRows = [
+  {
+    tool: 'Pathology Automation',
+    description: 'Automates filing for pathology tests (e.g., FBC, LFTs)',
+    model: 'Per registered patient',
+    price: '\u00A30.30 / patient / year',
+  },
+  {
+    tool: 'Clinical Document Management',
+    description: 'Processes, labels, and files clinical documents',
+    model: 'Per registered patient',
+    price: '\u00A30.30 / patient / year',
+  },
+  {
+    tool: 'Clinical Calculator QRisk3',
+    description: 'Calculates cardiovascular risk for patients',
+    model: 'Per 1,000 patients calculated / list size',
+    price: '\u00A3150 / 1,000 patients',
+  },
+  {
+    tool: 'GP List Reallocation',
+    description: 'Reallocates GPs (full or partial reallocation)',
+    model: 'Per run',
+    price: 'Full: \u00A3225 / GP\nPartial: \u00A375 / GP',
+  },
+];
+---
+
+<BaseLayout title="Pricing" description="Flexible, transparent pricing for ApolloIQ healthcare automation solutions. Pay-as-you-go or enterprise plans.">
+  <Nav />
+
+  <!-- Hero Section -->
+  <section class="section-hero pricing-hero">
+    <div class="container-site">
+      <div class="hero-split">
+        <div class="hero-left">
+          <h1 class="hero-title">
+            Flexible, Transparent <span class="text-gradient">Pricing</span> To Fit Your Needs
+          </h1>
+        </div>
+        <div class="hero-right">
+          <p class="hero-subtitle">
+            Choose from our pay-as-you-go model for your Practice or get in touch for bigger organisations, PCNs or ICBs.
+          </p>
+          <a href={`${base}contact-us`} class="btn-primary">Get a Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Sections -->
+  <section class="section pricing-tables">
+    <div class="container-site">
+
+      <!-- Merlin Spells Section -->
+      <div class="pricing-panel" id="panel-spells">
+        <div class="pricing-intro">
+          <h2 class="pricing-section-title"><span class="text-gradient">Merlin Spells</span></h2>
+          <p class="pricing-description">
+            Our pay-as-you-go model is ideal for individual practices, offering flexibility and control over costs.
+            This model ensures that practices only pay for the services they use, making it a cost-effective solution
+            for practices of all sizes.
+          </p>
+        </div>
+
+        <!-- Desktop Table -->
+        <div class="pricing-table-desktop">
+          <div class="pricing-table">
+            <div class="pricing-header-row">
+              <div class="pricing-cell pricing-header">Service / Feature</div>
+              <div class="pricing-cell pricing-header">User</div>
+              <div class="pricing-cell pricing-header">Organisation</div>
+              <div class="pricing-cell pricing-header">Enterprise</div>
+            </div>
+            {spellsRows.map((row) => (
+              <div class={`pricing-row ${row.highlight ? 'pricing-row-highlight' : ''}`}>
+                <div class="pricing-cell pricing-service">{row.service}</div>
+                <div class="pricing-cell">{row.user}</div>
+                <div class="pricing-cell">{row.organisation}</div>
+                <div class="pricing-cell">{row.enterprise}</div>
+              </div>
+            ))}
+            <div class="pricing-row">
+              <div class="pricing-cell pricing-service">Minimum Requirement</div>
+              <div class="pricing-cell">None</div>
+              <div class="pricing-cell pricing-exception">5 users per subscription type*</div>
+              <div class="pricing-cell">Custom</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Cards -->
+        <div class="pricing-cards-mobile">
+          {spellsRows.map((row) => (
+            <div class={`pricing-card-mobile ${row.highlight ? 'pricing-card-highlight' : ''}`}>
+              <h3 class="pricing-card-title">{row.service}</h3>
+              <div class="pricing-card-tiers">
+                <div class="pricing-tier">
+                  <span class="tier-label">User</span>
+                  <span class="tier-value">{row.user}</span>
+                </div>
+                <div class="pricing-tier">
+                  <span class="tier-label">Organisation</span>
+                  <span class="tier-value">{row.organisation}</span>
+                </div>
+                <div class="pricing-tier">
+                  <span class="tier-label">Enterprise</span>
+                  <span class="tier-value">{row.enterprise}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+          <div class="pricing-card-mobile pricing-card-note">
+            <h3 class="pricing-card-title">Minimum Requirement</h3>
+            <div class="pricing-card-tiers">
+              <div class="pricing-tier">
+                <span class="tier-label">User</span>
+                <span class="tier-value">None</span>
+              </div>
+              <div class="pricing-tier">
+                <span class="tier-label">Organisation</span>
+                <span class="tier-value tier-exception">5 users per subscription type*</span>
+              </div>
+              <div class="pricing-tier">
+                <span class="tier-label">Enterprise</span>
+                <span class="tier-value">Custom</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Automated Workflows Section -->
+      <div class="pricing-panel" id="panel-workflows">
+        <div class="pricing-intro">
+          <h2 class="pricing-section-title"><span class="text-gradient">Automated Workflows</span></h2>
+          <p class="pricing-description">
+            Our pay-as-you-go model is ideal for individual practices, offering flexibility and control over costs.
+            This model ensures that practices only pay for the services they use, making it a cost-effective solution
+            for practices of all sizes.
+          </p>
+        </div>
+
+        <!-- Desktop Table -->
+        <div class="pricing-table-desktop">
+          <div class="pricing-table">
+            <div class="pricing-header-row">
+              <div class="pricing-cell pricing-header">Workflow Tool</div>
+              <div class="pricing-cell pricing-header">Description</div>
+              <div class="pricing-cell pricing-header">Pricing Model</div>
+              <div class="pricing-cell pricing-header">Price</div>
+            </div>
+            {workflowRows.map((row) => (
+              <div class="pricing-row">
+                <div class="pricing-cell pricing-service">{row.tool}</div>
+                <div class="pricing-cell">{row.description}</div>
+                <div class="pricing-cell">{row.model}</div>
+                <div class="pricing-cell" set:html={row.price.replace('\n', '<br/>')} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Mobile Cards -->
+        <div class="pricing-cards-mobile">
+          {workflowRows.map((row) => (
+            <div class="pricing-card-mobile">
+              <h3 class="pricing-card-title">{row.tool}</h3>
+              <div class="pricing-card-tiers">
+                <div class="pricing-tier">
+                  <span class="tier-label">Description</span>
+                  <span class="tier-value">{row.description}</span>
+                </div>
+                <div class="pricing-tier">
+                  <span class="tier-label">Pricing Model</span>
+                  <span class="tier-value">{row.model}</span>
+                </div>
+                <div class="pricing-tier">
+                  <span class="tier-label">Price</span>
+                  <span class="tier-value" set:html={row.price.replace('\n', '<br/>')} />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <CTASection />
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* ── Hero ── */
+  .pricing-hero {
+    padding: 6rem 0 4rem;
+  }
+
+  .hero-split {
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+
+  .hero-left {
+    flex: 1.2;
+  }
+
+  .hero-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--color-brand-black);
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+  }
+
+  /* ── Panels ── */
+  .pricing-panel {
+    display: block;
+    margin-bottom: 4rem;
+  }
+
+  .pricing-panel:last-child {
+    margin-bottom: 0;
+  }
+
+  .pricing-intro {
+    margin-bottom: 2.5rem;
+  }
+
+  .pricing-section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .pricing-description {
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+    max-width: 700px;
+  }
+
+  /* ── Desktop Table ── */
+  .pricing-table {
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+  }
+
+  .pricing-header-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    background: var(--color-brand-black);
+    color: #fff;
+  }
+
+  .pricing-header-row .pricing-header {
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  .pricing-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--color-brand-grey-border);
+    transition: background 0.2s;
+  }
+
+  .pricing-row:hover {
+    background: var(--color-brand-grey-bg-subtle);
+  }
+
+  .pricing-row:last-child {
+    border-bottom: none;
+  }
+
+  .pricing-row-highlight {
+    background: var(--color-brand-blue-light);
+  }
+
+  .pricing-row-highlight:hover {
+    background: rgba(44, 112, 235, 0.1);
+  }
+
+  .pricing-cell {
+    padding: 1rem 1.5rem;
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    display: flex;
+    align-items: center;
+  }
+
+  .pricing-service {
+    font-weight: 600;
+    color: var(--color-brand-black);
+  }
+
+  .pricing-exception {
+    color: var(--color-brand-red);
+    font-weight: 500;
+  }
+
+  /* ── Mobile Cards ── */
+  .pricing-cards-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .pricing-card-mobile {
+    background: #fff;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: 1.5rem;
+  }
+
+  .pricing-card-highlight {
+    border: 2px solid var(--color-brand-blue);
+    background: var(--color-brand-blue-light);
+  }
+
+  .pricing-card-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-brand-grey-border);
+  }
+
+  .pricing-card-tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .pricing-tier {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .tier-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-brand-grey-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
+    min-width: 100px;
+  }
+
+  .tier-value {
+    font-size: 0.9375rem;
+    color: var(--color-brand-black);
+    text-align: right;
+  }
+
+  .tier-exception {
+    color: var(--color-brand-red);
+    font-weight: 500;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 960px) {
+    .hero-split {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .pricing-hero {
+      padding: 4rem 0 3rem;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .pricing-table-desktop {
+      display: none;
+    }
+
+    .pricing-cards-mobile {
+      display: flex;
+    }
+  }
+</style>

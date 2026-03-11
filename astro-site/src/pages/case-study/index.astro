@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Case Studies" description="See how ApolloIQ's AI and automation solutions have transformed healthcare practices, reduced costs, and improved patient care.">
+  <Nav />
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container-site">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <h1 class="hero-title">
+            Real <span class="text-gradient">Success Stories</span> From ApolloIQ
+          </h1>
+        </div>
+        <div class="hero-right">
+          <p class="hero-subtitle">
+            See how ApolloIQ's AI and automation solutions have transformed healthcare practices, reduced costs, and improved patient care.
+          </p>
+          <a href={`${base}about`} class="btn-primary">Find out more</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-orb hero-orb--1"></div>
+    <div class="hero-orb hero-orb--2"></div>
+  </section>
+
+  <!-- Case Study Cards -->
+  <section class="section">
+    <div class="container-site">
+      <div class="case-studies-grid">
+        <a href={`${base}case-study/apolloiq-capitalising-on-ai`} class="case-card">
+          <div class="case-card-image">
+            <img
+              src={`${base}images/68e8f4f5579ff61729b7eec0_thumb-case-study-forestside.jpg`}
+              alt="Forestside Medical Practice"
+              loading="lazy"
+            />
+          </div>
+          <div class="case-card-body">
+            <h3 class="case-card-title">Forestside Medical Practice - Clinical Document Management Automation</h3>
+            <span class="case-card-link">Read Case Study &rarr;</span>
+          </div>
+        </a>
+
+        <a href={`${base}case-study/apolloiq-new-website`} class="case-card">
+          <div class="case-card-image">
+            <img
+              src={`${base}images/68e8f4ee5ab86aa5ce6bf4cc_thumb-case-study-taunton-vale.jpg`}
+              alt="Taunton Vale Healthcare"
+              loading="lazy"
+            />
+          </div>
+          <div class="case-card-body">
+            <h3 class="case-card-title">Taunton Vale Healthcare - Automated Pathology Filing</h3>
+            <span class="case-card-link">Read Case Study &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .page-hero {
+    position: relative;
+    padding: 7rem 0 5rem;
+    overflow: hidden;
+    background: linear-gradient(170deg, #fff 0%, rgba(44,112,235,0.03) 40%, rgba(0,195,147,0.04) 100%);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--color-brand-black);
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+  }
+  .hero-orb--1 {
+    width: 500px;
+    height: 500px;
+    background: rgba(44, 112, 235, 0.06);
+    top: -10%;
+    right: -5%;
+  }
+  .hero-orb--2 {
+    width: 400px;
+    height: 400px;
+    background: rgba(0, 195, 147, 0.05);
+    bottom: -20%;
+    left: -5%;
+  }
+
+  /* Case Study Cards */
+  .case-studies-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .case-card {
+    background: #fff;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.3s, transform 0.3s;
+    display: block;
+  }
+  .case-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+  }
+
+  .case-card-image {
+    height: 280px;
+    overflow: hidden;
+  }
+  .case-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  .case-card:hover .case-card-image img {
+    transform: scale(1.05);
+  }
+
+  .case-card-body {
+    padding: 1.75rem 2rem 2rem;
+  }
+
+  .case-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+
+  .case-card-link {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-brand-blue);
+  }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .case-studies-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page-hero {
+      padding: 5rem 0 3rem;
+    }
+    .hero-title {
+      font-size: 2rem;
+    }
+    .case-card-image {
+      height: 200px;
+    }
+  }
+</style>

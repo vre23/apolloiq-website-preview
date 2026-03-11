@@ -1,0 +1,689 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import CTASection from '../../../components/CTASection.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Clinical Document Management" description="Automate the processing of clinical documents in Optum - EmisWeb. Assign dates, code document types, generate titles, and file automatically.">
+  <Nav />
+
+  <!-- Hero -->
+  <section class="product-hero">
+    <div class="container-site">
+      <span class="product-badge">Automated Workflow</span>
+      <h1 class="product-hero-title">Clinical Document <span class="text-gradient">Management</span></h1>
+      <p class="product-subtitle">Automate the processing of clinical documents in Optum - EmisWeb. Assign dates, code document types, generate titles, and file -- all automatically.</p>
+      <a href={`${base}contact-us`} class="btn-primary">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="section cdm-problem-section">
+    <div class="container-site">
+      <div class="cdm-problem-box">
+        <span class="product-label">THE PROBLEM</span>
+        <h2 class="product-section-title">100 Letters a Day. 36,500 a Year. All Processed <span class="text-gradient">Manually.</span></h2>
+        <p class="product-body-text">
+          An average size GP practice with 10,000 patients receives 100 letters a day, totalling 36,500 letters a year. These include:
+        </p>
+        <ul class="cdm-doc-types">
+          <li>Referral letters</li>
+          <li>Hospital discharge summaries</li>
+          <li>Specialist clinic letters</li>
+          <li>111 Reports</li>
+          <li>A&E Reports</li>
+          <li>Investigation results</li>
+        </ul>
+        <p class="product-body-text"><strong>Each document requires manual coding, labelling, dating, and filing -- a time-consuming process prone to human error and delays.</strong></p>
+
+        <!-- Before Table -->
+        <div class="cdm-table-wrap">
+          <div class="cdm-table-title cdm-title-before">EmisWeb documents inbox before ApolloIQ</div>
+          <div class="cdm-table-scroll">
+            <table class="cdm-table">
+              <thead>
+                <tr>
+                  <th>Letter Date</th>
+                  <th>Patient</th>
+                  <th>Type</th>
+                  <th>Document Title</th>
+                  <th>Coded</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>01-Oct-2024</td><td>Bertie Bangers</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
+                <tr><td>01-Oct-2024</td><td>Penny Farthing</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
+                <tr><td>01-Oct-2024</td><td>Chester Cheddar</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
+                <tr><td>01-Oct-2024</td><td>Molly Muddle</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
+                <tr><td>01-Oct-2024</td><td>Nigel Nibbles</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
+                <tr><td>01-Oct-2024</td><td>Fiona Fishcake</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
+                <tr><td>01-Oct-2024</td><td>Graham Gravy</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
+                <tr><td>01-Oct-2024</td><td>Daisy Doodle</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
+                <tr><td>01-Oct-2024</td><td>Colin Crumpet</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
+                <tr><td>01-Oct-2024</td><td>Wendy Wobble</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Solution -->
+  <section class="section">
+    <div class="container-site">
+      <div class="product-split">
+        <div class="product-split-left">
+          <h2 class="product-section-title">The <span class="text-gradient">Solution</span></h2>
+          <p class="product-split-intro">
+            An intelligent system combining Robotic Process Automation (RPA) with a self-hosted AI language model to automate and enhance the processing of clinical documents.
+          </p>
+        </div>
+        <div class="product-split-right">
+          <ul class="product-feature-list">
+            <li>
+              <strong>Accurate Date Identification</strong>
+              <span>RPA extracts the correct letter date from each document.</span>
+            </li>
+            <li>
+              <strong>SnomedCT Coding</strong>
+              <span>Automatically matches document types with clinical codes.</span>
+            </li>
+            <li>
+              <strong>AI-Generated Titles</strong>
+              <span>Self-hosted language model creates precise, meaningful document titles.</span>
+            </li>
+            <li>
+              <strong>Secure & Private</strong>
+              <span>Operates within our own HSCN connection. Your data never leaves the network.</span>
+            </li>
+            <li>
+              <strong>Available 24/7-365</strong>
+              <span>Can process ~1,000 letters per day with no breaks needed.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Result -->
+  <section class="section cdm-result-section">
+    <div class="container-site">
+      <div class="cdm-result-box">
+        <span class="product-label">THE RESULT</span>
+        <h2 class="product-section-title">Every Document Coded, Titled, and Filed <span class="text-gradient">Automatically</span></h2>
+        <p class="product-body-text">
+          After ApolloIQ processes your inbox, every document has the correct date, a meaningful title generated by AI, and a proper SnomedCT code -- ready for clinical review.
+        </p>
+
+        <!-- After Table -->
+        <div class="cdm-table-wrap">
+          <div class="cdm-table-title cdm-title-after">EmisWeb documents inbox after ApolloIQ</div>
+          <div class="cdm-table-scroll">
+            <table class="cdm-table">
+              <thead>
+                <tr>
+                  <th>Letter Date</th>
+                  <th>Patient</th>
+                  <th>Specialty</th>
+                  <th>Document Title</th>
+                  <th>Coded</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>30-Sep-2024</td><td>Bertie Bangers</td><td>Discharge Summary</td><td>Accidental fall, Lower respiratory tract Infection, Pleural Effusion</td><td class="cdm-yes">Yes</td></tr>
+                <tr><td>30-Sep-2024</td><td>Penny Farthing</td><td>Gastroenterology</td><td>Barrett's Metaplasia</td><td class="cdm-yes">Yes</td></tr>
+                <tr><td>30-Sep-2024</td><td>Chester Cheddar</td><td>Endocrinology</td><td>Normal Calcium and Vitamin D Levels</td><td class="cdm-yes">Yes</td></tr>
+                <tr><td>27-Sep-2024</td><td>Molly Muddle</td><td>Gastroenterology</td><td>No concerning features found in oesophagus samples</td><td class="cdm-yes">Yes</td></tr>
+                <tr><td>01-Oct-2024</td><td>Nigel Nibbles</td><td>Urology</td><td>Overactive Bladder</td><td class="cdm-yes">Yes</td></tr>
+                <tr><td>26-Sep-2024</td><td>Fiona Fishcake</td><td>Rheumatology</td><td>Rheumatoid Nodule on MCP2</td><td class="cdm-yes">Yes</td></tr>
+                <tr><td>30-Sep-2024</td><td>Graham Gravy</td><td>Neurology</td><td>Seizure Disorder</td><td class="cdm-yes">Yes</td></tr>
+                <tr><td>24-Sep-2024</td><td>Daisy Doodle</td><td>Medical Oncology</td><td>75 mm grade 3 leiomyosarcoma of the colonic splenic flexure</td><td class="cdm-yes">Yes</td></tr>
+                <tr><td>26-Sep-2024</td><td>Colin Crumpet</td><td>Obstetrics and Gynaecology</td><td>Incomplete Miscarriage Management</td><td class="cdm-yes">Yes</td></tr>
+                <tr><td>18-Sep-2024</td><td>Wendy Wobble</td><td>Seen in Maxillofacial Unit</td><td>Medication-Related Osteonecrosis of the Jaw</td><td class="cdm-yes">Yes</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Case -->
+  <section class="section cdm-business-section">
+    <div class="container-site">
+      <div class="cdm-business-box">
+        <span class="product-label">BUSINESS CASE</span>
+        <h2 class="product-section-title">The Numbers Speak for <span class="text-gradient">Themselves</span></h2>
+        <p class="product-body-text">
+          Based on a GP practice with 10,000 patients, 100 letters per day, and admin staff salary of &pound;22,383/year.
+        </p>
+
+        <!-- Stats -->
+        <div class="cdm-stat-row">
+          <div class="cdm-stat">
+            <div class="cdm-stat-num cdm-stat-blue">866</div>
+            <div class="cdm-stat-label">hours/year spent<br/>processing manually</div>
+          </div>
+          <div class="cdm-stat">
+            <div class="cdm-stat-num cdm-stat-blue">&pound;0.53</div>
+            <div class="cdm-stat-label">cost per document<br/>with manual processing</div>
+          </div>
+          <div class="cdm-stat">
+            <div class="cdm-stat-num cdm-stat-green">&pound;0.08</div>
+            <div class="cdm-stat-label">cost per document<br/>with ApolloIQ</div>
+          </div>
+          <div class="cdm-stat">
+            <div class="cdm-stat-num cdm-stat-green">24/7</div>
+            <div class="cdm-stat-label">availability<br/>365 days a year</div>
+          </div>
+        </div>
+
+        <h3 class="cdm-cost-heading">Manual Processing Costs</h3>
+        <ul class="cdm-cost-list">
+          <li>Direct labour: 866 hrs x &pound;11.48/hr = <strong>&pound;9,950</strong></li>
+          <li>Employer NI contribution: <strong>&pound;887</strong></li>
+          <li>Employer pension contribution: <strong>&pound;1,516</strong></li>
+          <li>Temporary staff/holiday cover: <strong>&pound;1,500</strong></li>
+          <li>Total annual manual cost: <strong>&pound;13,852</strong></li>
+        </ul>
+
+        <h3 class="cdm-cost-heading" style="margin-top: 2.5rem;">Automated Processing with ApolloIQ</h3>
+        <ul class="cdm-cost-list">
+          <li>Cost: &pound;0.30 per patient per year</li>
+          <li>10,000 patients x &pound;0.30 = <strong>&pound;3,000/year</strong></li>
+          <li>Processes 36,500 letters/year (365 days) vs 26,000 manually (230 working days)</li>
+          <li>No NI, pension, holiday, sick leave, recruitment, or training costs</li>
+        </ul>
+
+        <div class="cdm-savings-bar">
+          <div class="cdm-savings-label">Annual Savings with ApolloIQ</div>
+          <div class="cdm-savings-num">&pound;16,345</div>
+          <div class="cdm-savings-sub">Automation is 6x cheaper than manual processing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why You'll Love It -->
+  <section class="section">
+    <div class="container-site">
+      <div class="product-split">
+        <div class="product-split-left">
+          <h2 class="product-section-title">Why You'll <span class="text-gradient">Love</span> It</h2>
+          <p class="product-split-intro">
+            Our Clinical Document Management system integrates seamlessly into your practice's existing workflow. Here's why you'll love it:
+          </p>
+        </div>
+        <div class="product-split-right">
+          <ul class="product-feature-list">
+            <li>
+              <strong>Zero Delays</strong>
+              <span>Eliminates mistakes, delays, and queues of unprocessed letters.</span>
+            </li>
+            <li>
+              <strong>Better Prioritisation</strong>
+              <span>Administrative teams can prioritise tasks effectively.</span>
+            </li>
+            <li>
+              <strong>Enhanced Patient Care</strong>
+              <span>Quicker turnaround times and enhanced patient care.</span>
+            </li>
+            <li>
+              <strong>Always Available</strong>
+              <span>Available 24/7-365 -- no breaks, no holidays, no sick leave.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section cdm-pricing-section">
+    <div class="container-site">
+      <div class="cdm-pricing-wrap">
+        <span class="product-label">PRICING</span>
+        <h2 class="product-section-title" style="text-align: center;">Simple, Transparent <span class="text-gradient">Pricing</span></h2>
+        <p class="product-body-text" style="text-align: center; max-width: 600px; margin: 0 auto 2.5rem;">
+          No hidden fees. No complex contracts. Just straightforward pricing that saves you thousands.
+        </p>
+
+        <div class="cdm-pricing-card">
+          <div class="cdm-pricing-label">Per Patient Per Year</div>
+          <div class="cdm-pricing-price">&pound;0.30</div>
+          <div class="cdm-pricing-billed">billed annually</div>
+          <div class="cdm-pricing-calc">
+            <div class="cdm-pricing-calc-row">
+              <span><strong>Example:</strong> 10,000 patients x &pound;0.30</span>
+              <span class="cdm-pricing-calc-val">&pound;3,000/year</span>
+            </div>
+            <div class="cdm-pricing-calc-row">
+              <span>That's just</span>
+              <span class="cdm-pricing-calc-val">&pound;250/month</span>
+            </div>
+          </div>
+          <ul class="cdm-check-list">
+            <li>6-month initial contract</li>
+            <li>Then flexible month-by-month</li>
+            <li>No setup fees</li>
+            <li>Includes full support</li>
+          </ul>
+          <a href={`${base}contact-us`} class="btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+        </div>
+
+        <div class="cdm-savings-bar" style="max-width: 480px; margin: 1.5rem auto 0;">
+          <div class="cdm-savings-sub">Save at least &pound;16,345/year vs manual processing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .product-hero {
+    padding: 5rem 0 3rem;
+    background: linear-gradient(135deg, #f8faff, #f0f7ff 50%, #f5fdf9);
+    text-align: center;
+  }
+
+  .product-hero-title {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .product-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-brand-grey-muted);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+
+  .product-badge {
+    display: inline-block;
+    padding: 0.375rem 1rem;
+    background: rgba(44, 112, 235, 0.08);
+    color: var(--color-brand-blue);
+    border-radius: 20px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .product-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--color-brand-blue);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .product-section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 1.25rem;
+  }
+
+  .product-body-text {
+    font-size: 1.0625rem;
+    color: var(--color-brand-grey);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  /* Split layout */
+  .product-split {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+  }
+
+  .product-split-left {
+    flex: 1;
+    min-width: 260px;
+  }
+
+  .product-split-right {
+    flex: 1.2;
+    min-width: 300px;
+  }
+
+  .product-split-intro {
+    font-size: 1.0625rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+  }
+
+  .product-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .product-feature-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--color-brand-blue);
+  }
+
+  .product-feature-list li strong {
+    font-size: 1.0625rem;
+    color: var(--color-brand-black);
+  }
+
+  .product-feature-list li span {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+  }
+
+  /* Problem section */
+  .cdm-problem-section,
+  .cdm-result-section,
+  .cdm-business-section {
+    background: #f9fafb;
+  }
+
+  .cdm-problem-box,
+  .cdm-result-box,
+  .cdm-business-box {
+    max-width: 900px;
+  }
+
+  .cdm-doc-types {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .cdm-doc-types li {
+    padding: 0.375rem 1rem;
+    background: rgba(44, 112, 235, 0.06);
+    border-radius: 8px;
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+  }
+
+  /* Tables */
+  .cdm-table-wrap {
+    border-radius: 16px;
+    padding: 1.5rem;
+    background: #fff;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+    margin-top: 1.5rem;
+  }
+
+  .cdm-table-scroll {
+    overflow-x: auto;
+  }
+
+  .cdm-table-title {
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    margin-bottom: 1rem;
+  }
+
+  .cdm-title-before {
+    color: #e74c6f;
+  }
+
+  .cdm-title-after {
+    color: var(--color-brand-green);
+  }
+
+  .cdm-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+
+  .cdm-table thead tr {
+    border-bottom: 2px solid var(--color-brand-blue);
+  }
+
+  .cdm-table th {
+    text-align: left;
+    padding: 0.625rem 0.875rem;
+    color: var(--color-brand-blue);
+    font-weight: 600;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+
+  .cdm-table td {
+    padding: 0.625rem 0.875rem;
+    border-bottom: 1px solid #eaecf0;
+  }
+
+  .cdm-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .cdm-dim { color: #98a2b3; }
+  .cdm-no { color: #e74c6f; font-weight: 600; }
+  .cdm-yes { color: var(--color-brand-green); font-weight: 600; }
+
+  /* Stats */
+  .cdm-stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.25rem;
+    margin: 1.5rem 0 2rem;
+  }
+
+  .cdm-stat {
+    text-align: center;
+    border-radius: 16px;
+    padding: 1.5rem 1rem;
+    background: #fff;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  .cdm-stat-num {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.375rem;
+  }
+
+  .cdm-stat-blue { color: var(--color-brand-blue); }
+  .cdm-stat-green { color: var(--color-brand-green); }
+
+  .cdm-stat-label {
+    font-size: 0.8125rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.4;
+  }
+
+  .cdm-cost-heading {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 0.75rem;
+  }
+
+  .cdm-cost-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cdm-cost-list li {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .cdm-cost-list li::before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+    color: var(--color-brand-blue);
+    font-weight: 700;
+  }
+
+  .cdm-cost-list li strong {
+    color: var(--color-brand-black);
+  }
+
+  /* Savings bar */
+  .cdm-savings-bar {
+    text-align: center;
+    padding: 1.75rem;
+    border-radius: 16px;
+    color: #fff;
+    background: linear-gradient(274deg, #00c393, #04bb9c 37%, #10a5b3 60%, #2381d9 88%, #2c70eb);
+    margin-top: 2.5rem;
+  }
+
+  .cdm-savings-label {
+    font-size: 1.0625rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .cdm-savings-num {
+    font-size: 2.75rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.375rem;
+  }
+
+  .cdm-savings-sub {
+    font-size: 1.0625rem;
+    font-weight: 500;
+  }
+
+  /* Pricing */
+  .cdm-pricing-section {
+    background: #f9fafb;
+  }
+
+  .cdm-pricing-wrap {
+    text-align: center;
+  }
+
+  .cdm-pricing-card {
+    max-width: 480px;
+    margin: 0 auto 1.5rem;
+    border-radius: 20px;
+    padding: 2.5rem;
+    background: #fff;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .cdm-pricing-label {
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-brand-grey-muted);
+    margin-bottom: 0.25rem;
+  }
+
+  .cdm-pricing-price {
+    font-size: 3.25rem;
+    font-weight: 700;
+    color: var(--color-brand-blue);
+    line-height: 1;
+  }
+
+  .cdm-pricing-billed {
+    font-size: 0.875rem;
+    color: var(--color-brand-grey-muted);
+    margin-top: 0.375rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cdm-pricing-calc {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  .cdm-pricing-calc-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    margin-bottom: 0.25rem;
+  }
+
+  .cdm-pricing-calc-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .cdm-pricing-calc-val {
+    font-weight: 600;
+    color: var(--color-brand-blue);
+  }
+
+  .cdm-check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    text-align: left;
+  }
+
+  .cdm-check-list li {
+    padding: 0.375rem 0 0.375rem 1.5rem;
+    position: relative;
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+  }
+
+  .cdm-check-list li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    color: var(--color-brand-green);
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    .product-hero-title {
+      font-size: 2.25rem;
+    }
+    .product-split {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .cdm-stat-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cdm-stat-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

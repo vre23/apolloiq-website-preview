@@ -1,0 +1,350 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import CTASection from '../../../components/CTASection.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="Custom Software Solutions"
+  description="Bespoke healthcare software built around your workflow. Custom-built digital tools that fit your operations, designed by clinicians for clinicians."
+>
+  <Nav />
+
+  <!-- Hero -->
+  <section class="svc-hero">
+    <div class="container-site">
+      <div class="svc-hero-grid">
+        <div class="svc-hero-left">
+          <h1 class="svc-hero-title">
+            Custom Software <span class="text-gradient">Solutions</span>
+          </h1>
+        </div>
+        <div class="svc-hero-right">
+          <p class="svc-hero-subtitle">Bespoke Healthcare Software -- Built Around Your Workflow</p>
+          <a href={`${base}contact-us`} class="btn-primary">Contact Us</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-orb hero-orb--1"></div>
+    <div class="hero-orb hero-orb--2"></div>
+  </section>
+
+  <!-- Overview -->
+  <section class="svc-overview-section">
+    <div class="container-narrow">
+      <div class="svc-overview-card">
+        <span class="svc-tag">OVERVIEW</span>
+        <h2 class="svc-overview-title">What is Custom Software Solutions?</h2>
+        <p class="svc-overview-text">
+          Whether you're a GP practice, dental clinic, private hospital, or NHS trust, our
+          custom-built software solutions are designed to solve real-world clinical and administrative
+          challenges. At ApolloIQ, we don't offer generic platforms -- we create tailor-made digital
+          tools that fit your operations, not the other way around.
+        </p>
+        <a href={`${base}contact-us`} class="btn-primary">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Benefits -->
+  <section class="section">
+    <div class="container-site">
+      <div class="svc-benefits-grid">
+        <div class="svc-benefits-left">
+          <h2 class="svc-section-title">Key & <span class="text-gradient">Benefits</span></h2>
+          <p class="svc-benefits-subtitle">
+            4 key features that make our Custom Software Solutions essential for your practice.
+          </p>
+        </div>
+        <div class="svc-benefits-right">
+          <ul class="svc-benefits-list">
+            <li>
+              <strong>Fully tailored to your team's real needs</strong>
+            </li>
+            <li>
+              <strong>Seamless integration with existing systems</strong>
+            </li>
+            <li>
+              <strong>Improves efficiency and reduces manual work</strong>
+            </li>
+            <li>
+              <strong>Built with clinical safety, security, and compliance in mind</strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section class="section" style="background: var(--color-brand-grey-bg-subtle);">
+    <div class="container-narrow">
+      <div class="svc-why-section">
+        <span class="svc-tag">WHY US?</span>
+        <h2 class="svc-why-title">Why Choose ApolloIQ's Custom Software Solutions?</h2>
+        <p class="svc-why-text">
+          At ApolloIQ, we combine deep healthcare expertise with technical excellence. Our software
+          is designed by clinicians, for clinicians -- ensuring every click adds value, not friction.
+          We deliver not just code, but solutions that improve how care is delivered, managed, and experienced.
+        </p>
+        <div class="svc-process-grid">
+          <div class="svc-process-card">
+            <span class="svc-process-number">01</span>
+            <h3 class="svc-process-title">Needs Assessment</h3>
+            <p>We collaborate with your team to understand your specific workflow, pain points, and goals.</p>
+          </div>
+          <div class="svc-process-card">
+            <span class="svc-process-number">02</span>
+            <h3 class="svc-process-title">Software Development</h3>
+            <p>Our developers build robust, scalable, and user-friendly software using the latest technologies.</p>
+          </div>
+          <div class="svc-process-card">
+            <span class="svc-process-number">03</span>
+            <h3 class="svc-process-title">System Integration</h3>
+            <p>We ensure full compatibility with your existing systems, including EHRs, prescribing tools, and clinical portals.</p>
+          </div>
+          <div class="svc-process-card">
+            <span class="svc-process-number">04</span>
+            <h3 class="svc-process-title">Training & Support</h3>
+            <p>Your staff receives hands-on training and continued support for a smooth rollout and long-term success.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .svc-hero {
+    position: relative;
+    padding: 7rem 0 5rem;
+    overflow: hidden;
+    background: linear-gradient(170deg, #fff 0%, rgba(44,112,235,0.03) 40%, rgba(0,195,147,0.04) 100%);
+  }
+
+  .svc-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .svc-hero-title {
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--color-brand-black);
+  }
+
+  .svc-hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+  }
+  .hero-orb--1 {
+    width: 500px;
+    height: 500px;
+    background: rgba(44, 112, 235, 0.06);
+    top: -10%;
+    right: -5%;
+  }
+  .hero-orb--2 {
+    width: 400px;
+    height: 400px;
+    background: rgba(0, 195, 147, 0.05);
+    bottom: -20%;
+    left: -5%;
+  }
+
+  /* Overview */
+  .svc-overview-section {
+    padding: 5rem 0;
+    background: var(--color-brand-grey-bg-subtle);
+  }
+
+  .svc-overview-card {
+    background: #fff;
+    border-radius: var(--radius-card);
+    padding: 3rem;
+    box-shadow: var(--shadow-card);
+  }
+
+  .svc-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-brand-blue);
+    margin-bottom: 1.25rem;
+  }
+
+  .svc-overview-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 1.25rem;
+  }
+
+  .svc-overview-text {
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    max-width: 700px;
+  }
+
+  /* Benefits */
+  .svc-benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .svc-section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 1rem;
+  }
+
+  .svc-benefits-subtitle {
+    font-size: 1.0625rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.6;
+  }
+
+  .svc-benefits-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .svc-benefits-list li {
+    position: relative;
+    padding-left: 1.75rem;
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+  }
+  .svc-benefits-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-brand-blue), var(--color-brand-green));
+  }
+
+  /* Why Us */
+  .svc-why-section {
+    text-align: center;
+  }
+
+  .svc-why-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 1.25rem;
+  }
+
+  .svc-why-text {
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Process Grid */
+  .svc-process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    text-align: left;
+  }
+
+  .svc-process-card {
+    background: #fff;
+    border-radius: var(--radius-card);
+    padding: 2rem 1.5rem;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .svc-process-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+  }
+
+  .svc-process-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-brand-blue);
+    opacity: 0.15;
+    display: block;
+    margin-bottom: 0.75rem;
+    line-height: 1;
+  }
+
+  .svc-process-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 0.5rem;
+  }
+
+  .svc-process-card p {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.6;
+  }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .svc-hero-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .svc-benefits-grid {
+      grid-template-columns: 1fr;
+    }
+    .svc-process-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .svc-hero {
+      padding: 5rem 0 3rem;
+    }
+    .svc-hero-title {
+      font-size: 2rem;
+    }
+    .svc-overview-card {
+      padding: 2rem 1.5rem;
+    }
+    .svc-process-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

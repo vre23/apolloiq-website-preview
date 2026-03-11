@@ -1,0 +1,460 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<header class="nav-header" id="site-nav">
+  <div class="container-site">
+    <div class="nav-inner">
+      <!-- Logo -->
+      <a href={base} class="nav-logo" aria-label="ApolloIQ Home">
+        <img
+          src={`${base}images/685dc40ff887e05cecfae33e_aiq_logo-gradient.png`}
+          alt="ApolloIQ"
+          width="160"
+          height="auto"
+          loading="eager"
+        />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-desktop" aria-label="Main navigation">
+        <a href={base} class="nav-link">Home</a>
+
+        <!-- Merlin Dropdown -->
+        <div class="nav-dropdown">
+          <a href={`${base}products`} class="nav-link nav-dropdown-trigger">
+            Merlin
+            <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-mega">
+            <div class="nav-mega-inner">
+              <div class="nav-mega-col">
+                <h4 class="nav-mega-heading">Spells</h4>
+                <a href={`${base}products/blood-pressure-average-calculator`} class="nav-mega-link">Blood Pressure Scroll</a>
+                <a href={`${base}products/locate-elixir`} class="nav-mega-link">Locate Elixir</a>
+                <a href={`${base}products/scribecraft`} class="nav-mega-link">ScribeCraft</a>
+                <a href="#" class="nav-mega-link nav-mega-link--disabled">Knowledge Library</a>
+              </div>
+              <div class="nav-mega-col">
+                <h4 class="nav-mega-heading">Automated Workflows</h4>
+                <a href={`${base}products/pathology-automation`} class="nav-mega-link">Pathology Automation</a>
+                <a href={`${base}products/clinical-document-management`} class="nav-mega-link">Clinical Document Management</a>
+                <a href={`${base}products/clinical-calculator-qrisk3`} class="nav-mega-link">Clinical Calculations QRisk3</a>
+                <a href={`${base}products/gp-list-reallocation`} class="nav-mega-link">GP List Reallocation</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services Dropdown -->
+        <div class="nav-dropdown">
+          <button class="nav-link nav-dropdown-trigger" type="button">
+            Services
+            <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-mega nav-mega--narrow">
+            <div class="nav-mega-inner">
+              <div class="nav-mega-col">
+                <a href={`${base}services/custom-automation-processes-copy`} class="nav-mega-link">Custom Automation Processes</a>
+                <a href={`${base}services/custom-software-solutions`} class="nav-mega-link">Custom Software Solutions</a>
+                <a href={`${base}services/digitalisation-consultancy`} class="nav-mega-link">Digitalisation Consultancy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href={`${base}pricing`} class="nav-link">Pricing</a>
+        <a href={`${base}case-study`} class="nav-link">Case Studies</a>
+        <a href={`${base}about`} class="nav-link">About Us</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <a href="https://merlin.apolloiq.co.uk/home" class="btn-nav nav-cta" target="_blank" rel="noopener">
+        Go to Merlin
+        <img src={`${base}images/685dc40ff887e05cecfae344_logo_Merlin_color.svg`} alt="" width="36" height="auto" />
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="nav-mobile-toggle" id="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Overlay -->
+<div class="nav-mobile-overlay" id="nav-overlay"></div>
+
+<!-- Mobile Drawer -->
+<aside class="nav-mobile-drawer" id="nav-drawer" aria-label="Mobile navigation">
+  <div class="nav-drawer-header">
+    <img src={`${base}images/685dc40ff887e05cecfae33e_aiq_logo-gradient.png`} alt="ApolloIQ" width="130" />
+    <button class="nav-drawer-close" id="nav-close" type="button" aria-label="Close navigation">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav class="nav-drawer-links">
+    <a href={base} class="nav-drawer-link">Home</a>
+
+    <details class="nav-drawer-group">
+      <summary class="nav-drawer-link">Merlin <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <div class="nav-drawer-sub">
+        <span class="nav-drawer-sub-heading">Spells</span>
+        <a href={`${base}products/blood-pressure-average-calculator`}>Blood Pressure Scroll</a>
+        <a href={`${base}products/locate-elixir`}>Locate Elixir</a>
+        <a href={`${base}products/scribecraft`}>ScribeCraft</a>
+        <span class="nav-drawer-sub-heading">Automated Workflows</span>
+        <a href={`${base}products/pathology-automation`}>Pathology Automation</a>
+        <a href={`${base}products/clinical-document-management`}>Clinical Document Management</a>
+        <a href={`${base}products/clinical-calculator-qrisk3`}>Clinical Calculations QRisk3</a>
+        <a href={`${base}products/gp-list-reallocation`}>GP List Reallocation</a>
+      </div>
+    </details>
+
+    <details class="nav-drawer-group">
+      <summary class="nav-drawer-link">Services <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <div class="nav-drawer-sub">
+        <a href={`${base}services/custom-automation-processes-copy`}>Custom Automation Processes</a>
+        <a href={`${base}services/custom-software-solutions`}>Custom Software Solutions</a>
+        <a href={`${base}services/digitalisation-consultancy`}>Digitalisation Consultancy</a>
+      </div>
+    </details>
+
+    <a href={`${base}pricing`} class="nav-drawer-link">Pricing</a>
+    <a href={`${base}case-study`} class="nav-drawer-link">Case Studies</a>
+    <a href={`${base}about`} class="nav-drawer-link">About Us</a>
+  </nav>
+  <div class="nav-drawer-footer">
+    <a href="https://merlin.apolloiq.co.uk/home" class="btn-primary w-full text-center" target="_blank" rel="noopener">
+      Go to Merlin
+    </a>
+  </div>
+</aside>
+
+<style>
+  /* ── Header ── */
+  .nav-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .nav-header.scrolled {
+    border-bottom-color: var(--color-brand-grey-border);
+    box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    gap: 2rem;
+  }
+
+  .nav-logo img { height: 32px; width: auto; }
+
+  /* ── Desktop Nav ── */
+  .nav-desktop {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0.5rem 0.875rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-brand-grey);
+    border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
+    white-space: nowrap;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: var(--font-roboto);
+  }
+  .nav-link:hover {
+    color: var(--color-brand-blue);
+    background: var(--color-brand-blue-light);
+  }
+
+  .nav-chevron {
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+  }
+
+  .nav-cta {
+    flex-shrink: 0;
+  }
+
+  /* ── Dropdown ── */
+  .nav-dropdown {
+    position: relative;
+  }
+
+  .nav-mega {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 200;
+    padding-top: 8px;
+  }
+
+  .nav-dropdown:hover > .nav-mega,
+  .nav-dropdown:focus-within > .nav-mega {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .nav-dropdown:hover .nav-chevron {
+    transform: rotate(180deg);
+  }
+
+  .nav-mega-inner {
+    display: flex;
+    gap: 2rem;
+    background: #fff;
+    border: 1px solid var(--color-brand-grey-border);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+    min-width: 420px;
+  }
+
+  .nav-mega--narrow .nav-mega-inner {
+    min-width: 280px;
+  }
+
+  .nav-mega-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 200px;
+  }
+
+  .nav-mega-heading {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-brand-blue);
+    margin-bottom: 0.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .nav-mega-link {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--color-brand-black);
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-mega-link:hover {
+    background: var(--color-brand-blue-light);
+    color: var(--color-brand-blue);
+  }
+  .nav-mega-link--disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  /* ── Mobile Toggle ── */
+  .nav-mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  .nav-mobile-toggle:hover { background: var(--color-brand-grey-bg); }
+
+  .hamburger-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--color-brand-black);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  /* ── Mobile Drawer ── */
+  .nav-mobile-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(4px);
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .nav-mobile-overlay.active {
+    display: block;
+    opacity: 1;
+  }
+
+  .nav-mobile-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(320px, 85vw);
+    background: #fff;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: -8px 0 32px rgba(0,0,0,0.1);
+  }
+  .nav-mobile-drawer.open {
+    transform: translateX(0);
+  }
+
+  .nav-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--color-brand-grey-border);
+  }
+  .nav-drawer-header img { height: 28px; width: auto; }
+  .nav-drawer-close {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    border-radius: 8px;
+    color: var(--color-brand-grey);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-drawer-close:hover {
+    background: var(--color-brand-grey-bg);
+    color: var(--color-brand-black);
+  }
+
+  .nav-drawer-links {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem 0;
+  }
+
+  .nav-drawer-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-brand-black);
+    transition: background 0.2s;
+    cursor: pointer;
+    list-style: none;
+  }
+  .nav-drawer-link:hover { background: var(--color-brand-grey-bg-subtle); }
+
+  .nav-drawer-group summary { list-style: none; }
+  .nav-drawer-group summary::-webkit-details-marker { display: none; }
+  .nav-drawer-group[open] .nav-chevron { transform: rotate(180deg); }
+
+  .nav-drawer-sub {
+    display: flex;
+    flex-direction: column;
+    padding: 0.25rem 0 0.5rem;
+  }
+  .nav-drawer-sub a {
+    padding: 0.5rem 1.25rem 0.5rem 2.5rem;
+    font-size: 0.875rem;
+    color: var(--color-brand-grey);
+    transition: color 0.2s, background 0.2s;
+  }
+  .nav-drawer-sub a:hover {
+    color: var(--color-brand-blue);
+    background: var(--color-brand-blue-light);
+  }
+  .nav-drawer-sub-heading {
+    display: block;
+    padding: 0.5rem 1.25rem 0.25rem 2.5rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-brand-blue);
+  }
+
+  .nav-drawer-footer {
+    padding: 1rem 1.25rem;
+    border-top: 1px solid var(--color-brand-grey-border);
+  }
+
+  .w-full { width: 100%; }
+
+  /* ── Responsive ── */
+  @media (max-width: 960px) {
+    .nav-desktop { display: none; }
+    .nav-cta { display: none; }
+    .nav-mobile-toggle { display: flex; }
+  }
+</style>
+
+<script>
+  // Scroll behavior - add shadow on scroll
+  const nav = document.getElementById('site-nav');
+  window.addEventListener('scroll', () => {
+    nav?.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
+  // Mobile menu toggle
+  const toggle = document.getElementById('nav-toggle');
+  const drawer = document.getElementById('nav-drawer');
+  const overlay = document.getElementById('nav-overlay');
+  const close = document.getElementById('nav-close');
+
+  function openMenu() {
+    drawer?.classList.add('open');
+    overlay?.classList.add('active');
+    toggle?.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    drawer?.classList.remove('open');
+    overlay?.classList.remove('active');
+    toggle?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  toggle?.addEventListener('click', openMenu);
+  close?.addEventListener('click', closeMenu);
+  overlay?.addEventListener('click', closeMenu);
+</script>
