@@ -13,7 +13,10 @@ const base = import.meta.env.BASE_URL;
   <section class="product-hero">
     <div class="container-site">
       <span class="product-badge">Spell</span>
-      <h1 class="product-hero-title">Blood Pressure <span class="text-gradient">Scroll</span></h1>
+      <div class="product-hero-title-row">
+        <img src={`${base}images/icon-blood-pressure.svg`} alt="" class="product-hero-icon" />
+        <h1 class="product-hero-title">Blood Pressure <span class="text-gradient">Scroll</span></h1>
+      </div>
       <p class="product-subtitle">Effortless blood pressure data extraction from handwritten submissions</p>
       <a href={`${base}contact-us`} class="btn-primary">Activate Spell</a>
     </div>
@@ -125,6 +128,96 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
+  <!-- Clinical Safety -->
+  <section class="section bp-safety-section">
+    <div class="container-site">
+      <span class="product-label">DCB 0129 COMPLIANT</span>
+      <h2 class="product-section-title">Clinical Safety & <span class="text-gradient">Risk Management</span></h2>
+      <p class="product-body-text" style="max-width: 750px;">
+        Blood Pressure Scroll has been developed in accordance with <strong>DCB 0129</strong> — the NHS standard for Clinical Risk Management in the manufacture of Health IT Systems. A formal Clinical Safety Case Report and Hazard Log have been produced and approved by our Clinical Safety Officer.
+      </p>
+
+      <div class="bp-safety-statement">
+        <svg class="bp-safety-shield" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div>
+          <h3>Safety Statement</h3>
+          <p>The clinical benefits of this system — primarily the mitigation of high-risk manual transcription and calculation errors currently performed by staff — far outweigh the identified residual clinical risks. All residual risks have been reduced <strong>As Low As Reasonably Practicable (ALARP)</strong> and are deemed acceptable.</p>
+        </div>
+      </div>
+
+      <h3 class="bp-hazard-title">Identified Hazards & Controls</h3>
+      <p class="product-body-text" style="max-width: 750px;">
+        The following hazards have been formally identified, assessed, and mitigated with technical and procedural controls.
+      </p>
+
+      <div class="bp-hazard-grid">
+        <div class="bp-hazard-card">
+          <div class="bp-hazard-ref">H-04</div>
+          <div class="bp-hazard-content">
+            <strong class="bp-hazard-risk">Patient Misattribution</strong>
+            <p class="bp-hazard-desc">The system does not link to your EPR's patient record. Uploading a document or transferring data to the wrong patient context can cause significant harm.</p>
+            <div class="bp-hazard-control">
+              <span class="bp-control-label">Control:</span>
+              <span>The user is 100% responsible for ensuring the correct patient is selected in the main clinical system (e.g., EMIS/SystmOne) before uploading or transferring data.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bp-hazard-card">
+          <div class="bp-hazard-ref">H-01 / H-05</div>
+          <div class="bp-hazard-content">
+            <strong class="bp-hazard-risk">Incorrect AI Extraction / Automation Bias</strong>
+            <p class="bp-hazard-desc">The AI may misread a value (e.g., read "180" as "130"). Relying on the AI without checking can lead to missed diagnoses.</p>
+            <div class="bp-hazard-control">
+              <span class="bp-control-label">Control:</span>
+              <span>Source document displayed side-by-side with extracted data. Users must manually compare every value against the source before confirming. <strong>Do not trust the AI blindly.</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bp-hazard-card">
+          <div class="bp-hazard-ref">H-02</div>
+          <div class="bp-hazard-content">
+            <strong class="bp-hazard-risk">Missed AI Extraction (False Negative)</strong>
+            <p class="bp-hazard-desc">The AI may fail to extract a reading (e.g., a single very high value), causing the calculated average to be incorrect and misleading.</p>
+            <div class="bp-hazard-control">
+              <span class="bp-control-label">Control:</span>
+              <span>Users must visually scan the entire source document. If a reading is missing, use the "Add New Reading" button to enter it manually.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bp-hazard-card">
+          <div class="bp-hazard-ref">H-03</div>
+          <div class="bp-hazard-content">
+            <strong class="bp-hazard-risk">Calculation Accuracy</strong>
+            <p class="bp-hazard-desc">The calculated average is only as accurate as the data that has been verified by the user.</p>
+            <div class="bp-hazard-control">
+              <span class="bp-control-label">Control:</span>
+              <span>Rigorous unit testing and validation of calculation logic. Ensure all values are correct and present before using the calculated average.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bp-hazard-card">
+          <div class="bp-hazard-ref">H-06</div>
+          <div class="bp-hazard-content">
+            <strong class="bp-hazard-risk">System Unavailability</strong>
+            <p class="bp-hazard-desc">The tool is web-based and requires internet connectivity. It is not intended for emergency use.</p>
+            <div class="bp-hazard-control">
+              <span class="bp-control-label">Control:</span>
+              <span>Practices must maintain a non-digital (manual) backup process for receiving and processing blood pressure readings during downtime.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bp-disclaimer-box">
+        <p><strong>In-App Disclaimer:</strong> "It is the full responsibility of the user to verify the accuracy of the extracted data before making any clinical decisions."</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Pricing -->
   <section class="section product-pricing-section">
     <div class="container-site">
@@ -193,14 +286,29 @@ const base = import.meta.env.BASE_URL;
 <style>
   .product-hero {
     padding: 5rem 0 3rem;
-    background: linear-gradient(135deg, #f8faff, #f0f7ff 50%, #f5fdf9);
+    background: linear-gradient(175deg, #ffffff 0%, #f0f4fb 40%, #eef8f5 70%, #f5f7fa 100%);
     text-align: center;
+  }
+
+  .product-hero-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .product-hero-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
   }
 
   .product-hero-title {
     font-size: 3rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   .product-subtitle {
@@ -215,7 +323,7 @@ const base = import.meta.env.BASE_URL;
     padding: 0.375rem 1rem;
     background: rgba(44, 112, 235, 0.08);
     color: var(--color-brand-blue);
-    border-radius: 20px;
+    border-radius: 16px;
     font-size: 0.8125rem;
     font-weight: 500;
     margin-bottom: 1rem;
@@ -224,7 +332,7 @@ const base = import.meta.env.BASE_URL;
   .product-label {
     display: inline-block;
     font-size: 0.8125rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.08em;
     color: var(--color-brand-blue);
     text-transform: uppercase;
@@ -233,7 +341,8 @@ const base = import.meta.env.BASE_URL;
 
   .product-section-title {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     color: var(--color-brand-black);
     margin-bottom: 1.25rem;
   }
@@ -247,7 +356,7 @@ const base = import.meta.env.BASE_URL;
 
   /* Overview box */
   .product-overview-section {
-    background: #f9fafb;
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
   }
 
   .product-overview-box {
@@ -308,7 +417,7 @@ const base = import.meta.env.BASE_URL;
 
   /* Why box */
   .product-why-section {
-    background: #f9fafb;
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
   }
 
   .product-why-box {
@@ -375,7 +484,7 @@ const base = import.meta.env.BASE_URL;
     background: var(--color-brand-blue);
     color: #fff;
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -392,7 +501,148 @@ const base = import.meta.env.BASE_URL;
     line-height: 1.7;
   }
 
+  /* Clinical Safety */
+  .bp-safety-section {
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
+  }
+
+  .bp-safety-statement {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.75rem;
+    background: linear-gradient(135deg, rgba(39, 174, 96, 0.06), rgba(44, 112, 235, 0.06));
+    border: 1px solid rgba(39, 174, 96, 0.2);
+    border-radius: 14px;
+    margin: 2rem 0 2.5rem;
+    max-width: 750px;
+  }
+
+  .bp-safety-shield {
+    color: var(--color-brand-green);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .bp-safety-statement h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 0.5rem;
+  }
+
+  .bp-safety-statement p {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .bp-safety-statement strong {
+    color: var(--color-brand-black);
+  }
+
+  .bp-hazard-title {
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    margin-bottom: 0.75rem;
+  }
+
+  .bp-hazard-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+    max-width: 800px;
+  }
+
+  .bp-hazard-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: #fff;
+    border: 1px solid var(--color-brand-grey-border);
+    border-radius: 12px;
+    border-left: 3px solid #f39c12;
+  }
+
+  .bp-hazard-ref {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #f39c12;
+    background: rgba(243, 156, 18, 0.1);
+    padding: 0.25rem 0.625rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .bp-hazard-content {
+    flex: 1;
+  }
+
+  .bp-hazard-risk {
+    display: block;
+    font-size: 1rem;
+    color: var(--color-brand-black);
+    margin-bottom: 0.375rem;
+  }
+
+  .bp-hazard-desc {
+    font-size: 0.875rem;
+    color: var(--color-brand-grey);
+    line-height: 1.6;
+    margin: 0 0 0.75rem;
+  }
+
+  .bp-hazard-control {
+    font-size: 0.875rem;
+    color: var(--color-brand-grey);
+    line-height: 1.6;
+    padding: 0.75rem;
+    background: var(--color-brand-grey-bg-subtle);
+    border-radius: 8px;
+  }
+
+  .bp-hazard-control strong {
+    color: var(--color-brand-black);
+  }
+
+  .bp-control-label {
+    font-weight: 600;
+    color: var(--color-brand-green);
+    margin-right: 0.25rem;
+  }
+
+  .bp-disclaimer-box {
+    max-width: 800px;
+    padding: 1.25rem 1.5rem;
+    background: rgba(44, 112, 235, 0.04);
+    border: 1px solid rgba(44, 112, 235, 0.12);
+    border-radius: 12px;
+  }
+
+  .bp-disclaimer-box p {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .bp-disclaimer-box strong {
+    color: var(--color-brand-black);
+    font-style: normal;
+  }
+
   @media (max-width: 768px) {
+    .product-hero-icon {
+      width: 36px;
+      height: 36px;
+    }
     .product-hero-title {
       font-size: 2.25rem;
     }

@@ -1,0 +1,433 @@
+---
+import ProductDocsLayout from '../../../../../layouts/ProductDocsLayout.astro';
+const base = import.meta.env.BASE_URL;
+
+const sidebarItems = [
+  { label: 'Quick Start Guide', href: `${base}products/scribecraft/help-centre/quick-start` },
+  { label: 'Accuracy Optimisation', href: `${base}products/scribecraft/help-centre/accuracy` },
+  { label: 'FAQ', href: `${base}products/scribecraft/help-centre/faq` },
+  { label: 'Materials & Explainers', href: `${base}products/scribecraft/help-centre/materials` },
+  { label: 'Practice Readiness Audit', href: `${base}products/scribecraft/help-centre/practice-audit` },
+];
+---
+
+<ProductDocsLayout
+  title="Practice Readiness Audit - ScribeCraft Help Centre | ApolloIQ"
+  description="Assess how ready your practice is to adopt ScribeCraft. Answer these quick questions to get a personalised readiness score."
+  sidebarItems={sidebarItems}
+  heroTitle="ScribeCraft Help Centre"
+  heroSubtitle="Guides, FAQs, and resources to help you get the most from ScribeCraft in your practice."
+  heroIcon={`${base}images/icon-scribe.svg`}
+>
+
+  <a href={`${base}products/scribecraft/help-centre`} class="help-back-link">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to Help Centre
+  </a>
+
+  <section id="practice-readiness-audit">
+    <h2>Practice Readiness Audit</h2>
+    <p>Assess how ready your practice is to adopt ScribeCraft. Answer these quick questions to get a personalised readiness score.</p>
+
+    <div class="audit-container">
+
+      <div id="audit-quiz">
+        <div class="audit-progress-bar"><div class="audit-progress-fill" id="audit-progress"></div></div>
+
+        <div class="audit-card" data-q="1">
+          <div class="audit-q-num">Question 1 of 8</div>
+          <div class="audit-q-text">Does your practice have a reliable internet connection (Wi-Fi or wired)?</div>
+          <div class="audit-opts">
+            <div class="audit-opt" data-v="3"><span class="audit-opt-letter">A</span>Yes, stable broadband throughout the building</div>
+            <div class="audit-opt" data-v="2"><span class="audit-opt-letter">B</span>Yes, but signal can be weak in some rooms</div>
+            <div class="audit-opt" data-v="1"><span class="audit-opt-letter">C</span>Unreliable or very slow connection</div>
+          </div>
+        </div>
+
+        <div class="audit-card" data-q="2">
+          <div class="audit-q-num">Question 2 of 8</div>
+          <div class="audit-q-text">Do clinicians currently have access to a computer, laptop, or tablet during consultations?</div>
+          <div class="audit-opts">
+            <div class="audit-opt" data-v="3"><span class="audit-opt-letter">A</span>Yes, every clinician has their own device</div>
+            <div class="audit-opt" data-v="2"><span class="audit-opt-letter">B</span>Most do, but some share devices</div>
+            <div class="audit-opt" data-v="1"><span class="audit-opt-letter">C</span>Limited device availability</div>
+          </div>
+        </div>
+
+        <div class="audit-card" data-q="3">
+          <div class="audit-q-num">Question 3 of 8</div>
+          <div class="audit-q-text">How much time does each clinician typically spend on documentation per consultation?</div>
+          <div class="audit-opts">
+            <div class="audit-opt" data-v="3"><span class="audit-opt-letter">A</span>More than 5 minutes per consultation</div>
+            <div class="audit-opt" data-v="2"><span class="audit-opt-letter">B</span>3-5 minutes per consultation</div>
+            <div class="audit-opt" data-v="1"><span class="audit-opt-letter">C</span>Less than 3 minutes — documentation is minimal</div>
+          </div>
+        </div>
+
+        <div class="audit-card" data-q="4">
+          <div class="audit-q-num">Question 4 of 8</div>
+          <div class="audit-q-text">Is your practice comfortable with using cloud-based tools for clinical work?</div>
+          <div class="audit-opts">
+            <div class="audit-opt" data-v="3"><span class="audit-opt-letter">A</span>Yes, we already use cloud-based systems</div>
+            <div class="audit-opt" data-v="2"><span class="audit-opt-letter">B</span>Somewhat — we are open but cautious</div>
+            <div class="audit-opt" data-v="1"><span class="audit-opt-letter">C</span>No, we prefer on-premise solutions only</div>
+          </div>
+        </div>
+
+        <div class="audit-card" data-q="5">
+          <div class="audit-q-num">Question 5 of 8</div>
+          <div class="audit-q-text">Does your practice have a data protection officer or someone responsible for information governance?</div>
+          <div class="audit-opts">
+            <div class="audit-opt" data-v="3"><span class="audit-opt-letter">A</span>Yes, with established IG processes</div>
+            <div class="audit-opt" data-v="2"><span class="audit-opt-letter">B</span>Informally — someone oversees it but no formal role</div>
+            <div class="audit-opt" data-v="1"><span class="audit-opt-letter">C</span>No dedicated person for this</div>
+          </div>
+        </div>
+
+        <div class="audit-card" data-q="6">
+          <div class="audit-q-num">Question 6 of 8</div>
+          <div class="audit-q-text">Do clinicians currently experience burnout or after-hours documentation burden?</div>
+          <div class="audit-opts">
+            <div class="audit-opt" data-v="3"><span class="audit-opt-letter">A</span>Yes, it is a significant problem</div>
+            <div class="audit-opt" data-v="2"><span class="audit-opt-letter">B</span>Sometimes — depends on the day</div>
+            <div class="audit-opt" data-v="1"><span class="audit-opt-letter">C</span>Not really — documentation is manageable</div>
+          </div>
+        </div>
+
+        <div class="audit-card" data-q="7">
+          <div class="audit-q-num">Question 7 of 8</div>
+          <div class="audit-q-text">How many clinicians would initially use ScribeCraft?</div>
+          <div class="audit-opts">
+            <div class="audit-opt" data-v="3"><span class="audit-opt-letter">A</span>3 or more clinicians</div>
+            <div class="audit-opt" data-v="2"><span class="audit-opt-letter">B</span>1-2 clinicians (pilot)</div>
+            <div class="audit-opt" data-v="1"><span class="audit-opt-letter">C</span>Not sure yet</div>
+          </div>
+        </div>
+
+        <div class="audit-card" data-q="8">
+          <div class="audit-q-num">Question 8 of 8</div>
+          <div class="audit-q-text">Is there a clinical champion who would lead the adoption of ScribeCraft in your practice?</div>
+          <div class="audit-opts">
+            <div class="audit-opt" data-v="3"><span class="audit-opt-letter">A</span>Yes, we have an enthusiastic lead</div>
+            <div class="audit-opt" data-v="2"><span class="audit-opt-letter">B</span>Possibly — someone could be encouraged</div>
+            <div class="audit-opt" data-v="1"><span class="audit-opt-letter">C</span>No one identified yet</div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 28px;">
+          <button class="audit-submit-btn" id="audit-submit" disabled>View Results</button>
+        </div>
+      </div>
+
+      <div id="audit-results" style="display: none;">
+        <div class="audit-score-wrap">
+          <div class="audit-score-label">Your Readiness Score</div>
+          <div class="audit-score-num" id="audit-score-num">&mdash;</div>
+          <div class="audit-level" id="audit-level">&mdash;</div>
+          <div class="audit-level-desc" id="audit-level-desc">&mdash;</div>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+          <a href={`${base}contact-us`} class="audit-cta-btn">Get in Touch</a>
+          <button class="audit-restart-btn" id="audit-restart">Retake Audit</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</ProductDocsLayout>
+
+<style>
+  /* ── Audit Container ── */
+  .audit-container {
+    max-width: 740px;
+    margin-top: 1.5rem;
+  }
+
+  /* ── Progress Bar ── */
+  .audit-progress-bar {
+    height: 6px;
+    background: var(--color-brand-grey-border);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+
+  .audit-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2c70eb, #00c393);
+    border-radius: 3px;
+    transition: width 0.4s;
+    width: 0;
+  }
+
+  /* ── Question Cards ── */
+  .audit-card {
+    background: #fff;
+    border: 1.5px solid var(--color-brand-grey-border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 14px;
+    border-left: 4px solid var(--color-brand-grey-border);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.03);
+  }
+
+  .audit-card.answered {
+    border-left-color: var(--color-brand-blue);
+    box-shadow: 2px 2px 16px rgba(44, 112, 235, 0.06);
+  }
+
+  .audit-q-num {
+    font-size: 0.75rem;
+    color: var(--color-brand-blue);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+
+  .audit-q-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-brand-black);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+
+  /* ── Options ── */
+  .audit-opts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .audit-opt {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    border: 1.5px solid var(--color-brand-grey-border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.875rem;
+    color: var(--color-brand-black);
+  }
+
+  .audit-opt:hover {
+    border-color: #d1d5db;
+    background: rgba(44, 112, 235, 0.02);
+  }
+
+  .audit-opt.selected {
+    border-color: var(--color-brand-blue);
+    background: rgba(44, 112, 235, 0.06);
+  }
+
+  .audit-opt-letter {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    border: 1.5px solid #d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--color-brand-grey-muted);
+    flex-shrink: 0;
+    transition: all 0.2s;
+  }
+
+  .audit-opt.selected .audit-opt-letter {
+    background: linear-gradient(135deg, #2c70eb, #00c393);
+    color: #fff;
+    border-color: transparent;
+  }
+
+  /* ── Submit Button ── */
+  .audit-submit-btn {
+    padding: 14px 48px;
+    background: linear-gradient(135deg, #2c70eb, #00c393);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border: none;
+    border-radius: var(--radius-btn);
+    cursor: pointer;
+    opacity: 0.35;
+    pointer-events: none;
+    transition: all 0.3s;
+    letter-spacing: 0.3px;
+  }
+
+  .audit-submit-btn.enabled {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .audit-submit-btn.enabled:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(44, 112, 235, 0.3);
+  }
+
+  /* ── Score Display ── */
+  .audit-score-wrap {
+    text-align: center;
+    padding: 48px 24px;
+    background: linear-gradient(135deg, rgba(44, 112, 235, 0.06), rgba(0, 195, 147, 0.06));
+    border-radius: var(--radius-card);
+    margin-bottom: 2rem;
+    color: var(--color-brand-black);
+    box-shadow: var(--shadow-card-lg);
+    border: 1px solid rgba(44, 112, 235, 0.12);
+  }
+
+  .audit-score-num {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+    color: var(--color-brand-blue);
+  }
+
+  .audit-score-label {
+    font-size: 0.8rem;
+    color: var(--color-brand-grey-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+  }
+
+  .audit-level {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #00c393;
+  }
+
+  .audit-level-desc {
+    font-size: 0.9rem;
+    color: var(--color-brand-grey-muted);
+    max-width: 440px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ── CTA Buttons ── */
+  .audit-cta-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    background: var(--color-brand-blue);
+    color: #fff;
+    font-weight: 500;
+    border-radius: var(--radius-btn);
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 17px;
+    border: 2px solid var(--color-brand-blue);
+  }
+
+  .audit-cta-btn:hover {
+    background: #1a5bc7;
+    border-color: #1a5bc7;
+  }
+
+  .audit-restart-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    background: transparent;
+    color: var(--color-brand-blue);
+    font-weight: 500;
+    border: 2px solid var(--color-brand-blue);
+    border-radius: var(--radius-btn);
+    cursor: pointer;
+    margin-left: 12px;
+    transition: all 0.3s;
+    font-size: 17px;
+  }
+
+  .audit-restart-btn:hover {
+    background: rgba(44, 112, 235, 0.06);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .audit-container {
+      max-width: 100%;
+    }
+  }
+</style>
+
+<script>
+  // ── Practice Readiness Audit ──
+  const auditAnswers: Record<string, number> = {};
+  const totalQs = 8;
+
+  document.querySelectorAll('.audit-opt').forEach((opt) => {
+    opt.addEventListener('click', () => {
+      const card = opt.closest('.audit-card') as HTMLElement;
+      const q = card.getAttribute('data-q')!;
+      card.querySelectorAll('.audit-opt').forEach((o) => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      card.classList.add('answered');
+      auditAnswers[q] = parseInt(opt.getAttribute('data-v')!);
+
+      // Update progress
+      const answered = Object.keys(auditAnswers).length;
+      (document.getElementById('audit-progress') as HTMLElement).style.width = (answered / totalQs * 100) + '%';
+
+      // Enable submit
+      const btn = document.getElementById('audit-submit') as HTMLButtonElement;
+      if (answered >= totalQs) {
+        btn.classList.add('enabled');
+        btn.disabled = false;
+      }
+    });
+  });
+
+  const submitBtn = document.getElementById('audit-submit');
+  if (submitBtn) {
+    submitBtn.addEventListener('click', () => {
+      let total = 0;
+      for (const k in auditAnswers) total += auditAnswers[k];
+      const pct = Math.round((total / (totalQs * 3)) * 100);
+      document.getElementById('audit-score-num')!.textContent = pct + '%';
+
+      let level: string, desc: string;
+      if (pct >= 85) {
+        level = 'Excellent Readiness';
+        desc = 'Your practice is well positioned to adopt ScribeCraft with minimal preparation.';
+      } else if (pct >= 65) {
+        level = 'Good Readiness';
+        desc = 'Your practice is ready with a few areas to address. Our team will help with the transition.';
+      } else if (pct >= 45) {
+        level = 'Moderate Readiness';
+        desc = 'Some preparation is needed. We can help identify and resolve any gaps before deployment.';
+      } else {
+        level = 'Early Stage';
+        desc = 'Additional groundwork is recommended. Contact us for a guided assessment and support plan.';
+      }
+
+      document.getElementById('audit-level')!.textContent = level;
+      document.getElementById('audit-level-desc')!.textContent = desc;
+      (document.getElementById('audit-quiz') as HTMLElement).style.display = 'none';
+      (document.getElementById('audit-results') as HTMLElement).style.display = 'block';
+    });
+  }
+
+  const restartBtn = document.getElementById('audit-restart');
+  if (restartBtn) {
+    restartBtn.addEventListener('click', () => {
+      for (const k in auditAnswers) delete auditAnswers[k];
+      document.querySelectorAll('.audit-opt').forEach((o) => o.classList.remove('selected'));
+      document.querySelectorAll('.audit-card').forEach((c) => c.classList.remove('answered'));
+      (document.getElementById('audit-progress') as HTMLElement).style.width = '0';
+      const btn = document.getElementById('audit-submit') as HTMLButtonElement;
+      btn.classList.remove('enabled');
+      btn.disabled = true;
+      (document.getElementById('audit-quiz') as HTMLElement).style.display = 'block';
+      (document.getElementById('audit-results') as HTMLElement).style.display = 'none';
+    });
+  }
+</script>

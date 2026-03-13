@@ -9,16 +9,19 @@ const spells = [
   {
     title: 'Scribe Craft',
     href: `${base}products/scribecraft`,
+    icon: `${base}images/icon-scribe.svg`,
     description: 'ScribeCraft is a voice-powered consultation tool that listens to clinician-patient interactions and instantly creates structured, accurate notes. Designed to integrate smoothly within the Merlin workspace, it allows clinicians to quickly copy the output into their EPR system — all without typing a word.',
   },
   {
     title: 'Blood Pressure Scroll',
     href: `${base}products/blood-pressure-average-calculator`,
+    icon: `${base}images/icon-blood-pressure.svg`,
     description: 'Blood Pressure Scroll is a powerful AI-driven tool designed to support GP practices in digitising blood pressure records submitted by patients. Often, these readings come in handwritten formats, making manual transcription time-consuming and prone to error.',
   },
   {
     title: 'Locate Elixir',
     href: `${base}products/locate-elixir`,
+    icon: `${base}images/icon-locate-elixir.svg`,
     description: 'Locate Elixir is a live medication availability tool designed to give healthcare staff real-time visibility of pharmacy stock levels. Using a simple traffic light system, users can instantly check whether a medication is available to order (green) or currently out of stock (red). This reduces prescribing delays.',
   },
 ];
@@ -27,21 +30,25 @@ const workflows = [
   {
     title: 'Pathology Automation',
     href: `${base}products/pathology-automation`,
+    icon: `${base}images/icon-spell-book.svg`,
     description: 'Automate up to 80% of blood test filings, saving approximately \u00A318,000 annually. Ensure 100% accuracy with automated filing for tests like Full Blood Count (FBC), Liver Function Tests (LFTs), and more.',
   },
   {
     title: 'Clinical Document Management',
     href: `${base}products/clinical-document-management`,
+    icon: `${base}images/icon-spell-book.svg`,
     description: 'Document Management processes and organizes administrative paperwork, such as referrals and patient forms, directly within Merlin\'s workspace, significantly speeding up a task typically handled manually by admin staff.',
   },
   {
     title: 'Clinical Calculator (QRisk3)',
     href: `${base}products/clinical-calculator-qrisk3`,
+    icon: `${base}images/icon-spell-book.svg`,
     description: 'Say goodbye to manual calculations. Our QRisk3 Calculations delivers accurate cardiovascular risk assessments instantly. Results can be uploaded in EPR.',
   },
   {
     title: 'GP List Reallocation',
     href: `${base}products/gp-list-reallocation`,
+    icon: `${base}images/icon-spell-book.svg`,
     description: 'GP List Reallocation is a smart, automated tool designed to redistribute patients when a GP leaves a practice. Whether it\'s the entire patient list or just a subset, the system uses intelligent algorithms to assign patients fairly and strategically across your remaining clinicians.',
   },
 ];
@@ -84,6 +91,9 @@ const workflows = [
       <div class="products-grid">
         {spells.map((product) => (
           <a href={product.href} class="product-card">
+            <div class="product-card-icon-wrap">
+              <img src={product.icon} alt="" class="product-card-icon" loading="lazy" />
+            </div>
             <div class="product-card-header">
               <h3 class="product-card-title">{product.title}</h3>
               <div class="product-card-arrow">
@@ -109,6 +119,9 @@ const workflows = [
       <div class="products-grid">
         {workflows.map((product) => (
           <a href={product.href} class="product-card">
+            <div class="product-card-icon-wrap">
+              <img src={product.icon} alt="" class="product-card-icon" loading="lazy" />
+            </div>
             <div class="product-card-header">
               <h3 class="product-card-title">{product.title}</h3>
               <div class="product-card-arrow">
@@ -156,7 +169,7 @@ const workflows = [
   /* Hero */
   .products-hero {
     padding: 5rem 0 3rem;
-    background: linear-gradient(135deg, #f8faff, #f0f7ff 50%, #f5fdf9);
+    background: linear-gradient(175deg, #ffffff 0%, #f0f4fb 40%, #eef8f5 70%, #f5f7fa 100%);
   }
 
   .products-hero-content {
@@ -169,15 +182,17 @@ const workflows = [
 
   .products-hero-title {
     font-size: 3.5rem;
-    font-weight: 600;
+    font-weight: 800;
     margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
   }
 
   .products-hero-subtitle {
     font-size: 2.5rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-brand-black);
     line-height: 1.3;
+    letter-spacing: -0.02em;
   }
 
   .products-hero-actions {
@@ -206,9 +221,9 @@ const workflows = [
     padding: 0.5rem 1.25rem;
     background: rgba(44, 112, 235, 0.08);
     color: var(--color-brand-blue);
-    border-radius: 20px;
+    border-radius: 16px;
     font-size: 0.9375rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.02em;
   }
 
@@ -224,16 +239,35 @@ const workflows = [
     flex-direction: column;
     padding: 2rem;
     background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(25, 29, 33, 0.06), 0 8px 32px rgba(44, 112, 235, 0.06);
     text-decoration: none;
     color: inherit;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
 
   .product-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 2px 8px rgba(25, 29, 33, 0.08), 0 8px 32px rgba(44, 112, 235, 0.10);
+  }
+
+  .product-card-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(44, 112, 235, 0.08), rgba(0, 195, 147, 0.06));
+    margin-bottom: 1.25rem;
+    padding: 10px;
+  }
+
+  .product-card-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
   }
 
   .product-card-header {
@@ -245,7 +279,7 @@ const workflows = [
 
   .product-card-title {
     font-size: 1.375rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-brand-black);
   }
 
@@ -256,14 +290,15 @@ const workflows = [
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--color-brand-black);
+    background: var(--color-brand-blue);
     color: #fff;
     flex-shrink: 0;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, transform 0.4s ease;
   }
 
   .product-card:hover .product-card-arrow {
-    background: var(--color-brand-blue);
+    background: var(--color-brand-blue-dark);
+    transform: rotate(45deg);
   }
 
   .product-card-desc {

@@ -44,12 +44,12 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <!-- Solution with Image -->
-  <section class="section" style="background: var(--color-brand-grey-bg-subtle);">
+  <section class="section" style="background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);">
     <div class="container-site">
       <div class="cs-solution-grid">
         <div class="cs-image-wrap">
           <img
-            src={`${base}images/685dc40ff887e05cecfae2db_de549e830eb7c1963effe48e3f990923-min.jpeg`}
+            src={`${base}images/68e8f4f5579ff61729b7eec0_thumb-case-study-forestside.jpg`}
             alt="Forestside Medical Practice"
             loading="lazy"
           />
@@ -86,7 +86,6 @@ const base = import.meta.env.BASE_URL;
                   <th>Patient</th>
                   <th>Type</th>
                   <th>Title</th>
-                  <th>Coded</th>
                 </tr>
               </thead>
               <tbody>
@@ -94,37 +93,31 @@ const base = import.meta.env.BASE_URL;
                   <td>Bertie Bangers</td>
                   <td class="cs-dim">Clinical Document</td>
                   <td class="cs-dim">No Title</td>
-                  <td class="cs-no">Not Set</td>
                 </tr>
                 <tr>
                   <td>Penny Farthing</td>
                   <td class="cs-dim">Clinical Document</td>
                   <td class="cs-dim">No Title</td>
-                  <td class="cs-no">Not Set</td>
                 </tr>
                 <tr>
                   <td>Chester Cheddar</td>
                   <td class="cs-dim">Clinical Document</td>
                   <td class="cs-dim">No Title</td>
-                  <td class="cs-no">Not Set</td>
                 </tr>
                 <tr>
                   <td>Molly Muddle</td>
                   <td class="cs-dim">Clinical Document</td>
                   <td class="cs-dim">No Title</td>
-                  <td class="cs-no">Not Set</td>
                 </tr>
                 <tr>
                   <td>Nigel Nibbles</td>
                   <td class="cs-dim">Clinical Document</td>
                   <td class="cs-dim">No Title</td>
-                  <td class="cs-no">Not Set</td>
                 </tr>
                 <tr>
                   <td>Fiona Fishcake</td>
                   <td class="cs-dim">Clinical Document</td>
                   <td class="cs-dim">No Title</td>
-                  <td class="cs-no">Not Set</td>
                 </tr>
               </tbody>
             </table>
@@ -141,45 +134,38 @@ const base = import.meta.env.BASE_URL;
                   <th>Patient</th>
                   <th>Specialty</th>
                   <th>Title</th>
-                  <th>Coded</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>Bertie Bangers</td>
-                  <td>Discharge Summary</td>
-                  <td>Accidental fall, Pleural Effusion</td>
-                  <td class="cs-yes">Yes</td>
+                  <td class="cs-highlight">Discharge Summary</td>
+                  <td class="cs-highlight">Accidental fall, Pleural Effusion</td>
                 </tr>
                 <tr>
                   <td>Penny Farthing</td>
-                  <td>Gastroenterology</td>
-                  <td>Barrett's Metaplasia</td>
-                  <td class="cs-yes">Yes</td>
+                  <td class="cs-highlight">Gastroenterology</td>
+                  <td class="cs-highlight">Barrett's Metaplasia</td>
                 </tr>
                 <tr>
                   <td>Chester Cheddar</td>
-                  <td>Endocrinology</td>
-                  <td>Normal Calcium & Vitamin D</td>
-                  <td class="cs-yes">Yes</td>
+                  <td class="cs-highlight">Endocrinology</td>
+                  <td class="cs-highlight">Normal Calcium & Vitamin D</td>
                 </tr>
                 <tr>
                   <td>Molly Muddle</td>
-                  <td>Gastroenterology</td>
-                  <td>No concerning features found</td>
-                  <td class="cs-yes">Yes</td>
+                  <td class="cs-highlight">Gastroenterology</td>
+                  <td class="cs-highlight">No concerning features found</td>
                 </tr>
                 <tr>
                   <td>Nigel Nibbles</td>
-                  <td>Urology</td>
-                  <td>Overactive Bladder</td>
-                  <td class="cs-yes">Yes</td>
+                  <td class="cs-highlight">Urology</td>
+                  <td class="cs-highlight">Overactive Bladder</td>
                 </tr>
                 <tr>
                   <td>Fiona Fishcake</td>
-                  <td>Rheumatology</td>
-                  <td>Rheumatoid Nodule on MCP2</td>
-                  <td class="cs-yes">Yes</td>
+                  <td class="cs-highlight">Rheumatology</td>
+                  <td class="cs-highlight">Rheumatoid Nodule on MCP2</td>
                 </tr>
               </tbody>
             </table>
@@ -190,7 +176,7 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <!-- Results -->
-  <section class="section" style="background: var(--color-brand-grey-bg-subtle);">
+  <section class="section" style="background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);">
     <div class="container-narrow">
       <h2 class="cs-section-title">Results at a <span class="text-gradient">Glance</span></h2>
 
@@ -248,7 +234,7 @@ const base = import.meta.env.BASE_URL;
     position: relative;
     padding: 7rem 0 4rem;
     overflow: hidden;
-    background: linear-gradient(170deg, #fff 0%, rgba(44,112,235,0.03) 40%, rgba(0,195,147,0.04) 100%);
+    background: linear-gradient(175deg, #ffffff 0%, #f0f4fb 40%, #eef8f5 70%, #f5f7fa 100%);
   }
 
   .cs-hero-inner {
@@ -271,8 +257,9 @@ const base = import.meta.env.BASE_URL;
 
   .cs-hero-title {
     font-size: clamp(2rem, 4vw, 2.75rem);
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.15;
+    letter-spacing: -0.02em;
     color: var(--color-brand-black);
   }
 
@@ -285,7 +272,7 @@ const base = import.meta.env.BASE_URL;
   .hero-orb--1 {
     width: 500px;
     height: 500px;
-    background: rgba(44, 112, 235, 0.06);
+    background: rgba(44, 112, 235, 0.12);
     top: -20%;
     right: -10%;
   }
@@ -323,7 +310,8 @@ const base = import.meta.env.BASE_URL;
 
   .cs-section-title {
     font-size: 2.25rem;
-    font-weight: 400;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     color: var(--color-brand-black);
     margin-bottom: 1.5rem;
     line-height: 1.2;
@@ -365,7 +353,8 @@ const base = import.meta.env.BASE_URL;
   .cs-tables-heading {
     text-align: center;
     font-size: 1.75rem;
-    font-weight: 400;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     color: var(--color-brand-black);
     margin-bottom: 2rem;
   }
@@ -381,6 +370,7 @@ const base = import.meta.env.BASE_URL;
     border-radius: var(--radius-card);
     padding: 2rem;
     background: #fff;
+    border: 1px solid rgba(44, 112, 235, 0.06);
     box-shadow: var(--shadow-card);
   }
 
@@ -433,6 +423,11 @@ const base = import.meta.env.BASE_URL;
   .cs-dim { color: var(--color-brand-grey-light); }
   .cs-yes { color: var(--color-brand-green); font-weight: 600; }
   .cs-no { color: var(--color-brand-red); font-weight: 600; }
+  .cs-highlight {
+    background: linear-gradient(135deg, rgba(44,112,235,0.08), rgba(0,195,147,0.08));
+    font-weight: 600;
+    color: var(--color-brand-black);
+  }
 
   /* Stats Grid */
   .cs-stats-grid {
@@ -444,6 +439,7 @@ const base = import.meta.env.BASE_URL;
 
   .cs-stat-card {
     background: #fff;
+    border: 1px solid rgba(44, 112, 235, 0.06);
     border-radius: var(--radius-card);
     padding: 1.75rem 1.5rem;
     box-shadow: var(--shadow-card);
@@ -473,7 +469,7 @@ const base = import.meta.env.BASE_URL;
 
   .cs-subsection-title {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-brand-black);
     margin-bottom: 1rem;
   }

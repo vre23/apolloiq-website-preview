@@ -254,8 +254,9 @@ const workflowRows = [
 
   .hero-title {
     font-size: 3.5rem;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 1.15;
+    letter-spacing: -0.02em;
     color: var(--color-brand-black);
   }
 
@@ -281,7 +282,8 @@ const workflowRows = [
 
   .pricing-section-title {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     margin-bottom: 1rem;
   }
 
@@ -302,15 +304,16 @@ const workflowRows = [
   .pricing-header-row {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    background: var(--color-brand-black);
-    color: #fff;
+    background: linear-gradient(135deg, #f0f4fb, #eef8f5);
+    border-bottom: 2px solid var(--color-brand-grey-border);
   }
 
   .pricing-header-row .pricing-header {
-    font-weight: 600;
-    font-size: 0.875rem;
+    font-weight: 700;
+    font-size: 0.8125rem;
     text-transform: uppercase;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
+    color: var(--color-brand-grey-muted);
   }
 
   .pricing-row {
@@ -345,7 +348,7 @@ const workflowRows = [
   }
 
   .pricing-service {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-brand-black);
   }
 
@@ -363,6 +366,7 @@ const workflowRows = [
 
   .pricing-card-mobile {
     background: #fff;
+    border: 1px solid rgba(44, 112, 235, 0.06);
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-card);
     padding: 1.5rem;
@@ -375,7 +379,7 @@ const workflowRows = [
 
   .pricing-card-title {
     font-size: 1.125rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-brand-black);
     margin-bottom: 1rem;
     padding-bottom: 0.75rem;

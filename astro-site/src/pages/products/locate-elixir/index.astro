@@ -6,15 +6,19 @@ import CTASection from '../../../components/CTASection.astro';
 const base = import.meta.env.BASE_URL;
 ---
 
-<BaseLayout title="Locate Elixir" description="Instant medication stock visibility for healthcare staff. Real-time pharmacy availability with a traffic light system.">
+<BaseLayout title="Locate Elixir - Real-Time Medication Availability | ApolloIQ" description="Instant medication stock visibility for healthcare staff. Real-time national availability with a traffic light system — resolve supply queries in 10 seconds.">
   <Nav />
 
   <!-- Hero -->
   <section class="product-hero">
     <div class="container-site">
       <span class="product-badge">Spell</span>
-      <h1 class="product-hero-title">Locate <span class="text-gradient">Elixir</span></h1>
+      <div class="product-hero-title-row">
+        <img src={`${base}images/icon-locate-elixir.svg`} alt="" class="product-hero-icon" />
+        <h1 class="product-hero-title">Locate <span class="text-gradient">Elixir</span></h1>
+      </div>
       <p class="product-subtitle">Instant Stock Insight. Zero Delays.</p>
+      <p class="product-hero-users">For Doctors, Nurses, Clinical Pharmacists, Pharmacy Technicians, Reception Teams, Admin Staff & Independent Prescribers — it's for everyone!</p>
       <a href={`${base}contact-us`} class="btn-primary">Activate Spell</a>
     </div>
   </section>
@@ -23,63 +27,114 @@ const base = import.meta.env.BASE_URL;
   <section class="section product-overview-section">
     <div class="container-site">
       <div class="product-overview-box">
-        <span class="product-label">OVERVIEW</span>
-        <h2 class="product-section-title">What is Locate Elixir?</h2>
+        <span class="product-label">THE PROBLEM</span>
+        <h2 class="product-section-title">Medication Shortages Are a Clinical Risk</h2>
         <p class="product-body-text">
-          Locate Elixir is a live medication availability tool designed to give healthcare staff real-time visibility of pharmacy stock levels. Using a simple traffic light system, users can instantly check whether a medication is available to order (green) or currently out of stock (red). This reduces prescribing delays, enhances patient care, and simplifies the workflow for busy clinicians.
+          In the UK, medication shortages are not just an administrative hurdle — they are a clinical risk. When a medication is out of stock, the traditional "manual chase" takes an average of <strong>10 minutes per item</strong>, as pharmacists ring around suppliers trying to source alternatives. This has significant downstream effects on the patient:
         </p>
+        <ul class="product-problem-list">
+          <li><strong>Treatment Delays:</strong> Patients often wait 24–48 hours longer for essential medication while pharmacists "ring around."</li>
+          <li><strong>Reduced Adherence:</strong> Complexity in obtaining medication leads to missed doses and therapeutic failure.</li>
+          <li><strong>Patient Anxiety:</strong> Patients experience increased stress when their care team cannot provide immediate answers regarding supply.</li>
+          <li><strong>Safety Risks:</strong> Manual workarounds or switching to less familiar alternatives due to perceived unavailability can lead to prescribing errors.</li>
+        </ul>
+
+        <div class="le-solution-box">
+          <span class="product-label">THE SOLUTION</span>
+          <h2 class="product-section-title">What is Locate Elixir?</h2>
+          <p class="product-body-text">
+            Locate Elixir digitises the procurement and sourcing workflow. By providing real-time national availability and sourcing data in <strong>10 seconds</strong>, it allows pharmacists to resolve a supply issue during the clinical review or while the patient is still in contact — ensuring continuity of care and immediate peace of mind.
+          </p>
+          <p class="product-body-text">
+            The tool queries a database updated every few minutes from a medication broker partner and returns a clear traffic light status for any medication searched.
+          </p>
+        </div>
         <a href={`${base}contact-us`} class="btn-primary" style="margin-top: 1rem;">Get in Touch</a>
       </div>
     </div>
   </section>
 
-  <!-- Key Benefits -->
+  <!-- Traffic Light System -->
   <section class="section">
     <div class="container-site">
       <div class="product-split">
         <div class="product-split-left">
-          <h2 class="product-section-title">Key & <span class="text-gradient">Benefits</span></h2>
-          <p class="product-split-intro">4 key features that make Locate Elixir essential for your practice.</p>
+          <h2 class="product-section-title">Traffic Light <span class="text-gradient">System</span></h2>
+          <p class="product-split-intro">Instantly understand medication availability at a glance with three clear statuses.</p>
         </div>
         <div class="product-split-right">
-          <ul class="product-feature-list">
-            <li>
-              <strong>Live Stock Visibility</strong>
-              <span>Instantly see which medications are in stock at pharmacies using our real-time traffic light system.</span>
-            </li>
-            <li>
-              <strong>Faster Prescribing Decisions</strong>
-              <span>Avoid delays by prescribing only what's currently available, improving treatment start times.</span>
-            </li>
-            <li>
-              <strong>Reduced Admin Workload</strong>
-              <span>Eliminate the need for back-and-forth calls with pharmacies to confirm availability.</span>
-            </li>
-            <li>
-              <strong>Better Patient Experience</strong>
-              <span>Ensure patients receive their medications without disruption or stock-related issues.</span>
-            </li>
-          </ul>
+          <div class="le-traffic-lights">
+            <div class="le-traffic-card le-traffic-green">
+              <div class="le-traffic-dot le-dot-green"></div>
+              <div>
+                <strong>In Stock</strong>
+                <span>Orders have been successfully placed for this product recently. It is very likely to be available from suppliers at a national level.</span>
+              </div>
+            </div>
+            <div class="le-traffic-card le-traffic-red">
+              <div class="le-traffic-dot le-dot-red"></div>
+              <div>
+                <strong>Out of Stock</strong>
+                <span>An order has been placed for this product, but it was out of stock at the time of the order.</span>
+              </div>
+            </div>
+            <div class="le-traffic-card le-traffic-grey">
+              <div class="le-traffic-dot le-dot-grey"></div>
+              <div>
+                <strong>No Record</strong>
+                <span>No orders have been put through the system for this product. There is no reliable information about its availability. This does <em>not</em> mean "Out of Stock."</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Choose -->
+  <!-- Key Benefits -->
   <section class="section product-why-section">
     <div class="container-site">
-      <div class="product-why-box">
-        <span class="product-label">WHY US?</span>
-        <h2 class="product-section-title">Why Choose Locate Elixir?</h2>
-        <p class="product-body-text">
-          Merlin's Locate Elixir transforms how practices and pharmacies collaborate on medication supply, enhancing speed, efficiency, and patient care.
-        </p>
-        <ul class="product-benefit-list">
-          <li><strong>Save Time:</strong> Quickly identify stock availability without contacting multiple pharmacies.</li>
-          <li><strong>Improve Workflow:</strong> Enable clinicians to make informed prescribing decisions at the point of care.</li>
-          <li><strong>Boost Efficiency:</strong> Streamline communication between GP surgeries and pharmacies.</li>
-          <li><strong>Reduce Errors:</strong> Avoid prescribing medications that are currently unavailable.</li>
-        </ul>
+      <div class="product-split">
+        <div class="product-split-left">
+          <h2 class="product-section-title">Key <span class="text-gradient">Benefits</span></h2>
+          <p class="product-split-intro">Two pillars that make Locate Elixir essential for primary care.</p>
+        </div>
+        <div class="product-split-right">
+          <div class="le-pillar-card">
+            <h3 class="le-pillar-title">Workforce Sustainability</h3>
+            <ul class="product-feature-list">
+              <li>
+                <strong>Reclaim Clinical Capacity</strong>
+                <span>Shift hours from the telephone to high-value clinical tasks — QRisk3 assessments, pathology filing, structured medication reviews.</span>
+              </li>
+              <li>
+                <strong>Prevent Burnout</strong>
+                <span>Remove the "administrative churn" that causes pharmacists to leave primary care.</span>
+              </li>
+              <li>
+                <strong>Faster Prescribing Decisions</strong>
+                <span>Eliminate the need for back-and-forth calls with pharmacies to confirm availability.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="le-pillar-card" style="margin-top: 1.5rem;">
+            <h3 class="le-pillar-title">Enhanced Patient Outcomes</h3>
+            <ul class="product-feature-list">
+              <li>
+                <strong>Accelerated Access</strong>
+                <span>Reduce time-to-treatment from hours or days to seconds.</span>
+              </li>
+              <li>
+                <strong>Improved Medication Adherence</strong>
+                <span>Ensure patients receive the medication they were originally prescribed without unnecessary "alternative" switches.</span>
+              </li>
+              <li>
+                <strong>Clinical Safety</strong>
+                <span>Reclaimed time allows for more thorough medication safety audits and clinical interventions.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -91,28 +146,152 @@ const base = import.meta.env.BASE_URL;
         <div class="product-split-left">
           <h2 class="product-section-title">How Does It <span class="text-gradient">Work?</span></h2>
           <p class="product-split-intro">
-            Locate Elixir is intuitive and fast -- designed for clinical environments with no learning curve.
+            Locate Elixir is intuitive and fast — designed for clinical environments with no learning curve.
           </p>
         </div>
         <div class="product-split-right">
           <ol class="product-steps-list">
             <li>
-              <strong>Search the Medication Name</strong>
-              <span>Start typing the medication name -- our smart search helps you find it instantly.</span>
+              <strong>Log into Merlin</strong>
+              <span>Access Locate Elixir through your dedicated account on the Merlin platform. No software to install — it runs in your browser.</span>
             </li>
             <li>
-              <strong>Check the Traffic Light Indicator</strong>
-              <span>A green light means in stock and ready to order; red means currently out of stock.</span>
+              <strong>Select Locate Elixir</strong>
+              <span>From the left-hand menu, select the "Spells" tab and click on "Locate Elixir" to open the search tool.</span>
             </li>
             <li>
-              <strong>View Additional Details</strong>
-              <span>Access info on availability trends and alternative formulations when needed.</span>
+              <strong>Search for a Medication</strong>
+              <span>Type the name of the drug you wish to check into the search bar — our smart search helps you find it instantly.</span>
             </li>
             <li>
-              <strong>Prescribe Confidently</strong>
-              <span>Use the live data to issue prescriptions that are more likely to be fulfilled promptly.</span>
+              <strong>Interpret the Traffic Light Result</strong>
+              <span>The tool returns one of three statuses: In Stock (green), Out of Stock (red), or No Record (grey). Use this data to prescribe confidently.</span>
             </li>
           </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- By the Numbers / Pilot Results -->
+  <section class="section product-stats-section">
+    <div class="container-site">
+      <span class="product-label">PILOT RESULTS</span>
+      <h2 class="product-section-title">By the <span class="text-gradient">Numbers</span></h2>
+      <p class="product-body-text" style="max-width: 700px;">
+        A two-month pilot with 10 clinical pharmacists from Clinical Pharmacist Solutions demonstrated measurable impact across efficiency and patient care.
+      </p>
+      <div class="le-stats-grid">
+        <div class="le-stat-card">
+          <div class="le-stat-value">10s</div>
+          <div class="le-stat-label">Average search time</div>
+          <div class="le-stat-compare">vs 10 minutes manually</div>
+        </div>
+        <div class="le-stat-card">
+          <div class="le-stat-value">33.3h</div>
+          <div class="le-stat-label">Clinical time reclaimed</div>
+          <div class="le-stat-compare">from just 10 pharmacists</div>
+        </div>
+        <div class="le-stat-card">
+          <div class="le-stat-value">60x</div>
+          <div class="le-stat-label">Faster than manual</div>
+          <div class="le-stat-compare">10 seconds vs 10 minutes</div>
+        </div>
+        <div class="le-stat-card">
+          <div class="le-stat-value">150</div>
+          <div class="le-stat-label">Additional consultations</div>
+          <div class="le-stat-compare">enabled by reclaimed time</div>
+        </div>
+      </div>
+      <div class="le-pilot-details">
+        <div class="le-pilot-row">
+          <div class="le-pilot-metric">
+            <span class="le-pilot-number">5/5</span>
+            <span class="le-pilot-label">User Satisfaction</span>
+          </div>
+          <div class="le-pilot-metric">
+            <span class="le-pilot-number">10/10</span>
+            <span class="le-pilot-label">Net Promoter Score</span>
+          </div>
+          <div class="le-pilot-metric">
+            <span class="le-pilot-number">100%</span>
+            <span class="le-pilot-label">Reliability Score</span>
+          </div>
+          <div class="le-pilot-metric">
+            <span class="le-pilot-number">0%</span>
+            <span class="le-pilot-label">Technical Issues</span>
+          </div>
+        </div>
+        <p class="le-pilot-note">100% of participants <strong>strongly agreed</strong> that the service saves time, reduces admin workload, improves workflow efficiency, helps deliver safer care, and adds value to daily operations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="section le-testimonial-section">
+    <div class="container-site">
+      <div class="le-testimonial-card">
+        <svg class="le-quote-icon" width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M10 11H6c0-2.21 1.79-4 4-4V5c-3.31 0-6 2.69-6 6v6h6v-6zm8 0h-4c0-2.21 1.79-4 4-4V5c-3.31 0-6 2.69-6 6v6h6v-6z" fill="currentColor" opacity="0.15"/></svg>
+        <blockquote class="le-testimonial-quote">
+          "It has been great for me this week as I have had a few queries regarding out-of-stock situations. I am really thankful for it as other tools I found to be a bit flimsy. It is very easy and quick to use, which is exactly what is needed."
+        </blockquote>
+        <div class="le-testimonial-author">
+          <strong>Paula Taylor</strong>
+          <span>Pharmacy Technician, Clinical Pharmacist Solutions</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Safety & Limitations -->
+  <section class="section">
+    <div class="container-site">
+      <div class="product-split">
+        <div class="product-split-left">
+          <h2 class="product-section-title">Safety & <span class="text-gradient">Limitations</span></h2>
+          <p class="product-split-intro">
+            Important information to ensure safe and effective use of Locate Elixir.
+          </p>
+        </div>
+        <div class="product-split-right">
+          <div class="le-warning-list">
+            <div class="le-warning-card">
+              <div class="le-warning-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </div>
+              <div>
+                <strong>National Availability Only</strong>
+                <span>Locate Elixir displays national availability, not local pharmacy or hospital stock. A status of "In Stock" does not guarantee the medication is available at your specific location.</span>
+              </div>
+            </div>
+            <div class="le-warning-card">
+              <div class="le-warning-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </div>
+              <div>
+                <strong>User Verification Required</strong>
+                <span>While we strive to ensure information is accurate and timely, availability may change rapidly. It is the responsibility of the user to verify critical availability directly with the pharmacy or supplier before acting.</span>
+              </div>
+            </div>
+            <div class="le-warning-card">
+              <div class="le-warning-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v.01"/><path d="M12 8v4"/></svg>
+              </div>
+              <div>
+                <strong>"No Record" Is Not "Out of Stock"</strong>
+                <span>The "No Record" status means the availability is unknown — no orders have been placed through the system. Do not use this status as the sole basis for a clinical decision.</span>
+              </div>
+            </div>
+            <div class="le-warning-card">
+              <div class="le-warning-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </div>
+              <div>
+                <strong>Clinical Judgement</strong>
+                <span>This tool is for information and decision support only. It does not replace your professional clinical judgement.</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -186,21 +365,44 @@ const base = import.meta.env.BASE_URL;
 <style>
   .product-hero {
     padding: 5rem 0 3rem;
-    background: linear-gradient(135deg, #f8faff, #f0f7ff 50%, #f5fdf9);
+    background: linear-gradient(175deg, #ffffff 0%, #f0f4fb 40%, #eef8f5 70%, #f5f7fa 100%);
     text-align: center;
+  }
+
+  .product-hero-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .product-hero-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
   }
 
   .product-hero-title {
     font-size: 3rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   .product-subtitle {
     font-size: 1.25rem;
     color: var(--color-brand-grey-muted);
     max-width: 600px;
+    margin: 0 auto 1rem;
+  }
+
+  .product-hero-users {
+    font-size: 0.875rem;
+    color: var(--color-brand-grey-muted);
     margin: 0 auto 2rem;
+    max-width: 500px;
+    opacity: 0.8;
   }
 
   .product-badge {
@@ -208,7 +410,7 @@ const base = import.meta.env.BASE_URL;
     padding: 0.375rem 1rem;
     background: rgba(44, 112, 235, 0.08);
     color: var(--color-brand-blue);
-    border-radius: 20px;
+    border-radius: 16px;
     font-size: 0.8125rem;
     font-weight: 500;
     margin-bottom: 1rem;
@@ -217,7 +419,7 @@ const base = import.meta.env.BASE_URL;
   .product-label {
     display: inline-block;
     font-size: 0.8125rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.08em;
     color: var(--color-brand-blue);
     text-transform: uppercase;
@@ -226,7 +428,8 @@ const base = import.meta.env.BASE_URL;
 
   .product-section-title {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     color: var(--color-brand-black);
     margin-bottom: 1.25rem;
   }
@@ -238,14 +441,285 @@ const base = import.meta.env.BASE_URL;
     margin-bottom: 1rem;
   }
 
+  .product-body-text strong {
+    color: var(--color-brand-black);
+  }
+
   .product-overview-section {
-    background: #f9fafb;
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
   }
 
   .product-overview-box {
     max-width: 800px;
   }
 
+  /* Problem list */
+  .product-problem-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .product-problem-list li {
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+    padding-left: 1.75rem;
+    position: relative;
+  }
+
+  .product-problem-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e74c3c;
+  }
+
+  .product-problem-list li strong {
+    color: var(--color-brand-black);
+  }
+
+  .le-solution-box {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--color-brand-grey-border);
+  }
+
+  /* Traffic light system */
+  .le-traffic-lights {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .le-traffic-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-brand-grey-border);
+    background: var(--color-brand-grey-bg-subtle);
+  }
+
+  .le-traffic-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .le-dot-green { background: #27ae60; box-shadow: 0 0 8px rgba(39, 174, 96, 0.4); }
+  .le-dot-red { background: #e74c3c; box-shadow: 0 0 8px rgba(231, 76, 60, 0.4); }
+  .le-dot-grey { background: #95a5a6; box-shadow: 0 0 8px rgba(149, 165, 166, 0.3); }
+
+  .le-traffic-card strong {
+    display: block;
+    font-size: 1.0625rem;
+    color: var(--color-brand-black);
+    margin-bottom: 0.25rem;
+  }
+
+  .le-traffic-card span {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    line-height: 1.6;
+  }
+
+  /* Pillar cards */
+  .le-pillar-card {
+    background: var(--color-brand-grey-bg-subtle);
+    border: 1px solid var(--color-brand-grey-border);
+    border-radius: 14px;
+    padding: 1.75rem;
+  }
+
+  .le-pillar-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-brand-blue);
+    margin-bottom: 1.25rem;
+  }
+
+  /* Stats section */
+  .product-stats-section {
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
+  }
+
+  .le-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin: 2.5rem 0;
+  }
+
+  .le-stat-card {
+    background: #fff;
+    border: 1px solid var(--color-brand-grey-border);
+    border-radius: 14px;
+    padding: 1.75rem 1.25rem;
+    text-align: center;
+  }
+
+  .le-stat-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-brand-blue);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .le-stat-label {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-brand-black);
+    margin-top: 0.5rem;
+  }
+
+  .le-stat-compare {
+    font-size: 0.8125rem;
+    color: var(--color-brand-grey-muted);
+    margin-top: 0.25rem;
+  }
+
+  .le-pilot-details {
+    background: #fff;
+    border: 1px solid var(--color-brand-grey-border);
+    border-radius: 14px;
+    padding: 2rem;
+  }
+
+  .le-pilot-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .le-pilot-metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+  }
+
+  .le-pilot-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-brand-green);
+  }
+
+  .le-pilot-label {
+    font-size: 0.8125rem;
+    color: var(--color-brand-grey-muted);
+  }
+
+  .le-pilot-note {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-brand-grey-border);
+    margin: 0;
+  }
+
+  .le-pilot-note strong {
+    color: var(--color-brand-black);
+  }
+
+  /* Testimonial */
+  .le-testimonial-section {
+    background: #fff;
+  }
+
+  .le-testimonial-card {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, rgba(44, 112, 235, 0.04), rgba(0, 195, 147, 0.04));
+    border: 1px solid rgba(44, 112, 235, 0.12);
+    border-radius: 16px;
+    position: relative;
+  }
+
+  .le-quote-icon {
+    color: var(--color-brand-blue);
+    margin-bottom: 1rem;
+  }
+
+  .le-testimonial-quote {
+    font-size: 1.125rem;
+    color: var(--color-brand-grey);
+    line-height: 1.8;
+    font-style: italic;
+    margin: 0 0 1.5rem;
+  }
+
+  .le-testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  .le-testimonial-author strong {
+    font-size: 1rem;
+    color: var(--color-brand-black);
+  }
+
+  .le-testimonial-author span {
+    font-size: 0.875rem;
+    color: var(--color-brand-grey-muted);
+  }
+
+  /* Warning / Safety cards */
+  .le-warning-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .le-warning-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: #fff;
+    border: 1px solid var(--color-brand-grey-border);
+    border-radius: 12px;
+    border-left: 3px solid #f39c12;
+  }
+
+  .le-warning-icon {
+    color: #f39c12;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .le-warning-card strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--color-brand-black);
+    margin-bottom: 0.25rem;
+  }
+
+  .le-warning-card span {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    line-height: 1.6;
+  }
+
+  /* Shared layout */
   .product-split {
     display: flex;
     gap: 4rem;
@@ -297,40 +771,7 @@ const base = import.meta.env.BASE_URL;
   }
 
   .product-why-section {
-    background: #f9fafb;
-  }
-
-  .product-why-box {
-    max-width: 800px;
-  }
-
-  .product-benefit-list {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .product-benefit-list li {
-    font-size: 1rem;
-    color: var(--color-brand-grey);
-    line-height: 1.7;
-    padding-left: 1.5rem;
-    position: relative;
-  }
-
-  .product-benefit-list li::before {
-    content: "\2713";
-    position: absolute;
-    left: 0;
-    color: var(--color-brand-green);
-    font-weight: 700;
-  }
-
-  .product-benefit-list li strong {
-    color: var(--color-brand-black);
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
   }
 
   .product-steps-list {
@@ -363,7 +804,7 @@ const base = import.meta.env.BASE_URL;
     background: var(--color-brand-green);
     color: #fff;
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -380,13 +821,33 @@ const base = import.meta.env.BASE_URL;
     line-height: 1.7;
   }
 
+  /* Responsive */
   @media (max-width: 768px) {
+    .product-hero-icon {
+      width: 36px;
+      height: 36px;
+    }
     .product-hero-title {
       font-size: 2.25rem;
     }
     .product-split {
       flex-direction: column;
       gap: 2rem;
+    }
+    .le-stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .le-pilot-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .le-stats-grid {
+      grid-template-columns: 1fr;
+    }
+    .le-pilot-row {
+      grid-template-columns: 1fr;
     }
   }
 </style>

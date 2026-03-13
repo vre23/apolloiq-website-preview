@@ -37,13 +37,14 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
-  <!-- Solution with Image -->
-  <section class="section" style="background: var(--color-brand-grey-bg-subtle);">
+  <!-- Solution -->
+  <section class="section" style="background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);">
     <div class="container-site">
+      <!-- Top: image + intro side by side -->
       <div class="cs-solution-grid">
         <div class="cs-image-wrap">
           <img
-            src={`${base}images/685dc40ff887e05cecfae2db_de549e830eb7c1963effe48e3f990923-min.jpeg`}
+            src={`${base}images/68e8f4ee5ab86aa5ce6bf4cc_thumb-case-study-taunton-vale.jpg`}
             alt="Taunton Vale Healthcare"
             loading="lazy"
           />
@@ -62,21 +63,6 @@ const base = import.meta.env.BASE_URL;
             are haemolysed, insufficient, or otherwise unavailable -- preventing false results
             from being filed.
           </p>
-          <p>The 17 test categories include:</p>
-          <ul class="cs-list">
-            <li>Full Blood Count (FBC) -- 15 individual tests</li>
-            <li>Liver Function Tests (LFTs)</li>
-            <li>Urea & Electrolytes (U&Es)</li>
-            <li>Lipid Profiles</li>
-            <li>Inflammatory Markers (CRP, ESR)</li>
-            <li>Thyroid Function (TSH, T4)</li>
-            <li>Bone Profile</li>
-            <li>Vitamin D, B12, Folate</li>
-            <li>HbA1c (Diabetes)</li>
-            <li>Cardiac Biomarkers (BNP)</li>
-            <li>PSA with age-based logic</li>
-            <li>And more...</li>
-          </ul>
           <p>
             The system applies intelligent actions for each result:
             <strong>File Without Comments</strong> for normal results,
@@ -84,15 +70,37 @@ const base = import.meta.env.BASE_URL;
             <strong>Sample unavailable</strong> when quality issues are detected
             -- allowing clinicians to focus only on the results that matter most.
           </p>
+        </div>
+      </div>
 
+      <!-- Categories + How It Works in clean 2-col below -->
+      <div class="cs-detail-columns">
+        <div class="cs-detail-col">
+          <h3 class="cs-subsection-title">17 Test Categories</h3>
+          <div class="cs-category-grid">
+            <span class="cs-category-tag">Full Blood Count (FBC)</span>
+            <span class="cs-category-tag">Liver Function (LFTs)</span>
+            <span class="cs-category-tag">Urea & Electrolytes</span>
+            <span class="cs-category-tag">Lipid Profiles</span>
+            <span class="cs-category-tag">Inflammatory Markers</span>
+            <span class="cs-category-tag">Thyroid Function</span>
+            <span class="cs-category-tag">Bone Profile</span>
+            <span class="cs-category-tag">Vitamin D, B12, Folate</span>
+            <span class="cs-category-tag">HbA1c (Diabetes)</span>
+            <span class="cs-category-tag">Cardiac Biomarkers</span>
+            <span class="cs-category-tag">PSA (Age-based)</span>
+            <span class="cs-category-tag">And more...</span>
+          </div>
+        </div>
+        <div class="cs-detail-col">
           <h3 class="cs-subsection-title">How It Works</h3>
           <ul class="cs-list">
-            <li>Reports are received in EMIS format from pathology labs</li>
-            <li>Values are extracted using pattern matching against known test structures</li>
-            <li>Each value is compared against clinically reviewed reference ranges</li>
-            <li>Gender-specific and age-specific thresholds are applied automatically</li>
-            <li>Intelligent routing: normal results are filed automatically, abnormal results are flagged for doctor review</li>
-            <li>All processing is logged for a full audit trail</li>
+            <li>Reports received in EMIS format from pathology labs</li>
+            <li>Values extracted using pattern matching against known test structures</li>
+            <li>Each value compared against clinically reviewed reference ranges</li>
+            <li>Gender and age-specific thresholds applied automatically</li>
+            <li>Normal results filed automatically; abnormal flagged for doctor review</li>
+            <li>All processing logged for a full audit trail</li>
           </ul>
         </div>
       </div>
@@ -158,7 +166,7 @@ const base = import.meta.env.BASE_URL;
     position: relative;
     padding: 7rem 0 4rem;
     overflow: hidden;
-    background: linear-gradient(170deg, #fff 0%, rgba(44,112,235,0.03) 40%, rgba(0,195,147,0.04) 100%);
+    background: linear-gradient(175deg, #ffffff 0%, #f0f4fb 40%, #eef8f5 70%, #f5f7fa 100%);
   }
 
   .cs-hero-inner {
@@ -181,8 +189,9 @@ const base = import.meta.env.BASE_URL;
 
   .cs-hero-title {
     font-size: clamp(2rem, 4vw, 2.75rem);
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.15;
+    letter-spacing: -0.02em;
     color: var(--color-brand-black);
   }
 
@@ -195,7 +204,7 @@ const base = import.meta.env.BASE_URL;
   .hero-orb--1 {
     width: 500px;
     height: 500px;
-    background: rgba(44, 112, 235, 0.06);
+    background: rgba(44, 112, 235, 0.12);
     top: -20%;
     right: -10%;
   }
@@ -233,7 +242,8 @@ const base = import.meta.env.BASE_URL;
 
   .cs-section-title {
     font-size: 2.25rem;
-    font-weight: 400;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     color: var(--color-brand-black);
     margin-bottom: 1.5rem;
     line-height: 1.2;
@@ -272,6 +282,32 @@ const base = import.meta.env.BASE_URL;
     background: linear-gradient(135deg, var(--color-brand-blue), var(--color-brand-green));
   }
 
+  /* Detail columns (categories + how it works) */
+  .cs-detail-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .cs-category-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .cs-category-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #fff;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-brand-black);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    border: 1px solid var(--color-brand-grey-border);
+  }
+
   /* Stats Grid */
   .cs-stats-grid {
     display: grid;
@@ -282,6 +318,7 @@ const base = import.meta.env.BASE_URL;
 
   .cs-stat-card {
     background: #fff;
+    border: 1px solid rgba(44, 112, 235, 0.06);
     border-radius: var(--radius-card);
     padding: 1.75rem 1.5rem;
     box-shadow: var(--shadow-card);
@@ -332,7 +369,7 @@ const base = import.meta.env.BASE_URL;
 
   .cs-subsection-title {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-brand-black);
     margin-bottom: 1rem;
   }
@@ -347,6 +384,10 @@ const base = import.meta.env.BASE_URL;
   @media (max-width: 960px) {
     .cs-solution-grid {
       grid-template-columns: 1fr;
+    }
+    .cs-detail-columns {
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
     .cs-stats-grid {
       grid-template-columns: 1fr 1fr;

@@ -78,6 +78,13 @@ const testimonials = [
     quote: 'Documents Automation has reduced our workload by 50%!',
     variant: 'white',
   },
+  {
+    name: 'Paula Taylor',
+    role: 'Pharmacy Technician, Clinical Pharmacist Solutions',
+    image: `${base}images/68610f087977ffbeb345abba_nhs-logo.webp`,
+    quote: 'It has been great for me this week as I have had a few queries regarding out-of-stock situations. I am really thankful for it as other tools I found to be a bit flimsy. It is very easy and quick to use, which is exactly what is needed.',
+    variant: 'blue',
+  },
 ];
 
 const values = [
@@ -282,6 +289,7 @@ const values = [
   /* ── Hero ── */
   .about-hero {
     padding: 6rem 0 4rem;
+    background: linear-gradient(175deg, #ffffff 0%, #f0f4fb 40%, #eef8f5 70%, #f5f7fa 100%);
   }
 
   .hero-split {
@@ -304,9 +312,10 @@ const values = [
 
   .hero-title {
     font-size: 3.5rem;
-    font-weight: 500;
+    font-weight: 800;
     line-height: 1.15;
     color: var(--color-brand-black);
+    letter-spacing: -0.02em;
   }
 
   .hero-subtitle {
@@ -315,15 +324,25 @@ const values = [
     line-height: 1.7;
   }
 
+  /* ── Section Backgrounds ── */
+  .about-why,
+  .about-story,
+  .about-team,
+  .about-values,
+  .about-testimonials {
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
+  }
+
   /* ── Why ApolloIQ ── */
   .about-why .why-wrapper {
     padding: 3rem;
+    border: 1px solid rgba(44, 112, 235, 0.06);
   }
 
   .section-label {
     display: inline-block;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--color-brand-blue);
@@ -332,9 +351,10 @@ const values = [
 
   .why-heading {
     font-size: 2.5rem;
-    font-weight: 500;
+    font-weight: 800;
     margin-bottom: 1.25rem;
     color: var(--color-brand-black);
+    letter-spacing: -0.02em;
   }
 
   .why-text {
@@ -375,7 +395,7 @@ const values = [
 
   .why-list li strong {
     color: var(--color-brand-black);
-    font-weight: 600;
+    font-weight: 700;
   }
 
   /* ── Story & Mission ── */
@@ -387,12 +407,19 @@ const values = [
 
   .story-card {
     padding: 2.5rem;
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .story-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
   }
 
   .card-label {
     display: inline-block;
     font-size: 0.8125rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: var(--color-brand-blue);
@@ -468,7 +495,7 @@ const values = [
 
   .team-name {
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 700;
     color: #fff;
     margin-bottom: 0.25rem;
   }
@@ -489,12 +516,12 @@ const values = [
     flex-shrink: 0;
     opacity: 0;
     transform: translateY(8px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.4s ease;
   }
 
   .team-card:hover .team-arrow {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) rotate(45deg);
   }
 
   /* ── Values ── */
@@ -511,7 +538,7 @@ const values = [
   }
 
   .value-name {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-brand-blue);
   }
 
@@ -523,9 +550,10 @@ const values = [
 
   .testimonials-heading {
     font-size: 2.5rem;
-    font-weight: 500;
+    font-weight: 800;
     line-height: 1.2;
     color: var(--color-brand-black);
+    letter-spacing: -0.02em;
   }
 
   .testimonials-grid {
@@ -555,7 +583,8 @@ const values = [
   .testimonial-white {
     background: #fff;
     color: var(--color-brand-black);
-    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(44, 112, 235, 0.08);
+    box-shadow: 0 4px 24px rgba(44, 112, 235, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
   }
 
   .testimonial-author {
@@ -574,7 +603,7 @@ const values = [
 
   .testimonial-name {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   .testimonial-blue .testimonial-name {
@@ -606,7 +635,7 @@ const values = [
     align-items: center;
     gap: 0.5rem;
     font-size: 0.9375rem;
-    font-weight: 600;
+    font-weight: 700;
     transition: gap 0.2s ease;
   }
 

@@ -15,10 +15,15 @@ interface Props {
   sidebarItems: SidebarItem[];
   heroTitle: string;
   heroSubtitle?: string;
+  heroIcon?: string;
+  activePath?: string;
+  helpCentreHref?: string;
+  helpCentreDescription?: string;
 }
 
-const { title, description, sidebarItems, heroTitle, heroSubtitle } = Astro.props;
+const { title, description, sidebarItems, heroTitle, heroSubtitle, heroIcon, activePath, helpCentreHref, helpCentreDescription } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const currentPath = Astro.url.pathname;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -27,7 +32,19 @@ const base = import.meta.env.BASE_URL;
   <!-- Page Hero -->
   <section class="pdl-hero">
     <div class="container-site">
-      <h1 class="pdl-hero-title">{heroTitle}</h1>
+      <div class="pdl-hero-top-row">
+        <div class="pdl-hero-title-row">
+          {heroIcon && <img src={heroIcon} alt="" class="pdl-hero-icon" />}
+          <h1 class="pdl-hero-title">{heroTitle}</h1>
+        </div>
+        {helpCentreHref && (
+          <a href={helpCentreHref} class="pdl-help-centre-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <span class="pdl-help-centre-label">Help Centre</span>
+            {helpCentreDescription && <span class="pdl-help-centre-desc">{helpCentreDescription}</span>}
+          </a>
+        )}
+      </div>
       {heroSubtitle && <p class="pdl-hero-subtitle">{heroSubtitle}</p>}
     </div>
   </section>
@@ -43,22 +60,30 @@ const base = import.meta.env.BASE_URL;
             <span>Menu</span>
           </button>
           <nav class="pdl-sidebar-nav" id="sidebar-nav" aria-label="Page navigation">
-            {sidebarItems.map((item) => (
-              <div class="pdl-sidebar-group">
-                <a href={item.href} class="pdl-sidebar-link pdl-sidebar-link--parent" data-section={item.href.replace('#', '')}>
-                  {item.label}
-                </a>
-                {item.children && item.children.length > 0 && (
-                  <div class="pdl-sidebar-children">
-                    {item.children.map((child) => (
-                      <a href={child.href} class="pdl-sidebar-link pdl-sidebar-link--child" data-section={child.href.replace('#', '')}>
-                        {child.label}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+            {sidebarItems.map((item) => {
+              const isUrlLink = !item.href.startsWith('#');
+              const isActive = isUrlLink && currentPath.replace(/\/$/, '') === item.href.replace(/\/$/, '');
+              return (
+                <div class="pdl-sidebar-group">
+                  <a href={item.href} class={`pdl-sidebar-link pdl-sidebar-link--parent${isActive ? ' active' : ''}`} data-section={item.href.startsWith('#') ? item.href.replace('#', '') : ''}>
+                    {item.label}
+                  </a>
+                  {item.children && item.children.length > 0 && (
+                    <div class="pdl-sidebar-children">
+                      {item.children.map((child) => {
+                        const childIsUrl = !child.href.startsWith('#');
+                        const childIsActive = childIsUrl && currentPath.replace(/\/$/, '') === child.href.replace(/\/$/, '');
+                        return (
+                          <a href={child.href} class={`pdl-sidebar-link pdl-sidebar-link--child${childIsActive ? ' active' : ''}`} data-section={child.href.startsWith('#') ? child.href.replace('#', '') : ''}>
+                            {child.label}
+                          </a>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </nav>
         </aside>
 
@@ -79,6 +104,63 @@ const base = import.meta.env.BASE_URL;
     padding: 3.5rem 0 2rem;
     background: linear-gradient(135deg, #f8faff 0%, #f0f7ff 50%, #f5fdf9 100%);
     border-bottom: 1px solid var(--color-brand-grey-border);
+  }
+
+  .pdl-hero-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .pdl-hero-title-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .pdl-help-centre-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    background: var(--color-brand-blue);
+    color: #fff;
+    border-radius: 10px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+    box-shadow: 0 1px 3px rgba(44, 112, 235, 0.2);
+  }
+
+  .pdl-help-centre-link:hover {
+    background: var(--color-brand-blue-hover, #1b5ad4);
+    box-shadow: 0 4px 12px rgba(44, 112, 235, 0.3);
+  }
+
+  .pdl-help-centre-link svg {
+    flex-shrink: 0;
+  }
+
+  .pdl-help-centre-label {
+    font-weight: 600;
+  }
+
+  .pdl-help-centre-desc {
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 400;
+    padding-left: 0.5rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .pdl-hero-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
   }
 
   .pdl-hero-title {
@@ -314,7 +396,12 @@ const base = import.meta.env.BASE_URL;
 
   /* ── Responsive ── */
   @media (max-width: 860px) {
+    .pdl-hero-top-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
     .pdl-hero-title { font-size: 2rem; }
+    .pdl-help-centre-desc { display: none; }
 
     .pdl-grid {
       grid-template-columns: 1fr;
@@ -369,11 +456,11 @@ const base = import.meta.env.BASE_URL;
     sidebarNav?.classList.toggle('open');
   });
 
-  // Active section tracking with Intersection Observer
+  // Active section tracking with Intersection Observer (only for anchor-based links)
   const sections = document.querySelectorAll('.pdl-content section[id]');
-  const sidebarLinks = document.querySelectorAll('.pdl-sidebar-link');
+  const sidebarLinks = document.querySelectorAll('.pdl-sidebar-link[data-section]:not([data-section=""])');
 
-  if (sections.length > 0) {
+  if (sections.length > 0 && sidebarLinks.length > 0) {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

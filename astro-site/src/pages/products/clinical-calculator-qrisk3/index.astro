@@ -13,7 +13,10 @@ const base = import.meta.env.BASE_URL;
   <section class="product-hero">
     <div class="container-site">
       <span class="product-badge">Automated Workflow</span>
-      <h1 class="product-hero-title">Clinical Calculations <span class="text-gradient">(QRisk3)</span></h1>
+      <div class="product-hero-title-row">
+        <img src={`${base}images/icon-spell-book.svg`} alt="" class="product-hero-icon" />
+        <h1 class="product-hero-title">Clinical Calculations <span class="text-gradient">(QRisk3)</span></h1>
+      </div>
       <p class="product-subtitle">Automated Cardiovascular Risk Scoring -- Fast, Reliable, and Cost-Effective</p>
       <a href={`${base}contact-us`} class="btn-primary">Contact Us</a>
     </div>
@@ -181,14 +184,29 @@ const base = import.meta.env.BASE_URL;
 <style>
   .product-hero {
     padding: 5rem 0 3rem;
-    background: linear-gradient(135deg, #f8faff, #f0f7ff 50%, #f5fdf9);
+    background: linear-gradient(175deg, #ffffff 0%, #f0f4fb 40%, #eef8f5 70%, #f5f7fa 100%);
     text-align: center;
+  }
+
+  .product-hero-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .product-hero-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
   }
 
   .product-hero-title {
     font-size: 3rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   .product-subtitle {
@@ -203,7 +221,7 @@ const base = import.meta.env.BASE_URL;
     padding: 0.375rem 1rem;
     background: rgba(44, 112, 235, 0.08);
     color: var(--color-brand-blue);
-    border-radius: 20px;
+    border-radius: 16px;
     font-size: 0.8125rem;
     font-weight: 500;
     margin-bottom: 1rem;
@@ -212,7 +230,7 @@ const base = import.meta.env.BASE_URL;
   .product-label {
     display: inline-block;
     font-size: 0.8125rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.08em;
     color: var(--color-brand-blue);
     text-transform: uppercase;
@@ -221,7 +239,8 @@ const base = import.meta.env.BASE_URL;
 
   .product-section-title {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     color: var(--color-brand-black);
     margin-bottom: 1.25rem;
   }
@@ -234,7 +253,7 @@ const base = import.meta.env.BASE_URL;
   }
 
   .product-overview-section {
-    background: #f9fafb;
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
   }
 
   .product-overview-box {
@@ -292,7 +311,7 @@ const base = import.meta.env.BASE_URL;
   }
 
   .product-why-section {
-    background: #f9fafb;
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
   }
 
   .product-why-box {
@@ -330,7 +349,7 @@ const base = import.meta.env.BASE_URL;
 
   /* Stats */
   .qrisk-stats-section {
-    background: #f9fafb;
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
   }
 
   .qrisk-stats-grid {
@@ -344,7 +363,8 @@ const base = import.meta.env.BASE_URL;
     padding: 2rem 1.5rem;
     background: #fff;
     border-radius: 16px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    box-shadow: var(--shadow-card);
   }
 
   .qrisk-stat-value {
@@ -366,6 +386,10 @@ const base = import.meta.env.BASE_URL;
   }
 
   @media (max-width: 768px) {
+    .product-hero-icon {
+      width: 36px;
+      height: 36px;
+    }
     .product-hero-title {
       font-size: 2.25rem;
     }

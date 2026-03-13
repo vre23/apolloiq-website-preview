@@ -13,9 +13,15 @@ const base = import.meta.env.BASE_URL;
   <section class="product-hero">
     <div class="container-site">
       <span class="product-badge">Automated Workflow</span>
-      <h1 class="product-hero-title">Pathology <span class="text-gradient">Automation</span></h1>
+      <div class="product-hero-title-row">
+        <img src={`${base}images/icon-spell-book.svg`} alt="" class="product-hero-icon" />
+        <h1 class="product-hero-title">Pathology <span class="text-gradient">Automation</span></h1>
+      </div>
       <p class="product-subtitle">80+ biomarkers. 17 test categories. Gender and age-specific reference ranges. Intelligent filing with zero compromise on accuracy.</p>
-      <a href={`${base}contact-us`} class="btn-primary">Contact Us</a>
+      <div class="hero-cta-group">
+        <a href={`${base}contact-us`} class="btn-primary">Contact Us</a>
+        <a href={`${base}products/pathology-automation/calculator`} class="btn-secondary">ROI Calculator</a>
+      </div>
     </div>
   </section>
 
@@ -216,6 +222,158 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
+  <!-- Safety Credentials -->
+  <section class="section path-safety-section">
+    <div class="container-site">
+      <div class="product-split">
+        <div class="product-split-left">
+          <span class="product-label">TRUST &amp; COMPLIANCE</span>
+          <h2 class="product-section-title">Safety First, <span class="text-gradient">Innovation Second</span></h2>
+          <p class="product-split-intro">Our pathology automation is built on a foundation of clinical safety and regulatory compliance.</p>
+        </div>
+        <div class="product-split-right">
+          <div class="path-safety-cards">
+            <div class="path-safety-card">
+              <div class="path-safety-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 class="path-safety-name">UKCA Class I Medical Device</h3>
+                <p class="path-safety-desc">Rule 11(a) regulated. Certified as a Class I Medical Device under UKCA regulations.</p>
+              </div>
+            </div>
+            <div class="path-safety-card">
+              <div class="path-safety-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 class="path-safety-name">DCB0129 Compliant</h3>
+                <p class="path-safety-desc">Strict clinical risk management with documented hazard logs and safety cases.</p>
+              </div>
+            </div>
+            <div class="path-safety-card">
+              <div class="path-safety-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 class="path-safety-name">Clinical Safety Officer</h3>
+                <p class="path-safety-desc">Safety cases approved and maintained by a registered CSO with ongoing clinical oversight.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conservative by Design — Guardrails -->
+  <section class="section path-guardrails-section">
+    <div class="container-site">
+      <span class="product-label">THE MECHANISM</span>
+      <h2 class="product-section-title">Conservative <span class="text-gradient">by Design</span></h2>
+      <p class="product-body-text" style="max-width: 720px;">
+        Our system prioritises safety over sophistication. Every guardrail is adjustable per practice needs, ensuring clinical governance is maintained at every step.
+      </p>
+
+      <div class="path-guardrail-grid">
+        <details class="path-guardrail">
+          <summary class="path-guardrail-summary">
+            <span class="path-guardrail-num">1</span>
+            <div class="path-guardrail-info">
+              <strong>Trend Analysis (Safety)</strong>
+              <span>Detects clinically significant changes between results</span>
+            </div>
+            <svg class="path-guardrail-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="path-guardrail-body">
+            <ul>
+              <li>Skips results if <strong>Creatinine increases &ge;1.5x</strong> from previous result (AKI risk)</li>
+              <li>Skips results if <strong>Haemoglobin drops &gt;10 units</strong> from previous value</li>
+              <li>Ensures emerging clinical trends are caught before they escalate</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="path-guardrail">
+          <summary class="path-guardrail-summary">
+            <span class="path-guardrail-num">2</span>
+            <div class="path-guardrail-info">
+              <strong>Context &amp; Exclusions</strong>
+              <span>Age-based rules, PSA logic, and diabetes checks</span>
+            </div>
+            <svg class="path-guardrail-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="path-guardrail-body">
+            <ul>
+              <li>Patients <strong>under age 12</strong> are automatically excluded from auto-filing</li>
+              <li>PSA results use <strong>age-specific thresholds</strong> (40-49, 50-59, 60-69, 70-79)</li>
+              <li>Diabetes-related biomarkers flagged with appropriate clinical context</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="path-guardrail">
+          <summary class="path-guardrail-summary">
+            <span class="path-guardrail-num">3</span>
+            <div class="path-guardrail-info">
+              <strong>Safety Keywords</strong>
+              <span>Clinical keyword detection and flagging</span>
+            </div>
+            <svg class="path-guardrail-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="path-guardrail-body">
+            <ul>
+              <li>Detects <strong>AKI</strong> (Acute Kidney Injury) keywords and flags for immediate review</li>
+              <li>Identifies <strong>CKD</strong> (Chronic Kidney Disease) indicators</li>
+              <li>'Not Detected' rules ensure negative results are handled appropriately</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="path-guardrail">
+          <summary class="path-guardrail-summary">
+            <span class="path-guardrail-num">4</span>
+            <div class="path-guardrail-info">
+              <strong>Lab Errors &amp; Quality</strong>
+              <span>Sample quality detection and error handling</span>
+            </div>
+            <svg class="path-guardrail-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="path-guardrail-body">
+            <ul>
+              <li>Detects <strong>haemolysed samples</strong> and prevents filing</li>
+              <li>Catches <strong>null values</strong> and incomplete results</li>
+              <li>Identifies lab processing errors and duplicate specimens</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- Clinical Governance -->
+      <div class="path-governance">
+        <h3 class="path-governance-title">Clinical Governance Based On</h3>
+        <div class="path-governance-grid">
+          <div class="path-governance-item">
+            <strong>NICE Guidelines</strong>
+            <span>NG131 (Prostate), NG28 (Diabetes), NG8 (Anaemia), CG181 (CVD)</span>
+          </div>
+          <div class="path-governance-item">
+            <strong>KDIGO 2012</strong>
+            <span>CKD/AKI kidney logic standards</span>
+          </div>
+          <div class="path-governance-item">
+            <strong>BCSH Guidelines</strong>
+            <span>Haematology &amp; Iron Deficiency</span>
+          </div>
+          <div class="path-governance-item">
+            <strong>NHS Lab Handbooks</strong>
+            <span>Tietz textbook &amp; lab standards</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Stats Highlights -->
   <section class="section path-stats-section">
     <div class="container-site">
@@ -304,14 +462,29 @@ const base = import.meta.env.BASE_URL;
 <style>
   .product-hero {
     padding: 5rem 0 3rem;
-    background: linear-gradient(135deg, #f8faff, #f0f7ff 50%, #f5fdf9);
+    background: linear-gradient(175deg, #ffffff 0%, #f0f4fb 40%, #eef8f5 70%, #f5f7fa 100%);
     text-align: center;
+  }
+
+  .product-hero-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .product-hero-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
   }
 
   .product-hero-title {
     font-size: 3rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   .product-subtitle {
@@ -322,12 +495,19 @@ const base = import.meta.env.BASE_URL;
     line-height: 1.7;
   }
 
+  .hero-cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
   .product-badge {
     display: inline-block;
     padding: 0.375rem 1rem;
     background: rgba(44, 112, 235, 0.08);
     color: var(--color-brand-blue);
-    border-radius: 20px;
+    border-radius: 16px;
     font-size: 0.8125rem;
     font-weight: 500;
     margin-bottom: 1rem;
@@ -336,7 +516,7 @@ const base = import.meta.env.BASE_URL;
   .product-label {
     display: inline-block;
     font-size: 0.8125rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.08em;
     color: var(--color-brand-blue);
     text-transform: uppercase;
@@ -345,7 +525,8 @@ const base = import.meta.env.BASE_URL;
 
   .product-section-title {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     color: var(--color-brand-black);
     margin-bottom: 1.25rem;
   }
@@ -358,7 +539,7 @@ const base = import.meta.env.BASE_URL;
   }
 
   .product-overview-section {
-    background: #f9fafb;
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
   }
 
   .product-overview-box {
@@ -416,7 +597,7 @@ const base = import.meta.env.BASE_URL;
   }
 
   .product-why-section {
-    background: #f9fafb;
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
   }
 
   .product-why-box {
@@ -454,7 +635,7 @@ const base = import.meta.env.BASE_URL;
 
   /* Coverage section */
   .product-coverage-section {
-    background: #f9fafb;
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
   }
 
   .product-coverage-box {
@@ -472,7 +653,8 @@ const base = import.meta.env.BASE_URL;
     background: #fff;
     border-radius: 12px;
     padding: 1.25rem 1.5rem;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    box-shadow: var(--shadow-card);
     transition: box-shadow 0.2s ease;
   }
 
@@ -482,14 +664,14 @@ const base = import.meta.env.BASE_URL;
 
   .path-coverage-name {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-brand-black);
     margin-bottom: 0.25rem;
   }
 
   .path-coverage-count {
     font-size: 0.8125rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-brand-blue);
     margin-bottom: 0.5rem;
   }
@@ -516,7 +698,8 @@ const base = import.meta.env.BASE_URL;
     padding: 2rem 1.5rem;
     background: #fff;
     border-radius: 16px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    box-shadow: var(--shadow-card);
   }
 
   .path-stat-value {
@@ -539,7 +722,7 @@ const base = import.meta.env.BASE_URL;
 
   /* Pricing */
   .path-pricing-section {
-    background: #f9fafb;
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
   }
 
   .path-pricing-wrap {
@@ -549,10 +732,11 @@ const base = import.meta.env.BASE_URL;
   .path-pricing-card {
     max-width: 480px;
     margin: 0 auto 1.5rem;
-    border-radius: 20px;
+    border-radius: 16px;
     padding: 2.5rem;
     background: #fff;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    box-shadow: var(--shadow-card);
     text-align: center;
   }
 
@@ -599,7 +783,7 @@ const base = import.meta.env.BASE_URL;
   }
 
   .path-pricing-calc-val {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-brand-blue);
   }
 
@@ -625,7 +809,207 @@ const base = import.meta.env.BASE_URL;
     font-weight: 700;
   }
 
+  /* Safety Credentials */
+  .path-safety-section {
+    background: #fff;
+  }
+
+  .path-safety-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .path-safety-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .path-safety-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  .path-safety-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(44, 112, 235, 0.08);
+    color: var(--color-brand-blue);
+    flex-shrink: 0;
+  }
+
+  .path-safety-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 0.25rem;
+  }
+
+  .path-safety-desc {
+    font-size: 0.875rem;
+    color: var(--color-brand-grey);
+    line-height: 1.6;
+  }
+
+  /* Guardrails */
+  .path-guardrails-section {
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
+  }
+
+  .path-guardrail-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .path-guardrail {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+  }
+  .path-guardrail:hover {
+    box-shadow: var(--shadow-hover);
+  }
+  .path-guardrail[open] {
+    border-color: rgba(44, 112, 235, 0.15);
+  }
+
+  .path-guardrail-summary {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+  .path-guardrail-summary::-webkit-details-marker { display: none; }
+
+  .path-guardrail-num {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(44, 112, 235, 0.08);
+    color: var(--color-brand-blue);
+    font-weight: 800;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+    font-family: var(--font-display);
+  }
+
+  .path-guardrail-info strong {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 0.125rem;
+  }
+  .path-guardrail-info span {
+    font-size: 0.8125rem;
+    color: var(--color-brand-grey-muted);
+  }
+
+  .path-guardrail-chevron {
+    margin-left: auto;
+    color: var(--color-brand-grey-light);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+  .path-guardrail[open] .path-guardrail-chevron {
+    transform: rotate(180deg);
+  }
+
+  .path-guardrail-body {
+    padding: 0 1.5rem 1.5rem 4.75rem;
+  }
+  .path-guardrail-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .path-guardrail-body li {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    line-height: 1.6;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .path-guardrail-body li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-brand-green);
+  }
+
+  /* Governance */
+  .path-governance {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: #fff;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(44, 112, 235, 0.06);
+  }
+
+  .path-governance-title {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-brand-grey-light);
+    margin-bottom: 1.25rem;
+  }
+
+  .path-governance-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .path-governance-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .path-governance-item strong {
+    font-size: 0.9375rem;
+    color: var(--color-brand-black);
+  }
+  .path-governance-item span {
+    font-size: 0.8125rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.5;
+  }
+
   @media (max-width: 768px) {
+    .product-hero-icon {
+      width: 36px;
+      height: 36px;
+    }
     .product-hero-title {
       font-size: 2.25rem;
     }
@@ -638,6 +1022,12 @@ const base = import.meta.env.BASE_URL;
     }
     .path-coverage-grid {
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+    .path-guardrail-body {
+      padding-left: 1.5rem;
+    }
+    .path-governance-grid {
+      grid-template-columns: 1fr;
     }
   }
 

@@ -13,7 +13,10 @@ const base = import.meta.env.BASE_URL;
   <section class="product-hero">
     <div class="container-site">
       <span class="product-badge">Automated Workflow</span>
-      <h1 class="product-hero-title">Clinical Document <span class="text-gradient">Management</span></h1>
+      <div class="product-hero-title-row">
+        <img src={`${base}images/icon-spell-book.svg`} alt="" class="product-hero-icon" />
+        <h1 class="product-hero-title">Clinical Document <span class="text-gradient">Management</span></h1>
+      </div>
       <p class="product-subtitle">Automate the processing of clinical documents in Optum - EmisWeb. Assign dates, code document types, generate titles, and file -- all automatically.</p>
       <a href={`${base}contact-us`} class="btn-primary">Contact Us</a>
     </div>
@@ -49,20 +52,19 @@ const base = import.meta.env.BASE_URL;
                   <th>Patient</th>
                   <th>Type</th>
                   <th>Document Title</th>
-                  <th>Coded</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td>01-Oct-2024</td><td>Bertie Bangers</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
-                <tr><td>01-Oct-2024</td><td>Penny Farthing</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
-                <tr><td>01-Oct-2024</td><td>Chester Cheddar</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
-                <tr><td>01-Oct-2024</td><td>Molly Muddle</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
-                <tr><td>01-Oct-2024</td><td>Nigel Nibbles</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
-                <tr><td>01-Oct-2024</td><td>Fiona Fishcake</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
-                <tr><td>01-Oct-2024</td><td>Graham Gravy</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
-                <tr><td>01-Oct-2024</td><td>Daisy Doodle</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
-                <tr><td>01-Oct-2024</td><td>Colin Crumpet</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
-                <tr><td>01-Oct-2024</td><td>Wendy Wobble</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td><td class="cdm-no">Not Set</td></tr>
+                <tr><td>01-Oct-2024</td><td>Bertie Bangers</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td></tr>
+                <tr><td>01-Oct-2024</td><td>Penny Farthing</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td></tr>
+                <tr><td>01-Oct-2024</td><td>Chester Cheddar</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td></tr>
+                <tr><td>01-Oct-2024</td><td>Molly Muddle</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td></tr>
+                <tr><td>01-Oct-2024</td><td>Nigel Nibbles</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td></tr>
+                <tr><td>01-Oct-2024</td><td>Fiona Fishcake</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td></tr>
+                <tr><td>01-Oct-2024</td><td>Graham Gravy</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td></tr>
+                <tr><td>01-Oct-2024</td><td>Daisy Doodle</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td></tr>
+                <tr><td>01-Oct-2024</td><td>Colin Crumpet</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td></tr>
+                <tr><td>01-Oct-2024</td><td>Wendy Wobble</td><td class="cdm-dim">Clinical Document</td><td class="cdm-dim">No Title</td></tr>
               </tbody>
             </table>
           </div>
@@ -130,20 +132,19 @@ const base = import.meta.env.BASE_URL;
                   <th>Patient</th>
                   <th>Specialty</th>
                   <th>Document Title</th>
-                  <th>Coded</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td>30-Sep-2024</td><td>Bertie Bangers</td><td>Discharge Summary</td><td>Accidental fall, Lower respiratory tract Infection, Pleural Effusion</td><td class="cdm-yes">Yes</td></tr>
-                <tr><td>30-Sep-2024</td><td>Penny Farthing</td><td>Gastroenterology</td><td>Barrett's Metaplasia</td><td class="cdm-yes">Yes</td></tr>
-                <tr><td>30-Sep-2024</td><td>Chester Cheddar</td><td>Endocrinology</td><td>Normal Calcium and Vitamin D Levels</td><td class="cdm-yes">Yes</td></tr>
-                <tr><td>27-Sep-2024</td><td>Molly Muddle</td><td>Gastroenterology</td><td>No concerning features found in oesophagus samples</td><td class="cdm-yes">Yes</td></tr>
-                <tr><td>01-Oct-2024</td><td>Nigel Nibbles</td><td>Urology</td><td>Overactive Bladder</td><td class="cdm-yes">Yes</td></tr>
-                <tr><td>26-Sep-2024</td><td>Fiona Fishcake</td><td>Rheumatology</td><td>Rheumatoid Nodule on MCP2</td><td class="cdm-yes">Yes</td></tr>
-                <tr><td>30-Sep-2024</td><td>Graham Gravy</td><td>Neurology</td><td>Seizure Disorder</td><td class="cdm-yes">Yes</td></tr>
-                <tr><td>24-Sep-2024</td><td>Daisy Doodle</td><td>Medical Oncology</td><td>75 mm grade 3 leiomyosarcoma of the colonic splenic flexure</td><td class="cdm-yes">Yes</td></tr>
-                <tr><td>26-Sep-2024</td><td>Colin Crumpet</td><td>Obstetrics and Gynaecology</td><td>Incomplete Miscarriage Management</td><td class="cdm-yes">Yes</td></tr>
-                <tr><td>18-Sep-2024</td><td>Wendy Wobble</td><td>Seen in Maxillofacial Unit</td><td>Medication-Related Osteonecrosis of the Jaw</td><td class="cdm-yes">Yes</td></tr>
+                <tr><td class="cdm-highlight">30-Sep-2024</td><td>Bertie Bangers</td><td class="cdm-highlight">Discharge Summary</td><td class="cdm-highlight">Accidental fall, Lower respiratory tract Infection, Pleural Effusion</td></tr>
+                <tr><td class="cdm-highlight">30-Sep-2024</td><td>Penny Farthing</td><td class="cdm-highlight">Gastroenterology</td><td class="cdm-highlight">Barrett's Metaplasia</td></tr>
+                <tr><td class="cdm-highlight">30-Sep-2024</td><td>Chester Cheddar</td><td class="cdm-highlight">Endocrinology</td><td class="cdm-highlight">Normal Calcium and Vitamin D Levels</td></tr>
+                <tr><td class="cdm-highlight">27-Sep-2024</td><td>Molly Muddle</td><td class="cdm-highlight">Gastroenterology</td><td class="cdm-highlight">No concerning features found in oesophagus samples</td></tr>
+                <tr><td class="cdm-highlight">01-Oct-2024</td><td>Nigel Nibbles</td><td class="cdm-highlight">Urology</td><td class="cdm-highlight">Overactive Bladder</td></tr>
+                <tr><td class="cdm-highlight">26-Sep-2024</td><td>Fiona Fishcake</td><td class="cdm-highlight">Rheumatology</td><td class="cdm-highlight">Rheumatoid Nodule on MCP2</td></tr>
+                <tr><td class="cdm-highlight">30-Sep-2024</td><td>Graham Gravy</td><td class="cdm-highlight">Neurology</td><td class="cdm-highlight">Seizure Disorder</td></tr>
+                <tr><td class="cdm-highlight">24-Sep-2024</td><td>Daisy Doodle</td><td class="cdm-highlight">Medical Oncology</td><td class="cdm-highlight">75 mm grade 3 leiomyosarcoma of the colonic splenic flexure</td></tr>
+                <tr><td class="cdm-highlight">26-Sep-2024</td><td>Colin Crumpet</td><td class="cdm-highlight">Obstetrics and Gynaecology</td><td class="cdm-highlight">Incomplete Miscarriage Management</td></tr>
+                <tr><td class="cdm-highlight">18-Sep-2024</td><td>Wendy Wobble</td><td class="cdm-highlight">Seen in Maxillofacial Unit</td><td class="cdm-highlight">Medication-Related Osteonecrosis of the Jaw</td></tr>
               </tbody>
             </table>
           </div>
@@ -289,14 +290,29 @@ const base = import.meta.env.BASE_URL;
 <style>
   .product-hero {
     padding: 5rem 0 3rem;
-    background: linear-gradient(135deg, #f8faff, #f0f7ff 50%, #f5fdf9);
+    background: linear-gradient(175deg, #ffffff 0%, #f0f4fb 40%, #eef8f5 70%, #f5f7fa 100%);
     text-align: center;
+  }
+
+  .product-hero-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .product-hero-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
   }
 
   .product-hero-title {
     font-size: 3rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   .product-subtitle {
@@ -312,7 +328,7 @@ const base = import.meta.env.BASE_URL;
     padding: 0.375rem 1rem;
     background: rgba(44, 112, 235, 0.08);
     color: var(--color-brand-blue);
-    border-radius: 20px;
+    border-radius: 16px;
     font-size: 0.8125rem;
     font-weight: 500;
     margin-bottom: 1rem;
@@ -321,7 +337,7 @@ const base = import.meta.env.BASE_URL;
   .product-label {
     display: inline-block;
     font-size: 0.8125rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.08em;
     color: var(--color-brand-blue);
     text-transform: uppercase;
@@ -330,7 +346,8 @@ const base = import.meta.env.BASE_URL;
 
   .product-section-title {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     color: var(--color-brand-black);
     margin-bottom: 1.25rem;
   }
@@ -397,7 +414,7 @@ const base = import.meta.env.BASE_URL;
   .cdm-problem-section,
   .cdm-result-section,
   .cdm-business-section {
-    background: #f9fafb;
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
   }
 
   .cdm-problem-box,
@@ -428,7 +445,8 @@ const base = import.meta.env.BASE_URL;
     border-radius: 16px;
     padding: 1.5rem;
     background: #fff;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    box-shadow: var(--shadow-card);
     margin-top: 1.5rem;
   }
 
@@ -438,7 +456,7 @@ const base = import.meta.env.BASE_URL;
 
   .cdm-table-title {
     text-align: center;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.9375rem;
     margin-bottom: 1rem;
   }
@@ -465,7 +483,7 @@ const base = import.meta.env.BASE_URL;
     text-align: left;
     padding: 0.625rem 0.875rem;
     color: var(--color-brand-blue);
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.8125rem;
     text-transform: uppercase;
     letter-spacing: 0.03em;
@@ -484,6 +502,11 @@ const base = import.meta.env.BASE_URL;
   .cdm-dim { color: #98a2b3; }
   .cdm-no { color: #e74c6f; font-weight: 600; }
   .cdm-yes { color: var(--color-brand-green); font-weight: 600; }
+  .cdm-highlight {
+    background: linear-gradient(135deg, rgba(44,112,235,0.08), rgba(0,195,147,0.08));
+    font-weight: 600;
+    color: var(--color-brand-black);
+  }
 
   /* Stats */
   .cdm-stat-row {
@@ -498,7 +521,8 @@ const base = import.meta.env.BASE_URL;
     border-radius: 16px;
     padding: 1.5rem 1rem;
     background: #fff;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    box-shadow: var(--shadow-card);
   }
 
   .cdm-stat-num {
@@ -519,7 +543,7 @@ const base = import.meta.env.BASE_URL;
 
   .cdm-cost-heading {
     font-size: 1.125rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-brand-black);
     margin-bottom: 0.75rem;
   }
@@ -582,7 +606,7 @@ const base = import.meta.env.BASE_URL;
 
   /* Pricing */
   .cdm-pricing-section {
-    background: #f9fafb;
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
   }
 
   .cdm-pricing-wrap {
@@ -592,10 +616,11 @@ const base = import.meta.env.BASE_URL;
   .cdm-pricing-card {
     max-width: 480px;
     margin: 0 auto 1.5rem;
-    border-radius: 20px;
+    border-radius: 16px;
     padding: 2.5rem;
     background: #fff;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    box-shadow: var(--shadow-card);
     text-align: center;
   }
 
@@ -642,7 +667,7 @@ const base = import.meta.env.BASE_URL;
   }
 
   .cdm-pricing-calc-val {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-brand-blue);
   }
 
@@ -669,6 +694,10 @@ const base = import.meta.env.BASE_URL;
   }
 
   @media (max-width: 768px) {
+    .product-hero-icon {
+      width: 36px;
+      height: 36px;
+    }
     .product-hero-title {
       font-size: 2.25rem;
     }

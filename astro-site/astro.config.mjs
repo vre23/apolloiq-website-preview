@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://vre23.github.io',
-  base: '/apolloiq-website-preview',
+  base: '/apolloiq-website-preview/',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

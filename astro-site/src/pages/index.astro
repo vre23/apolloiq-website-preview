@@ -138,7 +138,7 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <!-- ════════ OUR MISSION ════════ -->
-  <section class="section">
+  <section class="mission-section">
     <div class="container-site text-center" style="max-width: 800px;">
       <h2 class="section-title">Our <span class="text-gradient">Mission</span></h2>
       <p class="section-text">
@@ -148,7 +148,7 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <!-- ════════ WHAT WE DO ════════ -->
-  <section class="section" style="background: var(--color-brand-grey-bg-subtle);">
+  <section class="section features-section">
     <div class="container-site">
       <div class="text-center" style="margin-bottom: 3rem;">
         <h2 class="section-title">What We <span class="text-gradient">Do</span></h2>
@@ -157,7 +157,7 @@ const base = import.meta.env.BASE_URL;
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6m-3-3v6m-7 4h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <img src={`${base}images/icon-scribe.svg`} alt="" class="feature-icon-img" />
           </div>
           <h3 class="feature-title">Spells</h3>
           <p class="feature-desc">Voice-powered clinical tools including ScribeCraft for consultation transcription, Blood Pressure Scroll for digitising readings, and Locate Elixir for real-time medication availability.</p>
@@ -165,7 +165,7 @@ const base = import.meta.env.BASE_URL;
         </div>
         <div class="feature-card">
           <div class="feature-icon feature-icon--green">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            <img src={`${base}images/icon-spell-book.svg`} alt="" class="feature-icon-img" />
           </div>
           <h3 class="feature-title">Automated Workflows</h3>
           <p class="feature-desc">Intelligent automation systems for pathology filing, clinical document management, QRisk3 calculations, and GP list reallocation — available 24/7 with 100% accuracy.</p>
@@ -173,7 +173,7 @@ const base = import.meta.env.BASE_URL;
         </div>
         <div class="feature-card">
           <div class="feature-icon feature-icon--teal">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+            <img src={`${base}images/icon-locate-elixir.svg`} alt="" class="feature-icon-img" />
           </div>
           <h3 class="feature-title">Custom Solutions</h3>
           <p class="feature-desc">Bespoke automation processes, custom software solutions, and digitalisation consultancy — tailored to your practice's specific needs and clinical workflows.</p>
@@ -192,19 +192,19 @@ const base = import.meta.env.BASE_URL;
       <div class="testimonials-grid">
         <div class="testimonial-card testimonial-card--blue">
           <div class="testimonial-quote">
-            <p>"ApolloIQ's approach to our collaboration has been outstanding from the start. They listened closely to our challenges and developed tailored solutions that genuinely improve our day-to-day operations. Their blend of healthcare knowledge and AI technology sets them apart."</p>
+            <p>"Collaboration with ApolloIQ has been a great experience for our GP business. The expertise from both pharmacists Raz and Vlad and their Automation and AI team was instrumental in developing solutions. Piloting and testing services did not affect daily operations. Continuous feedback loops ensured both safety and a personalised approach from ApolloIQ."</p>
           </div>
           <div class="testimonial-author">
-            <img src={`${base}images/685dc40ff887e05cecfae2fd_84b855382620e11d9931513d8365e6ae.jpeg`} alt="Dr Christian Hornung" class="testimonial-avatar" />
+            <img src={`${base}images/68610f087977ffbeb345abba_nhs-logo.webp`} alt="NHS" class="testimonial-avatar" />
             <div>
               <strong class="testimonial-name">Dr Christian Hornung</strong>
-              <span class="testimonial-role">Clinical Director, Taunton Vale Healthcare</span>
+              <span class="testimonial-role">Clinical Director - Taunton Vale Healthcare</span>
             </div>
           </div>
         </div>
         <div class="testimonial-card">
           <div class="testimonial-quote">
-            <p>"From the initial brief to the finished website, the ApolloIQ team were exceptional. Their responsiveness to queries and design input was great. A pleasure to work with and would highly recommend."</p>
+            <p>"Working with ApolloIQ has been an excellent experience, they are very responsive and attentive to detail. We never hesitate to work with them or recommend their services to our clients."</p>
           </div>
           <div class="testimonial-author">
             <img src={`${base}images/68610e0b2ff42f65d5184b3a_valeed2.webp`} alt="Dr. Valeed Ghafoor" class="testimonial-avatar" />
@@ -216,13 +216,13 @@ const base = import.meta.env.BASE_URL;
         </div>
         <div class="testimonial-card testimonial-card--blue">
           <div class="testimonial-quote">
-            <p>"We were instantly impressed by Vlad's knowledge of Primary Care administration and the evident opportunities to improve efficiency. The collaboration has gone from strength to strength as we work together to improve the pathway."</p>
+            <p>"ApolloIQ Automation solutions are improving efficiency and safety of our Practices. Their attention to details around clinical safety and information governance is second to none."</p>
           </div>
           <div class="testimonial-author">
             <img src={`${base}images/68610f087977ffbeb345abba_nhs-logo.webp`} alt="NHS" class="testimonial-avatar" />
             <div>
               <strong class="testimonial-name">James Roberts</strong>
-              <span class="testimonial-role">Digital & Transformation Lead, Taunton Central & Tone Valley PCN</span>
+              <span class="testimonial-role">Digital & Transformation Lead Taunton Central & Tone Valley PCN</span>
             </div>
           </div>
         </div>
@@ -234,7 +234,19 @@ const base = import.meta.env.BASE_URL;
             <img src={`${base}images/68610f087977ffbeb345abba_nhs-logo.webp`} alt="NHS" class="testimonial-avatar" />
             <div>
               <strong class="testimonial-name">Chris Miller</strong>
-              <span class="testimonial-role">Data Team Lead, French Wier Medical Centre</span>
+              <span class="testimonial-role">Data Team Lead French Weir Medical Centre, Taunton Central PCN</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card testimonial-card--blue">
+          <div class="testimonial-quote">
+            <p>"It has been great for me this week as I have had a few queries regarding out-of-stock situations. I am really thankful for it as other tools I found to be a bit flimsy. It is very easy and quick to use, which is exactly what is needed."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src={`${base}images/68610f087977ffbeb345abba_nhs-logo.webp`} alt="NHS" class="testimonial-avatar" />
+            <div>
+              <strong class="testimonial-name">Paula Taylor</strong>
+              <span class="testimonial-role">Pharmacy Technician, Clinical Pharmacist Solutions</span>
             </div>
           </div>
         </div>
@@ -243,7 +255,7 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <!-- ════════ WHY APOLLOIQ ════════ -->
-  <section class="section" style="background: var(--color-brand-grey-bg-subtle);">
+  <section class="section why-section">
     <div class="container-site">
       <div class="text-center" style="margin-bottom: 3rem;">
         <h2 class="section-title">Why <span class="text-gradient">ApolloIQ</span></h2>
@@ -315,7 +327,7 @@ const base = import.meta.env.BASE_URL;
     position: relative;
     padding: 5rem 0 4rem;
     overflow: hidden;
-    background: #fff;
+    background: linear-gradient(175deg, #ffffff 0%, #f0f4fb 40%, #eef8f5 70%, #f5f7fa 100%);
   }
   .hero-grid {
     display: grid;
@@ -329,13 +341,14 @@ const base = import.meta.env.BASE_URL;
   }
   .hero-title {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 300;
-    line-height: 1.15;
+    font-weight: 400;
+    line-height: 1.1;
     color: var(--color-brand-black);
     margin-bottom: 2.5rem;
+    letter-spacing: -0.02em;
   }
 
-  /* Hero icon grid (2x2 with descriptions) */
+  /* Hero icon grid */
   .hero-icon-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -355,7 +368,7 @@ const base = import.meta.env.BASE_URL;
   .hero-icon-item strong {
     display: block;
     font-size: 0.9375rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-brand-black);
     margin-bottom: 0.125rem;
   }
@@ -385,7 +398,6 @@ const base = import.meta.env.BASE_URL;
     height: 520px;
     margin-left: auto;
   }
-  /* Left column: 40% (blue card + merlin lion) */
   .hero-comp-col-left {
     display: flex;
     flex-direction: column;
@@ -393,7 +405,6 @@ const base = import.meta.env.BASE_URL;
     width: 40%;
     flex-shrink: 0;
   }
-  /* Right column: 60% (dashboard + blue card) */
   .hero-comp-col-right {
     display: flex;
     flex-direction: column;
@@ -402,14 +413,14 @@ const base = import.meta.env.BASE_URL;
     flex-shrink: 0;
   }
   .hero-comp-card {
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
   }
   .hero-comp-card--img {
     position: relative;
     flex: 1;
     min-height: 0;
-    box-shadow: 10px 6px 16px 1px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 32px rgba(25, 29, 33, 0.15);
   }
   .hero-comp-card--img img {
     width: 100%;
@@ -418,7 +429,7 @@ const base = import.meta.env.BASE_URL;
     display: block;
   }
   .hero-comp-card--text-blue {
-    background: var(--color-brand-blue);
+    background: linear-gradient(135deg, #1a3a5c, #1d4d40);
     height: 170px;
     flex-shrink: 0;
     padding: 1.5rem;
@@ -435,7 +446,7 @@ const base = import.meta.env.BASE_URL;
   }
   .hero-comp-heading--large {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 800;
   }
   .hero-comp-heading--bold {
     font-weight: 700;
@@ -449,28 +460,31 @@ const base = import.meta.env.BASE_URL;
 
   .hero-arrow-link {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    right: 12px;
+    top: 12px;
     z-index: 5;
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid rgba(44,112,235,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(44,112,235,0.15);
   }
   .hero-arrow-link:hover {
-    transform: translate(-50%, -50%) scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(0,0,0,0.18);
   }
   .hero-arrow-link img {
-    width: 24px;
+    width: 26px;
     height: auto;
+    transition: transform 0.4s ease;
+  }
+  .hero-arrow-link:hover img {
+    transform: rotate(45deg);
   }
 
   .hero-orb {
@@ -480,18 +494,18 @@ const base = import.meta.env.BASE_URL;
     pointer-events: none;
   }
   .hero-orb--1 {
-    width: 500px;
-    height: 500px;
-    background: rgba(44, 112, 235, 0.06);
-    top: -10%;
-    right: -5%;
+    width: 600px;
+    height: 600px;
+    background: rgba(44, 112, 235, 0.12);
+    top: -15%;
+    right: -8%;
   }
   .hero-orb--2 {
-    width: 400px;
-    height: 400px;
-    background: rgba(0, 195, 147, 0.05);
-    bottom: -20%;
-    right: 20%;
+    width: 500px;
+    height: 500px;
+    background: rgba(0, 195, 147, 0.1);
+    bottom: -25%;
+    right: 15%;
   }
 
   /* ── Marquee ── */
@@ -518,7 +532,7 @@ const base = import.meta.env.BASE_URL;
     animation-play-state: paused;
   }
   .marquee-logo {
-    height: 70px;
+    height: 131px;
     width: auto;
     opacity: 0.85;
     transition: opacity 0.3s, transform 0.3s;
@@ -532,14 +546,22 @@ const base = import.meta.env.BASE_URL;
     100% { transform: translateX(-25%); }
   }
 
+  /* ── Mission ── */
+  .mission-section {
+    padding: 4.5rem 0;
+    background: #fff;
+    position: relative;
+  }
+
   /* Sections */
   .text-center { text-align: center; }
   .section-title {
     font-size: 2.75rem;
-    font-weight: 300;
+    font-weight: 700;
     color: var(--color-brand-black);
     margin-bottom: 1rem;
     line-height: 1.15;
+    letter-spacing: -0.02em;
   }
   .section-subtitle {
     font-size: 1.0625rem;
@@ -553,10 +575,14 @@ const base = import.meta.env.BASE_URL;
   }
   .mission-highlight {
     color: var(--color-brand-blue);
-    font-weight: 500;
+    font-weight: 600;
   }
 
-  /* Features */
+  /* ── Features ── */
+  .features-section {
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
+    position: relative;
+  }
   .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -567,11 +593,13 @@ const base = import.meta.env.BASE_URL;
     border-radius: var(--radius-card);
     padding: 2.5rem 2rem;
     box-shadow: var(--shadow-card);
-    transition: box-shadow 0.3s, transform 0.3s;
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
   }
   .feature-card:hover {
     box-shadow: var(--shadow-hover);
     transform: translateY(-4px);
+    border-color: rgba(44, 112, 235, 0.15);
   }
   .feature-icon {
     width: 56px;
@@ -582,7 +610,14 @@ const base = import.meta.env.BASE_URL;
     border-radius: 14px;
     background: rgba(44, 112, 235, 0.08);
     color: var(--color-brand-blue);
+    padding: 10px;
     margin-bottom: 1.5rem;
+  }
+
+  .feature-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
   .feature-icon--green {
     background: rgba(0, 195, 147, 0.08);
@@ -594,7 +629,7 @@ const base = import.meta.env.BASE_URL;
   }
   .feature-title {
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-brand-black);
     margin-bottom: 0.75rem;
   }
@@ -606,7 +641,7 @@ const base = import.meta.env.BASE_URL;
   }
   .feature-link {
     font-size: 0.9375rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--color-brand-blue);
     transition: color 0.2s;
   }
@@ -614,7 +649,10 @@ const base = import.meta.env.BASE_URL;
     color: var(--color-brand-blue-dark);
   }
 
-  /* Testimonials */
+  /* ── Testimonials ── */
+  .testimonials-section {
+    background: #fff;
+  }
   .testimonials-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -625,18 +663,21 @@ const base = import.meta.env.BASE_URL;
     border-radius: var(--radius-card);
     padding: 2rem;
     box-shadow: var(--shadow-card);
+    border: 1px solid rgba(44, 112, 235, 0.06);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s, transform 0.3s;
   }
   .testimonial-card:hover {
     box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
   }
   .testimonial-card--blue {
-    background: linear-gradient(135deg, #1d2939, #344054);
-    color: #fff;
+    background: linear-gradient(135deg, rgba(44, 112, 235, 0.06), rgba(0, 195, 147, 0.06));
+    color: var(--color-brand-black);
     box-shadow: var(--shadow-card-lg);
+    border: 1px solid rgba(44, 112, 235, 0.12);
   }
   .testimonial-quote p {
     font-size: 0.9375rem;
@@ -646,7 +687,7 @@ const base = import.meta.env.BASE_URL;
     margin-bottom: 1.5rem;
   }
   .testimonial-card--blue .testimonial-quote p {
-    color: rgba(255,255,255,0.85);
+    color: var(--color-brand-grey);
   }
   .testimonial-author {
     display: flex;
@@ -659,16 +700,20 @@ const base = import.meta.env.BASE_URL;
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
+    border: 2px solid rgba(44, 112, 235, 0.1);
+  }
+  .testimonial-card--blue .testimonial-avatar {
+    border-color: rgba(255, 255, 255, 0.15);
   }
   .testimonial-name {
     display: block;
     font-size: 0.9375rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-brand-black);
     margin-bottom: 0.125rem;
   }
   .testimonial-card--blue .testimonial-name {
-    color: #fff;
+    color: var(--color-brand-black);
   }
   .testimonial-role {
     display: block;
@@ -677,10 +722,13 @@ const base = import.meta.env.BASE_URL;
     line-height: 1.4;
   }
   .testimonial-card--blue .testimonial-role {
-    color: rgba(255,255,255,0.55);
+    color: var(--color-brand-grey-muted);
   }
 
-  /* Why */
+  /* ── Why ApolloIQ ── */
+  .why-section {
+    background: linear-gradient(180deg, #f5f7fa 0%, #edf2fa 50%, #f0f7f4 100%);
+  }
   .why-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -688,25 +736,30 @@ const base = import.meta.env.BASE_URL;
   }
   .why-card {
     padding: 2rem;
-    border: 1px solid var(--color-brand-grey-border);
+    background: #fff;
+    border: 1px solid rgba(44, 112, 235, 0.08);
     border-radius: var(--radius-card);
-    transition: border-color 0.3s, box-shadow 0.3s;
+    box-shadow: var(--shadow-card);
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
   }
   .why-card:hover {
-    border-color: var(--color-brand-blue);
-    box-shadow: 0 4px 20px rgba(44, 112, 235, 0.08);
+    border-color: rgba(44, 112, 235, 0.2);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-3px);
   }
   .why-number {
     font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--color-brand-blue);
-    opacity: 0.15;
+    font-weight: 800;
+    background: linear-gradient(135deg, rgba(44, 112, 235, 0.15), rgba(0, 195, 147, 0.15));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 1rem;
     line-height: 1;
   }
   .why-title {
     font-size: 1.125rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-brand-black);
     margin-bottom: 0.75rem;
   }
@@ -716,7 +769,7 @@ const base = import.meta.env.BASE_URL;
     line-height: 1.7;
   }
 
-  /* Case Studies */
+  /* ── Case Studies ── */
   .case-studies-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -727,6 +780,7 @@ const base = import.meta.env.BASE_URL;
     border-radius: var(--radius-card);
     overflow: hidden;
     box-shadow: var(--shadow-card);
+    border: 1px solid rgba(44, 112, 235, 0.06);
     transition: box-shadow 0.3s, transform 0.3s;
     display: block;
   }
@@ -752,7 +806,7 @@ const base = import.meta.env.BASE_URL;
   }
   .case-card-title {
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-brand-black);
     margin-bottom: 0.5rem;
   }
@@ -764,7 +818,7 @@ const base = import.meta.env.BASE_URL;
   }
   .case-card-link {
     font-size: 0.9375rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--color-brand-blue);
   }
 
@@ -779,7 +833,7 @@ const base = import.meta.env.BASE_URL;
     .features-grid, .why-grid { grid-template-columns: 1fr; }
     .testimonials-grid { grid-template-columns: 1fr; }
     .case-studies-grid { grid-template-columns: 1fr; }
-    .marquee-logo { height: 55px; }
+    .marquee-logo { height: 103px; }
   }
   @media (max-width: 480px) {
     .hero { padding: 2.5rem 0 2rem; }
@@ -791,6 +845,6 @@ const base = import.meta.env.BASE_URL;
     .hero-comp-heading--large { font-size: 1.5rem; }
     .hero-icon-grid { grid-template-columns: 1fr; gap: 1rem; }
     .section-title { font-size: 2rem; }
-    .marquee-logo { height: 45px; }
+    .marquee-logo { height: 85px; }
   }
 </style>

@@ -1,0 +1,166 @@
+---
+import ProductDocsLayout from '../../../../../layouts/ProductDocsLayout.astro';
+const base = import.meta.env.BASE_URL;
+
+const sidebarItems = [
+  { label: 'Quick Start Guide', href: `${base}products/scribecraft/help-centre/quick-start` },
+  { label: 'Accuracy Optimisation', href: `${base}products/scribecraft/help-centre/accuracy` },
+  { label: 'FAQ', href: `${base}products/scribecraft/help-centre/faq` },
+  { label: 'Materials & Explainers', href: `${base}products/scribecraft/help-centre/materials` },
+  { label: 'Practice Readiness Audit', href: `${base}products/scribecraft/help-centre/practice-audit` },
+];
+---
+
+<ProductDocsLayout
+  title="Quick Start Guide - ScribeCraft Help Centre | ApolloIQ"
+  description="Step-by-step guide to start using ScribeCraft in your consultations."
+  sidebarItems={sidebarItems}
+  heroTitle="ScribeCraft Help Centre"
+  heroSubtitle="Guides, FAQs, and resources to help you get the most from ScribeCraft in your practice."
+  heroIcon={`${base}images/icon-scribe.svg`}
+>
+
+  <a href={`${base}products/scribecraft/help-centre`} class="help-back-link">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to Help Centre
+  </a>
+
+  <section id="quick-start-guide">
+    <h2>Quick Start Guide</h2>
+    <p>Follow these simple steps to start using ScribeCraft in your consultations.</p>
+
+    <div class="content-card">
+      <h3>1. Log into Merlin</h3>
+      <p>
+        Access ScribeCraft through your dedicated account on the <strong>Merlin platform</strong>. Navigate to
+        <strong>merlin.apolloiq.co.uk</strong> and sign in with your credentials. No software to install —
+        ScribeCraft runs entirely in your browser.
+      </p>
+    </div>
+
+    <div class="highlight-box">
+      <strong>Tip:</strong> ScribeCraft works on Chrome, Edge, Firefox, and Safari — on any device with a microphone
+      and internet connection.
+    </div>
+
+    <div class="content-card">
+      <h3>2. Set Up Your Microphone</h3>
+      <p>Before your first session, ensure your microphone is configured correctly:</p>
+      <ol>
+        <li><strong>Select your microphone</strong> — Click the microphone icon next to the Start button and choose your preferred device from the list.</li>
+        <li><strong>Test audio capture</strong> — Verify the microphone picks up your voice clearly at a comfortable distance.</li>
+        <li><strong>Grant browser permissions</strong> — When prompted, click <em>Allow</em> to let ScribeCraft access your microphone. If you accidentally blocked it, click the lock icon in the address bar and change the Microphone setting to Allow.</li>
+      </ol>
+    </div>
+
+    <div class="highlight-box">
+      <strong>Tip:</strong> A USB desk microphone gives the best audio quality. Your laptop's built-in microphone works
+      well for short distances. Position the microphone 30-50 cm from the speaker for optimal results.
+    </div>
+
+    <div class="content-card">
+      <h3>3. Choose a Note Format</h3>
+      <p>
+        Select from the available clinical templates — <strong>SOAP notes</strong>, <strong>clinical letters</strong>,
+        <strong>referral letters</strong>, or specialty-specific formats. Choosing the right template before recording
+        helps ScribeCraft structure information exactly the way you need it.
+      </p>
+    </div>
+
+    <div class="content-card">
+      <h3>4. Obtain Patient Consent</h3>
+      <p>
+        Before starting the recording, inform the patient and obtain their consent. This is a legal requirement
+        under UK data protection law and good clinical practice.
+      </p>
+      <p>
+        Suggested phrasing: <em>"I'll be using a digital assistant that transcribes our conversation to generate
+        clinical notes. Are you happy with that?"</em>
+      </p>
+    </div>
+
+    <div class="sc-warning-box">
+      <strong>Important:</strong> Patient consent is mandatory under UK GDPR. Ensure the patient understands and
+      agrees before recording the consultation.
+    </div>
+
+    <div class="content-card">
+      <h3>5. Start Recording</h3>
+      <p>
+        Press the <strong>Start</strong> button to begin recording. Conduct your consultation naturally — ScribeCraft
+        works in the background without interrupting your clinical workflow.
+      </p>
+    </div>
+
+    <div class="content-card">
+      <h3>6. Stop and Process</h3>
+      <p>
+        When the consultation ends, click <strong>Stop</strong>. ScribeCraft will automatically process the
+        conversation and generate a structured clinical note according to your chosen template. Processing usually
+        takes just a few seconds.
+      </p>
+    </div>
+
+    <div class="content-card">
+      <h3>7. Review and Edit</h3>
+      <p>
+        Read the generated draft carefully. Check that all clinical details are accurate — especially medication
+        doses, numerical values, and diagnoses. Edit directly in the editor if any corrections are needed.
+      </p>
+    </div>
+
+    <div class="sc-warning-box">
+      <strong>Important:</strong> Always review the generated note before using it officially. ScribeCraft produces
+      draft documents — final clinical responsibility remains with you.
+    </div>
+
+    <div class="content-card">
+      <h3>8. Copy and File</h3>
+      <p>Once you're satisfied with the note:</p>
+      <ul>
+        <li><strong>Copy to your EPR</strong> — Paste the note directly into EMIS Web, SystmOne, Vision, or any EPR system.</li>
+        <li><strong>Export as PDF</strong> — Generate a professional document for printing or patient records.</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <strong>Tip:</strong> Notes are saved automatically in your Merlin account. You can return to any previous note
+      from the History section at any time.
+    </div>
+  </section>
+
+</ProductDocsLayout>
+
+<style>
+  .help-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.875rem;
+    color: var(--color-brand-blue);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    transition: opacity 0.2s;
+  }
+  .help-back-link:hover { opacity: 0.7; }
+
+  .sc-warning-box {
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.04), rgba(220, 38, 38, 0.02));
+    border-left: 4px solid #dc2626;
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-brand-black);
+  }
+
+  .sc-warning-box strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #dc2626;
+  }
+</style>

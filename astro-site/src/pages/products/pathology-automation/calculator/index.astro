@@ -1,0 +1,920 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Nav from '../../../../components/Nav.astro';
+import Footer from '../../../../components/Footer.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Pathology Automation Calculator" description="Estimate the operational and financial impact of pathology automation for your GP practice. Interactive ROI calculator with real-time projections.">
+  <Nav />
+
+  <!-- Hero -->
+  <section class="calc-hero">
+    <div class="container-site">
+      <a href={`${base}products/pathology-automation`} class="calc-back-link">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to Pathology Automation
+      </a>
+      <span class="calc-badge">Interactive Calculator</span>
+      <h1 class="calc-hero-title">GP Practice Pathology <span class="text-gradient">Automation Calculator</span></h1>
+      <p class="calc-hero-sub">Estimate the operational and financial impact of automation for your practice.</p>
+    </div>
+  </section>
+
+  <!-- Practice Inputs -->
+  <section class="section calc-inputs-section">
+    <div class="container-site">
+      <div class="calc-inputs-grid">
+        <div class="calc-input-group">
+          <label class="calc-input-label" for="practice-name">Practice Name</label>
+          <input type="text" id="practice-name" class="form-field" placeholder="e.g. Riverside Medical Centre" />
+        </div>
+        <div class="calc-input-group">
+          <label class="calc-input-label" for="patient-list">Patient List Size</label>
+          <input type="number" id="patient-list" class="form-field" placeholder="e.g. 10000" value="10000" min="1000" max="50000" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Pain -->
+  <section class="section calc-pain-section">
+    <div class="container-site">
+      <span class="calc-section-label">THE PAIN</span>
+      <h2 class="calc-section-title">The Hidden Cost of <span class="text-gradient">'Cognitive Clutter'</span></h2>
+      <p class="calc-section-desc">
+        The financial cost is secondary. The real risk is the cognitive burden on physicians who must filter through hundreds of routine results daily, potentially missing subtle clinical patterns buried in the noise.
+      </p>
+
+      <div class="calc-pain-grid">
+        <div class="calc-pain-card">
+          <div class="calc-pain-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 14l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="calc-pain-value" id="daily-volume">152</div>
+          <div class="calc-pain-label">Daily Lab Volume</div>
+          <div class="calc-pain-detail">results processed manually every day</div>
+        </div>
+        <div class="calc-pain-card">
+          <div class="calc-pain-icon calc-pain-icon--amber">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="calc-pain-value" id="gp-capacity">633</div>
+          <div class="calc-pain-label">GP Capacity Lost</div>
+          <div class="calc-pain-detail">hours per year spent on filing</div>
+        </div>
+        <div class="calc-pain-card">
+          <div class="calc-pain-icon calc-pain-icon--red">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="calc-pain-value" id="annual-cost">&pound;50,667</div>
+          <div class="calc-pain-label">Annual Cost</div>
+          <div class="calc-pain-detail">based on &pound;80/hr GP cost</div>
+        </div>
+      </div>
+
+      <div class="calc-risk-callout">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div>
+          <strong>Clinical Risk Warning</strong>
+          <p>Cognitive clutter and fatigue-induced errors are the real cost -- not just the hours lost. When GPs process hundreds of routine results, the risk of missing a critical abnormality increases significantly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Goal -->
+  <section class="section calc-goal-section">
+    <div class="container-site">
+      <span class="calc-section-label">THE GOAL</span>
+      <h2 class="calc-section-title">Reducing Operational Risk <span class="text-gradient">for Your Practice</span></h2>
+      <p class="calc-section-desc">
+        We partner with practices to reduce GP administrative time by approximately 30% using our Class I Medical Device automation. Think of it as a force multiplier -- removing the high-volume, low-complexity workload so your clinicians can focus on patients who need them.
+      </p>
+    </div>
+  </section>
+
+  <!-- The Win — Interactive Slider -->
+  <section class="section calc-win-section">
+    <div class="container-site">
+      <span class="calc-section-label">THE WIN</span>
+      <h2 class="calc-section-title">Adjust the <span class="text-gradient">Filing Rate</span></h2>
+
+      <div class="calc-slider-wrap">
+        <div class="calc-slider-header">
+          <span class="calc-slider-label-left">Conservative (20%)</span>
+          <span class="calc-slider-value" id="slider-value">35%</span>
+          <span class="calc-slider-label-right">Aggressive (60%)</span>
+        </div>
+        <div class="calc-slider-track-wrap">
+          <input type="range" id="filing-slider" class="calc-slider" min="20" max="60" value="35" step="1" />
+        </div>
+        <div class="calc-slider-sub">Target Filing Rate</div>
+      </div>
+
+      <div class="calc-results-grid">
+        <div class="calc-result-card">
+          <div class="calc-result-value" id="hours-saved">222</div>
+          <div class="calc-result-label">Hours Saved / Year</div>
+        </div>
+        <div class="calc-result-card">
+          <div class="calc-result-value calc-result-green" id="results-filed">13,300</div>
+          <div class="calc-result-label">Results Auto-Filed</div>
+          <div class="calc-result-detail">removed from GP inbox</div>
+        </div>
+        <div class="calc-result-card">
+          <div class="calc-result-value" id="value-created">&pound;17,733</div>
+          <div class="calc-result-label">Value Created</div>
+          <div class="calc-result-detail">operational savings</div>
+        </div>
+        <div class="calc-result-card calc-result-card--accent">
+          <div class="calc-result-value" id="est-roi">491%</div>
+          <div class="calc-result-label">Estimated ROI</div>
+          <div class="calc-result-detail">based on &pound;11,400 annual cost</div>
+        </div>
+      </div>
+
+      <div class="calc-quote-callout">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="calc-quote-icon"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="currentColor" opacity="0.15"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="currentColor" opacity="0.15"/></svg>
+        <p class="calc-quote-text">That is equivalent to a partner getting home on time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us — Safety -->
+  <section class="section calc-safety-section">
+    <div class="container-site">
+      <span class="calc-section-label">WHY US</span>
+      <h2 class="calc-section-title">Safety First, <span class="text-gradient">Innovation Second</span></h2>
+
+      <div class="calc-safety-grid">
+        <div class="calc-safety-card">
+          <div class="calc-safety-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="calc-safety-heading">UKCA Class I Medical Device</h3>
+          <p class="calc-safety-desc">Rule 11(a) regulated. Our pathology automation system is certified as a Class I Medical Device under UKCA regulations.</p>
+        </div>
+        <div class="calc-safety-card">
+          <div class="calc-safety-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="calc-safety-heading">DCB0129 Compliant</h3>
+          <p class="calc-safety-desc">Strict clinical risk management following DCB0129 standards, with documented hazard logs and safety cases.</p>
+        </div>
+        <div class="calc-safety-card">
+          <div class="calc-safety-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="calc-safety-heading">Clinical Safety Officer</h3>
+          <p class="calc-safety-desc">Safety cases approved and maintained by a registered Clinical Safety Officer with ongoing clinical oversight.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Mechanism — Guardrails -->
+  <section class="section calc-mechanism-section">
+    <div class="container-site">
+      <span class="calc-section-label">THE MECHANISM</span>
+      <h2 class="calc-section-title">Conservative <span class="text-gradient">by Design</span></h2>
+      <p class="calc-section-desc">
+        Our system prioritises safety over sophistication. Every guardrail is adjustable per practice needs, ensuring clinical governance is maintained at every step.
+      </p>
+
+      <div class="calc-guardrails">
+        <details class="calc-guardrail">
+          <summary class="calc-guardrail-header">
+            <div class="calc-guardrail-num">1</div>
+            <div class="calc-guardrail-info">
+              <h3>Trend Analysis (Safety)</h3>
+              <p>Detects clinically significant changes between results</p>
+            </div>
+            <svg class="calc-guardrail-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="calc-guardrail-body">
+            <ul>
+              <li>Skips results if <strong>Creatinine increases &ge;1.5x</strong> from previous result (AKI risk)</li>
+              <li>Skips results if <strong>Haemoglobin drops &gt;10 units</strong> from previous value</li>
+              <li>Ensures emerging clinical trends are caught before they escalate</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="calc-guardrail">
+          <summary class="calc-guardrail-header">
+            <div class="calc-guardrail-num">2</div>
+            <div class="calc-guardrail-info">
+              <h3>Context &amp; Exclusions</h3>
+              <p>Age-based rules, PSA logic, and diabetes checks</p>
+            </div>
+            <svg class="calc-guardrail-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="calc-guardrail-body">
+            <ul>
+              <li>Patients <strong>under age 12</strong> are automatically excluded from auto-filing</li>
+              <li>PSA results use <strong>age-specific thresholds</strong> (40-49, 50-59, 60-69, 70-79)</li>
+              <li>Diabetes-related biomarkers flagged with appropriate clinical context</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="calc-guardrail">
+          <summary class="calc-guardrail-header">
+            <div class="calc-guardrail-num">3</div>
+            <div class="calc-guardrail-info">
+              <h3>Safety Keywords</h3>
+              <p>Clinical keyword detection and flagging</p>
+            </div>
+            <svg class="calc-guardrail-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="calc-guardrail-body">
+            <ul>
+              <li>Detects <strong>AKI</strong> (Acute Kidney Injury) keywords and flags for immediate review</li>
+              <li>Identifies <strong>CKD</strong> (Chronic Kidney Disease) indicators</li>
+              <li>'Not Detected' rules ensure negative results are handled appropriately</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="calc-guardrail">
+          <summary class="calc-guardrail-header">
+            <div class="calc-guardrail-num">4</div>
+            <div class="calc-guardrail-info">
+              <h3>Lab Errors &amp; Quality</h3>
+              <p>Sample quality detection and error handling</p>
+            </div>
+            <svg class="calc-guardrail-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="calc-guardrail-body">
+            <ul>
+              <li>Detects <strong>haemolysed samples</strong> and prevents filing</li>
+              <li>Catches <strong>null values</strong> and incomplete results</li>
+              <li>Identifies lab processing errors and duplicate specimens</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <div class="calc-governance">
+        <h3 class="calc-governance-title">Clinical Governance Based On</h3>
+        <div class="calc-governance-grid">
+          <div class="calc-governance-item">
+            <strong>NICE Guidelines</strong>
+            <span>NG131 (Prostate), NG28 (Diabetes), NG8 (Anaemia), CG181 (CVD)</span>
+          </div>
+          <div class="calc-governance-item">
+            <strong>KDIGO 2012</strong>
+            <span>CKD/AKI kidney logic standards</span>
+          </div>
+          <div class="calc-governance-item">
+            <strong>BCSH Guidelines</strong>
+            <span>Haematology &amp; Iron Deficiency</span>
+          </div>
+          <div class="calc-governance-item">
+            <strong>NHS Lab Handbooks</strong>
+            <span>Tietz textbook &amp; lab standards</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Merlin Dashboard -->
+  <section class="section calc-merlin-section">
+    <div class="container-site">
+      <span class="calc-section-label">CLINICAL OVERSIGHT</span>
+      <h2 class="calc-section-title">Real-Time Visibility <span class="text-gradient">via Merlin</span></h2>
+      <p class="calc-section-desc">
+        GPs maintain full control at all times. The Merlin dashboard provides real-time visibility into what was auto-filed versus flagged, with a complete audit trail of every automation decision.
+      </p>
+      <a href={`${base}contact-us`} class="btn-primary" style="margin-top: 0.5rem;">Get Started</a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* ── Hero ── */
+  .calc-hero {
+    padding: 5rem 0 3rem;
+    background: linear-gradient(175deg, #ffffff 0%, #f0f4fb 40%, #eef8f5 70%, #f5f7fa 100%);
+    text-align: center;
+  }
+
+  .calc-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.875rem;
+    color: var(--color-brand-blue);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    transition: opacity 0.2s;
+  }
+  .calc-back-link:hover { opacity: 0.7; }
+
+  .calc-badge {
+    display: inline-block;
+    padding: 0.375rem 1rem;
+    background: rgba(44, 112, 235, 0.08);
+    color: var(--color-brand-blue);
+    border-radius: 20px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .calc-hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: var(--color-brand-black);
+  }
+
+  .calc-hero-sub {
+    font-size: 1.125rem;
+    color: var(--color-brand-grey-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ── Section Labels ── */
+  .calc-section-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-brand-blue);
+    margin-bottom: 0.75rem;
+    font-family: var(--font-display);
+  }
+
+  .calc-section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-brand-black);
+    margin-bottom: 1rem;
+  }
+
+  .calc-section-desc {
+    font-size: 1.0625rem;
+    color: var(--color-brand-grey);
+    line-height: 1.8;
+    max-width: 720px;
+  }
+
+  /* ── Practice Inputs ── */
+  .calc-inputs-section {
+    padding: 2.5rem 0;
+    background: #fff;
+  }
+
+  .calc-inputs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 600px;
+  }
+
+  .calc-input-label {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--color-brand-grey-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-display);
+  }
+
+  /* ── Pain Section ── */
+  .calc-pain-section {
+    background: linear-gradient(180deg, #f5f7fa 0%, #f0f4fb 50%, #f5f7fa 100%);
+  }
+
+  .calc-pain-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .calc-pain-card {
+    background: #fff;
+    border-radius: var(--radius-card);
+    padding: 2rem;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    text-align: center;
+  }
+
+  .calc-pain-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(44, 112, 235, 0.08);
+    color: var(--color-brand-blue);
+    margin-bottom: 1.25rem;
+  }
+  .calc-pain-icon--amber {
+    background: rgba(245, 158, 11, 0.1);
+    color: #d97706;
+  }
+  .calc-pain-icon--red {
+    background: rgba(231, 76, 111, 0.1);
+    color: var(--color-brand-red);
+  }
+
+  .calc-pain-value {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--color-brand-black);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-display);
+  }
+
+  .calc-pain-label {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 0.25rem;
+  }
+
+  .calc-pain-detail {
+    font-size: 0.8125rem;
+    color: var(--color-brand-grey-muted);
+  }
+
+  .calc-risk-callout {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-top: 2rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(231, 76, 111, 0.05);
+    border: 1px solid rgba(231, 76, 111, 0.12);
+    border-radius: 12px;
+    color: var(--color-brand-grey);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+  }
+  .calc-risk-callout svg { flex-shrink: 0; margin-top: 2px; color: var(--color-brand-red); }
+  .calc-risk-callout strong { color: var(--color-brand-red); display: block; margin-bottom: 0.25rem; font-size: 0.9375rem; }
+  .calc-risk-callout p { margin: 0; }
+
+  /* ── Goal Section ── */
+  .calc-goal-section {
+    background: #fff;
+  }
+
+  /* ── Win Section — Slider ── */
+  .calc-win-section {
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
+  }
+
+  .calc-slider-wrap {
+    margin-top: 2.5rem;
+    max-width: 700px;
+    padding: 2rem 2.5rem;
+    background: #fff;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(44, 112, 235, 0.06);
+  }
+
+  .calc-slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .calc-slider-label-left,
+  .calc-slider-label-right {
+    font-size: 0.75rem;
+    color: var(--color-brand-grey-muted);
+    font-weight: 500;
+  }
+
+  .calc-slider-value {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--color-brand-blue);
+    font-family: var(--font-display);
+  }
+
+  .calc-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 4px;
+    background: linear-gradient(90deg, rgba(0, 195, 147, 0.2), rgba(44, 112, 235, 0.3));
+    outline: none;
+    cursor: pointer;
+  }
+  .calc-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-brand-blue), var(--color-brand-green));
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(44, 112, 235, 0.3);
+    cursor: grab;
+  }
+  .calc-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-brand-blue), var(--color-brand-green));
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(44, 112, 235, 0.3);
+    cursor: grab;
+  }
+
+  .calc-slider-sub {
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--color-brand-grey-muted);
+    margin-top: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .calc-results-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .calc-result-card {
+    background: #fff;
+    border-radius: var(--radius-card);
+    padding: 1.75rem 1.25rem;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .calc-result-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  .calc-result-card--accent {
+    background: linear-gradient(135deg, rgba(44, 112, 235, 0.06), rgba(0, 195, 147, 0.06));
+    border: 1px solid rgba(44, 112, 235, 0.12);
+  }
+
+  .calc-result-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-brand-blue);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-display);
+  }
+
+  .calc-result-green {
+    color: var(--color-brand-green);
+  }
+
+  .calc-result-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 0.25rem;
+  }
+
+  .calc-result-detail {
+    font-size: 0.75rem;
+    color: var(--color-brand-grey-muted);
+  }
+
+  .calc-quote-callout {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+    background: #fff;
+    border-radius: 12px;
+    border-left: 4px solid var(--color-brand-green);
+    box-shadow: var(--shadow-card);
+  }
+  .calc-quote-icon { color: var(--color-brand-green); flex-shrink: 0; }
+  .calc-quote-text {
+    font-size: 1.125rem;
+    font-style: italic;
+    color: var(--color-brand-grey);
+    font-weight: 500;
+    margin: 0;
+  }
+
+  /* ── Safety Section ── */
+  .calc-safety-section {
+    background: #fff;
+  }
+
+  .calc-safety-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .calc-safety-card {
+    background: #fff;
+    border-radius: var(--radius-card);
+    padding: 2rem;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .calc-safety-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  .calc-safety-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(44, 112, 235, 0.08);
+    color: var(--color-brand-blue);
+    margin-bottom: 1.25rem;
+  }
+
+  .calc-safety-heading {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 0.5rem;
+  }
+
+  .calc-safety-desc {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+  }
+
+  /* ── Mechanism / Guardrails ── */
+  .calc-mechanism-section {
+    background: linear-gradient(180deg, #f5f7fa 0%, #f0f4fb 50%, #f5f7fa 100%);
+  }
+
+  .calc-guardrails {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 2.5rem;
+  }
+
+  .calc-guardrail {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+  }
+  .calc-guardrail:hover {
+    box-shadow: var(--shadow-hover);
+  }
+  .calc-guardrail[open] {
+    border-color: rgba(44, 112, 235, 0.15);
+  }
+
+  .calc-guardrail-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+  .calc-guardrail-header::-webkit-details-marker { display: none; }
+
+  .calc-guardrail-num {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(44, 112, 235, 0.08);
+    color: var(--color-brand-blue);
+    font-weight: 800;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+    font-family: var(--font-display);
+  }
+
+  .calc-guardrail-info h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 0.125rem;
+  }
+  .calc-guardrail-info p {
+    font-size: 0.8125rem;
+    color: var(--color-brand-grey-muted);
+    margin: 0;
+  }
+
+  .calc-guardrail-chevron {
+    margin-left: auto;
+    color: var(--color-brand-grey-light);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+  .calc-guardrail[open] .calc-guardrail-chevron {
+    transform: rotate(180deg);
+  }
+
+  .calc-guardrail-body {
+    padding: 0 1.5rem 1.5rem 4.75rem;
+  }
+  .calc-guardrail-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .calc-guardrail-body li {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    line-height: 1.6;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .calc-guardrail-body li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-brand-green);
+  }
+
+  /* ── Governance ── */
+  .calc-governance {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: #fff;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(44, 112, 235, 0.06);
+  }
+
+  .calc-governance-title {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-brand-grey-light);
+    margin-bottom: 1.25rem;
+  }
+
+  .calc-governance-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .calc-governance-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .calc-governance-item strong {
+    font-size: 0.9375rem;
+    color: var(--color-brand-black);
+  }
+  .calc-governance-item span {
+    font-size: 0.8125rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.5;
+  }
+
+  /* ── Merlin Section ── */
+  .calc-merlin-section {
+    background: #fff;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 960px) {
+    .calc-pain-grid {
+      grid-template-columns: 1fr;
+    }
+    .calc-results-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .calc-safety-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .calc-hero-title {
+      font-size: 2.25rem;
+    }
+    .calc-inputs-grid {
+      grid-template-columns: 1fr;
+    }
+    .calc-results-grid {
+      grid-template-columns: 1fr;
+    }
+    .calc-slider-wrap {
+      padding: 1.5rem;
+    }
+    .calc-governance-grid {
+      grid-template-columns: 1fr;
+    }
+    .calc-guardrail-body {
+      padding-left: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  // ── Calculator Logic ──
+  const LABS_PER_PATIENT_DAILY = 0.0152;
+  const GP_COST_PER_HOUR = 80;
+  const MINS_PER_LAB = 1;
+  const WORKING_DAYS = 250;
+  const PRICE_PER_PATIENT = 0.30;
+
+  function formatNumber(num: number): string {
+    return new Intl.NumberFormat('en-GB').format(Math.round(num));
+  }
+
+  function recalculate() {
+    const patientInput = document.getElementById('patient-list') as HTMLInputElement;
+    const slider = document.getElementById('filing-slider') as HTMLInputElement;
+
+    const patients = parseInt(patientInput.value) || 10000;
+    const filingRate = parseInt(slider.value) / 100;
+
+    // Pain metrics — no intermediate rounding, matches reference exactly
+    const dailyLabs = patients * LABS_PER_PATIENT_DAILY;
+    const annualLabs = dailyLabs * WORKING_DAYS;
+    const totalHoursYear = (annualLabs * MINS_PER_LAB) / 60;
+    const totalCostYear = totalHoursYear * GP_COST_PER_HOUR;
+
+    // Win metrics
+    const annualAutoFiled = annualLabs * filingRate;
+    const hoursSaved = (annualAutoFiled * MINS_PER_LAB) / 60;
+    const valueCreated = hoursSaved * GP_COST_PER_HOUR;
+    const apolloCost = patients * PRICE_PER_PATIENT;
+    const roi = apolloCost > 0 ? ((valueCreated - apolloCost) / apolloCost) * 100 : 0;
+
+    // Update Pain
+    (document.getElementById('daily-volume') as HTMLElement).textContent = formatNumber(dailyLabs);
+    (document.getElementById('gp-capacity') as HTMLElement).textContent = formatNumber(totalHoursYear);
+    (document.getElementById('annual-cost') as HTMLElement).textContent = '£' + formatNumber(totalCostYear);
+
+    // Update Slider display
+    (document.getElementById('slider-value') as HTMLElement).textContent = slider.value + '%';
+
+    // Update Win
+    (document.getElementById('hours-saved') as HTMLElement).textContent = formatNumber(hoursSaved);
+    (document.getElementById('results-filed') as HTMLElement).textContent = formatNumber(annualAutoFiled);
+    (document.getElementById('value-created') as HTMLElement).textContent = '£' + formatNumber(valueCreated);
+    (document.getElementById('est-roi') as HTMLElement).textContent = formatNumber(roi) + '%';
+
+    // Update ROI detail
+    const roiDetail = document.querySelector('#est-roi')?.parentElement?.querySelector('.calc-result-detail');
+    if (roiDetail) {
+      roiDetail.textContent = 'based on £' + formatNumber(apolloCost) + ' annual cost';
+    }
+  }
+
+  document.getElementById('patient-list')?.addEventListener('input', recalculate);
+  document.getElementById('filing-slider')?.addEventListener('input', recalculate);
+
+  // Initial calculation
+  recalculate();
+</script>
