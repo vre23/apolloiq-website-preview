@@ -6,7 +6,9 @@ const sidebarItems = [
   { label: 'Quick Start Guide', href: `${base}products/scribecraft/help-centre/quick-start` },
   { label: 'Accuracy Optimisation', href: `${base}products/scribecraft/help-centre/accuracy` },
   { label: 'FAQ', href: `${base}products/scribecraft/help-centre/faq` },
-  { label: 'Materials & Explainers', href: `${base}products/scribecraft/help-centre/materials` },
+  { label: 'Safety & Compliance', href: `${base}products/scribecraft/help-centre/safety` },
+  { label: 'For Patients', href: `${base}products/scribecraft/help-centre/for-patients` },
+  { label: 'For Practices', href: `${base}products/scribecraft/help-centre/for-practices` },
   { label: 'Practice Readiness Audit', href: `${base}products/scribecraft/help-centre/practice-audit` },
 ];
 ---
@@ -145,35 +147,34 @@ const sidebarItems = [
       </div>
     </div>
 
-    <!-- Patient Consent FAQ -->
-    <div id="patient-consent-faq">
-      <h3>Patient Consent</h3>
+    <!-- Informing Patients FAQ -->
+    <div id="informing-patients-faq">
+      <h3>Informing Patients</h3>
       <div class="faq-group">
         <details class="faq-detail">
-          <summary>Is patient consent required?</summary>
+          <summary>Do I need patient consent to use ScribeCraft?</summary>
           <div>
-            <p>Yes. UK data protection law requires that patients are informed and consent is obtained before recording. The patient must know:</p>
+            <p>Under UK GDPR, the legal basis for processing health data through ScribeCraft is <strong>Article 6(1)(e)</strong> (public interest — healthcare provision) and <strong>Article 9(2)(h)</strong> (health/social care), not consent. A separate consent form is not required.</p>
+            <p>However, patients must be <strong>informed</strong> that ScribeCraft is in use. Your practice should:</p>
             <ul>
-              <li>That the consultation will be recorded by an AI tool</li>
-              <li>Why the recording is being made (to generate clinical documentation)</li>
-              <li>Who processes the data and how it is stored</li>
-              <li>That they can decline without any impact on their care</li>
+              <li>Update your privacy policy with a ScribeCraft addendum</li>
+              <li>Display a notice in the waiting room</li>
+              <li>Briefly inform the patient at the start of the consultation</li>
             </ul>
           </div>
         </details>
         <details class="faq-detail">
-          <summary>How do I obtain consent?</summary>
+          <summary>How do I inform patients?</summary>
           <div>
-            <ul>
-              <li><strong>Written consent:</strong> The patient signs a dedicated form. ApolloIQ provides a customisable consent form template compliant with UK GDPR.</li>
-              <li><strong>Verbal consent:</strong> Acceptable if documented in the patient record. Suggested phrasing: "I'll be using a digital assistant that transcribes our conversation to generate clinical notes. Are you happy with that?"</li>
-            </ul>
+            <p>A brief verbal statement is sufficient. Suggested phrasing:</p>
+            <p><em>"I'll be using a digital assistant that transcribes our conversation to generate clinical notes. Are you happy with that?"</em></p>
+            <p>We also provide a <strong>privacy policy addendum template</strong> and <strong>waiting room notice</strong> in the Help Centre — see <a href="${base}products/scribecraft/help-centre/for-practices">For Practices</a> and <a href="${base}products/scribecraft/help-centre/for-patients">For Patients</a>.</p>
           </div>
         </details>
         <details class="faq-detail">
-          <summary>What if the patient declines?</summary>
+          <summary>What if the patient prefers ScribeCraft is not used?</summary>
           <p>
-            The consultation proceeds normally without ScribeCraft. The patient's refusal has no effect on the quality
+            Simply do not use ScribeCraft for that consultation. The patient's preference has no effect on the quality
             of care received. You document manually as usual.
           </p>
         </details>

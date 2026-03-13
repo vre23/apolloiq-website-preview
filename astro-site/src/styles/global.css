@@ -143,6 +143,18 @@
     transform: translateY(-1px);
   }
 
+  /* Hero CTA Group */
+  .hero-cta-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.25rem;
+  }
+
+  .product-hero .hero-cta-group {
+    justify-content: center;
+  }
+
   /* Nav button (Go to Merlin) */
   .btn-nav {
     display: inline-flex;

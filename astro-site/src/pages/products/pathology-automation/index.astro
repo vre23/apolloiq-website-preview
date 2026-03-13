@@ -12,7 +12,10 @@ const base = import.meta.env.BASE_URL;
   <!-- Hero -->
   <section class="product-hero">
     <div class="container-site">
-      <span class="product-badge">Automated Workflow</span>
+      <div class="path-hero-badges">
+        <span class="product-badge">Class I Medical Device (SaMD)</span>
+        <span class="product-badge path-badge-green">DCB0129 Compliant</span>
+      </div>
       <div class="product-hero-title-row">
         <img src={`${base}images/icon-spell-book.svg`} alt="" class="product-hero-icon" />
         <h1 class="product-hero-title">Pathology <span class="text-gradient">Automation</span></h1>
@@ -20,6 +23,7 @@ const base = import.meta.env.BASE_URL;
       <p class="product-subtitle">80+ biomarkers. 17 test categories. Gender and age-specific reference ranges. Intelligent filing with zero compromise on accuracy.</p>
       <div class="hero-cta-group">
         <a href={`${base}contact-us`} class="btn-primary">Contact Us</a>
+        <a href="#book-demo" class="btn-secondary" data-product="pathology-automation">Book a Demo</a>
         <a href={`${base}products/pathology-automation/calculator`} class="btn-secondary">ROI Calculator</a>
       </div>
     </div>
@@ -32,10 +36,33 @@ const base = import.meta.env.BASE_URL;
         <span class="product-label">OVERVIEW</span>
         <h2 class="product-section-title">What is Pathology Automation?</h2>
         <p class="product-body-text">
-          Our Lab Report Processing Service is a purpose-built API that processes pathology lab reports in EMIS format. It extracts numerical biomarker values from unstructured lab report text, evaluates them against gender and age-specific reference ranges, and returns structured output indicating whether each result is normal, low, or high -- along with recommended actions.
+          The Pathology Automation software is a <strong>Class I Software as a Medical Device (SaMD)</strong> designed to automate the
+          administrative review and filing of pathology results determined to be 'normal'. It operates as an autonomous
+          <strong>Robotic Process Automation (RPA) bot</strong> that securely logs into your Electronic Health Record system, analyses
+          patient pathology data using strict rule-based logic incorporating numerical thresholds, trend analysis, and keyword
+          verification — then performs one of two actions:
         </p>
+        <div class="path-action-cards">
+          <div class="path-action-card path-action-file">
+            <div class="path-action-icon">✓</div>
+            <div>
+              <strong>File</strong>
+              <span>Results meeting all criteria for 'normal' are filed with the comment <em>"Normal - No action needed"</em></span>
+            </div>
+          </div>
+          <div class="path-action-card path-action-skip">
+            <div class="path-action-icon">→</div>
+            <div>
+              <strong>Skip</strong>
+              <span>Results that don't meet criteria are left in the clinician's workflow for <em>manual review</em></span>
+            </div>
+          </div>
+        </div>
         <p class="product-body-text">
-          With 80+ biomarker tests configured across 17 test categories, the service intelligently routes results: normal values are filed without comment, abnormal or clinically significant results are flagged for doctor review, and sample quality issues are detected automatically. The result is faster turnaround, safer workflows, and dramatically reduced admin burden for your clinical team.
+          With <strong>80+ biomarker tests</strong> configured across <strong>17 test categories</strong>, the system filters high volumes of normal
+          results, allowing qualified healthcare professionals to focus their attention on results that are abnormal, ambiguous,
+          or otherwise require clinical judgement. The result is faster turnaround, safer workflows, and dramatically reduced
+          admin burden for your clinical team.
         </p>
         <a href={`${base}contact-us`} class="btn-primary" style="margin-top: 1rem;">Get in Touch</a>
       </div>
@@ -222,6 +249,138 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
+  <!-- Clinical Oversight Dashboard -->
+  <section class="section path-dashboard-section">
+    <div class="container-site">
+      <span class="product-label">CLINICAL OVERSIGHT</span>
+      <h2 class="product-section-title">The Merlin <span class="text-gradient">Dashboard</span></h2>
+      <p class="product-body-text" style="max-width: 720px;">
+        The device has no direct operational user interface — its functions are fully autonomous. The primary human interaction
+        point is the <strong>Clinical Oversight Dashboard</strong>, designed for monitoring and auditing purposes.
+      </p>
+
+      <div class="path-dashboard-grid">
+        <div class="path-dashboard-card">
+          <div class="path-dashboard-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-width="1.5"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <strong>Real-Time Action Log</strong>
+          <span>A live log of every action taken by the bot — which results were filed, which were skipped, and when.</span>
+        </div>
+        <div class="path-dashboard-card">
+          <div class="path-dashboard-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <strong>Decision Transparency</strong>
+          <span>View the specific rules and logic applied to each result, so clinicians can understand and verify every decision.</span>
+        </div>
+        <div class="path-dashboard-card">
+          <div class="path-dashboard-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <strong>Full Audit Trail</strong>
+          <span>Complete traceability for clinical governance — every filed and skipped result is logged with reasoning.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Processing Rules -->
+  <section class="section path-rules-section">
+    <div class="container-site">
+      <span class="product-label">PROCESSING LOGIC</span>
+      <h2 class="product-section-title">General <span class="text-gradient">Processing Rules</span></h2>
+      <p class="product-body-text" style="max-width: 720px;">
+        The core algorithm is a rule-based decision engine that categorises results based on pre-defined clinical criteria.
+        Every rule is clinically approved during a formal hazard workshop with each organisation's Clinical Director.
+      </p>
+
+      <div class="path-rules-grid">
+        <div class="path-rule-card">
+          <div class="path-rule-num">1</div>
+          <div>
+            <strong>Age Restriction</strong>
+            <span>Do not process results if patient age is under 12.</span>
+          </div>
+        </div>
+        <div class="path-rule-card">
+          <div class="path-rule-num">2</div>
+          <div>
+            <strong>Textbook Naming</strong>
+            <span>Blood test names follow textbook definitions; terms like 'plasma' or 'serum' do not affect interpretation.</span>
+          </div>
+        </div>
+        <div class="path-rule-card">
+          <div class="path-rule-num">3</div>
+          <div>
+            <strong>Suffix Handling</strong>
+            <span>Suffixes such as 'TSH (Beckman)' are ignored; only textbook definitions determine processing.</span>
+          </div>
+        </div>
+        <div class="path-rule-card">
+          <div class="path-rule-num">4</div>
+          <div>
+            <strong>Error Detection</strong>
+            <span>If no numerical value is found or if any error (e.g., Sample Haemolysed, Duplicate result, Regret Error) is present, do not process.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="path-clinical-logic">
+        <h3 class="path-clinical-logic-title">Example: PSA Clinical Logic</h3>
+        <p class="product-body-text" style="margin-bottom: 1rem;">
+          PSA is produced by prostate cells and is specific to males. Levels increase with age due to benign enlargement.
+          PSA is used for cancer screening and monitoring, with <strong>age-dependent reference ranges</strong> essential for accurate interpretation.
+        </p>
+        <div class="path-psa-grid">
+          <div class="path-psa-item"><strong>Age 40-49</strong><span>&lt; 2.5 ng/mL</span></div>
+          <div class="path-psa-item"><strong>Age 50-59</strong><span>&lt; 3.5 ng/mL</span></div>
+          <div class="path-psa-item"><strong>Age 60-69</strong><span>&lt; 4.5 ng/mL</span></div>
+          <div class="path-psa-item"><strong>Age 70-79</strong><span>&lt; 6.5 ng/mL</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intended Users -->
+  <section class="section path-users-section">
+    <div class="container-site">
+      <span class="product-label">ROLES &amp; RESPONSIBILITIES</span>
+      <h2 class="product-section-title">Intended <span class="text-gradient">Users</span></h2>
+      <p class="product-body-text" style="max-width: 720px;">
+        The Pathology Automation software is an autonomous system that operates at scheduled times without direct user interaction.
+        The "users" are defined by their roles and responsibilities in relation to the system:
+      </p>
+
+      <div class="path-users-grid">
+        <div class="path-user-card">
+          <div class="path-user-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>System Configuration &amp; Approval</h3>
+          <p>The rules and logic for automated filing are established and clinically approved by <strong>senior healthcare professionals</strong>
+            (Medical Director, designated clinicians) during a formal clinical hazard workshop for each organisation.</p>
+        </div>
+        <div class="path-user-card">
+          <div class="path-user-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-width="1.5"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>System Oversight</h3>
+          <p>The autonomous operation is monitored by <strong>qualified healthcare professionals and trained administrative staff</strong>
+            via the Merlin Dashboard, which provides full visibility of the bot's actions.</p>
+        </div>
+        <div class="path-user-card">
+          <div class="path-user-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Clinical Responsibility</h3>
+          <p>Qualified healthcare professionals (GPs, Specialist Doctors, Clinical Pharmacists, Practice Nurses) are <strong>solely
+            responsible</strong> for the manual review, interpretation, and clinical management of all results skipped by the automation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Safety Credentials -->
   <section class="section path-safety-section">
     <div class="container-site">
@@ -239,7 +398,7 @@ const base = import.meta.env.BASE_URL;
               </div>
               <div>
                 <h3 class="path-safety-name">UKCA Class I Medical Device</h3>
-                <p class="path-safety-desc">Rule 11(a) regulated. Certified as a Class I Medical Device under UKCA regulations.</p>
+                <p class="path-safety-desc">Rule 11(a) + MDCG 2019-11 guidance. Non-invasive SaMD that does not by itself drive diagnosis or therapy.</p>
               </div>
             </div>
             <div class="path-safety-card">
@@ -258,6 +417,15 @@ const base = import.meta.env.BASE_URL;
               <div>
                 <h3 class="path-safety-name">Clinical Safety Officer</h3>
                 <p class="path-safety-desc">Safety cases approved and maintained by a registered CSO with ongoing clinical oversight.</p>
+              </div>
+            </div>
+            <div class="path-safety-card">
+              <div class="path-safety-icon" style="background: rgba(0, 195, 147, 0.08); color: var(--color-brand-green);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 class="path-safety-name">ALARP Verified</h3>
+                <p class="path-safety-desc">All residual risks reduced to As Low As Reasonably Practicable. Clinical hazard workshops conducted with each organisation's Clinical Director.</p>
               </div>
             </div>
           </div>
@@ -354,21 +522,254 @@ const base = import.meta.env.BASE_URL;
         <h3 class="path-governance-title">Clinical Governance Based On</h3>
         <div class="path-governance-grid">
           <div class="path-governance-item">
-            <strong>NICE Guidelines</strong>
-            <span>NG131 (Prostate), NG28 (Diabetes), NG8 (Anaemia), CG181 (CVD)</span>
+            <strong>NICE CG181</strong>
+            <span>Cardiovascular disease: risk assessment and reduction, including lipid modification</span>
+          </div>
+          <div class="path-governance-item">
+            <strong>NICE NG131</strong>
+            <span>Prostate cancer: diagnosis and management</span>
+          </div>
+          <div class="path-governance-item">
+            <strong>NICE NG28</strong>
+            <span>Type 2 diabetes in adults: management</span>
+          </div>
+          <div class="path-governance-item">
+            <strong>NICE NG8</strong>
+            <span>Anaemia — iron deficiency</span>
           </div>
           <div class="path-governance-item">
             <strong>KDIGO 2012</strong>
-            <span>CKD/AKI kidney logic standards</span>
+            <span>Clinical Practice Guideline for CKD Evaluation and Management</span>
           </div>
           <div class="path-governance-item">
             <strong>BCSH Guidelines</strong>
-            <span>Haematology &amp; Iron Deficiency</span>
+            <span>British Committee for Standards in Haematology</span>
           </div>
           <div class="path-governance-item">
-            <strong>NHS Lab Handbooks</strong>
-            <span>Tietz textbook &amp; lab standards</span>
+            <strong>BSG 2011</strong>
+            <span>British Society of Gastroenterology: Management of iron deficiency anaemia</span>
           </div>
+          <div class="path-governance-item">
+            <strong>Tietz (8th ed.)</strong>
+            <span>Fundamentals of Clinical Chemistry and Molecular Diagnostics</span>
+          </div>
+          <div class="path-governance-item">
+            <strong>BHF</strong>
+            <span>British Heart Foundation: Understanding Cholesterol</span>
+          </div>
+          <div class="path-governance-item">
+            <strong>Synnovis</strong>
+            <span>Guy's &amp; St Thomas' NHS Foundation Trust Laboratory Medicine Handbook</span>
+          </div>
+          <div class="path-governance-item">
+            <strong>Oxford Handbook</strong>
+            <span>Oxford Handbook of Clinical Medicine (10th ed.)</span>
+          </div>
+          <div class="path-governance-item">
+            <strong>DCB0129</strong>
+            <span>Clinical Risk Management: Application in Manufacture of Health IT Systems</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clinical Safety & Risk Management -->
+  <section class="section path-clinical-safety-section">
+    <div class="container-site">
+      <div class="path-cs-badge-row">
+        <span class="path-cs-badge">DCB0129 COMPLIANT</span>
+        <span class="path-cs-badge path-cs-badge-green">ALARP VERIFIED</span>
+        <span class="path-cs-badge">CLASS I SaMD</span>
+      </div>
+
+      <h2 class="product-section-title">Clinical Safety &amp; <span class="text-gradient">Risk Management</span></h2>
+
+      <div class="path-cs-statement">
+        <div class="path-cs-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2c70eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <p class="product-body-text" style="margin-bottom: 0.75rem;">
+            The Pathology Automation system has undergone a comprehensive clinical risk management process in accordance with
+            <strong>DCB0129</strong>. Hazard identification workshops, risk assessment, and mitigation controls ensure that all
+            identified risks are managed to an acceptable level.
+          </p>
+          <p class="product-body-text" style="margin-bottom: 0;">
+            The system does <strong>not handle abnormal results or make clinical decisions</strong> — its function is limited to
+            filtering and filing normal results. Abnormal or ambiguous results are always left for clinician review.
+          </p>
+        </div>
+      </div>
+
+      <h3 class="path-cs-subtitle">Identified Hazards &amp; Controls</h3>
+
+      <!-- Hazard 1 -->
+      <div class="path-hazard-card">
+        <div class="path-hazard-header">
+          <span class="path-hazard-ref">H-01</span>
+          <span class="path-hazard-risk path-risk-medium">Medium → Low</span>
+        </div>
+        <div class="path-hazard-title">Unauthorised Access to Sensitive Data</div>
+        <p class="path-hazard-desc">
+          Unauthorised access to the system could lead to breaches of patient confidentiality and compromised data integrity.
+        </p>
+        <div class="path-control-box">
+          <strong>Control Measures</strong>
+          <ul>
+            <li>Robust authentication protocols with encrypted credential vaults</li>
+            <li>Multi-factor authentication and regular security training</li>
+            <li>Appointed Data Protection Officer (DPO) with regular policy reviews</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Hazard 2 -->
+      <div class="path-hazard-card">
+        <div class="path-hazard-header">
+          <span class="path-hazard-ref">H-02</span>
+          <span class="path-hazard-risk path-risk-medium">Medium → Low</span>
+        </div>
+        <div class="path-hazard-title">Inadequate Access Controls &amp; Permissions</div>
+        <p class="path-hazard-desc">
+          Insufficient access controls might allow unauthorised data alterations, risking data integrity across the system.
+        </p>
+        <div class="path-control-box">
+          <strong>Control Measures</strong>
+          <ul>
+            <li>Refined access controls — only authorised personnel access sensitive information</li>
+            <li>Encryption of all stored credentials and clinical rules</li>
+            <li>Regular security audits and access reviews</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Hazard 3 -->
+      <div class="path-hazard-card">
+        <div class="path-hazard-header">
+          <span class="path-hazard-ref">H-03</span>
+          <span class="path-hazard-risk path-risk-medium">Medium → Low</span>
+        </div>
+        <div class="path-hazard-title">Poor Data Quality Leading to Inaccurate Filing</div>
+        <p class="path-hazard-desc">
+          Inaccuracies in digital patient records could lead to medical errors arising from incorrect automated filing decisions.
+        </p>
+        <div class="path-control-box">
+          <strong>Control Measures</strong>
+          <ul>
+            <li>Practices encouraged to adopt robust quality checking processes for digital records</li>
+            <li>Regular audits and feedback mechanisms to improve data accuracy</li>
+            <li>System handles naming variations (serum/plasma) and detects lab errors automatically</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Hazard 4 -->
+      <div class="path-hazard-card">
+        <div class="path-hazard-header">
+          <span class="path-hazard-ref">H-04</span>
+          <span class="path-hazard-risk path-risk-high">High → Medium</span>
+        </div>
+        <div class="path-hazard-title">eGFR Misclassification</div>
+        <p class="path-hazard-desc">
+          Filing an eGFR result as normal when it is not could delay CKD diagnosis or miss acute kidney injury indicators.
+        </p>
+        <div class="path-control-box">
+          <strong>Control Measures</strong>
+          <ul>
+            <li>Files only if eGFR &gt;86; skips if creatinine increases &ge;1.5x from previous result</li>
+            <li>Keyword detection for "AKI" and "CKD" — presence triggers automatic skip</li>
+            <li>Logic aligned with NICE and KDIGO guidelines for CKD staging</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Hazard 5 -->
+      <div class="path-hazard-card">
+        <div class="path-hazard-header">
+          <span class="path-hazard-ref">H-05</span>
+          <span class="path-hazard-risk path-risk-medium">Medium → Low</span>
+        </div>
+        <div class="path-hazard-title">Misclassification Due to Simplified Logic</div>
+        <p class="path-hazard-desc">
+          The simplified File/Skip logic could potentially lead to misclassification of results or overlooked clinical conditions.
+        </p>
+        <div class="path-control-box">
+          <strong>Control Measures</strong>
+          <ul>
+            <li>Comprehensive keyword and trend checks for creatinine, haemoglobin, HbA1c, thyroid, PSA, Helicobacter, and HLA-B27</li>
+            <li>Clinical dashboard provides transparent display of all decision logic</li>
+            <li>Regular clinical audits and feedback loops to ensure continued accuracy</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Hazard 6 -->
+      <div class="path-hazard-card">
+        <div class="path-hazard-header">
+          <span class="path-hazard-ref">H-06</span>
+          <span class="path-hazard-risk path-risk-medium">Medium → Low</span>
+        </div>
+        <div class="path-hazard-title">Data Breach via Unauthorised Process Access</div>
+        <p class="path-hazard-desc">
+          A data breach of the automation process due to unauthorised access could expose sensitive patient information.
+        </p>
+        <div class="path-control-box">
+          <strong>Control Measures</strong>
+          <ul>
+            <li>Regular data security and protection training for all staff</li>
+            <li>System operates within the secure environment of the healthcare organisation's network</li>
+            <li>Bot securely logs out and resets session after each run</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CSO Statement -->
+      <div class="path-cs-cso-box">
+        <strong>Clinical Safety Officer Statement</strong>
+        <p>
+          Following rigorous evaluation, the updated system (Version 1.2) demonstrates significantly improved clinical safety through
+          simplified yet highly robust automated pathology management logic. With stringent keyword and trend checks, clear clinical
+          oversight via dashboards, and regular clinical audits, patient safety and clinical efficacy are comprehensively safeguarded.
+          This version aligns with best clinical practices and meets DCB0129 compliance effectively.
+        </p>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="path-cs-disclaimer">
+        <strong>Important</strong>
+        This automation does not handle abnormal test results, which are flagged for clinician review. The system processes normal
+        blood test results based on predefined criteria agreed with the Clinical Director of each organisation. The use of this
+        automated system must always be overseen by qualified healthcare professionals who are responsible for interpreting results
+        and making clinical decisions.
+      </div>
+
+      <!-- Safety Documentation Request -->
+      <div class="path-safety-cta" id="path-safety-cta">
+        <div class="path-safety-cta-content">
+          <h3>Need the Full Safety Documentation?</h3>
+          <p>Request the complete Clinical Safety Case Report, Hazard Log, and Process Definition Document for your ICB or procurement process.</p>
+        </div>
+        <div class="path-safety-cta-actions">
+          <button class="btn-primary" id="path-safety-toggle" onclick="document.getElementById('path-safety-form-wrap').style.display='block';this.style.display='none';">Request Safety Documentation</button>
+          <div id="path-safety-form-wrap" style="display:none;">
+            <form class="safety-request-form" id="path-safety-form">
+              <input type="text" class="form-field" placeholder="Your Name *" required />
+              <input type="text" class="form-field" placeholder="Your Role *" required />
+              <input type="text" class="form-field" placeholder="Organisation / Practice *" required />
+              <input type="email" class="form-field" placeholder="Work Email *" required />
+              <select class="form-field" required>
+                <option value="">Purpose of request *</option>
+                <option value="ICB Procurement">ICB Procurement</option>
+                <option value="Internal Review">Internal Governance Review</option>
+                <option value="DPIA">DPIA / Data Protection Assessment</option>
+                <option value="Clinical Assurance">Clinical Assurance</option>
+                <option value="Other">Other</option>
+              </select>
+              <button type="submit" class="btn-primary" style="width:100%;">Submit Request</button>
+            </form>
+          </div>
+          <p class="path-safety-cta-sub">Questions about clinical safety? <a href="mailto:contact@apolloiq.co.uk">Email our Clinical Safety Officer</a></p>
         </div>
       </div>
     </div>
@@ -1005,6 +1406,529 @@ const base = import.meta.env.BASE_URL;
     line-height: 1.5;
   }
 
+  /* Hero badges row */
+  .path-hero-badges {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .path-badge-green {
+    background: rgba(0, 195, 147, 0.1);
+    color: var(--color-brand-green);
+  }
+
+  /* File/Skip action cards */
+  .path-action-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .path-action-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    box-shadow: var(--shadow-card);
+  }
+
+  .path-action-file {
+    background: linear-gradient(135deg, rgba(0, 195, 147, 0.04), rgba(0, 195, 147, 0.01));
+    border-left: 4px solid var(--color-brand-green);
+  }
+
+  .path-action-skip {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.04), rgba(245, 158, 11, 0.01));
+    border-left: 4px solid #f59e0b;
+  }
+
+  .path-action-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .path-action-file .path-action-icon {
+    background: rgba(0, 195, 147, 0.1);
+    color: var(--color-brand-green);
+  }
+
+  .path-action-skip .path-action-icon {
+    background: rgba(245, 158, 11, 0.1);
+    color: #d97706;
+  }
+
+  .path-action-card strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--color-brand-black);
+    margin-bottom: 0.25rem;
+  }
+
+  .path-action-card span {
+    font-size: 0.875rem;
+    color: var(--color-brand-grey);
+    line-height: 1.6;
+  }
+
+  /* Dashboard section */
+  .path-dashboard-section {
+    background: #fff;
+  }
+
+  .path-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .path-dashboard-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .path-dashboard-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(44, 112, 235, 0.08);
+    color: var(--color-brand-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.25rem;
+  }
+
+  .path-dashboard-card strong {
+    font-size: 1rem;
+    color: var(--color-brand-black);
+  }
+
+  .path-dashboard-card span {
+    font-size: 0.875rem;
+    color: var(--color-brand-grey);
+    line-height: 1.6;
+  }
+
+  /* Processing Rules section */
+  .path-rules-section {
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
+  }
+
+  .path-rules-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .path-rule-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    box-shadow: var(--shadow-card);
+  }
+
+  .path-rule-num {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(44, 112, 235, 0.08);
+    color: var(--color-brand-blue);
+    font-weight: 800;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+  }
+
+  .path-rule-card strong {
+    display: block;
+    font-size: 0.9375rem;
+    color: var(--color-brand-black);
+    margin-bottom: 0.25rem;
+  }
+
+  .path-rule-card span {
+    font-size: 0.875rem;
+    color: var(--color-brand-grey);
+    line-height: 1.6;
+  }
+
+  .path-clinical-logic {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(44, 112, 235, 0.06);
+  }
+
+  .path-clinical-logic-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 0.75rem;
+  }
+
+  .path-psa-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+  }
+
+  .path-psa-item {
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(180deg, #f0f4fb, #eef8f5);
+    border-radius: 12px;
+  }
+
+  .path-psa-item strong {
+    display: block;
+    font-size: 0.8125rem;
+    color: var(--color-brand-blue);
+    margin-bottom: 0.375rem;
+  }
+
+  .path-psa-item span {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+  }
+
+  /* Intended Users section */
+  .path-users-section {
+    background: #fff;
+  }
+
+  .path-users-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .path-user-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.75rem;
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    box-shadow: var(--shadow-card);
+  }
+
+  .path-user-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(44, 112, 235, 0.08);
+    color: var(--color-brand-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .path-user-card h3 {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 0.5rem;
+  }
+
+  .path-user-card p {
+    font-size: 0.875rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* Clinical Safety section */
+  .path-clinical-safety-section {
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
+  }
+
+  .path-cs-badge-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .path-cs-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 16px;
+    background: var(--color-brand-blue);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .path-cs-badge-green {
+    background: var(--color-brand-green);
+  }
+
+  .path-cs-statement {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    background: linear-gradient(135deg, rgba(44, 112, 235, 0.04), rgba(0, 195, 147, 0.03));
+    border-left: 4px solid var(--color-brand-blue);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .path-cs-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(44, 112, 235, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .path-cs-subtitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 1rem;
+  }
+
+  .path-hazard-card {
+    background: #fff;
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    box-shadow: var(--shadow-card);
+  }
+
+  .path-hazard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .path-hazard-ref {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--color-brand-blue);
+    background: rgba(44, 112, 235, 0.08);
+    padding: 3px 10px;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .path-hazard-risk {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 8px;
+    letter-spacing: 0.3px;
+  }
+
+  .path-risk-medium {
+    background: rgba(245, 158, 11, 0.1);
+    color: #d97706;
+  }
+
+  .path-risk-high {
+    background: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
+  }
+
+  .path-hazard-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 0.5rem;
+  }
+
+  .path-hazard-desc {
+    font-size: 0.925rem;
+    line-height: 1.7;
+    color: var(--color-brand-grey);
+    margin-bottom: 1rem;
+  }
+
+  .path-control-box {
+    background: linear-gradient(135deg, rgba(0, 195, 147, 0.04), rgba(44, 112, 235, 0.03));
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+  }
+
+  .path-control-box strong {
+    display: block;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-brand-green);
+    margin-bottom: 0.5rem;
+  }
+
+  .path-control-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .path-control-box li {
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    position: relative;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-brand-grey);
+  }
+
+  .path-control-box li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    color: var(--color-brand-green);
+    font-weight: 700;
+  }
+
+  .path-cs-cso-box {
+    background: linear-gradient(135deg, rgba(44, 112, 235, 0.04), rgba(0, 195, 147, 0.03));
+    border-left: 4px solid var(--color-brand-green);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .path-cs-cso-box strong {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-brand-green);
+    margin-bottom: 0.5rem;
+  }
+
+  .path-cs-cso-box p {
+    font-size: 0.925rem;
+    line-height: 1.7;
+    color: var(--color-brand-grey);
+    margin: 0;
+  }
+
+  .path-cs-disclaimer {
+    background: linear-gradient(135deg, rgba(44, 112, 235, 0.04), rgba(44, 112, 235, 0.02));
+    border-left: 4px solid var(--color-brand-blue);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-top: 1.5rem;
+    font-size: 0.925rem;
+    line-height: 1.7;
+    color: var(--color-brand-grey);
+  }
+
+  .path-cs-disclaimer strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-brand-blue);
+  }
+
+  /* Safety CTA */
+  .path-safety-cta {
+    margin-top: 2.5rem;
+    padding: 2rem 2.5rem;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid rgba(44, 112, 235, 0.1);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .path-safety-cta-content {
+    flex: 1;
+  }
+
+  .path-safety-cta-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 0.5rem;
+  }
+
+  .path-safety-cta-content p {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .path-safety-cta-actions {
+    flex-shrink: 0;
+    text-align: center;
+  }
+
+  .path-safety-cta-sub {
+    font-size: 0.8125rem;
+    color: var(--color-brand-grey-muted);
+    margin-top: 0.75rem;
+  }
+
+  .path-safety-cta-sub a {
+    color: var(--color-brand-blue);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .path-safety-cta-sub a:hover {
+    text-decoration: underline;
+  }
+
+  .safety-request-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    margin-top: 1rem;
+    max-width: 300px;
+  }
+
+  .safety-request-form .form-field {
+    font-size: 0.875rem;
+    padding: 0.625rem 0.875rem;
+  }
+
   @media (max-width: 768px) {
     .product-hero-icon {
       width: 36px;
@@ -1029,6 +1953,30 @@ const base = import.meta.env.BASE_URL;
     .path-governance-grid {
       grid-template-columns: 1fr;
     }
+    .path-action-cards {
+      grid-template-columns: 1fr;
+    }
+    .path-dashboard-grid {
+      grid-template-columns: 1fr;
+    }
+    .path-rules-grid {
+      grid-template-columns: 1fr;
+    }
+    .path-psa-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .path-users-grid {
+      grid-template-columns: 1fr;
+    }
+    .path-cs-statement {
+      flex-direction: column;
+    }
+    .path-safety-cta {
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
+      padding: 1.5rem;
+    }
   }
 
   @media (max-width: 480px) {
@@ -1040,3 +1988,17 @@ const base = import.meta.env.BASE_URL;
     }
   }
 </style>
+
+<script>
+  const pathSafetyForm = document.getElementById('path-safety-form');
+  if (pathSafetyForm) {
+    pathSafetyForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const inputs = pathSafetyForm.querySelectorAll('input, select');
+      const data = {};
+      inputs.forEach((inp) => { if (inp.name || inp.placeholder) data[inp.placeholder || inp.name] = inp.value; });
+      console.log('Safety docs request:', { ...data, product: 'Pathology Automation', timestamp: new Date().toISOString() });
+      document.getElementById('path-safety-form-wrap').innerHTML = '<p style="color:var(--color-brand-green);font-weight:600;margin-top:1rem;">✓ Request submitted! We\'ll send the documentation to your email shortly.</p>';
+    });
+  }
+</script>

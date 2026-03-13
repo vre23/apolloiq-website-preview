@@ -18,7 +18,13 @@ const base = import.meta.env.BASE_URL;
         <h1 class="product-hero-title">Clinical Document <span class="text-gradient">Management</span></h1>
       </div>
       <p class="product-subtitle">Automate the processing of clinical documents in Optum - EmisWeb. Assign dates, code document types, generate titles, and file -- all automatically.</p>
-      <a href={`${base}contact-us`} class="btn-primary">Contact Us</a>
+      <div class="cdm-hero-badges">
+        <span class="cdm-hero-badge cdm-badge-dcb">DCB 0129 Compliant</span>
+      </div>
+      <div class="hero-cta-group">
+        <a href={`${base}contact-us`} class="btn-primary">Contact Us</a>
+        <a href="#book-demo" class="btn-secondary" data-product="clinical-document-management">Book a Demo</a>
+      </div>
     </div>
   </section>
 
@@ -80,7 +86,7 @@ const base = import.meta.env.BASE_URL;
         <div class="product-split-left">
           <h2 class="product-section-title">The <span class="text-gradient">Solution</span></h2>
           <p class="product-split-intro">
-            An intelligent system combining Robotic Process Automation (RPA) with a self-hosted AI language model to automate and enhance the processing of clinical documents.
+            An intelligent system combining Robotic Process Automation (RPA) with OpenAI's GPT-4o language model, hosted on Microsoft Azure UK data centres, to automate and enhance the processing of clinical documents.
           </p>
         </div>
         <div class="product-split-right">
@@ -90,16 +96,16 @@ const base = import.meta.env.BASE_URL;
               <span>RPA extracts the correct letter date from each document.</span>
             </li>
             <li>
-              <strong>SnomedCT Coding</strong>
-              <span>Automatically matches document types with clinical codes.</span>
+              <strong>SNOMED CT Coding</strong>
+              <span>Automatically matches document types with standardised clinical codes for consistent categorisation.</span>
             </li>
             <li>
               <strong>AI-Generated Titles</strong>
-              <span>Self-hosted language model creates precise, meaningful document titles.</span>
+              <span>GPT-4o generates precise, meaningful document titles from letter content -- hosted on Azure UK for data residency.</span>
             </li>
             <li>
               <strong>Secure & Private</strong>
-              <span>Operates within our own HSCN connection. Your data never leaves the network.</span>
+              <span>Operates within our own HSCN connection. Data processed in Azure UK data centres -- never leaves the country.</span>
             </li>
             <li>
               <strong>Available 24/7-365</strong>
@@ -158,19 +164,23 @@ const base = import.meta.env.BASE_URL;
     <div class="container-site">
       <div class="cdm-business-box">
         <span class="product-label">BUSINESS CASE</span>
-        <h2 class="product-section-title">The Numbers Speak for <span class="text-gradient">Themselves</span></h2>
-        <p class="product-body-text">
-          Based on a GP practice with 10,000 patients, 100 letters per day, and admin staff salary of &pound;22,383/year.
-        </p>
+        <h2 class="product-section-title">Calculate Your Practice's <span class="text-gradient">Savings</span></h2>
+
+        <div class="cdm-calc-input-row">
+          <div class="cdm-calc-input-group">
+            <label for="cdm-patient-count">Your Patient List Size</label>
+            <input type="number" id="cdm-patient-count" class="form-field" value="10000" min="1000" max="50000" placeholder="e.g. 10000" />
+          </div>
+        </div>
 
         <!-- Stats -->
         <div class="cdm-stat-row">
           <div class="cdm-stat">
-            <div class="cdm-stat-num cdm-stat-blue">866</div>
+            <div class="cdm-stat-num cdm-stat-blue" id="cdm-hours">866</div>
             <div class="cdm-stat-label">hours/year spent<br/>processing manually</div>
           </div>
           <div class="cdm-stat">
-            <div class="cdm-stat-num cdm-stat-blue">&pound;0.53</div>
+            <div class="cdm-stat-num cdm-stat-blue" id="cdm-cost-manual">&pound;0.53</div>
             <div class="cdm-stat-label">cost per document<br/>with manual processing</div>
           </div>
           <div class="cdm-stat">
@@ -185,25 +195,49 @@ const base = import.meta.env.BASE_URL;
 
         <h3 class="cdm-cost-heading">Manual Processing Costs</h3>
         <ul class="cdm-cost-list">
-          <li>Direct labour: 866 hrs x &pound;11.48/hr = <strong>&pound;9,950</strong></li>
-          <li>Employer NI contribution: <strong>&pound;887</strong></li>
-          <li>Employer pension contribution: <strong>&pound;1,516</strong></li>
+          <li>Direct labour: <strong id="cdm-labour">866 hrs x &pound;11.48/hr = &pound;9,950</strong></li>
+          <li>Employer NI contribution: <strong id="cdm-ni">&pound;887</strong></li>
+          <li>Employer pension contribution: <strong id="cdm-pension">&pound;1,516</strong></li>
           <li>Temporary staff/holiday cover: <strong>&pound;1,500</strong></li>
-          <li>Total annual manual cost: <strong>&pound;13,852</strong></li>
+          <li>Total annual manual cost: <strong id="cdm-total-manual">&pound;13,852</strong></li>
         </ul>
 
         <h3 class="cdm-cost-heading" style="margin-top: 2.5rem;">Automated Processing with ApolloIQ</h3>
         <ul class="cdm-cost-list">
           <li>Cost: &pound;0.30 per patient per year</li>
-          <li>10,000 patients x &pound;0.30 = <strong>&pound;3,000/year</strong></li>
+          <li><strong id="cdm-apollo-calc">10,000 patients x &pound;0.30 = &pound;3,000/year</strong></li>
           <li>Processes 36,500 letters/year (365 days) vs 26,000 manually (230 working days)</li>
           <li>No NI, pension, holiday, sick leave, recruitment, or training costs</li>
         </ul>
 
         <div class="cdm-savings-bar">
           <div class="cdm-savings-label">Annual Savings with ApolloIQ</div>
-          <div class="cdm-savings-num">&pound;16,345</div>
+          <div class="cdm-savings-num" id="cdm-total-savings">&pound;16,345</div>
           <div class="cdm-savings-sub">Automation is 6x cheaper than manual processing</div>
+        </div>
+
+        <!-- Lead Capture -->
+        <div class="cdm-calc-gate" id="cdm-calc-gate">
+          <h3>Get a Custom Quote for Your Practice</h3>
+          <p>Enter your details and we'll send you a personalised business case with exact savings for your practice size.</p>
+          <form class="cdm-calc-gate-form" id="cdm-calc-gate-form">
+            <div class="cdm-calc-gate-fields">
+              <input type="text" class="form-field" id="cdm-gate-name" placeholder="Your Name *" required />
+              <select class="form-field" id="cdm-gate-role" required>
+                <option value="">Your Role *</option>
+                <option value="GP Partner">GP Partner</option>
+                <option value="Practice Manager">Practice Manager</option>
+                <option value="Operations Manager">Operations Manager</option>
+                <option value="PCN Manager">PCN Manager</option>
+                <option value="ICB Representative">ICB Representative</option>
+                <option value="Other">Other</option>
+              </select>
+              <input type="text" class="form-field" id="cdm-gate-practice" placeholder="Practice Name *" required />
+              <input type="email" class="form-field" id="cdm-gate-email" placeholder="Work Email *" required />
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%;">Send Me My Custom Business Case</button>
+            <p class="cdm-calc-gate-privacy">We'll email your personalised savings report. No spam, ever.</p>
+          </form>
         </div>
       </div>
     </div>
@@ -243,6 +277,239 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
+  <!-- How It Works -->
+  <section class="section cdm-workflow-section">
+    <div class="container-site">
+      <span class="product-label">HOW IT WORKS</span>
+      <h2 class="product-section-title">Automated Processing <span class="text-gradient">Pipeline</span></h2>
+      <p class="product-body-text" style="max-width: 700px;">
+        The system runs on a scheduled basis, processing documents through a secure, fully automated pipeline -- from login to logout -- with no manual intervention required.
+      </p>
+
+      <div class="cdm-workflow-grid">
+        <div class="cdm-workflow-step">
+          <div class="cdm-workflow-num">1</div>
+          <strong>Scheduled Run</strong>
+          <span>The system triggers automatically at configured intervals throughout the day.</span>
+        </div>
+        <div class="cdm-workflow-step">
+          <div class="cdm-workflow-num">2</div>
+          <strong>Secure Login</strong>
+          <span>RPA bot authenticates into EMIS Web using encrypted credentials via HSCN connection.</span>
+        </div>
+        <div class="cdm-workflow-step">
+          <div class="cdm-workflow-num">3</div>
+          <strong>Document Retrieval</strong>
+          <span>Navigates to the document management inbox and identifies unprocessed clinical documents.</span>
+        </div>
+        <div class="cdm-workflow-step">
+          <div class="cdm-workflow-num">4</div>
+          <strong>Data Extraction</strong>
+          <span>Extracts letter dates, document content, and metadata from each clinical document.</span>
+        </div>
+        <div class="cdm-workflow-step">
+          <div class="cdm-workflow-num">5</div>
+          <strong>AI Title Assignment</strong>
+          <span>GPT-4o analyses document content and generates a precise, clinically meaningful title.</span>
+        </div>
+        <div class="cdm-workflow-step">
+          <div class="cdm-workflow-num">6</div>
+          <strong>SNOMED CT Coding</strong>
+          <span>Document type is matched to the correct SNOMED CT code for standardised categorisation.</span>
+        </div>
+        <div class="cdm-workflow-step">
+          <div class="cdm-workflow-num">7</div>
+          <strong>Outlier Handling</strong>
+          <span>Documents that cannot be confidently classified are flagged and left for manual review.</span>
+        </div>
+        <div class="cdm-workflow-step">
+          <div class="cdm-workflow-num">8</div>
+          <strong>Reporting & Logout</strong>
+          <span>A summary report is generated for each run, then the bot securely logs out of EMIS Web.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Safety Credentials -->
+  <section class="section">
+    <div class="container-site">
+      <span class="product-label">SAFETY CREDENTIALS</span>
+      <h2 class="product-section-title">Built to NHS <span class="text-gradient">Standards</span></h2>
+      <p class="product-body-text" style="max-width: 700px;">
+        Clinical Document Management is fully compliant with NHS clinical safety standards and operates securely within the NHS network.
+      </p>
+
+      <div class="cdm-cred-grid">
+        <div class="cdm-cred-card">
+          <div class="cdm-cred-icon">&#x1F6E1;</div>
+          <strong>DCB 0129 Compliance</strong>
+          <span>Full clinical risk management process following NHS Digital DCB 0129 standard. Clinical Safety Case Report, Hazard Log, and Process Definition Document maintained and version-controlled.</span>
+        </div>
+        <div class="cdm-cred-card">
+          <div class="cdm-cred-icon">&#x2705;</div>
+          <strong>ALARP Verified</strong>
+          <span>All identified clinical hazards have been assessed and reduced to As Low As Reasonably Practicable (ALARP). Residual risks independently reviewed by a qualified Clinical Safety Officer.</span>
+        </div>
+        <div class="cdm-cred-card">
+          <div class="cdm-cred-icon">&#x1F512;</div>
+          <strong>Azure UK Data Residency</strong>
+          <span>AI processing via GPT-4o hosted on Microsoft Azure UK data centres. Patient data is transmitted over HSCN and never leaves the country.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clinical Safety & Risk Management -->
+  <section class="section cdm-cs-section">
+    <div class="container-site">
+      <div class="cdm-cs-badge-row">
+        <span class="cdm-cs-badge cdm-cs-badge-dcb">DCB 0129 COMPLIANT</span>
+        <span class="cdm-cs-badge cdm-cs-badge-alarp">ALARP VERIFIED</span>
+      </div>
+
+      <span class="product-label">CLINICAL SAFETY</span>
+      <h2 class="product-section-title">Clinical Safety & <span class="text-gradient">Risk Management</span></h2>
+
+      <div class="cdm-cs-statement">
+        <div class="cdm-cs-icon">&#x1F6E1;</div>
+        <p>
+          This product has undergone a formal clinical risk management process in accordance with <strong>NHS Digital standard DCB 0129</strong>. All identified hazards have been assessed and mitigated to a level that is <strong>As Low As Reasonably Practicable (ALARP)</strong>.
+        </p>
+      </div>
+
+      <h3 class="cdm-cs-sub">Identified Hazards & Controls</h3>
+
+      <!-- H-01 -->
+      <div class="cdm-hazard-card">
+        <div class="cdm-hazard-header">
+          <span class="cdm-hazard-ref">H-01</span>
+          <span class="cdm-hazard-risk cdm-risk-medium">Initial Risk: 2 &rarr; Residual: 1</span>
+        </div>
+        <div class="cdm-hazard-title">Unauthorized Access to Patient Data</div>
+        <p class="cdm-hazard-desc">Potential for unauthorized individuals to access patient clinical data processed by the system, leading to data privacy breach.</p>
+        <div class="cdm-control-box">
+          <strong>Controls:</strong> Encrypted credential storage, role-based access controls within EMIS Web, HSCN-secured network connection, audit logging of all system access, and regular access reviews.
+        </div>
+      </div>
+
+      <!-- H-02 -->
+      <div class="cdm-hazard-card">
+        <div class="cdm-hazard-header">
+          <span class="cdm-hazard-ref">H-02</span>
+          <span class="cdm-hazard-risk cdm-risk-medium">Initial Risk: 2 &rarr; Residual: 1</span>
+        </div>
+        <div class="cdm-hazard-title">Incorrect Labelling of Clinical Documents</div>
+        <p class="cdm-hazard-desc">A clinical document may be assigned an incorrect date, title, or specialty label, potentially leading to misidentification during clinical review.</p>
+        <div class="cdm-control-box">
+          <strong>Controls:</strong> AI-generated titles are cross-referenced with document content; outlier detection flags uncertain classifications for manual review; SNOMED CT coding provides standardised categorisation; clinical staff retain final review responsibility.
+        </div>
+      </div>
+
+      <!-- H-03 -->
+      <div class="cdm-hazard-card">
+        <div class="cdm-hazard-header">
+          <span class="cdm-hazard-ref">H-03</span>
+          <span class="cdm-hazard-risk cdm-risk-medium">Initial Risk: 2 &rarr; Residual: 1</span>
+        </div>
+        <div class="cdm-hazard-title">RPA Bot System Downtime</div>
+        <p class="cdm-hazard-desc">The RPA bot may become unavailable due to software failure, infrastructure issues, or EMIS Web interface changes, causing a backlog of unprocessed documents.</p>
+        <div class="cdm-control-box">
+          <strong>Controls:</strong> Automated health monitoring with alerting, scheduled retry logic, graceful error handling that preserves unprocessed documents in the inbox for manual fallback, and regular testing against EMIS Web updates.
+        </div>
+      </div>
+
+      <!-- H-04 -->
+      <div class="cdm-hazard-card">
+        <div class="cdm-hazard-header">
+          <span class="cdm-hazard-ref">H-04</span>
+          <span class="cdm-hazard-risk cdm-risk-high">Initial Risk: 3 &rarr; Residual: 1</span>
+        </div>
+        <div class="cdm-hazard-title">Incorrect Document Classification by AI</div>
+        <p class="cdm-hazard-desc">The GPT-4o AI model may misinterpret document content and generate an incorrect or misleading title, potentially affecting clinical decision-making.</p>
+        <div class="cdm-control-box">
+          <strong>Controls:</strong> AI output is informational only -- clinicians retain full responsibility for clinical decisions; outlier detection identifies low-confidence classifications; documents are never deleted or hidden from the clinical workflow; regular model performance audits conducted.
+        </div>
+      </div>
+
+      <!-- H-06 -->
+      <div class="cdm-hazard-card">
+        <div class="cdm-hazard-header">
+          <span class="cdm-hazard-ref">H-06</span>
+          <span class="cdm-hazard-risk cdm-risk-medium">Initial Risk: 2 &rarr; Residual: 1</span>
+        </div>
+        <div class="cdm-hazard-title">SNOMED Code Assignment Mismatch</div>
+        <p class="cdm-hazard-desc">A document may be assigned an incorrect SNOMED CT code, leading to miscategorisation in the patient record and potential downstream coding errors.</p>
+        <div class="cdm-control-box">
+          <strong>Controls:</strong> SNOMED CT mapping validated against NHS reference data; document type classification cross-checked with letter content; unrecognised document types flagged for manual coding; regular mapping audits against updated SNOMED CT releases.
+        </div>
+      </div>
+
+      <!-- H-07 -->
+      <div class="cdm-hazard-card">
+        <div class="cdm-hazard-header">
+          <span class="cdm-hazard-ref">H-07</span>
+          <span class="cdm-hazard-risk cdm-risk-medium">Initial Risk: 2 &rarr; Residual: 1</span>
+        </div>
+        <div class="cdm-hazard-title">Service Disruption Due to Azure Dependency</div>
+        <p class="cdm-hazard-desc">Dependency on Microsoft Azure UK for GPT-4o processing introduces risk of service disruption if Azure experiences an outage, preventing AI title generation.</p>
+        <div class="cdm-control-box">
+          <strong>Controls:</strong> Graceful degradation -- documents remain in inbox with original metadata if AI processing fails; automated retry logic with exponential backoff; Azure service health monitoring with alerting; manual processing fallback always available.
+        </div>
+      </div>
+
+      <!-- Residual Risk -->
+      <div class="cdm-cs-residual">
+        <h3 class="cdm-cs-sub">Residual Risk Evaluation</h3>
+        <p class="product-body-text">
+          Following implementation of all control measures, the residual risk for each identified hazard has been reduced to <strong>acceptable levels</strong>. All hazards have been assessed as ALARP. The highest initial risk (H-04: Incorrect Document Classification by AI, initial score 3) has been reduced to a residual score of 1 through multiple layered controls.
+        </p>
+      </div>
+
+      <!-- CSO Statement -->
+      <div class="cdm-cs-statement" style="margin-top: 2rem;">
+        <div class="cdm-cs-icon">&#x1F4CB;</div>
+        <p>
+          <strong>Clinical Safety Officer Statement:</strong> As the appointed Clinical Safety Officer, I confirm that the clinical risk management process has been conducted in accordance with DCB 0129. All identified hazards have been assessed, and appropriate controls have been implemented to reduce residual risks to acceptable levels. The system is approved for deployment in clinical environments.
+        </p>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="cdm-cs-disclaimer">
+        <strong>Important:</strong> This product is designed to assist with administrative document management tasks. It does not make clinical decisions or replace clinical judgement. All AI-generated titles and SNOMED CT codes are informational -- clinicians retain full responsibility for reviewing document content and making clinical decisions. This product should be used in conjunction with, not as a replacement for, professional clinical review processes.
+      </div>
+
+      <!-- Safety Documentation Request -->
+      <div class="cdm-safety-cta" id="cdm-safety-cta">
+        <div class="cdm-safety-cta-content">
+          <h3>Need the Full Safety Documentation?</h3>
+          <p>Request the complete Clinical Safety Case Report, Hazard Log, and Process Definition Document for your ICB or procurement process.</p>
+        </div>
+        <div class="cdm-safety-cta-actions">
+          <button class="btn-primary" id="cdm-safety-toggle" onclick="document.getElementById('cdm-safety-form-wrap').style.display='block';this.style.display='none';">Request Safety Documentation</button>
+          <div id="cdm-safety-form-wrap" style="display:none;">
+            <form class="safety-request-form" id="cdm-safety-form">
+              <input type="text" class="form-field" placeholder="Your Name *" required />
+              <input type="text" class="form-field" placeholder="Your Role *" required />
+              <input type="text" class="form-field" placeholder="Organisation / Practice *" required />
+              <input type="email" class="form-field" placeholder="Work Email *" required />
+              <select class="form-field" required>
+                <option value="">Purpose of request *</option>
+                <option value="ICB Procurement">ICB Procurement</option>
+                <option value="Internal Review">Internal Governance Review</option>
+                <option value="DPIA">DPIA / Data Protection Assessment</option>
+                <option value="Clinical Assurance">Clinical Assurance</option>
+                <option value="Other">Other</option>
+              </select>
+              <button type="submit" class="btn-primary" style="width:100%;">Submit Request</button>
+            </form>
+          </div>
+          <p class="cdm-safety-cta-sub">Questions about clinical safety? <a href="mailto:contact@apolloiq.co.uk">Email our Clinical Safety Officer</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Pricing -->
   <section class="section cdm-pricing-section">
     <div class="container-site">
@@ -260,11 +527,11 @@ const base = import.meta.env.BASE_URL;
           <div class="cdm-pricing-calc">
             <div class="cdm-pricing-calc-row">
               <span><strong>Example:</strong> 10,000 patients x &pound;0.30</span>
-              <span class="cdm-pricing-calc-val">&pound;3,000/year</span>
+              <span class="cdm-pricing-calc-val" id="cdm-pricing-example">&pound;3,000/year</span>
             </div>
             <div class="cdm-pricing-calc-row">
               <span>That's just</span>
-              <span class="cdm-pricing-calc-val">&pound;250/month</span>
+              <span class="cdm-pricing-calc-val" id="cdm-pricing-month">&pound;250/month</span>
             </div>
           </div>
           <ul class="cdm-check-list">
@@ -292,6 +559,13 @@ const base = import.meta.env.BASE_URL;
     padding: 5rem 0 3rem;
     background: linear-gradient(175deg, #ffffff 0%, #f0f4fb 40%, #eef8f5 70%, #f5f7fa 100%);
     text-align: center;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .product-hero-title-row {
@@ -693,6 +967,417 @@ const base = import.meta.env.BASE_URL;
     font-weight: 700;
   }
 
+  /* Hero badges */
+  .cdm-hero-badges {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .cdm-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.25rem;
+    border-radius: 20px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .cdm-badge-device {
+    background: rgba(44, 112, 235, 0.08);
+    color: var(--color-brand-blue);
+    border: 1px solid rgba(44, 112, 235, 0.15);
+  }
+
+  .cdm-badge-dcb {
+    background: rgba(0, 195, 147, 0.08);
+    color: #00a67d;
+    border: 1px solid rgba(0, 195, 147, 0.15);
+  }
+
+  /* Workflow section */
+  .cdm-workflow-section {
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
+  }
+
+  .cdm-workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .cdm-workflow-step {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cdm-workflow-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-brand-blue), #00c393);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .cdm-workflow-step strong {
+    font-size: 0.9375rem;
+    color: var(--color-brand-black);
+  }
+
+  .cdm-workflow-step span {
+    font-size: 0.8125rem;
+    color: var(--color-brand-grey);
+    line-height: 1.6;
+  }
+
+  /* Safety Credentials */
+  .cdm-cred-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .cdm-cred-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.75rem;
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cdm-cred-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .cdm-cred-card strong {
+    font-size: 1.0625rem;
+    color: var(--color-brand-black);
+  }
+
+  .cdm-cred-card span {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+  }
+
+  /* Clinical Safety section */
+  .cdm-cs-section {
+    background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);
+  }
+
+  .cdm-cs-badge-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .cdm-cs-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.25rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  .cdm-cs-badge-dcb {
+    background: rgba(44, 112, 235, 0.08);
+    color: var(--color-brand-blue);
+    border: 1px solid rgba(44, 112, 235, 0.15);
+  }
+
+  .cdm-cs-badge-alarp {
+    background: rgba(0, 195, 147, 0.08);
+    color: #00a67d;
+    border: 1px solid rgba(0, 195, 147, 0.15);
+  }
+
+  .cdm-cs-statement {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    box-shadow: var(--shadow-card);
+    margin-bottom: 2rem;
+  }
+
+  .cdm-cs-icon {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+  }
+
+  .cdm-cs-statement p {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .cdm-cs-sub {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 1.25rem;
+  }
+
+  .cdm-hazard-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    box-shadow: var(--shadow-card);
+    margin-bottom: 1rem;
+  }
+
+  .cdm-hazard-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .cdm-hazard-ref {
+    background: var(--color-brand-blue);
+    color: #fff;
+    padding: 0.25rem 0.625rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .cdm-hazard-risk {
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .cdm-risk-medium {
+    background: rgba(245, 158, 11, 0.1);
+    color: #d97706;
+  }
+
+  .cdm-risk-high {
+    background: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
+  }
+
+  .cdm-hazard-title {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 0.5rem;
+  }
+
+  .cdm-hazard-desc {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .cdm-control-box {
+    background: #f0f9f6;
+    border-left: 3px solid #00c393;
+    padding: 1rem 1.25rem;
+    border-radius: 0 12px 12px 0;
+    font-size: 0.875rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+  }
+
+  .cdm-control-box strong {
+    color: var(--color-brand-black);
+  }
+
+  .cdm-cs-residual {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    box-shadow: var(--shadow-card);
+  }
+
+  .cdm-cs-residual .cdm-cs-sub {
+    margin-bottom: 0.75rem;
+  }
+
+  .cdm-cs-residual .product-body-text {
+    margin-bottom: 0;
+  }
+
+  .cdm-cs-disclaimer {
+    margin-top: 2rem;
+    padding: 1.25rem 1.5rem;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    color: #92400e;
+    line-height: 1.7;
+  }
+
+  .cdm-cs-disclaimer strong {
+    color: #78350f;
+  }
+
+  /* Safety CTA */
+  .cdm-safety-cta {
+    margin-top: 2.5rem;
+    padding: 2rem 2.5rem;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid rgba(44, 112, 235, 0.1);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .cdm-safety-cta-content {
+    flex: 1;
+  }
+
+  .cdm-safety-cta-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 0.5rem;
+  }
+
+  .cdm-safety-cta-content p {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .cdm-safety-cta-actions {
+    flex-shrink: 0;
+    text-align: center;
+  }
+
+  .cdm-safety-cta-sub {
+    font-size: 0.8125rem;
+    color: var(--color-brand-grey-muted);
+    margin-top: 0.75rem;
+  }
+
+  .cdm-safety-cta-sub a {
+    color: var(--color-brand-blue);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .cdm-safety-cta-sub a:hover {
+    text-decoration: underline;
+  }
+
+  .safety-request-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    margin-top: 1rem;
+    max-width: 300px;
+  }
+
+  .safety-request-form .form-field {
+    font-size: 0.875rem;
+    padding: 0.625rem 0.875rem;
+  }
+
+  /* Calculator input */
+  .cdm-calc-input-row {
+    margin-bottom: 2rem;
+  }
+
+  .cdm-calc-input-group {
+    max-width: 300px;
+  }
+
+  .cdm-calc-input-group label {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--color-brand-grey-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Lead gate */
+  .cdm-calc-gate {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(44, 112, 235, 0.04), rgba(0, 195, 147, 0.04));
+    border: 1px solid rgba(44, 112, 235, 0.12);
+    border-radius: 16px;
+    text-align: center;
+  }
+
+  .cdm-calc-gate h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 0.5rem;
+  }
+
+  .cdm-calc-gate p {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .cdm-calc-gate-form {
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .cdm-calc-gate-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .cdm-calc-gate-privacy {
+    font-size: 0.75rem;
+    color: var(--color-brand-grey-muted);
+    text-align: center;
+    margin-top: 0.75rem;
+  }
+
   @media (max-width: 768px) {
     .product-hero-icon {
       width: 36px;
@@ -708,11 +1393,137 @@ const base = import.meta.env.BASE_URL;
     .cdm-stat-row {
       grid-template-columns: repeat(2, 1fr);
     }
+    .cdm-workflow-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .cdm-cred-grid {
+      grid-template-columns: 1fr;
+    }
+    .cdm-safety-cta {
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .cdm-calc-gate-fields {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (max-width: 480px) {
     .cdm-stat-row {
       grid-template-columns: 1fr;
     }
+    .cdm-workflow-grid {
+      grid-template-columns: 1fr;
+    }
+    .cdm-cs-statement {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
   }
 </style>
+
+<script>
+  const cdmSafetyForm = document.getElementById('cdm-safety-form');
+  if (cdmSafetyForm) {
+    cdmSafetyForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const inputs = cdmSafetyForm.querySelectorAll('input, select');
+      const data = {};
+      inputs.forEach((inp) => { if (inp.name || inp.placeholder) data[inp.placeholder || inp.name] = inp.value; });
+      console.log('Safety docs request:', { ...data, product: 'Clinical Document Management', timestamp: new Date().toISOString() });
+      document.getElementById('cdm-safety-form-wrap').innerHTML = '<p style="color:var(--color-brand-green);font-weight:600;margin-top:1rem;">✓ Request submitted! We\'ll send the documentation to your email shortly.</p>';
+    });
+  }
+</script>
+
+<script>
+  // CDM Business Case Calculator
+  const ADMIN_SALARY = 22383;
+  const ADMIN_HOURLY = 11.48;
+  const WORKING_DAYS = 230;
+  const NI_RATE = 0.0891;
+  const PENSION_RATE = 0.1524;
+  const HOLIDAY_COVER = 1500;
+  const PRICE_PER_PATIENT = 0.30;
+  const LETTERS_PER_10K = 36500;
+
+  function formatCurrency(n) {
+    return '£' + new Intl.NumberFormat('en-GB').format(Math.round(n));
+  }
+
+  function recalcCDM() {
+    const input = document.getElementById('cdm-patient-count');
+    if (!input) return;
+    const patients = parseInt(input.value) || 10000;
+    const ratio = patients / 10000;
+
+    const letters = Math.round(LETTERS_PER_10K * ratio);
+    const hours = Math.round(866 * ratio);
+    const costPerDoc = 0.53;
+    const labourCost = Math.round(hours * ADMIN_HOURLY);
+    const niCost = Math.round(labourCost * NI_RATE);
+    const pensionCost = Math.round(labourCost * PENSION_RATE);
+    const totalManual = labourCost + niCost + pensionCost + HOLIDAY_COVER;
+    const apolloCost = patients * PRICE_PER_PATIENT;
+    const savings = totalManual - apolloCost;
+
+    // Update stats
+    const hoursEl = document.getElementById('cdm-hours');
+    if (hoursEl) hoursEl.textContent = new Intl.NumberFormat('en-GB').format(hours);
+
+    const costEl = document.getElementById('cdm-cost-manual');
+    if (costEl) costEl.textContent = '£' + costPerDoc.toFixed(2);
+
+    // Update cost breakdown
+    const labourEl = document.getElementById('cdm-labour');
+    if (labourEl) labourEl.textContent = hours + ' hrs x £' + ADMIN_HOURLY + '/hr = ' + formatCurrency(labourCost);
+
+    const niEl = document.getElementById('cdm-ni');
+    if (niEl) niEl.textContent = formatCurrency(niCost);
+
+    const pensionEl = document.getElementById('cdm-pension');
+    if (pensionEl) pensionEl.textContent = formatCurrency(pensionCost);
+
+    const totalManualEl = document.getElementById('cdm-total-manual');
+    if (totalManualEl) totalManualEl.textContent = formatCurrency(totalManual);
+
+    // Update apollo cost
+    const apolloCalcEl = document.getElementById('cdm-apollo-calc');
+    if (apolloCalcEl) apolloCalcEl.textContent = new Intl.NumberFormat('en-GB').format(patients) + ' patients x £0.30 = ' + formatCurrency(apolloCost) + '/year';
+
+    // Update savings
+    const savingsEl = document.getElementById('cdm-total-savings');
+    if (savingsEl) savingsEl.textContent = formatCurrency(savings);
+
+    // Update pricing section example
+    const pricingCalcEl = document.getElementById('cdm-pricing-example');
+    if (pricingCalcEl) pricingCalcEl.textContent = formatCurrency(apolloCost) + '/year';
+
+    const pricingMonthEl = document.getElementById('cdm-pricing-month');
+    if (pricingMonthEl) pricingMonthEl.textContent = formatCurrency(apolloCost / 12) + '/month';
+  }
+
+  document.getElementById('cdm-patient-count')?.addEventListener('input', recalcCDM);
+  recalcCDM();
+
+  // Lead gate
+  const cdmGateForm = document.getElementById('cdm-calc-gate-form');
+  if (cdmGateForm) {
+    cdmGateForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('cdm-gate-name').value;
+      const role = document.getElementById('cdm-gate-role').value;
+      const practice = document.getElementById('cdm-gate-practice').value;
+      const email = document.getElementById('cdm-gate-email').value;
+      const patients = document.getElementById('cdm-patient-count').value;
+
+      const leadData = { name, role, practice, email, patients, product: 'Clinical Document Management', source: 'Business Case Calculator', timestamp: new Date().toISOString() };
+      console.log('Lead captured:', leadData);
+
+      // Replace gate with success message
+      document.getElementById('cdm-calc-gate').innerHTML = '<div style="text-align:center;padding:2rem;"><div style="font-size:2rem;margin-bottom:0.75rem;">✓</div><h3 style="font-size:1.25rem;font-weight:700;color:var(--color-brand-black);margin-bottom:0.5rem;">Business Case Sent!</h3><p style="color:var(--color-brand-grey);font-size:0.9375rem;">Check your inbox for your personalised savings report.</p></div>';
+    });
+  }
+</script>

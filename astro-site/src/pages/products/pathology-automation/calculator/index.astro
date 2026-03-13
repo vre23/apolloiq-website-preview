@@ -83,6 +83,48 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
+  <!-- Lead Capture Gate -->
+  <section class="section calc-gate-section" id="calc-gate">
+    <div class="container-site">
+      <div class="calc-gate-box">
+        <h2 class="calc-gate-title">See Your Full ROI Breakdown</h2>
+        <p class="calc-gate-desc">Enter your details below to unlock the interactive ROI calculator with adjustable filing rates, savings projections, and clinical governance details.</p>
+        <form class="calc-gate-form" id="calc-gate-form">
+          <div class="calc-gate-fields">
+            <div class="calc-gate-field">
+              <label for="gate-name">Your Name *</label>
+              <input type="text" id="gate-name" class="form-field" placeholder="e.g. Dr Sarah Jones" required />
+            </div>
+            <div class="calc-gate-field">
+              <label for="gate-role">Your Role *</label>
+              <select id="gate-role" class="form-field" required>
+                <option value="">Select your role...</option>
+                <option value="GP Partner">GP Partner</option>
+                <option value="Salaried GP">Salaried GP</option>
+                <option value="Practice Manager">Practice Manager</option>
+                <option value="Operations Manager">Operations Manager</option>
+                <option value="PCN Manager">PCN Manager</option>
+                <option value="ICB Representative">ICB Representative</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="calc-gate-field">
+              <label for="gate-practice">Practice Name *</label>
+              <input type="text" id="gate-practice" class="form-field" placeholder="e.g. Riverside Medical Centre" required />
+            </div>
+            <div class="calc-gate-field">
+              <label for="gate-email">Work Email *</label>
+              <input type="email" id="gate-email" class="form-field" placeholder="e.g. sarah@practice.nhs.uk" required />
+            </div>
+          </div>
+          <button type="submit" class="btn-primary calc-gate-btn">Unlock Full Calculator</button>
+          <p class="calc-gate-privacy">We respect your privacy. Your details will only be used to discuss pathology automation for your practice.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div id="calc-gated-content">
   <!-- The Goal -->
   <section class="section calc-goal-section">
     <div class="container-site">
@@ -291,6 +333,7 @@ const base = import.meta.env.BASE_URL;
       <a href={`${base}contact-us`} class="btn-primary" style="margin-top: 0.5rem;">Get Started</a>
     </div>
   </section>
+  </div>
 
   <Footer />
 </BaseLayout>
@@ -824,6 +867,72 @@ const base = import.meta.env.BASE_URL;
     background: #fff;
   }
 
+  /* ── Lead Gate ── */
+  .calc-gate-section {
+    background: linear-gradient(180deg, #f5f7fa 0%, #f0f4fb 50%, #eef8f5 100%);
+  }
+
+  .calc-gate-box {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    background: #fff;
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    box-shadow: var(--shadow-card-lg);
+    border: 1px solid rgba(44, 112, 235, 0.1);
+  }
+
+  .calc-gate-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 0.75rem;
+  }
+
+  .calc-gate-desc {
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .calc-gate-form {
+    text-align: left;
+  }
+
+  .calc-gate-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .calc-gate-field label {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-brand-grey-muted);
+    margin-bottom: 0.375rem;
+  }
+
+  .calc-gate-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .calc-gate-privacy {
+    font-size: 0.75rem;
+    color: var(--color-brand-grey-muted);
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.5;
+  }
+
+  #calc-gated-content {
+    display: none;
+  }
+
   /* ── Responsive ── */
   @media (max-width: 960px) {
     .calc-pain-grid {
@@ -855,6 +964,12 @@ const base = import.meta.env.BASE_URL;
     }
     .calc-guardrail-body {
       padding-left: 1.5rem;
+    }
+    .calc-gate-fields {
+      grid-template-columns: 1fr;
+    }
+    .calc-gate-box {
+      padding: 2rem 1.5rem;
     }
   }
 </style>
@@ -917,4 +1032,33 @@ const base = import.meta.env.BASE_URL;
 
   // Initial calculation
   recalculate();
+
+  // ── Lead Gate ──
+  const gateForm = document.getElementById('calc-gate-form');
+  if (gateForm) {
+    gateForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = (document.getElementById('gate-name') as HTMLInputElement).value;
+      const role = (document.getElementById('gate-role') as HTMLSelectElement).value;
+      const practice = (document.getElementById('gate-practice') as HTMLInputElement).value;
+      const email = (document.getElementById('gate-email') as HTMLInputElement).value;
+
+      // Auto-fill practice name into calculator if empty
+      const practiceInput = document.getElementById('practice-name') as HTMLInputElement;
+      if (practiceInput && !practiceInput.value) {
+        practiceInput.value = practice;
+      }
+
+      // Store lead data (for future CRM integration)
+      const leadData = { name, role, practice, email, product: 'Pathology Automation', source: 'ROI Calculator', timestamp: new Date().toISOString() };
+      console.log('Lead captured:', leadData);
+
+      // Show gated content, hide gate
+      (document.getElementById('calc-gate') as HTMLElement).style.display = 'none';
+      (document.getElementById('calc-gated-content') as HTMLElement).style.display = 'block';
+
+      // Scroll to the unlocked content
+      document.getElementById('calc-gated-content')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
 </script>

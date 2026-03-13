@@ -6,7 +6,9 @@ const sidebarItems = [
   { label: 'Quick Start Guide', href: `${base}products/scribecraft/help-centre/quick-start` },
   { label: 'Accuracy Optimisation', href: `${base}products/scribecraft/help-centre/accuracy` },
   { label: 'FAQ', href: `${base}products/scribecraft/help-centre/faq` },
-  { label: 'Materials & Explainers', href: `${base}products/scribecraft/help-centre/materials` },
+  { label: 'Safety & Compliance', href: `${base}products/scribecraft/help-centre/safety` },
+  { label: 'For Patients', href: `${base}products/scribecraft/help-centre/for-patients` },
+  { label: 'For Practices', href: `${base}products/scribecraft/help-centre/for-practices` },
   { label: 'Practice Readiness Audit', href: `${base}products/scribecraft/help-centre/practice-audit` },
 ];
 ---
@@ -68,10 +70,11 @@ const sidebarItems = [
     </div>
 
     <div class="content-card">
-      <h3>4. Obtain Patient Consent</h3>
+      <h3>4. Inform the Patient</h3>
       <p>
-        Before starting the recording, inform the patient and obtain their consent. This is a legal requirement
-        under UK data protection law and good clinical practice.
+        Before starting the recording, let the patient know you'll be using ScribeCraft. Under UK GDPR, the legal
+        basis is public interest (healthcare provision), so a separate consent form is not required — but patients
+        should always be informed.
       </p>
       <p>
         Suggested phrasing: <em>"I'll be using a digital assistant that transcribes our conversation to generate
@@ -79,9 +82,9 @@ const sidebarItems = [
       </p>
     </div>
 
-    <div class="sc-warning-box">
-      <strong>Important:</strong> Patient consent is mandatory under UK GDPR. Ensure the patient understands and
-      agrees before recording the consultation.
+    <div class="highlight-box">
+      <strong>Tip:</strong> Ensure your practice privacy policy has been updated with the ScribeCraft addendum and
+      a notice is displayed in your waiting room. See <a href={`${base}products/scribecraft/help-centre/for-practices`}>For Practices</a> for templates.
     </div>
 
     <div class="content-card">
