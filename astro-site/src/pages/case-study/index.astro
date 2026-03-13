@@ -61,6 +61,20 @@ const base = import.meta.env.BASE_URL;
             <span class="case-card-link">Read Case Study &rarr;</span>
           </div>
         </a>
+
+        <a href={`${base}case-study/cps-locate-elixir`} class="case-card">
+          <div class="case-card-image case-card-image--logo">
+            <img
+              src={`${base}images/logo-cps.avif`}
+              alt="Clinical Pharmacist Solutions"
+              loading="lazy"
+            />
+          </div>
+          <div class="case-card-body">
+            <h3 class="case-card-title">Clinical Pharmacist Solutions - Locate Elixir Drug Availability Pilot</h3>
+            <span class="case-card-link">Read Case Study &rarr;</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -124,7 +138,7 @@ const base = import.meta.env.BASE_URL;
   /* Case Study Cards */
   .case-studies-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
 
@@ -151,6 +165,17 @@ const base = import.meta.env.BASE_URL;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s;
+  }
+  .case-card-image--logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0f4fb, #eef8f5);
+  }
+  .case-card-image--logo img {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
   }
   .case-card:hover .case-card-image img {
     transform: scale(1.05);
@@ -181,7 +206,7 @@ const base = import.meta.env.BASE_URL;
       gap: 1.5rem;
     }
     .case-studies-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
     }
   }
 

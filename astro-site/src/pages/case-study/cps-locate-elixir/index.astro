@@ -1,0 +1,607 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import CTASection from '../../../components/CTASection.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="Clinical Pharmacist Solutions - Locate Elixir Pilot | ApolloIQ"
+  description="How ApolloIQ's Locate Elixir transformed drug availability searches for Clinical Pharmacist Solutions, reclaiming 33.3 hours and enabling 150 additional consultations."
+>
+  <Nav />
+
+  <!-- Hero -->
+  <section class="cs-hero">
+    <div class="container-site">
+      <div class="cs-hero-inner">
+        <a href={`${base}case-study`} class="cs-back-link">&larr; All Case Studies</a>
+        <div class="cs-hero-logos">
+          <img src={`${base}images/logo-cps.avif`} alt="Clinical Pharmacist Solutions" class="cs-partner-logo" />
+        </div>
+        <h1 class="cs-hero-title">
+          Clinical Pharmacist Solutions &mdash; Locate Elixir Pilot
+        </h1>
+        <p class="cs-hero-subtitle">Drug Availability Automation &middot; Workforce Efficiency &amp; Patient Care Outcomes</p>
+      </div>
+    </div>
+    <div class="hero-orb hero-orb--1"></div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container-narrow">
+      <div class="cs-intro">
+        <p>
+          In the UK, medication shortages are not just an administrative hurdle &mdash; they are a
+          <strong>clinical risk</strong>. When a medication is out of stock, the traditional "manual chase"
+          takes an average of <strong>10 minutes per item</strong>. Pharmacists ring around suppliers by
+          phone, patients wait 24&ndash;48 hours longer for essential medication, and the repetitive
+          administrative churn drives burnout across primary care teams.
+        </p>
+        <p>
+          <strong>Clinical Pharmacist Solutions (CPS)</strong> partnered with ApolloIQ to pilot
+          <strong>Locate Elixir</strong> &mdash; a real-time drug availability tool built into the
+          Merlin platform &mdash; across a cohort of <strong>10 clinical pharmacists</strong> over two months
+          (October&ndash;December 2025).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="section" style="background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);">
+    <div class="container-site">
+      <div class="cs-problem-grid">
+        <div class="cs-problem-content">
+          <h2 class="cs-section-title">The <span class="text-gradient">Problem</span></h2>
+          <p>When a medication is out of stock, the downstream effects on patients are significant:</p>
+          <ul class="cs-list">
+            <li><strong>Treatment Delays</strong> &mdash; Patients wait 24&ndash;48 hours longer while pharmacists "ring around"</li>
+            <li><strong>Reduced Adherence</strong> &mdash; Complexity in obtaining medication leads to missed doses and therapeutic failure</li>
+            <li><strong>Anxiety &amp; Trust</strong> &mdash; Patients experience increased stress when their care team cannot provide immediate answers</li>
+            <li><strong>Safety Risks</strong> &mdash; Manual workarounds or switching to less familiar alternatives can lead to prescribing errors</li>
+          </ul>
+        </div>
+        <div class="cs-efficiency-card">
+          <h3>The Efficiency Gap</h3>
+          <div class="cs-gap-row">
+            <div class="cs-gap-label">Manual Process<br /><span>(Phone/Portals)</span></div>
+            <div class="cs-gap-bar cs-gap-bar--slow"></div>
+            <div class="cs-gap-value cs-gap-value--slow">10 min</div>
+          </div>
+          <div class="cs-gap-row">
+            <div class="cs-gap-label">Locate Elixir<br /><span>(Merlin Platform)</span></div>
+            <div class="cs-gap-bar cs-gap-bar--fast"></div>
+            <div class="cs-gap-value cs-gap-value--fast">10 sec</div>
+          </div>
+          <p class="cs-gap-note">60x faster resolution &mdash; during the consultation, not after</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section class="section">
+    <div class="container-narrow">
+      <h2 class="cs-section-title">The <span class="text-gradient">Solution</span></h2>
+      <p class="cs-solution-lead">
+        Locate Elixir digitises the procurement and sourcing workflow. By providing real-time
+        availability and sourcing data in <strong>10 seconds</strong>, it allows the pharmacist to resolve
+        a supply issue <em>during</em> the clinical review or while the patient is still in contact &mdash;
+        ensuring continuity of care and immediate peace of mind.
+      </p>
+
+      <div class="cs-solution-cards">
+        <div class="cs-sol-card">
+          <div class="cs-sol-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3>Real-Time Search</h3>
+          <p>Instant availability data across multiple suppliers in seconds, not minutes</p>
+        </div>
+        <div class="cs-sol-card">
+          <div class="cs-sol-icon cs-sol-icon--green">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>100% Reliable</h3>
+          <p>Zero technical issues reported. Zero manual errors. Trusted by clinicians daily</p>
+        </div>
+        <div class="cs-sol-card">
+          <div class="cs-sol-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="11" rx="1.5"/><line x1="6" y1="17" x2="12" y2="17"/><line x1="9" y1="14" x2="9" y2="17"/><rect x="17" y="6" width="6" height="12" rx="1"/><line x1="17" y1="15" x2="23" y2="15"/></svg>
+          </div>
+          <h3>Any Device</h3>
+          <p>Runs on desktop, mobile, or tablet — accessible wherever pharmacists work, via the Merlin platform</p>
+        </div>
+        <div class="cs-sol-card">
+          <div class="cs-sol-icon cs-sol-icon--green">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+          </div>
+          <h3>Loved by Users</h3>
+          <p>5/5 satisfaction score and 10/10 Net Promoter Score from all participants</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section" style="background: linear-gradient(180deg, #f0f4fb 0%, #eef8f5 50%, #f5f7fa 100%);">
+    <div class="container-narrow">
+      <h2 class="cs-section-title">Results at a <span class="text-gradient">Glance</span></h2>
+
+      <div class="cs-stats-grid">
+        <div class="cs-stat-card">
+          <span class="cs-stat-value">33.3 hrs</span>
+          <span class="cs-stat-label">Clinical time reclaimed across 200 queries</span>
+        </div>
+        <div class="cs-stat-card">
+          <span class="cs-stat-value">150</span>
+          <span class="cs-stat-label">Additional consultations capacity gained</span>
+        </div>
+        <div class="cs-stat-card">
+          <span class="cs-stat-value">10 sec</span>
+          <span class="cs-stat-label">Average search time vs 10 minutes manually</span>
+        </div>
+        <div class="cs-stat-card">
+          <span class="cs-stat-value">100%</span>
+          <span class="cs-stat-label">Reliability &mdash; zero manual errors, zero technical issues</span>
+        </div>
+      </div>
+
+      <div class="cs-what-changed">
+        <h3 class="cs-subsection-title">Workforce Impact</h3>
+        <ul class="cs-list">
+          <li>Eliminated 200 "phone-tag" sessions with suppliers</li>
+          <li>Reclaimed headspace for SMRs, Qrisk3 audits, and pathology filing</li>
+          <li>Significant reduction in repetitive administrative churn that drives burnout</li>
+        </ul>
+      </div>
+
+      <div class="cs-what-changed">
+        <h3 class="cs-subsection-title">Patient Outcomes</h3>
+        <ul class="cs-list">
+          <li>Wait times reduced from 48 hours to seconds</li>
+          <li>Patients receive their original prescriptions without unnecessary switches</li>
+          <li>Improved continuity and trust in pharmacy service</li>
+          <li>Equal access to supply information regardless of location</li>
+        </ul>
+      </div>
+
+      <!-- Testimonial -->
+      <blockquote class="cs-quote">
+        <p>
+          "It has been great for me this week as I have had a few queries regarding out-of-stock
+          situations. I am really thankful for it as other tools I found to be a bit flimsy.
+          It is very easy and quick to use, which is exactly what is needed."
+        </p>
+        <cite>&mdash; <strong>Paula Taylor</strong>, Pharmacy Technician, Clinical Pharmacist Solutions</cite>
+      </blockquote>
+
+      <!-- Feedback -->
+      <div class="cs-feedback-section">
+        <h3 class="cs-subsection-title">100% Strong Agreement</h3>
+        <p class="cs-feedback-lead">All participants strongly agreed with the following statements:</p>
+        <div class="cs-feedback-grid">
+          <div class="cs-feedback-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Saves me or my team time</span>
+          </div>
+          <div class="cs-feedback-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Reduces administrative workload</span>
+          </div>
+          <div class="cs-feedback-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Improves workflow and efficiency</span>
+          </div>
+          <div class="cs-feedback-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Helps deliver safer, more accurate care</span>
+          </div>
+          <div class="cs-feedback-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Adds value to daily operations</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="cs-closing">
+        <strong>The pilot with Clinical Pharmacist Solutions demonstrates that Locate Elixir is more than an
+        efficiency tool. By streamlining the supply chain interface, we are improving the safety, reliability,
+        and speed of patient care in the UK.</strong>
+      </p>
+    </div>
+  </section>
+
+  <CTASection />
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .cs-hero {
+    position: relative;
+    padding: 7rem 0 4rem;
+    overflow: hidden;
+    background: linear-gradient(175deg, #ffffff 0%, #f0f4fb 40%, #eef8f5 70%, #f5f7fa 100%);
+  }
+
+  .cs-hero-inner {
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .cs-back-link {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-brand-blue);
+    margin-bottom: 1.5rem;
+    transition: color 0.2s;
+  }
+  .cs-back-link:hover {
+    color: var(--color-brand-blue-dark);
+  }
+
+  .cs-hero-logos {
+    margin-bottom: 1.5rem;
+  }
+
+  .cs-partner-logo {
+    height: 72px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .cs-hero-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--color-brand-black);
+    margin-bottom: 0.75rem;
+  }
+
+  .cs-hero-subtitle {
+    font-size: 1.0625rem;
+    color: var(--color-brand-grey-muted);
+    font-weight: 500;
+  }
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+  }
+  .hero-orb--1 {
+    width: 500px;
+    height: 500px;
+    background: rgba(44, 112, 235, 0.12);
+    top: -20%;
+    right: -10%;
+  }
+
+  /* Intro */
+  .cs-intro {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .cs-intro p {
+    font-size: 1.0625rem;
+    color: var(--color-brand-grey);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Problem Grid */
+  .cs-problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .cs-problem-content p {
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  .cs-section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-brand-black);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .cs-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .cs-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.9625rem;
+    color: var(--color-brand-grey);
+    line-height: 1.6;
+  }
+  .cs-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-brand-blue), var(--color-brand-green));
+  }
+
+  /* Efficiency Gap Card */
+  .cs-efficiency-card {
+    background: #fff;
+    border: 1px solid rgba(44, 112, 235, 0.08);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(44, 112, 235, 0.06);
+  }
+
+  .cs-efficiency-card h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .cs-gap-row {
+    display: grid;
+    grid-template-columns: 140px 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .cs-gap-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-brand-black);
+    line-height: 1.3;
+  }
+  .cs-gap-label span {
+    font-weight: 400;
+    color: var(--color-brand-grey-muted);
+    font-size: 0.75rem;
+  }
+
+  .cs-gap-bar {
+    height: 12px;
+    border-radius: 6px;
+  }
+  .cs-gap-bar--slow {
+    background: linear-gradient(90deg, #ef4444, #f97316);
+    width: 100%;
+  }
+  .cs-gap-bar--fast {
+    background: linear-gradient(90deg, var(--color-brand-blue), var(--color-brand-green));
+    width: 8%;
+    min-width: 12px;
+  }
+
+  .cs-gap-value {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .cs-gap-value--slow { color: #ef4444; }
+  .cs-gap-value--fast { color: var(--color-brand-green); }
+
+  .cs-gap-note {
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--color-brand-grey-muted);
+    margin-top: 0.5rem;
+    font-weight: 500;
+  }
+
+  /* Solution Cards */
+  .cs-solution-lead {
+    font-size: 1.0625rem;
+    color: var(--color-brand-grey);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .cs-solution-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .cs-sol-card {
+    background: #fff;
+    border: 1px solid rgba(44, 112, 235, 0.08);
+    border-radius: 16px;
+    padding: 1.75rem;
+    transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  }
+  .cs-sol-card:hover {
+    border-color: rgba(44, 112, 235, 0.2);
+    box-shadow: 0 6px 24px rgba(44, 112, 235, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .cs-sol-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(44, 112, 235, 0.1), rgba(44, 112, 235, 0.04));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-brand-blue);
+    margin-bottom: 1rem;
+  }
+  .cs-sol-icon--green {
+    background: linear-gradient(135deg, rgba(0, 195, 147, 0.12), rgba(0, 195, 147, 0.04));
+    color: #059669;
+  }
+
+  .cs-sol-card h3 {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 0.5rem;
+  }
+  .cs-sol-card p {
+    font-size: 0.9rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.6;
+  }
+
+  /* Stats Grid */
+  .cs-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .cs-stat-card {
+    background: #fff;
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    border-radius: var(--radius-card);
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-card);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cs-stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-brand-blue);
+    line-height: 1.1;
+  }
+
+  .cs-stat-label {
+    font-size: 0.875rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.4;
+  }
+
+  /* What Changed */
+  .cs-what-changed {
+    margin-bottom: 2.5rem;
+  }
+
+  .cs-subsection-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 1rem;
+  }
+
+  /* Quote */
+  .cs-quote {
+    border-left: 4px solid var(--color-brand-blue);
+    padding: 1.25rem 1.75rem;
+    margin: 2.5rem 0;
+    background: rgba(44, 112, 235, 0.03);
+    border-radius: 0 12px 12px 0;
+  }
+  .cs-quote p {
+    font-style: italic;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--color-brand-dark-medium);
+    margin-bottom: 0.75rem;
+  }
+  .cs-quote cite {
+    font-style: normal;
+    font-size: 0.9375rem;
+    color: var(--color-brand-grey-muted);
+  }
+
+  /* Feedback */
+  .cs-feedback-section {
+    margin: 2.5rem 0;
+  }
+
+  .cs-feedback-lead {
+    font-size: 0.9625rem;
+    color: var(--color-brand-grey);
+    margin-bottom: 1.25rem;
+  }
+
+  .cs-feedback-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .cs-feedback-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #fff;
+    border: 1px solid rgba(0, 195, 147, 0.12);
+    border-radius: 12px;
+    padding: 0.875rem 1.25rem;
+    color: #059669;
+  }
+  .cs-feedback-item span {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-brand-black);
+  }
+
+  .cs-closing {
+    font-size: 1.0625rem;
+    color: var(--color-brand-grey);
+    line-height: 1.7;
+  }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .cs-problem-grid {
+      grid-template-columns: 1fr;
+    }
+    .cs-solution-cards {
+      grid-template-columns: 1fr;
+    }
+    .cs-stats-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cs-hero {
+      padding: 5rem 0 3rem;
+    }
+    .cs-hero-title {
+      font-size: 1.75rem;
+    }
+    .cs-stats-grid {
+      grid-template-columns: 1fr;
+    }
+    .cs-gap-row {
+      grid-template-columns: 100px 1fr auto;
+      gap: 0.5rem;
+    }
+    .cs-gap-label {
+      font-size: 0.75rem;
+    }
+  }
+</style>

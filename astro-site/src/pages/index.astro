@@ -59,10 +59,19 @@ const base = import.meta.env.BASE_URL;
           <div class="hero-img-composition">
             <!-- Left column (40%): Blue text card + Merlin lion -->
             <div class="hero-comp-col-left">
-              <div class="hero-comp-card hero-comp-card--text-blue">
+              <div class="hero-comp-card hero-comp-card--text-blue hero-comp-card--proven">
+                <div class="hero-comp-deco hero-comp-deco--orb1"></div>
+                <div class="hero-comp-deco hero-comp-deco--lines">
+                  <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.12"><path d="M0 40h80M40 0v80M10 10l60 60M70 10L10 70" stroke="#fff" stroke-width="0.5"/></svg>
+                </div>
                 <span class="hero-comp-heading hero-comp-heading--large">Proven</span>
                 <span class="hero-comp-heading">Productivity</span>
                 <span class="hero-comp-heading">Increase</span>
+                <div class="hero-comp-bar-row">
+                  <div class="hero-comp-bar hero-comp-bar--1"></div>
+                  <div class="hero-comp-bar hero-comp-bar--2"></div>
+                  <div class="hero-comp-bar hero-comp-bar--3"></div>
+                </div>
               </div>
               <div class="hero-comp-card hero-comp-card--img">
                 <img src={`${base}images/68e64c96cb8794ac69203cac_img_hero_1.jpg`} alt="Merlin AI Healthcare" loading="eager" />
@@ -73,11 +82,17 @@ const base = import.meta.env.BASE_URL;
               <div class="hero-comp-card hero-comp-card--img">
                 <img src={`${base}images/68e6543bff4a39d5270fa13c_img_hero_2.jpg`} alt="ApolloIQ Merlin Dashboard" loading="eager" />
               </div>
-              <div class="hero-comp-card hero-comp-card--text-blue">
+              <div class="hero-comp-card hero-comp-card--text-blue hero-comp-card--growing">
                 <span class="hero-comp-heading hero-comp-heading--large">Growing</span>
                 <span class="hero-comp-heading">Network of UK</span>
                 <span class="hero-comp-heading hero-comp-heading--bold">Healthcare Partners</span>
-                <img src={`${base}images/685dc40ff887e05cecfae33d_Testimonials_stars.png`} alt="5 stars" class="hero-comp-stars" />
+                <div class="hero-comp-green-stars">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#00c393"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#00c393"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#00c393"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#00c393"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#00c393"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
               </div>
             </div>
             <!-- Arrow link centered -->
@@ -308,6 +323,16 @@ const base = import.meta.env.BASE_URL;
             <span class="case-card-link">Read Case Study &rarr;</span>
           </div>
         </a>
+        <a href={`${base}case-study/cps-locate-elixir`} class="case-card">
+          <div class="case-card-image case-card-image--logo">
+            <img src={`${base}images/logo-cps.avif`} alt="Clinical Pharmacist Solutions" loading="lazy" />
+          </div>
+          <div class="case-card-body">
+            <h3 class="case-card-title">Clinical Pharmacist Solutions</h3>
+            <p class="case-card-desc">Locate Elixir drug availability pilot — 33.3 hours reclaimed, 150 consultations gained</p>
+            <span class="case-card-link">Read Case Study &rarr;</span>
+          </div>
+        </a>
       </div>
       <div class="text-center" style="margin-top: 2.5rem;">
         <a href={`${base}case-study`} class="btn-secondary">All Case Studies</a>
@@ -436,6 +461,82 @@ const base = import.meta.env.BASE_URL;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  /* ── Decorative elements ── */
+  .hero-comp-deco {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  /* Proven card decorations */
+  .hero-comp-deco--orb1 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(44, 112, 235, 0.35), transparent 70%);
+    top: -30px;
+    right: -20px;
+    animation: hero-pulse 4s ease-in-out infinite;
+  }
+
+  .hero-comp-deco--lines {
+    top: 8px;
+    right: 8px;
+  }
+
+  .hero-comp-bar-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    margin-top: 0.75rem;
+  }
+
+  .hero-comp-bar {
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: hero-bar-grow 2s ease-out forwards;
+  }
+
+  .hero-comp-bar--1 {
+    width: 16px;
+    height: 0;
+    animation-delay: 0.3s;
+    --bar-height: 10px;
+  }
+  .hero-comp-bar--2 {
+    width: 16px;
+    height: 0;
+    animation-delay: 0.5s;
+    --bar-height: 18px;
+  }
+  .hero-comp-bar--3 {
+    width: 16px;
+    height: 0;
+    background: rgba(0, 195, 147, 0.4);
+    animation-delay: 0.7s;
+    --bar-height: 28px;
+  }
+
+  @keyframes hero-bar-grow {
+    to { height: var(--bar-height); }
+  }
+
+  /* Growing card — green stars */
+  .hero-comp-green-stars {
+    display: flex;
+    gap: 3px;
+    margin-top: 0.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  @keyframes hero-pulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.15); }
   }
   .hero-comp-heading {
     display: block;
@@ -443,6 +544,8 @@ const base = import.meta.env.BASE_URL;
     font-weight: 600;
     color: #fff;
     line-height: 1.2;
+    position: relative;
+    z-index: 1;
   }
   .hero-comp-heading--large {
     font-size: 2rem;
@@ -450,12 +553,6 @@ const base = import.meta.env.BASE_URL;
   }
   .hero-comp-heading--bold {
     font-weight: 700;
-  }
-  .hero-comp-stars {
-    height: auto;
-    width: 80px;
-    margin-top: 0.5rem;
-    display: block;
   }
 
   .hero-arrow-link {
@@ -772,7 +869,7 @@ const base = import.meta.env.BASE_URL;
   /* ── Case Studies ── */
   .case-studies-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
   .case-card {
@@ -797,6 +894,17 @@ const base = import.meta.env.BASE_URL;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s;
+  }
+  .case-card-image--logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0f4fb, #eef8f5);
+  }
+  .case-card-image--logo img {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
   }
   .case-card:hover .case-card-image img {
     transform: scale(1.05);
@@ -832,7 +940,7 @@ const base = import.meta.env.BASE_URL;
     .hero-icon-grid { grid-template-columns: 1fr 1fr; }
     .features-grid, .why-grid { grid-template-columns: 1fr; }
     .testimonials-grid { grid-template-columns: 1fr; }
-    .case-studies-grid { grid-template-columns: 1fr; }
+    .case-studies-grid { grid-template-columns: 1fr 1fr; }
     .marquee-logo { height: 103px; }
   }
   @media (max-width: 480px) {

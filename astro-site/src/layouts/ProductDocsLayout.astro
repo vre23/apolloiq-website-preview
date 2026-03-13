@@ -46,6 +46,9 @@ const currentPath = Astro.url.pathname;
         )}
       </div>
       {heroSubtitle && <p class="pdl-hero-subtitle">{heroSubtitle}</p>}
+      <div class="pdl-hero-actions">
+        <slot name="hero-actions" />
+      </div>
     </div>
   </section>
 
@@ -176,6 +179,17 @@ const currentPath = Astro.url.pathname;
     color: var(--color-brand-grey-muted);
     line-height: 1.6;
     max-width: 640px;
+  }
+
+  .pdl-hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .pdl-hero-actions:empty {
+    display: none;
   }
 
   /* ── Wrapper ── */

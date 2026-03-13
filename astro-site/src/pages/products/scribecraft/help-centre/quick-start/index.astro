@@ -31,13 +31,18 @@ const sidebarItems = [
     <h2>Quick Start Guide</h2>
     <p>Follow these simple steps to start using ScribeCraft in your consultations.</p>
 
-    <div class="content-card">
-      <h3>1. Log into Merlin</h3>
-      <p>
-        Access ScribeCraft through your dedicated account on the <strong>Merlin platform</strong>. Navigate to
-        <strong>merlin.apolloiq.co.uk</strong> and sign in with your credentials. No software to install —
-        ScribeCraft runs entirely in your browser.
-      </p>
+    <div class="sc-steps">
+      <div class="sc-step">
+        <div class="sc-step-num">1</div>
+        <div class="sc-step-content">
+          <h3>Log into Merlin</h3>
+          <p>
+            Access ScribeCraft through your dedicated account on the <strong>Merlin platform</strong>. Navigate to
+            <strong>merlin.apolloiq.co.uk</strong> and sign in with your credentials. No software to install —
+            ScribeCraft runs entirely in your browser.
+          </p>
+        </div>
+      </div>
     </div>
 
     <div class="highlight-box">
@@ -45,14 +50,19 @@ const sidebarItems = [
       and internet connection.
     </div>
 
-    <div class="content-card">
-      <h3>2. Set Up Your Microphone</h3>
-      <p>Before your first session, ensure your microphone is configured correctly:</p>
-      <ol>
-        <li><strong>Select your microphone</strong> — Click the microphone icon next to the Start button and choose your preferred device from the list.</li>
-        <li><strong>Test audio capture</strong> — Verify the microphone picks up your voice clearly at a comfortable distance.</li>
-        <li><strong>Grant browser permissions</strong> — When prompted, click <em>Allow</em> to let ScribeCraft access your microphone. If you accidentally blocked it, click the lock icon in the address bar and change the Microphone setting to Allow.</li>
-      </ol>
+    <div class="sc-steps">
+      <div class="sc-step">
+        <div class="sc-step-num">2</div>
+        <div class="sc-step-content">
+          <h3>Set Up Your Microphone</h3>
+          <p>Before your first session, ensure your microphone is configured correctly:</p>
+          <ol>
+            <li><strong>Select your microphone</strong> — Click the microphone icon next to the Start button and choose your preferred device from the list.</li>
+            <li><strong>Test audio capture</strong> — Verify the microphone picks up your voice clearly at a comfortable distance.</li>
+            <li><strong>Grant browser permissions</strong> — When prompted, click <em>Allow</em> to let ScribeCraft access your microphone. If you accidentally blocked it, click the lock icon in the address bar and change the Microphone setting to Allow.</li>
+          </ol>
+        </div>
+      </div>
     </div>
 
     <div class="highlight-box">
@@ -60,26 +70,33 @@ const sidebarItems = [
       well for short distances. Position the microphone 30-50 cm from the speaker for optimal results.
     </div>
 
-    <div class="content-card">
-      <h3>3. Choose a Note Format</h3>
-      <p>
-        Select from the available clinical templates — <strong>SOAP notes</strong>, <strong>clinical letters</strong>,
-        <strong>referral letters</strong>, or specialty-specific formats. Choosing the right template before recording
-        helps ScribeCraft structure information exactly the way you need it.
-      </p>
-    </div>
-
-    <div class="content-card">
-      <h3>4. Inform the Patient</h3>
-      <p>
-        Before starting the recording, let the patient know you'll be using ScribeCraft. Under UK GDPR, the legal
-        basis is public interest (healthcare provision), so a separate consent form is not required — but patients
-        should always be informed.
-      </p>
-      <p>
-        Suggested phrasing: <em>"I'll be using a digital assistant that transcribes our conversation to generate
-        clinical notes. Are you happy with that?"</em>
-      </p>
+    <div class="sc-steps">
+      <div class="sc-step">
+        <div class="sc-step-num">3</div>
+        <div class="sc-step-content">
+          <h3>Choose a Note Format</h3>
+          <p>
+            Select from the available clinical templates — <strong>SOAP notes</strong>, <strong>clinical letters</strong>,
+            <strong>referral letters</strong>, or specialty-specific formats. Choosing the right template before recording
+            helps ScribeCraft structure information exactly the way you need it.
+          </p>
+        </div>
+      </div>
+      <div class="sc-step">
+        <div class="sc-step-num">4</div>
+        <div class="sc-step-content">
+          <h3>Inform the Patient</h3>
+          <p>
+            Before starting the recording, let the patient know you'll be using ScribeCraft. Under UK GDPR, the legal
+            basis is public interest (healthcare provision), so a separate consent form is not required — but patients
+            should always be informed.
+          </p>
+          <p>
+            Suggested phrasing: <em>"I'll be using a digital assistant that transcribes our conversation to generate
+            clinical notes. Are you happy with that?"</em>
+          </p>
+        </div>
+      </div>
     </div>
 
     <div class="highlight-box">
@@ -87,29 +104,38 @@ const sidebarItems = [
       a notice is displayed in your waiting room. See <a href={`${base}products/scribecraft/help-centre/for-practices`}>For Practices</a> for templates.
     </div>
 
-    <div class="content-card">
-      <h3>5. Start Recording</h3>
-      <p>
-        Press the <strong>Start</strong> button to begin recording. Conduct your consultation naturally — ScribeCraft
-        works in the background without interrupting your clinical workflow.
-      </p>
-    </div>
-
-    <div class="content-card">
-      <h3>6. Stop and Process</h3>
-      <p>
-        When the consultation ends, click <strong>Stop</strong>. ScribeCraft will automatically process the
-        conversation and generate a structured clinical note according to your chosen template. Processing usually
-        takes just a few seconds.
-      </p>
-    </div>
-
-    <div class="content-card">
-      <h3>7. Review and Edit</h3>
-      <p>
-        Read the generated draft carefully. Check that all clinical details are accurate — especially medication
-        doses, numerical values, and diagnoses. Edit directly in the editor if any corrections are needed.
-      </p>
+    <div class="sc-steps">
+      <div class="sc-step">
+        <div class="sc-step-num">5</div>
+        <div class="sc-step-content">
+          <h3>Start Recording</h3>
+          <p>
+            Press the <strong>Start</strong> button to begin recording. Conduct your consultation naturally — ScribeCraft
+            works in the background without interrupting your clinical workflow.
+          </p>
+        </div>
+      </div>
+      <div class="sc-step">
+        <div class="sc-step-num">6</div>
+        <div class="sc-step-content">
+          <h3>Stop and Process</h3>
+          <p>
+            When the consultation ends, click <strong>Stop</strong>. ScribeCraft will automatically process the
+            conversation and generate a structured clinical note according to your chosen template. Processing usually
+            takes just a few seconds.
+          </p>
+        </div>
+      </div>
+      <div class="sc-step">
+        <div class="sc-step-num">7</div>
+        <div class="sc-step-content">
+          <h3>Review and Edit</h3>
+          <p>
+            Read the generated draft carefully. Check that all clinical details are accurate — especially medication
+            doses, numerical values, and diagnoses. Edit directly in the editor if any corrections are needed.
+          </p>
+        </div>
+      </div>
     </div>
 
     <div class="sc-warning-box">
@@ -117,13 +143,18 @@ const sidebarItems = [
       draft documents — final clinical responsibility remains with you.
     </div>
 
-    <div class="content-card">
-      <h3>8. Copy and File</h3>
-      <p>Once you're satisfied with the note:</p>
-      <ul>
-        <li><strong>Copy to your EPR</strong> — Paste the note directly into EMIS Web, SystmOne, Vision, or any EPR system.</li>
-        <li><strong>Export as PDF</strong> — Generate a professional document for printing or patient records.</li>
-      </ul>
+    <div class="sc-steps">
+      <div class="sc-step">
+        <div class="sc-step-num">8</div>
+        <div class="sc-step-content">
+          <h3>Copy and File</h3>
+          <p>Once you're satisfied with the note:</p>
+          <ul>
+            <li><strong>Copy to your EPR</strong> — Paste the note directly into EMIS Web, SystmOne, Vision, or any EPR system.</li>
+            <li><strong>Export as PDF</strong> — Generate a professional document for printing or patient records.</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <div class="highlight-box">
@@ -165,5 +196,63 @@ const sidebarItems = [
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: #dc2626;
+  }
+
+  /* ── Steps ── */
+  .sc-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 1.5rem;
+    position: relative;
+  }
+
+  .sc-step {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    padding: 1.25rem 0;
+    position: relative;
+  }
+
+  .sc-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 21px;
+    top: calc(1.25rem + 42px);
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, rgba(44, 112, 235, 0.15), rgba(0, 195, 147, 0.1));
+  }
+
+  .sc-step-num {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2c70eb, #00c393);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(44, 112, 235, 0.2);
+  }
+
+  .sc-step-content h3 {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 0.25rem;
+    margin-top: 0.25rem;
+  }
+
+  .sc-step-content p,
+  .sc-step-content ol,
+  .sc-step-content ul {
+    font-size: 0.925rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.6;
   }
 </style>

@@ -34,24 +34,44 @@ const sidebarItems = [
     <h2>Our Approach to Safety</h2>
     <p>ScribeCraft is designed from the ground up to meet the highest standards of data protection and clinical safety required by UK healthcare.</p>
 
-    <div class="content-card">
-      <h3>Clinician in Control (Human-in-the-Loop)</h3>
-      <p>ScribeCraft is an administrative support tool — it does not make clinical decisions. Every document generated is a draft that must be reviewed and validated by the clinician before use. The clinician retains full responsibility for the final content.</p>
+    <div class="sc-info-card">
+      <div class="sc-info-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+      </div>
+      <div class="sc-info-content">
+        <h3>Clinician in Control (Human-in-the-Loop)</h3>
+        <p>ScribeCraft is an administrative support tool — it does not make clinical decisions. Every document generated is a draft that must be reviewed and validated by the clinician before use. The clinician retains full responsibility for the final content.</p>
+      </div>
     </div>
 
-    <div class="content-card">
-      <h3>Zero-Retention Architecture</h3>
-      <p>Audio data is processed in real time and immediately deleted. No recordings or patient data are retained on our servers. Zero-retention by design.</p>
+    <div class="sc-info-card">
+      <div class="sc-info-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+      </div>
+      <div class="sc-info-content">
+        <h3>Zero-Retention Architecture</h3>
+        <p>Audio data is processed in real time and immediately deleted. No recordings or patient data are retained on our servers. Zero-retention by design.</p>
+      </div>
     </div>
 
-    <div class="content-card">
-      <h3>Encryption at Every Layer</h3>
-      <p>All data is encrypted in transit (TLS 1.2+) and at rest (AES-256). Only the authenticated user can access their generated documents — the ApolloIQ team has no access to document content.</p>
+    <div class="sc-info-card">
+      <div class="sc-info-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+      <div class="sc-info-content">
+        <h3>Encryption at Every Layer</h3>
+        <p>All data is encrypted in transit (TLS 1.2+) and at rest (AES-256). Only the authenticated user can access their generated documents — the ApolloIQ team has no access to document content.</p>
+      </div>
     </div>
 
-    <div class="content-card">
-      <h3>AI Training Guarantee</h3>
-      <p>Your data is never used to train, retrain, or improve any AI models. This is contractually guaranteed in our Terms of Service and DPA.</p>
+    <div class="sc-info-card">
+      <div class="sc-info-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="sc-info-content">
+        <h3>AI Training Guarantee</h3>
+        <p>Your data is never used to train, retrain, or improve any AI models. This is contractually guaranteed in our Terms of Service and DPA.</p>
+      </div>
     </div>
   </section>
 
@@ -60,21 +80,31 @@ const sidebarItems = [
   <!-- ════════════════════════════════════════════════════════ -->
   <section id="gdpr">
     <h2>UK GDPR &amp; Data Protection</h2>
-    <div class="content-card">
-      <h3>Data Processing Framework</h3>
-      <p>All data processing complies with UK GDPR and the Data Protection Act 2018. Your practice is the Data Controller; ApolloIQ is the Data Processor, formalised through a Data Processing Agreement (DPA) signed at account activation.</p>
-      <p>The legal basis for processing health data through ScribeCraft is <strong>Article 6(1)(e) UK GDPR</strong> (task carried out in the public interest — healthcare provision) and <strong>Article 9(2)(h)</strong> (processing necessary for health or social care).</p>
+    <div class="sc-info-card">
+      <div class="sc-info-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <div class="sc-info-content">
+        <h3>Data Processing Framework</h3>
+        <p>All data processing complies with UK GDPR and the Data Protection Act 2018. Your practice is the Data Controller; ApolloIQ is the Data Processor, formalised through a Data Processing Agreement (DPA) signed at account activation.</p>
+        <p>The legal basis for processing health data through ScribeCraft is <strong>Article 6(1)(e) UK GDPR</strong> (task carried out in the public interest — healthcare provision) and <strong>Article 9(2)(h)</strong> (processing necessary for health or social care).</p>
+      </div>
     </div>
 
-    <div class="content-card">
-      <h3>Informing Patients</h3>
-      <p>Under UK GDPR, no separate patient consent form is required. Practices should:</p>
-      <ul>
-        <li>Update their privacy policy to include ScribeCraft as a processing activity</li>
-        <li>Display a notice in the waiting room (see our <a href={`${base}products/scribecraft/help-centre/for-patients`}>For Patients</a> page for suggested wording)</li>
-        <li>Clinicians should briefly mention ScribeCraft at the start of consultations</li>
-        <li>Patients can opt out at any time — their care continues as normal</li>
-      </ul>
+    <div class="sc-info-card">
+      <div class="sc-info-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg>
+      </div>
+      <div class="sc-info-content">
+        <h3>Informing Patients</h3>
+        <p>Under UK GDPR, no separate patient consent form is required. Practices should:</p>
+        <ul>
+          <li>Update their privacy policy to include ScribeCraft as a processing activity</li>
+          <li>Display a notice in the waiting room (see our <a href={`${base}products/scribecraft/help-centre/for-patients`}>For Patients</a> page for suggested wording)</li>
+          <li>Clinicians should briefly mention ScribeCraft at the start of consultations</li>
+          <li>Patients can opt out at any time — their care continues as normal</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -83,24 +113,39 @@ const sidebarItems = [
   <!-- ════════════════════════════════════════════════════════ -->
   <section id="compliance">
     <h2>Compliance &amp; Certifications</h2>
-    <div class="content-card-grid">
-      <div class="content-card">
+    <div class="sc-cert-grid">
+      <div class="sc-cert-card">
+        <div class="sc-cert-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
         <h3>Class I Medical Device</h3>
         <p>Registered under UK Medical Devices Regulations 2002. Administrative documentation tool, no diagnostic/therapeutic functions.</p>
       </div>
-      <div class="content-card">
+      <div class="sc-cert-card">
+        <div class="sc-cert-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
         <h3>UK GDPR Compliant</h3>
         <p>Fully compliant with UK GDPR and Data Protection Act 2018.</p>
       </div>
-      <div class="content-card">
+      <div class="sc-cert-card">
+        <div class="sc-cert-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
         <h3>ISO 27001 Standards</h3>
         <p>Information security management aligned with ISO 27001.</p>
       </div>
-      <div class="content-card">
+      <div class="sc-cert-card">
+        <div class="sc-cert-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
         <h3>AI Act Ready</h3>
         <p>Designed with transparency obligations per EU AI Act (Regulation 2024/1689).</p>
       </div>
-      <div class="content-card">
+      <div class="sc-cert-card">
+        <div class="sc-cert-icon sc-cert-icon-green">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
         <h3>Microsoft for Startups Partner</h3>
         <p>Built on Microsoft Azure infrastructure.</p>
       </div>
@@ -290,23 +335,28 @@ const sidebarItems = [
 
     <!-- Residual Risk Evaluation -->
     <h3 id="residual-risk" style="scroll-margin-top: 100px;">Residual Risk Evaluation</h3>
-    <div class="content-card">
-      <p>
-        All identified hazards have been mitigated through a combination of <strong>technical controls</strong>
-        (system prompt engineering, low-temperature LLM configuration, zero-retention architecture),
-        <strong>UI controls</strong> (side-by-side transcript view, manual copy/paste workflow), and
-        <strong>procedural controls</strong> (Instructions for Use, patient information requirements, clinician training).
-      </p>
-      <p style="margin-top: 0.75rem;">
-        The highest remaining residual risks are <strong>H-SC-3</strong> (Wrong Patient Record) and
-        <strong>H-SC-4</strong> (Automation Bias), both at Risk Level 3. These are inherent to any stand-alone
-        documentation tool and are mitigated by the deliberate manual copy/paste workflow — the strongest
-        possible control in this architecture.
-      </p>
-      <p style="margin-top: 0.75rem;">
-        The clinical benefit — significant reduction in administrative burden on clinicians, allowing for more time
-        on direct patient care — is judged to <strong>outweigh the low, ALARP-mitigated residual risks</strong>.
-      </p>
+    <div class="sc-info-card">
+      <div class="sc-info-icon sc-info-icon-green">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <div class="sc-info-content">
+        <p>
+          All identified hazards have been mitigated through a combination of <strong>technical controls</strong>
+          (system prompt engineering, low-temperature LLM configuration, zero-retention architecture),
+          <strong>UI controls</strong> (side-by-side transcript view, manual copy/paste workflow), and
+          <strong>procedural controls</strong> (Instructions for Use, patient information requirements, clinician training).
+        </p>
+        <p style="margin-top: 0.75rem;">
+          The highest remaining residual risks are <strong>H-SC-3</strong> (Wrong Patient Record) and
+          <strong>H-SC-4</strong> (Automation Bias), both at Risk Level 3. These are inherent to any stand-alone
+          documentation tool and are mitigated by the deliberate manual copy/paste workflow — the strongest
+          possible control in this architecture.
+        </p>
+        <p style="margin-top: 0.75rem;">
+          The clinical benefit — significant reduction in administrative burden on clinicians, allowing for more time
+          on direct patient care — is judged to <strong>outweigh the low, ALARP-mitigated residual risks</strong>.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -315,7 +365,7 @@ const sidebarItems = [
   <!-- ════════════════════════════════════════════════════════ -->
   <section id="request-docs">
     <h2>Request Safety Documentation</h2>
-    <div class="content-card" style="padding: 2rem;">
+    <div class="sc-request-card">
       <h3>Need the Full Safety Documentation?</h3>
       <p>Request the complete Clinical Safety Case Report, Hazard Log, and Process Definition Document for your ICB or procurement process.</p>
       <button class="btn-primary" id="sc-safety-toggle" onclick="document.getElementById('sc-safety-form-wrap').style.display='block';this.style.display='none';">Request Safety Documentation</button>
@@ -355,12 +405,135 @@ const sidebarItems = [
   }
   .help-back-link:hover { opacity: 0.7; }
 
-  /* ── Content Card Grid ── */
-  .content-card-grid {
+  /* ── Info Cards ── */
+  .sc-info-card {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid rgba(44, 112, 235, 0.08);
+    border-radius: 16px;
+    padding: 1.75rem;
+    margin-bottom: 1.25rem;
+    transition: border-color 0.25s, box-shadow 0.25s;
+  }
+
+  .sc-info-card:hover {
+    border-color: rgba(44, 112, 235, 0.2);
+    box-shadow: 0 6px 24px rgba(44, 112, 235, 0.08);
+  }
+
+  .sc-info-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(44, 112, 235, 0.1), rgba(44, 112, 235, 0.04));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-brand-blue);
+  }
+
+  .sc-info-icon-green {
+    background: linear-gradient(135deg, rgba(0, 195, 147, 0.12), rgba(0, 195, 147, 0.04));
+    color: #059669;
+  }
+
+  .sc-info-content h3 {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 0.5rem;
+  }
+
+  .sc-info-content p,
+  .sc-info-content ul,
+  .sc-info-content ol {
+    font-size: 0.925rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.65;
+  }
+
+  /* ── Certification Grid ── */
+  .sc-cert-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1rem;
     margin-top: 1rem;
+  }
+
+  .sc-cert-card {
+    background: #fff;
+    border: 1px solid rgba(44, 112, 235, 0.08);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  }
+
+  .sc-cert-card:hover {
+    border-color: rgba(44, 112, 235, 0.2);
+    box-shadow: 0 6px 24px rgba(44, 112, 235, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .sc-cert-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(44, 112, 235, 0.1), rgba(44, 112, 235, 0.04));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-brand-blue);
+    margin: 0 auto 1rem;
+  }
+
+  .sc-cert-icon-green {
+    background: linear-gradient(135deg, rgba(0, 195, 147, 0.12), rgba(0, 195, 147, 0.04));
+    color: #059669;
+  }
+
+  .sc-cert-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 0.5rem;
+  }
+
+  .sc-cert-card p {
+    font-size: 0.875rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.6;
+  }
+
+  /* ── Request Card ── */
+  .sc-request-card {
+    background: linear-gradient(135deg, rgba(44, 112, 235, 0.04), rgba(0, 195, 147, 0.03));
+    border: 1px solid rgba(44, 112, 235, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+
+  .sc-request-card h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+    margin-bottom: 0.5rem;
+  }
+
+  .sc-request-card p {
+    font-size: 0.925rem;
+    color: var(--color-brand-grey-muted);
+    line-height: 1.65;
+  }
+
+  @media (max-width: 480px) {
+    .sc-info-card {
+      flex-direction: column;
+      gap: 1rem;
+    }
   }
 
   /* ── Safety Badges ── */
