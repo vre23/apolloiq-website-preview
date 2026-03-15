@@ -19,31 +19,31 @@ const base = import.meta.env.BASE_URL;
             <span class="text-gradient">AI & Automation</span><br />
             for Modern Healthcare
           </h1>
-          <!-- Icon grid with descriptions (matches original) -->
+          <!-- Icon grid with descriptions -->
           <div class="hero-icon-grid">
             <div class="hero-icon-item">
-              <img src={`${base}images/685dc40ff887e05cecfae324_Document_icon.png`} alt="" width="32" />
+              <img src={`${base}images/logo_Merlin_white.svg`} alt="" class="hero-icon-svg" />
               <div>
                 <strong>Merlin Platform</strong>
                 <span>Empowering Primary Care</span>
               </div>
             </div>
             <div class="hero-icon-item">
-              <img src={`${base}images/685dc40ff887e05cecfae2fe_Gears_Icon.png`} alt="" width="32" />
+              <svg class="hero-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
               <div>
                 <strong>Fully NHS Compliant</strong>
                 <span>Always compliant with latest guidelines</span>
               </div>
             </div>
             <div class="hero-icon-item">
-              <img src={`${base}images/685dc40ff887e05cecfae2ea_Clipboard_icon.png`} alt="" width="32" />
+              <svg class="hero-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
               <div>
                 <strong>By clinician for clinicians</strong>
                 <span>Simple tools that make big difference</span>
               </div>
             </div>
             <div class="hero-icon-item">
-              <img src={`${base}images/685dc40ff887e05cecfae31c_People_silhouette_icon.png`} alt="" width="32" />
+              <svg class="hero-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
               <div>
                 <strong>Expert Support Team</strong>
                 <span>Dedicated support from industry experts.</span>
@@ -500,9 +500,16 @@ const base = import.meta.env.BASE_URL;
     align-items: flex-start;
     gap: 0.75rem;
   }
-  .hero-icon-item img {
+  .hero-icon-item img,
+  .hero-icon-item svg {
     flex-shrink: 0;
     margin-top: 2px;
+  }
+
+  .hero-icon-svg {
+    width: 30px;
+    height: 30px;
+    color: var(--color-brand-blue);
   }
   .hero-icon-item strong {
     display: block;
