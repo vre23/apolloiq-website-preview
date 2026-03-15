@@ -208,6 +208,17 @@ function moduleIcon(key, size) {
   return '<img src="' + MODULE_ICONS[key] + '" alt="" width="' + size + '" height="' + size + '" style="display:block" />';
 }
 
+// Inline SVG icons (replace emojis)
+var SVG = {
+  clock: '<svg class="au-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+  trendUp: '<svg class="au-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>',
+  barChart: '<svg class="au-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>',
+  warn: '<svg class="au-icon au-icon--warn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+  stop: '<svg class="au-icon au-icon--stop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>',
+  check: '<svg class="au-icon au-icon--check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
+  x: '<svg class="au-icon au-icon--x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
+};
+
 function render() {
   if (phase === "start") renderStart();
   else if (phase === "questions") renderQuestion();
@@ -227,9 +238,9 @@ function renderStart() {
       </div>\
       <div class="au-body">\
         <div class="au-chips">\
-          <div class="au-chip"><span style="font-size:18px;display:block;margin-bottom:4px">\u23F1\uFE0F</span>Takes 3 minutes</div>\
-          <div class="au-chip"><span style="font-size:18px;display:block;margin-bottom:4px">\uD83D\uDCB0</span>Real ROI numbers</div>\
-          <div class="au-chip"><span style="font-size:18px;display:block;margin-bottom:4px">\uD83D\uDCCA</span>Instant results</div>\
+          <div class="au-chip"><span class="au-chip-icon">' + SVG.clock + '</span>Takes 3 minutes</div>\
+          <div class="au-chip"><span class="au-chip-icon">' + SVG.trendUp + '</span>Real ROI numbers</div>\
+          <div class="au-chip"><span class="au-chip-icon">' + SVG.barChart + '</span>Instant results</div>\
         </div>\
         <p style="font-size:13px;color:#667085;line-height:1.6;margin-bottom:22px;text-align:center">' + QUESTIONS.length + ' quick questions about pathology, documents, clinical documentation, blood pressure, and prescriptions. You\u2019ll see where time is lost, how you benchmark nationally, and a transparent cost-vs-savings breakdown.</p>\
         <button class="au-primary" id="au-start">Start the Audit \u2192</button>\
@@ -475,7 +486,7 @@ function renderResults() {
     html += '<div class="au-vendor-pains au-reveal" data-step="1">\
       <div style="font-size:12px;font-weight:700;color:#92400E;margin-bottom:6px">You told us these frustrate you:</div>';
     R.vendorPains.forEach(function(p) {
-      html += '<div style="display:flex;gap:8px;align-items:center;margin-bottom:3px;font-size:12px;color:#78350F"><span style="color:#D97706">\u2715</span> ' + (painLabels[p] || p) + '</div>';
+      html += '<div style="display:flex;gap:8px;align-items:center;margin-bottom:3px;font-size:12px;color:#78350F"><span style="color:#D97706;flex-shrink:0">' + SVG.x + '</span> ' + (painLabels[p] || p) + '</div>';
     });
     html += '</div>';
   }
@@ -498,7 +509,7 @@ function renderResults() {
 
     // Clinical risk label for BP
     if (mod.clinicalRiskLabel) {
-      html += '<div class="au-risk-badge ' + (mod.clinicalRiskSevere ? 'au-risk-badge--severe' : 'au-risk-badge--warn') + '">' + (mod.clinicalRiskSevere ? '\u26D4' : '\u26A0\uFE0F') + ' ' + mod.clinicalRiskLabel + '</div>';
+      html += '<div class="au-risk-badge ' + (mod.clinicalRiskSevere ? 'au-risk-badge--severe' : 'au-risk-badge--warn') + '">' + (mod.clinicalRiskSevere ? SVG.stop : SVG.warn) + ' ' + mod.clinicalRiskLabel + '</div>';
     }
 
     // ROI pill
@@ -508,13 +519,13 @@ function renderResults() {
       <span class="au-roi-arrow">\u2192</span>\
       <div class="au-roi-pill au-roi-pill--blue">ApolloIQ: \u00A3' + mod.apolloiqCost.toLocaleString() + '/yr</div>\
       <span class="au-roi-arrow">=</span>\
-      <div class="au-roi-pill ' + (pos ? 'au-roi-pill--green' : 'au-roi-pill--amber') + '">' + (pos ? '\u2713 Save \u00A3' + mod.netROI.toLocaleString() + '/yr' : '+\u00A3' + Math.abs(mod.netROI).toLocaleString() + '/yr net cost') + '</div>\
+      <div class="au-roi-pill ' + (pos ? 'au-roi-pill--green' : 'au-roi-pill--amber') + '">' + (pos ? '' + SVG.check + ' Save \u00A3' + mod.netROI.toLocaleString() + '/yr' : '+\u00A3' + Math.abs(mod.netROI).toLocaleString() + '/yr net cost') + '</div>\
     </div>';
 
     html += '<div style="font-size:11px;color:#667085;margin-bottom:8px;font-style:italic">' + mod.pricingLabel + '</div>';
 
     mod.findings.forEach(function(finding) {
-      html += '<div class="au-finding">\u26A0\uFE0F ' + finding + '</div>';
+      html += '<div class="au-finding">' + SVG.warn + ' ' + finding + '</div>';
     });
 
     if (mod.benchmark) {
@@ -555,7 +566,7 @@ function renderResults() {
    "DCB0129 clinical safety certification across every workflow",
    "Transparent pricing \u2014 per-patient for workflows, per-user for spells, no hidden costs"
   ].forEach(function(pt) {
-    html += '<div class="au-platform-item"><span style="color:#00c393">\u2713</span> ' + pt + '</div>';
+    html += '<div class="au-platform-item"><span style="color:#00c393;flex-shrink:0">' + SVG.check + '</span> ' + pt + '</div>';
   });
   html += '</div>';
 
@@ -677,6 +688,68 @@ render();
     font-size: 12px;
     font-weight: 600;
     color: #344054;
+  }
+
+  .au-chip-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4px;
+  }
+
+  .au-chip-icon .au-icon {
+    width: 20px;
+    height: 20px;
+    color: #2c70eb;
+  }
+
+  /* Inline SVG icons */
+  .au-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .au-icon--warn {
+    color: #D97706;
+  }
+
+  .au-icon--stop {
+    color: #DC2626;
+  }
+
+  .au-icon--check {
+    color: currentColor;
+    width: 12px;
+    height: 12px;
+  }
+
+  .au-icon--x {
+    width: 12px;
+    height: 12px;
+  }
+
+  .au-finding .au-icon {
+    width: 16px;
+    height: 16px;
+    margin-top: 1px;
+  }
+
+  .au-risk-badge .au-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .au-roi-pill .au-icon {
+    width: 12px;
+    height: 12px;
+    margin-right: 2px;
+  }
+
+  .au-platform-item .au-icon {
+    width: 14px;
+    height: 14px;
   }
 
   /* ── Options ── */
