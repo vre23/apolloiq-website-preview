@@ -352,25 +352,27 @@ const base = import.meta.env.BASE_URL;
             When Merlin becomes your practice platform, the gains compound. Find out how much time and money your practice loses to manual admin — and what you could reclaim.
           </p>
           <ul class="audit-features">
-            <li>Takes 2 minutes</li>
-            <li>No data stored</li>
+            <li>Takes 3 minutes</li>
+            <li>Real ROI numbers</li>
             <li>Instant personalised results</li>
           </ul>
           <a href={`${base}practice-efficiency-audit`} class="btn-primary audit-btn">Practice Efficiency Audit →</a>
         </div>
         <div class="audit-card-visual">
-          <div class="audit-visual-icon">📋</div>
+          <div class="audit-visual-icon">
+            <img src={`${base}images/logo_Merlin_white.svg`} alt="" class="audit-main-icon" />
+          </div>
           <div class="audit-visual-stats">
             <div class="audit-mini-stat">
-              <span class="audit-mini-value">⏱️</span>
+              <img src={`${base}images/icon-spell-book.svg`} alt="" class="audit-stat-icon" />
               <span class="audit-mini-label">Hours saved</span>
             </div>
             <div class="audit-mini-stat">
-              <span class="audit-mini-value">💷</span>
+              <img src={`${base}images/icon-blood-pressure.svg`} alt="" class="audit-stat-icon" />
               <span class="audit-mini-label">Cost reclaimed</span>
             </div>
             <div class="audit-mini-stat">
-              <span class="audit-mini-value">📊</span>
+              <img src={`${base}images/icon-scribe.svg`} alt="" class="audit-stat-icon" />
               <span class="audit-mini-label">Custom report</span>
             </div>
           </div>
@@ -1129,6 +1131,13 @@ const base = import.meta.env.BASE_URL;
     font-size: 3rem;
   }
 
+  .audit-main-icon {
+    width: 64px;
+    height: 64px;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+  }
+
   .audit-visual-stats {
     display: flex;
     flex-direction: column;
@@ -1144,8 +1153,11 @@ const base = import.meta.env.BASE_URL;
     font-weight: 500;
   }
 
-  .audit-mini-value {
-    font-size: 1rem;
+  .audit-stat-icon {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
   }
 
   /* Responsive */
