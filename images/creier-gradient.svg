@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 1000 1000">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+      }
+
+      .st1 {
+        fill: url(#linear-gradient);
+      }
+
+      .st2 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <path class="st0" d="M753.6,494.2v12s-48.2,0-48.2,48.2h-12s0-48.2-48.2-48.2v-12s48.2,0,48.2-48.2h12s0,48.2,48.2,48.2h0ZM560.3,421.8h12c0-48.2,48.2-48.2,48.2-48.2v-12c-48.2,0-48.2-48.2-48.2-48.2h-12c0,48.2-48.2,48.2-48.2,48.2v12c48.2,0,48.2,48.2,48.2,48.2h0ZM306.7,445.8h-12c0,48.2-48.2,48.2-48.2,48.2v12c48.2,0,48.2,48.2,48.2,48.2h12c0-48.2,48.2-48.2,48.2-48.2v-12c-48.2,0-48.2-48.2-48.2-48.2ZM572.4,445.8h-12c0,48.2-48.2,48.2-48.2,48.2v12c48.2,0,48.2,48.2,48.2,48.2v24.2c0,48.2-48.2,48.2-48.2,48.2v12c48.2,0,48.2,48.2,48.2,48.2h12c0-48.2,48.2-48.2,48.2-48.2v-12c-48.2,0-48.2-48.2-48.2-48.2v-24.2c0-48.2,48.2-48.2,48.2-48.2v-12c-48.2,0-48.2-48.2-48.2-48.2ZM439.5,313h-12c0,48.2-48.2,48.2-48.2,48.2v12c48.2,0,48.2,48.2,48.2,48.2v24.2c0,48.2-48.2,48.2-48.2,48.2v12c48.2,0,48.2,48.2,48.2,48.2h12c0-48.2,48.2-48.2,48.2-48.2v-12c-48.2,0-48.2-48.2-48.2-48.2v-24.2c0-48.2,48.2-48.2,48.2-48.2v-12c-48.2,0-48.2-48.2-48.2-48.2Z"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="-2866.1" y1="-313.3" x2="-2490.9" y2="-313.3" gradientTransform="translate(831.1 3178.3) rotate(90) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset=".2" stop-color="#00c393"/>
+      <stop offset=".4" stop-color="#04ba9b"/>
+      <stop offset=".6" stop-color="#0fa4b2"/>
+      <stop offset=".9" stop-color="#2281d8"/>
+      <stop offset="1" stop-color="#2c70eb"/>
+    </linearGradient>
+  </defs>
+  <g class="st2">
+    <rect class="st1" x="249.6" y="312.2" width="536.4" height="375.2"/>
+  </g>
+</svg>
