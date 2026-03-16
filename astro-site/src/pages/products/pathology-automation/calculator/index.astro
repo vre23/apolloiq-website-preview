@@ -89,15 +89,17 @@ const base = import.meta.env.BASE_URL;
       <div class="calc-gate-box">
         <h2 class="calc-gate-title">See Your Full ROI Breakdown</h2>
         <p class="calc-gate-desc">Enter your details below to unlock the interactive ROI calculator with adjustable filing rates, savings projections, and clinical governance details.</p>
-        <form class="calc-gate-form" id="calc-gate-form">
+        <form class="calc-gate-form" id="calc-gate-form" action="https://formspree.io/f/xdawwgeo" method="POST">
+          <input type="hidden" name="_source" value="Pathology ROI Calculator" />
+          <input type="hidden" name="_subject" value="Pathology ROI Calculator Lead" />
           <div class="calc-gate-fields">
             <div class="calc-gate-field">
               <label for="gate-name">Your Name *</label>
-              <input type="text" id="gate-name" class="form-field" placeholder="e.g. Dr Sarah Jones" required />
+              <input type="text" id="gate-name" name="name" class="form-field" placeholder="e.g. Dr Sarah Jones" required />
             </div>
             <div class="calc-gate-field">
               <label for="gate-role">Your Role *</label>
-              <select id="gate-role" class="form-field" required>
+              <select id="gate-role" name="role" class="form-field" required>
                 <option value="">Select your role...</option>
                 <option value="GP Partner">GP Partner</option>
                 <option value="Salaried GP">Salaried GP</option>
@@ -110,11 +112,11 @@ const base = import.meta.env.BASE_URL;
             </div>
             <div class="calc-gate-field">
               <label for="gate-practice">Practice Name *</label>
-              <input type="text" id="gate-practice" class="form-field" placeholder="e.g. Riverside Medical Centre" required />
+              <input type="text" id="gate-practice" name="practice" class="form-field" placeholder="e.g. Riverside Medical Centre" required />
             </div>
             <div class="calc-gate-field">
               <label for="gate-email">Work Email *</label>
-              <input type="email" id="gate-email" class="form-field" placeholder="e.g. sarah@practice.nhs.uk" required />
+              <input type="email" id="gate-email" name="email" class="form-field" placeholder="e.g. sarah@practice.nhs.uk" required />
             </div>
           </div>
           <button type="submit" class="btn-primary calc-gate-btn">Unlock Full Calculator</button>
@@ -1034,14 +1036,16 @@ const base = import.meta.env.BASE_URL;
   recalculate();
 
   // ── Lead Gate ──
-  const gateForm = document.getElementById('calc-gate-form');
+  const gateForm = document.getElementById('calc-gate-form') as HTMLFormElement;
   if (gateForm) {
-    gateForm.addEventListener('submit', (e) => {
+    gateForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const name = (document.getElementById('gate-name') as HTMLInputElement).value;
-      const role = (document.getElementById('gate-role') as HTMLSelectElement).value;
+      const btn = gateForm.querySelector('.calc-gate-btn') as HTMLButtonElement;
+      const original = btn.textContent;
+      btn.textContent = 'Unlocking...';
+      btn.disabled = true;
+
       const practice = (document.getElementById('gate-practice') as HTMLInputElement).value;
-      const email = (document.getElementById('gate-email') as HTMLInputElement).value;
 
       // Auto-fill practice name into calculator if empty
       const practiceInput = document.getElementById('practice-name') as HTMLInputElement;
@@ -1049,9 +1053,50 @@ const base = import.meta.env.BASE_URL;
         practiceInput.value = practice;
       }
 
-      // Store lead data (for future CRM integration)
-      const leadData = { name, role, practice, email, product: 'Pathology Automation', source: 'ROI Calculator', timestamp: new Date().toISOString() };
-      console.log('Lead captured:', leadData);
+      // Gather form + calculator values for email
+      const name = (document.getElementById('gate-name') as HTMLInputElement).value;
+      const role = (document.getElementById('gate-role') as HTMLSelectElement).value;
+      const email = (document.getElementById('gate-email') as HTMLInputElement).value;
+      const patients = parseInt((document.getElementById('patient-list') as HTMLInputElement).value) || 10000;
+      const filingRate = parseInt((document.getElementById('filing-slider') as HTMLInputElement).value) || 35;
+
+      // Calculate key metrics for email
+      const dailyLabs = Math.round(patients * LABS_PER_PATIENT_DAILY);
+      const annualLabs = patients * LABS_PER_PATIENT_DAILY * WORKING_DAYS;
+      const totalHours = Math.round((annualLabs * MINS_PER_LAB) / 60);
+      const annualCost = Math.round(totalHours * GP_COST_PER_HOUR);
+      const hoursSaved = Math.round((annualLabs * (filingRate / 100) * MINS_PER_LAB) / 60);
+      const valueCreated = Math.round(hoursSaved * GP_COST_PER_HOUR);
+      const apolloCost = patients * PRICE_PER_PATIENT;
+      const roi = apolloCost > 0 ? Math.round(((valueCreated - apolloCost) / apolloCost) * 100) : 0;
+
+      // Send to Formspree (non-blocking — unlock content regardless)
+      fetch(gateForm.action, {
+        method: 'POST',
+        body: new FormData(gateForm),
+        headers: { 'Accept': 'application/json' }
+      }).catch(() => {});
+
+      // Send personalised email via Google Apps Script (non-blocking)
+      fetch('https://script.google.com/macros/s/AKfycbw_88x4yCO66ZqKzM90EaarkQo8OtrP0JywqkMdDHChOgVInN_ZdibpXm7vH1PFZTMP9A/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({
+          type: 'pathology',
+          email: email,
+          name: name,
+          practice: practice,
+          role: role,
+          patients: patients,
+          dailyLabs: dailyLabs,
+          totalHours: totalHours,
+          annualCost: annualCost,
+          filingRate: filingRate,
+          hoursSaved: hoursSaved,
+          valueCreated: valueCreated,
+          roi: roi
+        })
+      }).catch(() => {});
 
       // Show gated content, hide gate
       (document.getElementById('calc-gate') as HTMLElement).style.display = 'none';
