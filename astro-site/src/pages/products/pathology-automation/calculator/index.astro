@@ -89,7 +89,7 @@ const base = import.meta.env.BASE_URL;
       <div class="calc-gate-box">
         <h2 class="calc-gate-title">See Your Full ROI Breakdown</h2>
         <p class="calc-gate-desc">Enter your details below to unlock the interactive ROI calculator with adjustable filing rates, savings projections, and clinical governance details.</p>
-        <form class="calc-gate-form" id="calc-gate-form" action="https://formspree.io/f/xdawwgeo" method="POST">
+        <form class="calc-gate-form" id="calc-gate-form" action="#" method="POST">
           <input type="hidden" name="_source" value="Pathology ROI Calculator" />
           <input type="hidden" name="_subject" value="Pathology ROI Calculator Lead" />
           <div class="calc-gate-fields">
@@ -1070,15 +1070,8 @@ const base = import.meta.env.BASE_URL;
       const apolloCost = patients * PRICE_PER_PATIENT;
       const roi = apolloCost > 0 ? Math.round(((valueCreated - apolloCost) / apolloCost) * 100) : 0;
 
-      // Send to Formspree (non-blocking — unlock content regardless)
-      fetch(gateForm.action, {
-        method: 'POST',
-        body: new FormData(gateForm),
-        headers: { 'Accept': 'application/json' }
-      }).catch(() => {});
-
       // Send personalised email via Google Apps Script (non-blocking)
-      fetch('https://script.google.com/macros/s/AKfycbw_88x4yCO66ZqKzM90EaarkQo8OtrP0JywqkMdDHChOgVInN_ZdibpXm7vH1PFZTMP9A/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbyxiagGQW6AIdiR8o8o0u4c0ET1I70injnp9ExqGWvFYHj6ucqSlPOe-ijPuewWToFZMw/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify({

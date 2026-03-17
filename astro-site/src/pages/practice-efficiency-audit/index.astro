@@ -670,19 +670,8 @@ function renderResults() {
       });
     });
 
-    // Send to Formspree (lead capture)
-    fd.append('patients', R.patients);
-    fd.append('clinicalUsers', R.clinicalUsers);
-    fd.append('hoursLostPerWeek', totalWeeklyHrs);
-    fd.append('currentAnnualCost', R.totalCurrentCost);
-    fd.append('apolloiqCost', R.totalApolloIQCost);
-    fd.append('netROI', R.totalNetROI);
-    fetch('https://formspree.io/f/xdawwgeo', {
-      method: 'POST', body: fd, headers: { 'Accept': 'application/json' }
-    }).catch(function() {});
-
     // Send personalised email via Apps Script
-    fetch('https://script.google.com/macros/s/AKfycbw_88x4yCO66ZqKzM90EaarkQo8OtrP0JywqkMdDHChOgVInN_ZdibpXm7vH1PFZTMP9A/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbyxiagGQW6AIdiR8o8o0u4c0ET1I70injnp9ExqGWvFYHj6ucqSlPOe-ijPuewWToFZMw/exec', {
       method: 'POST',
       headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify({

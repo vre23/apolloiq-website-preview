@@ -125,15 +125,17 @@ const sidebarItems = [
         <div class="audit-gate-box">
           <h3 class="audit-gate-title">Get Your Readiness Score</h3>
           <p class="audit-gate-desc">Enter your details to see your personalised Practice Readiness Score and recommendations.</p>
-          <form class="audit-gate-form" id="audit-gate-form">
+          <form class="audit-gate-form" id="audit-gate-form" action="#" method="POST">
+            <input type="hidden" name="_source" value="Practice Readiness Audit - ScribeCraft" />
+            <input type="hidden" name="_subject" value="Practice Readiness Audit Lead - ScribeCraft" />
             <div class="audit-gate-fields">
               <div class="audit-gate-field">
                 <label for="audit-gate-name">Your Name *</label>
-                <input type="text" id="audit-gate-name" class="form-field" placeholder="e.g. Dr Sarah Jones" required />
+                <input type="text" id="audit-gate-name" name="name" class="form-field" placeholder="e.g. Dr Sarah Jones" required />
               </div>
               <div class="audit-gate-field">
                 <label for="audit-gate-role">Your Role *</label>
-                <select id="audit-gate-role" class="form-field" required>
+                <select id="audit-gate-role" name="role" class="form-field" required>
                   <option value="">Select your role...</option>
                   <option value="GP Partner">GP Partner</option>
                   <option value="Salaried GP">Salaried GP</option>
@@ -145,11 +147,11 @@ const sidebarItems = [
               </div>
               <div class="audit-gate-field">
                 <label for="audit-gate-practice">Practice Name *</label>
-                <input type="text" id="audit-gate-practice" class="form-field" placeholder="e.g. Riverside Medical Centre" required />
+                <input type="text" id="audit-gate-practice" name="practice" class="form-field" placeholder="e.g. Riverside Medical Centre" required />
               </div>
               <div class="audit-gate-field">
                 <label for="audit-gate-email">Work Email *</label>
-                <input type="email" id="audit-gate-email" class="form-field" placeholder="e.g. sarah@practice.nhs.uk" required />
+                <input type="email" id="audit-gate-email" name="email" class="form-field" placeholder="e.g. sarah@practice.nhs.uk" required />
               </div>
             </div>
             <button type="submit" class="audit-submit-btn enabled" style="opacity:1;pointer-events:auto;width:100%;text-align:center;">View My Results</button>
@@ -514,19 +516,19 @@ const sidebarItems = [
     });
   }
 
-  // Gate form submission - show actual results
-  const gateForm = document.getElementById('audit-gate-form');
+  // Gate form submission - send to Google Apps Script then show results
+  const gateForm = document.getElementById('audit-gate-form') as HTMLFormElement;
   if (gateForm) {
-    gateForm.addEventListener('submit', (e) => {
+    gateForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      const name = (document.getElementById('audit-gate-name') as HTMLInputElement).value;
-      const role = (document.getElementById('audit-gate-role') as HTMLSelectElement).value;
-      const practice = (document.getElementById('audit-gate-practice') as HTMLInputElement).value;
-      const email = (document.getElementById('audit-gate-email') as HTMLInputElement).value;
+      var btn = gateForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+      btn.textContent = 'Loading...';
+      btn.disabled = true;
 
-      // Store lead data
-      const leadData = { name, role, practice, email, product: 'ScribeCraft', source: 'Practice Audit', score: auditScore, timestamp: new Date().toISOString() };
-      console.log('Lead captured:', leadData);
+      // Send to Google Apps Script (fire-and-forget)
+      var fd = new FormData(gateForm);
+      var data = { type: 'scribecraft-audit', name: fd.get('name'), role: fd.get('role'), practice: fd.get('practice'), email: fd.get('email'), score: auditScore + '%', level: auditLevel, _source: 'ScribeCraft Practice Readiness Audit' };
+      fetch('https://script.google.com/macros/s/AKfycbyxiagGQW6AIdiR8o8o0u4c0ET1I70injnp9ExqGWvFYHj6ucqSlPOe-ijPuewWToFZMw/exec', { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(data) }).catch(function(){});
 
       // Show results
       document.getElementById('audit-score-num')!.textContent = auditScore + '%';

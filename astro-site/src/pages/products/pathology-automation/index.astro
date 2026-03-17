@@ -23,7 +23,7 @@ const base = import.meta.env.BASE_URL;
       <p class="product-subtitle">80+ biomarkers. 17 test categories. Gender and age-specific reference ranges. Intelligent filing with zero compromise on accuracy.</p>
       <div class="hero-cta-group">
         <a href={`${base}contact-us`} class="btn-primary">Contact Us</a>
-        <a href="#book-demo" class="btn-secondary" data-product="pathology-automation">Book a Demo</a>
+        <a href="https://calendar.app.google/xMYkxVNCAuVvCaNt8" target="_blank" rel="noopener" class="btn-secondary">Book a Demo</a>
         <a href={`${base}products/pathology-automation/calculator`} class="btn-secondary">ROI Calculator</a>
       </div>
     </div>
@@ -753,12 +753,14 @@ const base = import.meta.env.BASE_URL;
         <div class="path-safety-cta-actions">
           <button class="btn-primary" id="path-safety-toggle" onclick="document.getElementById('path-safety-form-wrap').style.display='block';this.style.display='none';">Request Safety Documentation</button>
           <div id="path-safety-form-wrap" style="display:none;">
-            <form class="safety-request-form" id="path-safety-form">
-              <input type="text" class="form-field" placeholder="Your Name *" required />
-              <input type="text" class="form-field" placeholder="Your Role *" required />
-              <input type="text" class="form-field" placeholder="Organisation / Practice *" required />
-              <input type="email" class="form-field" placeholder="Work Email *" required />
-              <select class="form-field" required>
+            <form class="safety-request-form" id="path-safety-form" action="#" method="POST">
+              <input type="hidden" name="_source" value="Safety Documentation Request - Pathology Automation" />
+              <input type="hidden" name="_subject" value="Safety Documentation Request - Pathology Automation" />
+              <input type="text" name="name" class="form-field" placeholder="Your Name *" required />
+              <input type="text" name="role" class="form-field" placeholder="Your Role *" required />
+              <input type="text" name="organisation" class="form-field" placeholder="Organisation / Practice *" required />
+              <input type="email" name="email" class="form-field" placeholder="Work Email *" required />
+              <select name="purpose" class="form-field" required>
                 <option value="">Purpose of request *</option>
                 <option value="ICB Procurement">ICB Procurement</option>
                 <option value="Internal Review">Internal Governance Review</option>
@@ -769,7 +771,7 @@ const base = import.meta.env.BASE_URL;
               <button type="submit" class="btn-primary" style="width:100%;">Submit Request</button>
             </form>
           </div>
-          <p class="path-safety-cta-sub">Questions about clinical safety? <a href="mailto:contact@apolloiq.co.uk">Email our Clinical Safety Officer</a></p>
+          <p class="path-safety-cta-sub">Questions about clinical safety? <a href="mailto:vlad.repede@apolloiq.co.uk">Email our Clinical Safety Officer</a></p>
         </div>
       </div>
     </div>
@@ -1990,15 +1992,30 @@ const base = import.meta.env.BASE_URL;
 </style>
 
 <script>
-  const pathSafetyForm = document.getElementById('path-safety-form');
+  const pathSafetyForm = document.getElementById('path-safety-form') as HTMLFormElement;
   if (pathSafetyForm) {
-    pathSafetyForm.addEventListener('submit', (e) => {
+    pathSafetyForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      const inputs = pathSafetyForm.querySelectorAll('input, select');
-      const data = {};
-      inputs.forEach((inp) => { if (inp.name || inp.placeholder) data[inp.placeholder || inp.name] = inp.value; });
-      console.log('Safety docs request:', { ...data, product: 'Pathology Automation', timestamp: new Date().toISOString() });
-      document.getElementById('path-safety-form-wrap').innerHTML = '<p style="color:var(--color-brand-green);font-weight:600;margin-top:1rem;">✓ Request submitted! We\'ll send the documentation to your email shortly.</p>';
+      var btn = pathSafetyForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      var fd = new FormData(pathSafetyForm);
+      fetch('https://script.google.com/macros/s/AKfycbyxiagGQW6AIdiR8o8o0u4c0ET1I70injnp9ExqGWvFYHj6ucqSlPOe-ijPuewWToFZMw/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({
+          type: 'safety-request',
+          name: fd.get('name'),
+          role: fd.get('role'),
+          organisation: fd.get('organisation'),
+          email: fd.get('email'),
+          purpose: fd.get('purpose'),
+          _source: fd.get('_source') || 'Safety Documentation Request - Pathology Automation'
+        })
+      }).catch(function(){});
+
+      document.getElementById('path-safety-form-wrap')!.innerHTML = '<p style="color:var(--color-brand-green);font-weight:600;margin-top:1rem;">✓ Request submitted! We\'ll send the documentation to your email shortly.</p>';
     });
   }
 </script>

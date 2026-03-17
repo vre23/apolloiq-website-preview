@@ -11,7 +11,7 @@ const base = import.meta.env.BASE_URL;
         </div>
         <div class="cta-body">
           <div class="cta-form-wrap">
-            <form class="cta-form" data-wf-page-id="form" data-wf-element-id="cta">
+            <form class="cta-form" id="cta-form" action="#" method="POST">
               <input
                 class="form-field"
                 type="text"
@@ -41,6 +41,16 @@ const base = import.meta.env.BASE_URL;
                 <span class="cta-consent-text">I consent to receive updates on events, digital marketing and business.</span>
               </label>
             </form>
+            <div class="cta-success" id="cta-success" hidden>
+              <div class="success-icon">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="24" r="24" fill="var(--color-brand-green)"/>
+                  <path d="M16 24L22 30L32 18" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Thank you!</h3>
+              <p>Your submission has been received. We'll get back to you soon.</p>
+            </div>
           </div>
           <div class="cta-info">
             <p class="cta-info-text">
@@ -152,6 +162,24 @@ const base = import.meta.env.BASE_URL;
     color: var(--color-brand-blue-dark);
   }
 
+  .cta-success {
+    text-align: center;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .cta-success h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-brand-black);
+  }
+  .cta-success p {
+    font-size: 1rem;
+    color: var(--color-brand-grey);
+  }
+
   @media (max-width: 768px) {
     .cta-wrapper {
       padding: 2rem 1.5rem;
@@ -164,3 +192,25 @@ const base = import.meta.env.BASE_URL;
     }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('cta-form');
+    const success = document.getElementById('cta-success');
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = form.querySelector('.cta-submit');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      var fd = new FormData(form);
+      var data = { type: 'contact', name: fd.get('name'), email: fd.get('email'), message: fd.get('message'), consent: fd.get('consent') ? 'yes' : 'no', _source: 'CTA Section' };
+      fetch('https://script.google.com/macros/s/AKfycbyxiagGQW6AIdiR8o8o0u4c0ET1I70injnp9ExqGWvFYHj6ucqSlPOe-ijPuewWToFZMw/exec', { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(data) }).catch(function(){});
+
+      form.style.display = 'none';
+      success.hidden = false;
+    });
+  });
+</script>

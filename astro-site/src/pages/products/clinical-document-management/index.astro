@@ -220,7 +220,7 @@ const base = import.meta.env.BASE_URL;
         <div class="cdm-calc-gate" id="cdm-calc-gate">
           <h3>Unlock Your Full Business Case</h3>
           <p>Enter your details to unlock the full financial comparison, hidden cost analysis, and implementation roadmap for your practice.</p>
-          <form class="cdm-calc-gate-form" id="cdm-calc-gate-form" action="https://formspree.io/f/xdawwgeo" method="POST">
+          <form class="cdm-calc-gate-form" id="cdm-calc-gate-form" action="#" method="POST">
             <input type="hidden" name="_source" value="Business Case Calculator - Clinical Document Management" />
             <input type="hidden" name="_subject" value="Business Case Lead - Clinical Document Management" />
             <div class="cdm-calc-gate-fields">
@@ -662,7 +662,7 @@ const base = import.meta.env.BASE_URL;
         <div class="cdm-safety-cta-actions">
           <button class="btn-primary" id="cdm-safety-toggle" onclick="document.getElementById('cdm-safety-form-wrap').style.display='block';this.style.display='none';">Request Safety Documentation</button>
           <div id="cdm-safety-form-wrap" style="display:none;">
-            <form class="safety-request-form" id="cdm-safety-form" action="https://formspree.io/f/xdawwgeo" method="POST">
+            <form class="safety-request-form" id="cdm-safety-form" action="#" method="POST">
               <input type="hidden" name="_source" value="Safety Documentation Request - Clinical Document Management" />
               <input type="hidden" name="_subject" value="Safety Documentation Request - Clinical Document Management" />
               <input type="text" name="name" class="form-field" placeholder="Your Name *" required />
@@ -1937,14 +1937,23 @@ const base = import.meta.env.BASE_URL;
       btn.disabled = true;
 
       try {
-        const res = await fetch(cdmSafetyForm.action, {
+        const fd = new FormData(cdmSafetyForm);
+        const data = {
+          type: 'safety-request',
+          _source: fd.get('_source'),
+          _subject: fd.get('_subject'),
+          name: fd.get('name'),
+          role: fd.get('role'),
+          organisation: fd.get('organisation'),
+          email: fd.get('email'),
+          purpose: fd.get('purpose')
+        };
+        await fetch('https://script.google.com/macros/s/AKfycbyxiagGQW6AIdiR8o8o0u4c0ET1I70injnp9ExqGWvFYHj6ucqSlPOe-ijPuewWToFZMw/exec', {
           method: 'POST',
-          body: new FormData(cdmSafetyForm),
-          headers: { 'Accept': 'application/json' }
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify(data)
         });
-        if (res.ok) {
-          document.getElementById('cdm-safety-form-wrap')!.innerHTML = '<p style="color:var(--color-brand-green);font-weight:600;margin-top:1rem;">✓ Request submitted! We\'ll send the documentation to your email shortly.</p>';
-        } else { throw new Error('Failed'); }
+        document.getElementById('cdm-safety-form-wrap')!.innerHTML = '<p style="color:var(--color-brand-green);font-weight:600;margin-top:1rem;">✓ Request submitted! We\'ll send the documentation to your email shortly.</p>';
       } catch {
         btn.textContent = 'Submit Request';
         btn.disabled = false;
@@ -2064,14 +2073,8 @@ const base = import.meta.env.BASE_URL;
       u('cdm-compare-multiplier', multiplier + 'x');
       u('cdm-reason-multiplier', multiplier + 'x');
 
-      // Send to Formspree (non-blocking)
-      const fd = new FormData(cdmGateForm);
-      fd.append('patients', String(patients));
-      fd.append('annual_savings', formatCurrency(savings));
-      fetch(cdmGateForm.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } }).catch(() => {});
-
       // Send personalised email via Google Apps Script (non-blocking)
-      fetch('https://script.google.com/macros/s/AKfycbw_88x4yCO66ZqKzM90EaarkQo8OtrP0JywqkMdDHChOgVInN_ZdibpXm7vH1PFZTMP9A/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbyxiagGQW6AIdiR8o8o0u4c0ET1I70injnp9ExqGWvFYHj6ucqSlPOe-ijPuewWToFZMw/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify({

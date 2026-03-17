@@ -204,11 +204,9 @@ const base = import.meta.env.BASE_URL;
         e.preventDefault();
         var fd = new FormData(form);
         var name = fd.get('name');
-        // Send to Formspree
-        fetch('https://formspree.io/f/xdawwgeo', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } }).catch(function(){});
         // Send to Apps Script
         var data = { type: 'custom-solution', _source: fd.get('_source'), _subject: fd.get('_subject'), name: name, role: fd.get('role'), organisation: fd.get('organisation'), email: fd.get('email'), need: fd.get('need'), timeline: fd.get('timeline'), description: fd.get('description') || '' };
-        fetch('https://script.google.com/macros/s/AKfycbw_88x4yCO66ZqKzM90EaarkQo8OtrP0JywqkMdDHChOgVInN_ZdibpXm7vH1PFZTMP9A/exec', { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }).catch(function(){});
+        fetch('https://script.google.com/macros/s/AKfycbyxiagGQW6AIdiR8o8o0u4c0ET1I70injnp9ExqGWvFYHj6ucqSlPOe-ijPuewWToFZMw/exec', { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }).catch(function(){});
         // Show success
         document.getElementById('enquiry-card').style.display = 'none';
         document.getElementById('enquiry-success-title').textContent = 'Thank you ' + name + '! We\'ve received your enquiry.';

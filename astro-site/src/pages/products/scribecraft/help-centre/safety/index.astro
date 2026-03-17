@@ -370,12 +370,14 @@ const sidebarItems = [
       <p>Request the complete Clinical Safety Case Report, Hazard Log, and Process Definition Document for your ICB or procurement process.</p>
       <button class="btn-primary" id="sc-safety-toggle" onclick="document.getElementById('sc-safety-form-wrap').style.display='block';this.style.display='none';">Request Safety Documentation</button>
       <div id="sc-safety-form-wrap" style="display:none;">
-        <form id="sc-safety-form" style="display:flex;flex-direction:column;gap:0.625rem;margin-top:1rem;max-width:400px;">
-          <input type="text" class="form-field" placeholder="Your Name *" required />
-          <input type="text" class="form-field" placeholder="Your Role *" required />
-          <input type="text" class="form-field" placeholder="Organisation / Practice *" required />
-          <input type="email" class="form-field" placeholder="Work Email *" required />
-          <select class="form-field" required>
+        <form id="sc-safety-form" action="#" method="POST" style="display:flex;flex-direction:column;gap:0.625rem;margin-top:1rem;max-width:400px;">
+          <input type="hidden" name="_source" value="Safety Documentation Request - ScribeCraft" />
+          <input type="hidden" name="_subject" value="Safety Documentation Request - ScribeCraft" />
+          <input type="text" name="name" class="form-field" placeholder="Your Name *" required />
+          <input type="text" name="role" class="form-field" placeholder="Your Role *" required />
+          <input type="text" name="organisation" class="form-field" placeholder="Organisation / Practice *" required />
+          <input type="email" name="email" class="form-field" placeholder="Work Email *" required />
+          <select name="purpose" class="form-field" required>
             <option value="">Purpose of request *</option>
             <option value="ICB Procurement">ICB Procurement</option>
             <option value="Internal Review">Internal Governance Review</option>
@@ -386,7 +388,7 @@ const sidebarItems = [
           <button type="submit" class="btn-primary" style="width:100%;">Submit Request</button>
         </form>
       </div>
-      <p style="font-size:0.8125rem;color:var(--color-brand-grey-muted);margin-top:0.75rem;">Questions about clinical safety? <a href="mailto:contact@apolloiq.co.uk" style="color:var(--color-brand-blue);font-weight:600;">Email our Clinical Safety Officer</a></p>
+      <p style="font-size:0.8125rem;color:var(--color-brand-grey-muted);margin-top:0.75rem;">Questions about clinical safety? <a href="mailto:vlad.repede@apolloiq.co.uk" style="color:var(--color-brand-blue);font-weight:600;">Email our Clinical Safety Officer</a></p>
     </div>
   </section>
 
@@ -696,13 +698,28 @@ const sidebarItems = [
 <script>
   const scSafetyForm = document.getElementById('sc-safety-form');
   if (scSafetyForm) {
-    scSafetyForm.addEventListener('submit', (e) => {
+    scSafetyForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      const inputs = scSafetyForm.querySelectorAll('input, select');
-      const data = {};
-      inputs.forEach((inp) => { if (inp.name || inp.placeholder) data[inp.placeholder || inp.name] = inp.value; });
-      console.log('Safety docs request:', { ...data, product: 'ScribeCraft', page: 'help-centre/safety', timestamp: new Date().toISOString() });
-      document.getElementById('sc-safety-form-wrap').innerHTML = '<p style="color:var(--color-brand-green);font-weight:600;margin-top:1rem;">Request submitted! We\'ll send the documentation to your email shortly.</p>';
+      var btn = scSafetyForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      var fd = new FormData(scSafetyForm as HTMLFormElement);
+      fetch('https://script.google.com/macros/s/AKfycbyxiagGQW6AIdiR8o8o0u4c0ET1I70injnp9ExqGWvFYHj6ucqSlPOe-ijPuewWToFZMw/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({
+          type: 'safety-request',
+          name: fd.get('name'),
+          role: fd.get('role'),
+          organisation: fd.get('organisation'),
+          email: fd.get('email'),
+          purpose: fd.get('purpose'),
+          _source: 'Safety Documentation Request - ScribeCraft'
+        })
+      }).catch(function(){});
+
+      document.getElementById('sc-safety-form-wrap')!.innerHTML = '<p style="color:var(--color-brand-green);font-weight:600;margin-top:1rem;">✓ Request submitted! We\'ll send the documentation to your email shortly.</p>';
     });
   }
 </script>

@@ -76,7 +76,7 @@ const base = import.meta.env.BASE_URL;
 
           <!-- Form Side -->
           <div class="contact-form-wrap">
-            <form class="contact-form" id="contact-form">
+            <form class="contact-form" id="contact-form" action="#" method="POST">
               <div class="form-group">
                 <label for="contact-name" class="form-label">Name / Business</label>
                 <input
@@ -138,6 +138,28 @@ const base = import.meta.env.BASE_URL;
 
   <Footer />
 </BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('form-success');
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = form.querySelector('.contact-submit');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      var fd = new FormData(form);
+      var data = { type: 'contact', name: fd.get('name'), email: fd.get('email'), message: fd.get('message'), consent: fd.get('consent') ? 'yes' : 'no', _source: 'Contact Us Page' };
+      fetch('https://script.google.com/macros/s/AKfycbyxiagGQW6AIdiR8o8o0u4c0ET1I70injnp9ExqGWvFYHj6ucqSlPOe-ijPuewWToFZMw/exec', { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(data) }).catch(function(){});
+
+      form.style.display = 'none';
+      success.hidden = false;
+    });
+  });
+</script>
 
 <style>
   /* ── Hero ── */
