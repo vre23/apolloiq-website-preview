@@ -92,7 +92,7 @@ const workflows = [
         {spells.map((product) => (
           <a href={product.href} class="product-card">
             <div class="product-card-icon-wrap">
-              <img src={product.icon} alt="" class="product-card-icon" loading="lazy" />
+              <img src={product.icon} alt={product.title} class="product-card-icon" loading="lazy" />
             </div>
             <div class="product-card-header">
               <h3 class="product-card-title">{product.title}</h3>
@@ -120,7 +120,7 @@ const workflows = [
         {workflows.map((product) => (
           <a href={product.href} class="product-card">
             <div class="product-card-icon-wrap">
-              <img src={product.icon} alt="" class="product-card-icon" loading="lazy" />
+              <img src={product.icon} alt={product.title} class="product-card-icon" loading="lazy" />
             </div>
             <div class="product-card-header">
               <h3 class="product-card-title">{product.title}</h3>

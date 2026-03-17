@@ -22,7 +22,7 @@ const base = import.meta.env.BASE_URL;
           <!-- Icon grid with descriptions -->
           <div class="hero-icon-grid">
             <div class="hero-icon-item">
-              <img src={`${base}images/logo_Merlin_blue.svg`} alt="" class="hero-icon-svg" />
+              <img src={`${base}images/logo_Merlin_blue.svg`} alt="Merlin Platform" class="hero-icon-svg" />
               <div>
                 <strong>Merlin Platform</strong>
                 <span>Empowering Primary Care</span>
@@ -98,7 +98,7 @@ const base = import.meta.env.BASE_URL;
             </div>
             <!-- Arrow link centered -->
             <a href={`${base}products`} class="hero-arrow-link" aria-label="Explore products">
-              <img src={`${base}images/685dc40ff887e05cecfae306_Arrow_icon.png`} alt="" width="40" />
+              <img src={`${base}images/685dc40ff887e05cecfae306_Arrow_icon.png`} alt="Explore products" width="40" />
             </a>
           </div>
         </div>
@@ -173,7 +173,7 @@ const base = import.meta.env.BASE_URL;
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon">
-            <img src={`${base}images/icon-spell-book.svg`} alt="" class="feature-icon-img" />
+            <img src={`${base}images/icon-spell-book.svg`} alt="Spells" class="feature-icon-img" />
           </div>
           <h3 class="feature-title">Spells</h3>
           <p class="feature-desc">Voice-powered clinical tools including ScribeCraft for consultation transcription, Blood Pressure Scroll for digitising readings, and Locate Elixir for real-time medication availability.</p>
@@ -360,7 +360,7 @@ const base = import.meta.env.BASE_URL;
         </div>
         <div class="audit-card-visual">
           <div class="audit-visual-icon">
-            <img src={`${base}images/logo_Merlin_white.svg`} alt="" class="audit-main-icon" />
+            <img src={`${base}images/logo_Merlin_white.svg`} alt="Merlin" class="audit-main-icon" />
           </div>
           <div class="audit-visual-stats">
             <div class="audit-mini-stat">
@@ -1384,13 +1384,21 @@ const base = import.meta.env.BASE_URL;
   overlay?.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-  // Product card clicks — for now navigate to contact with product context
+  // Product card clicks — open Google Calendar booking links
+  const bookingLinks = {
+    'scribecraft': 'https://calendar.app.google/T2x9NAYAKirvEvbRA',
+    'pathology-automation': 'https://calendar.app.google/xMYkxVNCAuVvCaNt8',
+    'clinical-document-management': 'https://calendar.app.google/hNCBgFoxGdw4ZVRx6',
+    'bp-scroll': 'https://calendar.app.google/TEivVUQJBsHJvBss9',
+    'locate-elixir': 'https://calendar.app.google/KLZLE2aXdgUW6tjn8',
+    'merlin-platform': 'https://calendar.app.google/2mH1TehGUkFiBW2D9',
+  };
   document.querySelectorAll('.demo-product-card').forEach((card) => {
     card.addEventListener('click', (e) => {
       e.preventDefault();
       const product = card.getAttribute('data-product');
-      const baseUrl = document.querySelector('meta[name="base-url"]')?.getAttribute('content') || '/apolloiq-website-preview/';
-      window.location.href = `${baseUrl}contact-us?demo=${product}`;
+      const url = bookingLinks[product];
+      if (url) window.open(url, '_blank');
     });
   });
 </script>

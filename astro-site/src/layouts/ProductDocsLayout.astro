@@ -34,7 +34,7 @@ const currentPath = Astro.url.pathname;
     <div class="container-site">
       <div class="pdl-hero-top-row">
         <div class="pdl-hero-title-row">
-          {heroIcon && <img src={heroIcon} alt="" class="pdl-hero-icon" />}
+          {heroIcon && <img src={heroIcon} alt={heroTitle} class="pdl-hero-icon" />}
           <h1 class="pdl-hero-title">{heroTitle}</h1>
         </div>
         {helpCentreHref && (
