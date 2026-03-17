@@ -444,6 +444,36 @@ function renderResults() {
     html += '</div>';
   }
 
+  // ── GATE FORM (after Step 1, before detailed breakdown) ──
+  html += '<div id="au-gate" class="au-reveal" data-step="1" style="margin-top:8px">\
+    <div style="background:#f5f7fa;border-radius:14px;padding:28px 24px;text-align:center">\
+      <div style="font-size:18px;font-weight:700;color:#191d21;margin-bottom:6px">Unlock Your Full Report</div>\
+      <div style="font-size:13px;color:#667085;line-height:1.55;margin-bottom:20px">Enter your details to see the complete module-by-module breakdown, clinical risk analysis, and personalised ROI.</div>\
+      <form id="au-gate-form" style="max-width:400px;margin:0 auto;text-align:left">\
+        <input type="text" name="name" placeholder="Your Name *" required style="width:100%;padding:11px 14px;border:1.5px solid #e0e4ea;border-radius:10px;font-size:14px;font-family:inherit;margin-bottom:10px;box-sizing:border-box;outline:none;transition:border-color 0.2s" onfocus="this.style.borderColor=\'#2c70eb\'" onblur="this.style.borderColor=\'#e0e4ea\'" />\
+        <select name="role" required style="width:100%;padding:11px 14px;border:1.5px solid #e0e4ea;border-radius:10px;font-size:14px;font-family:inherit;margin-bottom:10px;box-sizing:border-box;outline:none;color:#667085;background:#fff;transition:border-color 0.2s" onfocus="this.style.borderColor=\'#2c70eb\'" onblur="this.style.borderColor=\'#e0e4ea\'">\
+          <option value="" disabled selected>Your Role *</option>\
+          <option value="GP Partner">GP Partner</option>\
+          <option value="Salaried GP">Salaried GP</option>\
+          <option value="Practice Manager">Practice Manager</option>\
+          <option value="Operations Manager">Operations Manager</option>\
+          <option value="PCN Manager">PCN Manager</option>\
+          <option value="ICB Representative">ICB Representative</option>\
+          <option value="Other">Other</option>\
+        </select>\
+        <input type="text" name="practice" placeholder="Practice Name *" required style="width:100%;padding:11px 14px;border:1.5px solid #e0e4ea;border-radius:10px;font-size:14px;font-family:inherit;margin-bottom:10px;box-sizing:border-box;outline:none;transition:border-color 0.2s" onfocus="this.style.borderColor=\'#2c70eb\'" onblur="this.style.borderColor=\'#e0e4ea\'" />\
+        <input type="email" name="email" placeholder="Work Email *" required style="width:100%;padding:11px 14px;border:1.5px solid #e0e4ea;border-radius:10px;font-size:14px;font-family:inherit;margin-bottom:14px;box-sizing:border-box;outline:none;transition:border-color 0.2s" onfocus="this.style.borderColor=\'#2c70eb\'" onblur="this.style.borderColor=\'#e0e4ea\'" />\
+        <input type="hidden" name="_source" value="Practice Efficiency Audit" />\
+        <input type="hidden" name="_subject" value="Practice Efficiency Audit Lead" />\
+        <button type="submit" class="au-primary" style="margin-top:0">Unlock Full Report \u2192</button>\
+      </form>\
+      <div style="font-size:11px;color:#98a2b3;margin-top:10px">We respect your privacy. Your details will only be used to discuss efficiency improvements for your practice.</div>\
+    </div>\
+  </div>';
+
+  // ── GATED CONTENT (hidden until form submit) ──
+  html += '<div id="au-gated" style="display:none">';
+
   // Module breakdown
   html += '<div class="au-reveal" data-step="2">\
     <div class="au-section-label" style="margin-bottom:14px">Module-by-Module Breakdown</div>';
@@ -529,33 +559,104 @@ function renderResults() {
     <div style="font-size:11px;color:#98a2b3;line-height:1.6">Benchmarks: NHS Transformation Directorate; O\u2019Sullivan et al. BMC Medicine 2018; Sinnott et al. BJGP 2022 (GP documentation time); GOSH-led 9-site NHS AI scribe pilot (17,000 encounters, July 2025); Docman/OneAdvanced (~6,000 practices); NHS Digital QOF 2024\u201325; CPE Medicines Supply Report 2024; NICE NG136 (hypertension thresholds); IfG Performance Tracker 2025. Rates: AfC Band 3 top (\u00A314.50/hr), GP sessional mid-range (\u00A385/hr). ApolloIQ pricing: Organisation tier from apolloiq.co.uk/pricing (March 2026). BP error rate estimates are conservative modelling \u2014 actual error rates in your practice may differ. All figures are estimates \u2014 a full on-site audit uses your real data.</div>\
   </div>';
 
-  // CTA
+  // CTA (now a booking link instead of contact page)
   html += '<div style="margin-top:24px;text-align:center" class="au-reveal" data-step="8">\
     <p style="font-size:13px;color:#667085;line-height:1.6;margin-bottom:14px">These are estimates based on national averages and your answers. Want the exact numbers using your practice\u2019s real data?</p>\
-    <a href="' + base + 'contact-us" class="au-primary" style="display:inline-block;text-decoration:none;text-align:center;font-size:15px;padding:14px 28px">Book a Free Efficiency Review Call</a>\
+    <a href="https://calendar.app.google/9uQNNTvfzHr5U7bYA" target="_blank" class="au-primary" style="display:inline-block;text-decoration:none;text-align:center;font-size:15px;padding:14px 28px">Book a Free Efficiency Review Call \u2192</a>\
     <div style="font-size:11px;color:#98a2b3;margin-top:8px">No commitment \u00B7 1 hour online \u00B7 Full report with your actual numbers and ROI</div>\
     <button class="au-back-btn" style="margin-top:14px;color:#2c70eb" id="au-restart">\u2190 Retake audit</button>\
   </div>';
 
+  // Close gated content div
+  html += '</div>';
+
   html += '</div></div>';
   app.innerHTML = html;
 
-  // Animate results in
-  resultTimer = setInterval(function() {
-    resultStep++;
-    if (resultStep > 12) { clearInterval(resultTimer); resultTimer = null; return; }
-    document.querySelectorAll('.au-reveal').forEach(function(el) {
-      var step = parseInt(el.dataset.step, 10);
-      if (step <= resultStep) el.classList.add('au-revealed');
-    });
-  }, 280);
-  // Reveal step 1 immediately
+  // Animate Step 1 in immediately
   setTimeout(function() {
     resultStep = 1;
     document.querySelectorAll('.au-reveal[data-step="1"]').forEach(function(el) {
       el.classList.add('au-revealed');
     });
   }, 50);
+
+  // ── Gate form handler ──
+  var gateForm = document.getElementById('au-gate-form');
+  gateForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var fd = new FormData(gateForm);
+    var name = fd.get('name');
+    var role = fd.get('role');
+    var practice = fd.get('practice');
+    var email = fd.get('email');
+
+    // Hide gate, show gated content
+    document.getElementById('au-gate').style.display = 'none';
+    document.getElementById('au-gated').style.display = 'block';
+
+    // Animate gated steps in
+    resultStep = 1;
+    resultTimer = setInterval(function() {
+      resultStep++;
+      if (resultStep > 12) { clearInterval(resultTimer); resultTimer = null; return; }
+      document.querySelectorAll('.au-reveal').forEach(function(el) {
+        var step = parseInt(el.dataset.step, 10);
+        if (step <= resultStep) el.classList.add('au-revealed');
+      });
+    }, 280);
+
+    // Smooth scroll to module breakdown
+    document.getElementById('au-gated').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Build module summary for email
+    var moduleSummary = [];
+    R.modules.forEach(function(mod) {
+      moduleSummary.push({
+        name: mod.name,
+        adminHours: mod.adminHours || 0,
+        gpHours: mod.gpHours || 0,
+        currentCost: mod.currentCost,
+        apolloiqCost: mod.apolloiqCost,
+        netROI: mod.netROI,
+        findings: mod.findings
+      });
+    });
+
+    // Send to Formspree (lead capture)
+    fd.append('patients', R.patients);
+    fd.append('clinicalUsers', R.clinicalUsers);
+    fd.append('hoursLostPerWeek', totalWeeklyHrs);
+    fd.append('currentAnnualCost', R.totalCurrentCost);
+    fd.append('apolloiqCost', R.totalApolloIQCost);
+    fd.append('netROI', R.totalNetROI);
+    fetch('https://formspree.io/f/xdawwgeo', {
+      method: 'POST', body: fd, headers: { 'Accept': 'application/json' }
+    }).catch(function() {});
+
+    // Send personalised email via Apps Script
+    fetch('https://script.google.com/macros/s/AKfycbw_88x4yCO66ZqKzM90EaarkQo8OtrP0JywqkMdDHChOgVInN_ZdibpXm7vH1PFZTMP9A/exec', {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({
+        type: 'audit',
+        email: email,
+        name: name,
+        practice: practice,
+        role: role,
+        patients: R.patients,
+        clinicalUsers: R.clinicalUsers,
+        hoursLostPerWeek: totalWeeklyHrs,
+        totalCurrentCost: R.totalCurrentCost,
+        totalApolloIQCost: R.totalApolloIQCost,
+        totalNetROI: R.totalNetROI,
+        positiveROI: positiveROI,
+        roiPercent: positiveROI ? Math.round((R.totalNetROI / R.totalApolloIQCost) * 100) : 0,
+        modules: moduleSummary,
+        vendorPains: R.vendorPains
+      })
+    }).catch(function() {});
+  });
 
   document.getElementById("au-restart").addEventListener("click", function() {
     if (resultTimer) { clearInterval(resultTimer); resultTimer = null; }
