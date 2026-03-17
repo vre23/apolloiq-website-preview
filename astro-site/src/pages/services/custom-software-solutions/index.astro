@@ -115,6 +115,108 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
+  <!-- Enquiry Form -->
+  <section class="enquiry-section" id="enquiry-section">
+    <div class="container-narrow">
+      <div class="enquiry-header">
+        <h2 class="enquiry-title">Start Your Project</h2>
+        <p class="enquiry-subtitle">Tell us what you need and we'll get back to you within 24 hours.</p>
+      </div>
+      <div class="enquiry-card" id="enquiry-card">
+        <form id="enquiry-form" novalidate>
+          <input type="hidden" name="_source" value="Custom Software Solutions" />
+          <input type="hidden" name="_subject" value="New Lead: Custom Software Solutions" />
+          <div class="enquiry-row">
+            <div class="enquiry-field">
+              <label class="enquiry-label" for="enq-name">Name <span class="enquiry-req">*</span></label>
+              <input class="enquiry-input" type="text" id="enq-name" name="name" required placeholder="Your full name" />
+            </div>
+            <div class="enquiry-field">
+              <label class="enquiry-label" for="enq-role">Role <span class="enquiry-req">*</span></label>
+              <select class="enquiry-input" id="enq-role" name="role" required>
+                <option value="" disabled selected>Select your role</option>
+                <option value="CTO">CTO</option>
+                <option value="Operations Director">Operations Director</option>
+                <option value="Practice Manager">Practice Manager</option>
+                <option value="IT Lead">IT Lead</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="enquiry-row">
+            <div class="enquiry-field">
+              <label class="enquiry-label" for="enq-org">Organisation <span class="enquiry-req">*</span></label>
+              <input class="enquiry-input" type="text" id="enq-org" name="organisation" required placeholder="Your organisation" />
+            </div>
+            <div class="enquiry-field">
+              <label class="enquiry-label" for="enq-email">Work Email <span class="enquiry-req">*</span></label>
+              <input class="enquiry-input" type="email" id="enq-email" name="email" required placeholder="you@company.com" />
+            </div>
+          </div>
+          <div class="enquiry-row">
+            <div class="enquiry-field">
+              <label class="enquiry-label" for="enq-need">What do you need? <span class="enquiry-req">*</span></label>
+              <select class="enquiry-input" id="enq-need" name="need" required>
+                <option value="" disabled selected>Select a category</option>
+                <option value="Web application">Web application</option>
+                <option value="Mobile app">Mobile app</option>
+                <option value="Integration/API">Integration/API</option>
+                <option value="Data platform">Data platform</option>
+                <option value="Internal tool">Internal tool</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="enquiry-field">
+              <label class="enquiry-label" for="enq-timeline">Timeline <span class="enquiry-req">*</span></label>
+              <select class="enquiry-input" id="enq-timeline" name="timeline" required>
+                <option value="" disabled selected>Select timeline</option>
+                <option value="ASAP">ASAP</option>
+                <option value="1-3 months">1-3 months</option>
+                <option value="3-6 months">3-6 months</option>
+                <option value="Just exploring">Just exploring</option>
+              </select>
+            </div>
+          </div>
+          <div class="enquiry-field enquiry-field--full">
+            <label class="enquiry-label" for="enq-desc">Brief description</label>
+            <textarea class="enquiry-input enquiry-textarea" id="enq-desc" name="description" rows="3" placeholder="Tell us about your project in 2-3 sentences..."></textarea>
+          </div>
+          <button type="submit" class="enquiry-submit" id="enquiry-submit">Send Enquiry</button>
+        </form>
+      </div>
+      <div class="enquiry-success" id="enquiry-success" style="display:none;">
+        <div class="enquiry-card" style="text-align:center; padding:3rem;">
+          <div class="enquiry-success-icon">&#10003;</div>
+          <h3 class="enquiry-success-title" id="enquiry-success-title"></h3>
+          <p class="enquiry-success-text">We'll review your requirements and get back to you within 24 hours.</p>
+          <a href="https://calendar.app.google/5CyGaiNaB31KhdFFA" target="_blank" rel="noopener" class="enquiry-book-btn">Book a Discovery Call &rarr;</a>
+          <p class="enquiry-success-small">Prefer to talk sooner? Book a call directly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function() {
+      var form = document.getElementById('enquiry-form');
+      if (!form) return;
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var fd = new FormData(form);
+        var name = fd.get('name');
+        // Send to Formspree
+        fetch('https://formspree.io/f/xdawwgeo', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } }).catch(function(){});
+        // Send to Apps Script
+        var data = { type: 'custom-solution', _source: fd.get('_source'), _subject: fd.get('_subject'), name: name, role: fd.get('role'), organisation: fd.get('organisation'), email: fd.get('email'), need: fd.get('need'), timeline: fd.get('timeline'), description: fd.get('description') || '' };
+        fetch('https://script.google.com/macros/s/AKfycbw_88x4yCO66ZqKzM90EaarkQo8OtrP0JywqkMdDHChOgVInN_ZdibpXm7vH1PFZTMP9A/exec', { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }).catch(function(){});
+        // Show success
+        document.getElementById('enquiry-card').style.display = 'none';
+        document.getElementById('enquiry-success-title').textContent = 'Thank you ' + name + '! We\'ve received your enquiry.';
+        document.getElementById('enquiry-success').style.display = 'block';
+      });
+    })();
+  </script>
+
   <CTASection />
   <Footer />
 </BaseLayout>
@@ -351,6 +453,162 @@ const base = import.meta.env.BASE_URL;
     }
     .svc-process-grid {
       grid-template-columns: 1fr;
+    }
+  }
+
+  /* Enquiry Form */
+  .enquiry-section {
+    padding: 5rem 0;
+    background: #f5f7fa;
+  }
+  .enquiry-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .enquiry-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #191d21;
+    margin-bottom: 0.75rem;
+  }
+  .enquiry-subtitle {
+    font-size: 1.0625rem;
+    color: #667085;
+    line-height: 1.6;
+  }
+  .enquiry-card {
+    background: #fff;
+    border: 1px solid rgba(44, 112, 235, 0.06);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+  }
+  .enquiry-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .enquiry-field {
+    display: flex;
+    flex-direction: column;
+  }
+  .enquiry-field--full {
+    margin-bottom: 1.5rem;
+  }
+  .enquiry-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #191d21;
+    margin-bottom: 0.4rem;
+  }
+  .enquiry-req {
+    color: #2c70eb;
+  }
+  .enquiry-input {
+    border: 1.5px solid #e0e4ea;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 0.9375rem;
+    color: #191d21;
+    background: #fff;
+    transition: border-color 0.2s;
+    outline: none;
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .enquiry-input:focus {
+    border-color: #2c70eb;
+  }
+  .enquiry-input::placeholder {
+    color: #9ca3af;
+  }
+  select.enquiry-input {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%23667085' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+  .enquiry-textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  .enquiry-submit {
+    display: block;
+    width: 100%;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #2c70eb 0%, #00c393 100%);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.15s;
+    font-family: inherit;
+  }
+  .enquiry-submit:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+  }
+  .enquiry-success-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2c70eb 0%, #00c393 100%);
+    color: #fff;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+  }
+  .enquiry-success-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #191d21;
+    margin-bottom: 0.5rem;
+  }
+  .enquiry-success-text {
+    font-size: 1rem;
+    color: #667085;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  .enquiry-book-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #2c70eb 0%, #00c393 100%);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.15s;
+    margin-bottom: 1rem;
+  }
+  .enquiry-book-btn:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+  }
+  .enquiry-success-small {
+    font-size: 0.8125rem;
+    color: #9ca3af;
+  }
+
+  @media (max-width: 640px) {
+    .enquiry-row {
+      grid-template-columns: 1fr;
+    }
+    .enquiry-card {
+      padding: 1.5rem;
     }
   }
 </style>
